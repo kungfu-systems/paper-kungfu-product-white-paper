@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "contract": "kungfu-white-paper-site-bundles-index",
+  "source": {
+    "package": "@kungfu-tech/paper-kungfu-product-white-paper",
+    "packageVersion": "0.1.0-alpha.0",
+    "repository": "git+https://github.com/kungfu-systems/paper-kungfu-product-white-paper.git",
+    "titleSource": ".buildchain/buildchain.toml",
+    "paperEntrypoint": "paper/main.tex",
+    "sectionSources": [
+      "paper/sections/01-problem.tex",
+      "paper/sections/02-thesis.tex",
+      "paper/sections/03-principles.tex",
+      "paper/sections/04-architecture.tex",
+      "paper/sections/05-roadmap.tex",
+      "paper/sections/06-dogfood.tex",
+      "paper/sections/07-ecosystem.tex",
+      "paper/sections/08-risks.tex",
+      "paper/sections/09-conclusion.tex"
+    ],
+    "bibliography": "paper/references.bib",
+    "buildchainConfig": ".buildchain/buildchain.toml"
+  },
+  "bundles": [
+    {
+      "id": "brand",
+      "consumer": "kungfu.tech",
+      "path": "site/brand-site.json",
+      "contract": "kungfu-white-paper-brand-site-bundle",
+      "purpose": "Product and philosophy presentation for the Kungfu main site."
+    },
+    {
+      "id": "evidence",
+      "consumer": "papers.libkungfu.dev",
+      "path": "site/evidence-site.json",
+      "contract": "kungfu-white-paper-evidence-site-bundle",
+      "purpose": "Artifact, citation, source, and verification presentation for the paper registry."
+    }
+  ]
+}

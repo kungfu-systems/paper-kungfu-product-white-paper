@@ -11,9 +11,9 @@ abstract = "A product white paper describing Kungfu's thesis, architecture, road
 authors = ["Keren Dong"]
 primary_artifact = "_build/main.pdf"
 artifact_paths = ["_build/main.pdf"]
-metadata_paths = ["README.md", "docs/MAP.md"]
-source_paths = ["paper", "README.md", "LICENSE", "Makefile"]
-site_consumers = ["papers.libkungfu.dev"]
+metadata_paths = ["README.md", "docs/MAP.md", "package.json", "site"]
+source_paths = ["paper", "README.md", "LICENSE", "Makefile", "package.json", "scripts", "site"]
+site_consumers = ["kungfu.tech", "papers.libkungfu.dev"]
 manifest_path = ".buildchain/publication/publication-artifact.json"
 source_bundle_path = ".buildchain/publication/source.tar.gz"
 

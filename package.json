@@ -1,0 +1,48 @@
+{
+  "name": "@kungfu-tech/paper-kungfu-product-white-paper",
+  "version": "0.1.0-alpha.0",
+  "description": "Kungfu product white paper source and site bundles for managing real-world work with agents",
+  "license": "Apache-2.0",
+  "type": "module",
+  "files": [
+    "README.md",
+    "AGENTS.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "LICENSE",
+    "TRADEMARK.md",
+    "ACCEPTABLE_USE.md",
+    "PROVIDER_COMPLIANCE.md",
+    "Makefile",
+    ".buildchain/buildchain.toml",
+    "docs",
+    "paper",
+    "scripts",
+    "site"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    "./README.md": "./README.md",
+    "./docs/*": "./docs/*",
+    "./paper/main.tex": "./paper/main.tex",
+    "./paper/references.bib": "./paper/references.bib",
+    "./paper/sections/*.tex": "./paper/sections/*.tex",
+    "./site/brand-site.json": "./site/brand-site.json",
+    "./site/evidence-site.json": "./site/evidence-site.json",
+    "./site/site-bundles.json": "./site/site-bundles.json",
+    "./scripts/*.mjs": "./scripts/*.mjs"
+  },
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "update:site-bundles": "node scripts/update-site-bundles.mjs",
+    "pdf": "make pdf"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kungfu-systems/paper-kungfu-product-white-paper.git"
+  }
+}

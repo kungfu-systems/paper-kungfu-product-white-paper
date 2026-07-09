@@ -32,6 +32,21 @@ LaTeX is an implementation detail.
 - [`.buildchain/buildchain.toml`](.buildchain/buildchain.toml): Buildchain
   publication-artifact contract.
 
+## Site Bundles
+
+The npm package exposes two generated site bundles from the same paper source:
+
+- [`site/brand-site.json`](site/brand-site.json): product-facing bundle for
+  `site-kungfu-tech` / `kungfu.tech`.
+- [`site/evidence-site.json`](site/evidence-site.json): artifact and evidence
+  bundle for `papers.libkungfu.dev`.
+
+Regenerate them after changing the paper source:
+
+```sh
+make update-site-bundles
+```
+
 ## Build
 
 If `tectonic` is installed:
@@ -44,6 +59,12 @@ Source-only checks:
 
 ```sh
 make check
+```
+
+NPM package dry-run:
+
+```sh
+npm pack --dry-run --json
 ```
 
 Buildchain publication artifact manifest:
