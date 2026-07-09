@@ -42,6 +42,34 @@ for (const consumer of ["kungfu.tech", "papers.libkungfu.dev"]) {
   }
 }
 
+const brandBundle = readJson("site/brand-site.json");
+if (brandBundle.routes?.canonicalUrl !== "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work") {
+  fail("brand site bundle must declare the kungfu.tech canonical white paper URL");
+}
+if (brandBundle.routes?.indexUrl !== "https://kungfu.tech/whitepaper") {
+  fail("brand site bundle must declare the kungfu.tech white paper index URL");
+}
+if (brandBundle.routes?.pdfUrl !== "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work.pdf") {
+  fail("brand site bundle must declare the kungfu.tech canonical PDF URL");
+}
+if (brandBundle.hero?.primaryCta?.href !== brandBundle.routes?.canonicalUrl) {
+  fail("brand site primary CTA must point to routes.canonicalUrl");
+}
+if (brandBundle.hero?.secondaryCta?.href !== brandBundle.routes?.evidenceUrl) {
+  fail("brand site secondary CTA must point to routes.evidenceUrl");
+}
+
+const evidenceBundle = readJson("site/evidence-site.json");
+if (evidenceBundle.routes?.canonicalUrl !== "https://papers.libkungfu.dev/kungfu-product-white-paper") {
+  fail("evidence site bundle must declare the papers.libkungfu.dev canonical URL");
+}
+if (evidenceBundle.routes?.brandUrl !== brandBundle.routes?.canonicalUrl) {
+  fail("evidence site brandUrl must point to the brand canonicalUrl");
+}
+if (brandBundle.routes?.evidenceUrl !== evidenceBundle.routes?.canonicalUrl) {
+  fail("brand site evidenceUrl must point to the evidence canonicalUrl");
+}
+
 try {
   execFileSync("git", ["diff", "--check"], { stdio: "pipe" });
 } catch (error) {

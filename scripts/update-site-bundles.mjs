@@ -147,9 +147,13 @@ export const buildSiteBundles = () => {
     consumer: "kungfu.tech",
     source,
     routes: {
-      suggestedPath: "/whitepaper",
-      paperPath: "/whitepaper/kungfu-real-world-agent-work",
+      canonicalHost: "kungfu.tech",
+      canonicalPath: "/whitepaper/kungfu-real-world-agent-work",
+      canonicalUrl: "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work",
+      indexPath: "/whitepaper",
+      indexUrl: "https://kungfu.tech/whitepaper",
       pdfPath: "/whitepaper/kungfu-real-world-agent-work.pdf",
+      pdfUrl: "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work.pdf",
       evidenceUrl: "https://papers.libkungfu.dev/kungfu-product-white-paper",
     },
     hero: {
@@ -159,7 +163,7 @@ export const buildSiteBundles = () => {
       stance: "Kungfu helps people and agents manage real-world work through non-drifting facts, fact-based trust, trusted value, and observer-declared timelines.",
       primaryCta: {
         label: "Read the white paper",
-        href: "/whitepaper/kungfu-real-world-agent-work",
+        href: "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work",
       },
       secondaryCta: {
         label: "Inspect evidence",
@@ -204,10 +208,14 @@ export const buildSiteBundles = () => {
       siteConsumers: buildchain.siteConsumers,
     },
     routes: {
-      suggestedPath: "/kungfu-product-white-paper",
+      canonicalHost: "papers.libkungfu.dev",
+      canonicalPath: "/kungfu-product-white-paper",
+      canonicalUrl: "https://papers.libkungfu.dev/kungfu-product-white-paper",
       pdfPath: "/kungfu-product-white-paper/main.pdf",
+      pdfUrl: "https://papers.libkungfu.dev/kungfu-product-white-paper/main.pdf",
       sourcePath: "/kungfu-product-white-paper/source.tar.gz",
-      brandUrl: "https://kungfu.tech/whitepaper",
+      sourceUrl: "https://papers.libkungfu.dev/kungfu-product-white-paper/source.tar.gz",
+      brandUrl: "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work",
       repositoryUrl: "https://github.com/kungfu-systems/paper-kungfu-product-white-paper",
     },
     sectionMap: sections.map((section, index) => ({
