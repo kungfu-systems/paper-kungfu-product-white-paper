@@ -1,0 +1,42 @@
+\section{Architecture Direction}
+
+Kungfu's architecture follows from the product thesis.
+
+\subsection{Core Runtime Fact Layer}
+
+At the center is a local runtime fact layer. It records durable facts about
+work, agents, traces, tasks, artifacts, cost, state transitions, and observer
+timelines. The storage layer is not disposable cache. If Kungfu becomes a
+source of truth for long-running work, storage needs the operational qualities
+users expect from serious local infrastructure: verification, backup,
+recovery, migration, and clear failure modes.
+
+\subsection{Control Plane Interfaces}
+
+Kungfu GUI and TUI are control planes for humans. They should make long-running
+agent work visible without forcing the user to read logs or reconstruct
+context manually. CLI, Python, and Node APIs are control planes for agents and
+automation. They should expose the same facts in structured form.
+
+\subsection{Polyglot Membrane}
+
+The product needs a polyglot membrane because the best ecosystem for each layer
+is different:
+
+\begin{itemize}[leftmargin=*]
+  \item frontend and desktop surfaces benefit from Node, Electron, React, and
+  the web ecosystem;
+  \item agent integration benefits from Python and Node APIs;
+  \item durable high-performance core surfaces benefit from C++ where needed.
+\end{itemize}
+
+The membrane is not accidental complexity. It lets Kungfu compress complexity
+inside the product while exposing low-friction interfaces to humans and agents.
+
+\subsection{Extension Model}
+
+Kungfu extensions should let other users define their own work semantics
+without forking the product. Atlas mission/go is one profile. A research lab,
+operations team, developer, writer, or personal user may need a different
+semantic model. The core should support these variations through explicit
+schemas, extension packages, and capability declarations.

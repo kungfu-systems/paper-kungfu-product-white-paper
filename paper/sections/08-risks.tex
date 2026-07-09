@@ -1,0 +1,31 @@
+\section{Risks and Boundaries}
+
+Kungfu should avoid three failure modes.
+
+\subsection{Tracer Narrowing}
+
+If Kungfu is understood only as an LLM tracing tool, it competes in a smaller
+category and misses the higher-level need. Tracing should remain an important
+capability, but the product frame should stay on real-world work with agents.
+
+\subsection{Local Complexity Without Compression}
+
+Local-first software can become hard to install, hard to debug, and hard to
+trust. Kungfu's complexity is justified only if it compresses complexity for
+users and agents. Storage, buildchain, GUI/TUI, polyglot APIs, and extensions
+must reduce real coordination cost, not merely move it.
+
+\subsection{Philosophy Without Product Proof}
+
+KFD principles are valuable only if they are visible in product behavior:
+non-drifting facts, inspectable trust, transparent agent cooperation, and
+observer-declared timelines. The proof path is the product itself, the
+Buildchain release evidence, and the dogfood trail.
+
+\subsection{Cloud And Platform Pressure}
+
+Large operating-system and model-provider platforms may move into adjacent
+spaces. Kungfu's opportunity is neutrality: cross-platform operation, local
+ownership, agent-readable interfaces, and data bundle portability. The product
+should not assume permanent dependence on a single OS, model provider, or cloud
+workflow.

@@ -1,0 +1,42 @@
+\section{Principles}
+
+Kungfu's product direction is grounded in the KFD principles.
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+KFD-1 & facts must not drift. \\
+KFD-2 & trust must start from facts. \\
+KFD-3 & cooperation must start from trusted value. \\
+KFD-4 & timelines must declare their observer. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+These principles are not slogans for marketing copy. They are release and
+product constraints.
+
+KFD-1 says that a product cannot rely on facts that silently drift between
+development, build, packaging, runtime, and user-visible surfaces. For Kungfu,
+this applies to configuration, schemas, agent interfaces, task ledgers, storage
+formats, release evidence, and extension contracts.
+
+KFD-2 says that users and agents need to know what kind of trust a surface
+deserves. Some facts can be byte-verified. Some can be checked against a
+release passport. Some are natural-language judgments and require residual
+risk. A product that hides those distinctions asks users to trust complexity
+without a path to inspect it.
+
+KFD-3 says that cooperation begins when another participant can see the value
+and boundary of using the product. This applies to humans and agents. Kungfu
+should not force agents into brittle rituals. It should expose transparent
+mechanisms that let agents understand why using Kungfu helps them complete
+work.
+
+KFD-4 says that complex timelines should not pretend to be a view from nowhere.
+In real systems, the important question is often not whether one global clock
+has absolute truth. It is whether an observer's declared view is stable,
+auditable, and honest about what it has not seen.
+
+Together these principles create a practical trust model: stable facts,
+inspectable trust, transparent cooperation, and observer-declared timelines.

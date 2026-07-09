@@ -1,0 +1,56 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{longtable}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=black
+}
+
+\title{Kungfu: Managing Real-World Work with Agents}
+\author{Keren Dong\\Kungfu Origin Technology Limited\\\href{mailto:keren.dong@kungfu.link}{keren.dong@kungfu.link}}
+\date{White Paper Draft: July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Agents are moving from short-lived question answering into real-world work:
+coding, research, operations, planning, documentation, personal administration,
+and long-running projects that cross machines, tools, accounts, and time. The
+hard problem is no longer only model capability. It is managing durable facts,
+responsibility, trust, context, artifacts, and collaboration between humans and
+agents while real work changes underneath them. Kungfu is a product and
+infrastructure direction for this problem. It helps people and agents manage
+real-world work by providing a local-first runtime fact layer, dual-first human
+and agent interfaces, a cross-platform control plane, and an extensible
+polyglot architecture. This white paper states the product thesis, explains the
+KFD principles behind the trust model, describes the architecture, and outlines
+the roadmap from Atlas dogfood to a public product.
+\end{abstract}
+
+\input{sections/01-problem}
+\input{sections/02-thesis}
+\input{sections/03-principles}
+\input{sections/04-architecture}
+\input{sections/05-roadmap}
+\input{sections/06-dogfood}
+\input{sections/07-ecosystem}
+\input{sections/08-risks}
+\input{sections/09-conclusion}
+
+\nocite{kungfuKfd,kungfuBuildchain,kungfuAtlasDogfood}
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,28 @@
+\section{Dogfood Strategy}
+
+Atlas dogfood is not a demo. It is the path by which Kungfu learns what real
+agent work management requires.
+
+Atlas already contains mission/go semantics, worktree isolation, task ledgers,
+goal registries, review records, dogfood queues, multi-agent handoff, and
+external repository coordinates. Many of these mechanisms are hand-built from
+Git and JSONL. They work, but they also expose the cost of managing runtime
+facts without a product designed for that purpose.
+
+Kungfu should absorb the lessons, not merely import the terminology. The
+sequence is:
+
+\begin{enumerate}[leftmargin=*]
+  \item import Atlas mission/go facts into Kungfu so the GUI can display them;
+  \item let agents write runtime facts, traces, friction, and task state into
+  Kungfu while Atlas remains a backup source during the transition;
+  \item identify which Atlas semantics are personal workflow choices and which
+  belong in the generic Kungfu core;
+  \item rebuild future Atlas mechanisms around the generic core where that
+  reduces drift and token-heavy coordination;
+  \item keep dogfood pressure high enough that Kungfu must become useful in
+  daily work before public launch.
+\end{enumerate}
+
+The dogfood standard is load-bearing: if Kungfu cannot manage the work that is
+building Kungfu, the product thesis has not been proven.

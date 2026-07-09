@@ -1,0 +1,28 @@
+name: Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      buildchain-ref:
+        description: "Temporary Buildchain runtime ref for trusted manual validation"
+        required: false
+        default: ""
+  pull_request:
+  push:
+    branches:
+      - "dev/**"
+      - "alpha/**"
+      - "release/**"
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  publication:
+    uses: kungfu-systems/buildchain/.github/workflows/publication-artifact.yml@v2
+    with:
+      buildchain-ref: ${{ inputs.buildchain-ref || '' }}
+      build-command: make pdf
+      verify-command: make check
+      artifact-name: publication-artifact

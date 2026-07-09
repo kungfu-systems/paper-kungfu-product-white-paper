@@ -1,0 +1,57 @@
+\section{Product Thesis}
+
+Kungfu helps people manage real-world work with agents.
+
+This sentence is intentionally broad. It does not say that Kungfu is only a
+tracer, an IDE, a dashboard, a task manager, or a local database. Those are
+surfaces. The product thesis is that people and agents need a durable fact and
+coordination layer for real work.
+
+The product is built around four commitments.
+
+\subsection{Real-World Work First}
+
+The product begins with the user's work, not with an implementation category.
+If a user is writing software, operating infrastructure, drafting a paper,
+planning a release, or coordinating local and remote agents, Kungfu should help
+answer:
+
+\begin{itemize}[leftmargin=*]
+  \item what is the current state;
+  \item what facts support that state;
+  \item what changed since the last stable point;
+  \item what can an agent safely do next;
+  \item what remains outside machine-verifiable confidence.
+\end{itemize}
+
+\subsection{Dual-First Users}
+
+Kungfu has two first-class users: humans and agents. A human needs a GUI or TUI
+that reduces cognitive load. An agent needs CLI, Python, Node, and structured
+interfaces that expose the same facts without scraping visual pages or
+reverse-engineering hidden APIs.
+
+Dual-first design is not an accessibility feature added later. It is a product
+standard. If a human-readable surface claims a capability, the agent-facing
+surface should be able to find and verify the corresponding fact. If an API
+exposes a capability, the public documentation should not hide it from humans.
+
+\subsection{Local-First Control}
+
+Real-world work often depends on local files, local repositories, local tools,
+private context, devices, and user-specific workflow. A local-first product can
+observe and manage this complexity with lower friction than a purely remote
+service. It can also remain useful when cloud products change, provider quotas
+shift, or internet access is unreliable.
+
+Local-first does not mean local-only. Kungfu can support remote agents and cloud
+contexts through packages, APIs, sync, and import/export. But the product must
+not require a heavyweight external service just to be agent-friendly.
+
+\subsection{Extensible Infrastructure}
+
+Kungfu should be a core plus extensions, not a fixed application that only
+supports one author's workflow. Atlas mission/go semantics are a dogfood
+profile, not the universal ontology. Other users may define plans, jobs,
+cases, tasks, projects, or domain-specific work units. Kungfu should provide
+the durable substrate that lets those semantics become inspectable and useful.

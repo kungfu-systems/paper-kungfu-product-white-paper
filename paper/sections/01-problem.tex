@@ -1,0 +1,35 @@
+\section{The Problem}
+
+Agents are becoming capable enough to do real work, but real work is not a
+single prompt and a single response. It has state. It has unresolved questions,
+partial evidence, tasks that span days or months, files that move between
+machines, and decisions that must remain inspectable after the original context
+window is gone.
+
+The first generation of agent tooling often starts from a technical surface:
+traces, prompts, model calls, evaluations, IDE integration, or workflow
+automation. Those surfaces are useful, but they are not the user's real unit of
+concern. The real unit is work: a product release, a paper, a migration, an
+operation, a personal task, a business process, or a long-running project. A
+trace is valuable only when it helps a person or another agent recover what
+happened in that work.
+
+This creates a gap. Users can ask agents to do more, but the surrounding
+management layer remains fragile:
+
+\begin{itemize}[leftmargin=*]
+  \item important facts drift between chat, files, logs, repositories, and
+  memory;
+  \item long tasks lose their continuity when context windows end;
+  \item local and remote agent sessions are hard to compare or resume;
+  \item human-facing documents and agent-facing interfaces diverge;
+  \item debugging tools observe calls but do not manage the real work that
+  gives those calls meaning;
+  \item cloud agent products can manage provider-side context, but often cannot
+  become the durable local source of truth for a user's real environment.
+\end{itemize}
+
+Kungfu starts from this gap. It treats real-world agent work as the primary
+object. Model traces, cost management, debugging, task ledgers, timelines, and
+agent bootstrap interfaces become product surfaces around that object rather
+than isolated tools.
