@@ -1,3 +1,5 @@
+SOURCE_DATE_EPOCH ?= $(shell git log -1 --format=%ct 2>/dev/null || printf '0')
+
 .PHONY: check update-site-bundles pdf clean
 
 check:
@@ -11,7 +13,7 @@ update-site-bundles:
 
 pdf:
 	mkdir -p _build
-	tectonic --outdir _build paper/main.tex
+	SOURCE_DATE_EPOCH="$(SOURCE_DATE_EPOCH)" tectonic --outdir _build paper/main.tex
 
 clean:
 	rm -rf _build

@@ -24,15 +24,60 @@ for (const [path, expected] of Object.entries(buildSiteBundles())) {
 }
 
 const packageJson = readJson("package.json");
-for (const requiredFile of ["README.md", "paper", "site", "scripts", ".buildchain/buildchain.toml"]) {
+for (const requiredFile of [
+  "README.md",
+  "paper",
+  "site",
+  "scripts",
+  ".buildchain/buildchain.toml",
+  ".buildchain/contract-lock.json",
+  ".buildchain/publication/publication-artifact.json",
+  ".buildchain/publication/publication-artifact-passport.json",
+  ".buildchain/publication/publication-registry.json",
+  ".buildchain/publication/source.tar.gz",
+  "_build/main.pdf",
+  "release-impact.json",
+]) {
   if (!packageJson.files?.includes(requiredFile)) {
     fail(`package.json files[] must include ${requiredFile}`);
   }
 }
-for (const requiredExport of ["./site/brand-site.json", "./site/evidence-site.json", "./site/site-bundles.json"]) {
+for (const requiredExport of [
+  "./site/brand-site.json",
+  "./site/evidence-site.json",
+  "./site/site-bundles.json",
+  "./pdf",
+  "./buildchain/contract-lock.json",
+  "./publication-artifact.json",
+  "./publication-artifact-passport.json",
+  "./publication-registry.json",
+  "./source.tar.gz",
+  "./release-impact.json",
+  "./scripts/*.mjs",
+]) {
   if (!packageJson.exports?.[requiredExport]) {
     fail(`package.json exports must include ${requiredExport}`);
   }
+}
+if (packageJson.publishConfig?.registry !== "https://registry.npmjs.org/" || packageJson.publishConfig?.access !== "public") {
+  fail("package.json publishConfig must target public npmjs");
+}
+const contractLock = readJson(".buildchain/contract-lock.json");
+if (contractLock.contract !== "kungfu-buildchain-contract-lock") {
+  fail(".buildchain/contract-lock.json must be a Buildchain contract lock");
+}
+if (contractLock.buildchain?.ref !== "v2") {
+  fail(".buildchain/contract-lock.json must lock the Buildchain v2 floating ref");
+}
+const releaseImpact = readJson("release-impact.json");
+if (releaseImpact.contract !== "kungfu-buildchain-impact") {
+  fail("release-impact.json must use the kungfu-buildchain-impact contract");
+}
+if (releaseImpact.versionImpact?.final !== "minor") {
+  fail("initial release impact must be minor");
+}
+if (!Array.isArray(releaseImpact.surfaceImpacts) || releaseImpact.surfaceImpacts.length === 0) {
+  fail("release-impact.json must declare surfaceImpacts");
 }
 
 const buildchainText = readFileSync(".buildchain/buildchain.toml", "utf8");

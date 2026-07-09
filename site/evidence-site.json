@@ -35,6 +35,8 @@
       "README.md",
       "docs/MAP.md",
       "package.json",
+      "package-lock.json",
+      "release-impact.json",
       "site"
     ],
     "sourcePaths": [
@@ -43,6 +45,8 @@
       "LICENSE",
       "Makefile",
       "package.json",
+      "package-lock.json",
+      "release-impact.json",
       "scripts",
       "site"
     ],

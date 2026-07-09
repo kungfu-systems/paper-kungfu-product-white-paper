@@ -2,8 +2,9 @@
 
 ## Checks
 
-- [ ] `make check`
-- [ ] `make pdf` if a TeX toolchain is available
+- [ ] `npm run check`
+- [ ] `npm run build` if a TeX toolchain is available
+- [ ] Buildchain release surface changes are reflected in `.buildchain/buildchain.toml`, `package.json`, and `release-impact.json`
 
 ## Governance
 

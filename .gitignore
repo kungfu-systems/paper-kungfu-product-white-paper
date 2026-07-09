@@ -11,6 +11,11 @@
 *.synctex.gz
 *.toc
 _build/
+.buildchain/publication/
+.buildchain/release-candidate/
+.buildchain/release-passport/
+.buildchain/test-publish/
 build/
 dist/
+node_modules/
 .DS_Store

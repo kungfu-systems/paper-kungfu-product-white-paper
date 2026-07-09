@@ -9,9 +9,11 @@ Start here if you are reading or changing this repository.
 | Where are the sections? | [`../paper/sections/`](../paper/sections/) |
 | How is the publication artifact declared? | [`../.buildchain/buildchain.toml`](../.buildchain/buildchain.toml) |
 | What package exports the paper to sites? | [`../package.json`](../package.json) |
+| What release impact is declared? | [`../release-impact.json`](../release-impact.json) |
 | What should `kungfu.tech` consume? | [`../site/brand-site.json`](../site/brand-site.json) |
 | What should `papers.libkungfu.dev` consume? | [`../site/evidence-site.json`](../site/evidence-site.json) |
-| How do I build or check it? | [`../Makefile`](../Makefile) |
+| How do I build or check it? | [`../README.md`](../README.md#build), [`../Makefile`](../Makefile) |
+| What owns CI build and promotion? | [`../.github/workflows/build.yml`](../.github/workflows/build.yml), [`../.github/workflows/buildchain-ref-promotion.yml`](../.github/workflows/buildchain-ref-promotion.yml) |
 | What contribution rules apply? | [`../CONTRIBUTING.md`](../CONTRIBUTING.md) |
 | What license applies? | [`../LICENSE`](../LICENSE) |
 

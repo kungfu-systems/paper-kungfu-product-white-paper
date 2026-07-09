@@ -29,7 +29,11 @@ LaTeX is an implementation detail.
 - [`paper/references.bib`](paper/references.bib): bibliography.
 - [`docs/MAP.md`](docs/MAP.md): repository map.
 - [`.buildchain/buildchain.toml`](.buildchain/buildchain.toml): Buildchain
-  publication-artifact contract.
+  publication and release-management contract.
+- [`release-impact.json`](release-impact.json): release impact declaration used
+  by Buildchain release passports.
+- [`package.json`](package.json): npm package surface consumed by paper sites
+  and agents.
 
 ## Site Bundles
 
@@ -48,16 +52,22 @@ make update-site-bundles
 
 ## Build
 
-If `tectonic` is installed:
+Install dependencies:
 
 ```sh
-make pdf
+npm install
 ```
 
-Source-only checks:
+Run repository and release-surface checks:
 
 ```sh
-make check
+npm run check
+```
+
+Build the PDF and Buildchain publication artifact:
+
+```sh
+npm run build
 ```
 
 NPM package dry-run:
@@ -66,11 +76,17 @@ NPM package dry-run:
 npm pack --dry-run --json
 ```
 
-Buildchain publication artifact manifest:
+The package coordinate is:
 
-```sh
-buildchain publication-artifact manifest --source-sha "$(git rev-parse HEAD)" --json
+```text
+@kungfu-tech/paper-kungfu-product-white-paper
 ```
+
+Buildchain owns release promotion, Trusted Publishing, release passports, and
+GitHub Release publication for this repository. Local manual builds may still
+use `make pdf`, `make check`, and `make update-site-bundles` for debugging, but
+CI and publication should go through the Buildchain lifecycle declared in
+`.buildchain/buildchain.toml`.
 
 ## Status
 

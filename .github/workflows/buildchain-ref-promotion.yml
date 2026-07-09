@@ -1,0 +1,78 @@
+name: Buildchain Ref Promotion
+
+on:
+  workflow_run:
+    workflows: ["Verify"]
+    branches:
+      - "alpha/v*/v*"
+      - "release/v*/v*"
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      sha:
+        description: Verified alpha/release commit to promote. Defaults to the current workflow ref SHA.
+        required: false
+        default: ""
+      target-ref:
+        description: Buildchain channel branch to promote
+        required: true
+        default: alpha/v0/v0.1
+      dry-run:
+        description: Only print planned tag updates
+        required: true
+        default: "true"
+
+permissions:
+  contents: write
+  actions: read
+  checks: write
+  issues: write
+  id-token: write
+
+jobs:
+  reject-manual-apply:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs['dry-run'] != 'true' }}
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Reject manual apply
+        run: |
+          echo "::error::Manual Buildchain ref promotion is limited to dry-run."
+          echo "::error::Merge through alpha/release and let a successful Verify workflow_run promote refs."
+          exit 1
+
+  promote:
+    if: >-
+      ${{
+        (github.event_name == 'workflow_dispatch' && inputs['dry-run'] == 'true') ||
+        (
+          github.event.workflow_run.conclusion == 'success' &&
+          github.event.workflow_run.event == 'push'
+        )
+      }}
+    uses: kungfu-systems/buildchain/.github/workflows/release-candidate-promote.yml@v2
+    secrets:
+      BUILDCHAIN_PROMOTION_TOKEN: ${{ secrets.KUNGFU_GITHUB_TOKEN }}
+      buildchain-issue-app-id: ${{ secrets.BUILDCHAIN_ISSUE_APP_ID }}
+      buildchain-issue-app-private-key: ${{ secrets.BUILDCHAIN_ISSUE_APP_PRIVATE_KEY }}
+    with:
+      target-ref: ${{ github.event.workflow_run.head_branch || inputs['target-ref'] }}
+      target-sha: ${{ github.event.workflow_run.head_sha || inputs.sha || github.sha }}
+      buildchain-contract-lock-path: .buildchain/contract-lock.json
+      package-manager: npm
+      artifact-name: paper-kungfu-product-white-paper
+      release-candidate-workflow-file: build.yml
+      release-candidate-workflow-name: Build
+      required-status-check: "check / check"
+      required-artifact-count: 0
+      publish-required-artifacts-json: "[]"
+      publish-mode: publish-final-version
+      publish-dist-tag: ${{ startsWith(github.event.workflow_run.head_branch || inputs['target-ref'], 'alpha/') && 'alpha' || 'latest' }}
+      publish-package-set-order: as-provided
+      publish-package-main: "@kungfu-tech/paper-kungfu-product-white-paper"
+      release-passport: true
+      release-passport-product-name: "Kungfu Product White Paper"
+      release-passport-impact-json: release-impact.json
+      github-release: true
+      github-release-title: "Kungfu Product White Paper ${{ github.event.workflow_run.head_branch || inputs['target-ref'] }}"
+      github-release-notes: "Buildchain-managed release passport assets for the Kungfu product white paper."
+      dry-run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry-run == 'true' }}
