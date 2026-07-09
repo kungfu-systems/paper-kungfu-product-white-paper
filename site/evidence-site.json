@@ -9,6 +9,7 @@
     "titleSource": ".buildchain/buildchain.toml",
     "paperEntrypoint": "paper/main.tex",
     "sectionSources": [
+      "paper/sections/00-executive-summary.tex",
       "paper/sections/01-problem.tex",
       "paper/sections/02-thesis.tex",
       "paper/sections/03-principles.tex",
@@ -64,6 +65,19 @@
   "sectionMap": [
     {
       "order": 1,
+      "id": "00-executive-summary",
+      "title": "Executive Summary",
+      "sourcePath": "paper/sections/00-executive-summary.tex",
+      "subsections": [
+        "Why This Matters",
+        "The Core Argument",
+        "What This Paper Is Not",
+        "What To Read For"
+      ],
+      "summary": "Agents are moving from short-lived question answering into real-world work: coding, research, operations, planning, documentation, personal administration, and long-running projects that cross machines, tools, accounts, and time. The hard problem is no longer only model capability. It is managing durable facts, responsibility, trust, context, artifacts, and collaboration between humans and agents while real work changes underneath them."
+    },
+    {
+      "order": 2,
       "id": "01-problem",
       "title": "The Problem",
       "sourcePath": "paper/sections/01-problem.tex",
@@ -71,7 +85,7 @@
       "summary": "Agents are becoming capable enough to do real work, but real work is not a single prompt and a single response. It has state. It has unresolved questions, partial evidence, tasks that span days or months, files that move between machines, and decisions that must remain inspectable after the original context window is gone."
     },
     {
-      "order": 2,
+      "order": 3,
       "id": "02-thesis",
       "title": "Product Thesis",
       "sourcePath": "paper/sections/02-thesis.tex",
@@ -84,7 +98,7 @@
       "summary": "Kungfu helps people manage real-world work with agents."
     },
     {
-      "order": 3,
+      "order": 4,
       "id": "03-principles",
       "title": "Principles",
       "sourcePath": "paper/sections/03-principles.tex",
@@ -92,7 +106,7 @@
       "summary": "Kungfu's product direction is grounded in the KFD principles."
     },
     {
-      "order": 4,
+      "order": 5,
       "id": "04-architecture",
       "title": "Architecture Direction",
       "sourcePath": "paper/sections/04-architecture.tex",
@@ -105,7 +119,7 @@
       "summary": "Kungfu's architecture follows from the product thesis."
     },
     {
-      "order": 5,
+      "order": 6,
       "id": "05-roadmap",
       "title": "Roadmap",
       "sourcePath": "paper/sections/05-roadmap.tex",
@@ -118,7 +132,7 @@
       "summary": "The roadmap should be judged by whether Kungfu becomes indispensable for real daily work, not by whether it checks a list of fashionable AI features."
     },
     {
-      "order": 6,
+      "order": 7,
       "id": "06-dogfood",
       "title": "Dogfood Strategy",
       "sourcePath": "paper/sections/06-dogfood.tex",
@@ -126,7 +140,7 @@
       "summary": "Kungfu dogfood is not a demo. It is the path by which Kungfu learns what real agent work management requires before public launch."
     },
     {
-      "order": 7,
+      "order": 8,
       "id": "07-ecosystem",
       "title": "Ecosystem",
       "sourcePath": "paper/sections/07-ecosystem.tex",
@@ -134,7 +148,7 @@
       "summary": "Kungfu's open-source repository can be valuable beyond the default product because agent work management is a meta-capability. A developer can build extensions for software work. A researcher can build publication workflows. An operator can build infrastructure runbooks. A personal user can build life and work organization profiles."
     },
     {
-      "order": 8,
+      "order": 9,
       "id": "08-risks",
       "title": "Risks and Boundaries",
       "sourcePath": "paper/sections/08-risks.tex",
@@ -147,7 +161,7 @@
       "summary": "Kungfu should avoid three failure modes."
     },
     {
-      "order": 9,
+      "order": 10,
       "id": "09-conclusion",
       "title": "Conclusion",
       "sourcePath": "paper/sections/09-conclusion.tex",

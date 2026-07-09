@@ -1,0 +1,59 @@
+\section{Executive Summary}
+
+Agents are moving from short-lived question answering into real-world work:
+coding, research, operations, planning, documentation, personal administration,
+and long-running projects that cross machines, tools, accounts, and time. The
+hard problem is no longer only model capability. It is managing durable facts,
+responsibility, trust, context, artifacts, and collaboration between humans and
+agents while real work changes underneath them.
+
+\calloutbox{What Kungfu is}{Kungfu is a local-first control plane and runtime
+fact layer for real-world work with agents. It gives humans and agents shared
+interfaces for facts, tasks, traces, timelines, costs, artifacts, and reviewable
+records.}
+
+\subsection{Why This Matters}
+
+Most agent tools still start from a technical surface: prompts, traces, model
+calls, IDE workflows, or evaluation dashboards. Those are useful, but they are
+not the user's real unit of concern. The real unit is work: something a person
+needs to finish, understand, resume, delegate, audit, or recover.
+
+Kungfu starts from that real unit. It treats tracing, debugging, cost
+management, task state, timelines, and agent bootstrap as surfaces around
+real-world work rather than isolated products.
+
+\subsection{The Core Argument}
+
+\begin{itemize}
+  \item Facts must not drift between source, build, release, runtime, GUI, CLI,
+  API, and agent-facing surfaces.
+  \item Trust must start from inspectable facts, not reputation, authority, or
+  hidden state.
+  \item Cooperation must start from trusted value: humans and agents should see
+  why the product is useful, what constraints apply, and how decisions can be
+  reviewed.
+  \item Timelines must declare their observer, because real work happens across
+  machines, agents, processes, and partial perspectives.
+\end{itemize}
+
+\subsection{What This Paper Is Not}
+
+This is not a narrow LLM tracing paper and not a business plan. It is a product
+white paper: a readable statement of Kungfu's market problem, product thesis,
+philosophy, architecture, roadmap, and proof path.
+
+\subsection{What To Read For}
+
+\begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}X}
+\toprule
+If you are a user & Read for how Kungfu helps make long-running agent work
+visible, resumable, and trustworthy. \\
+If you are an agent & Read for the fact surfaces and collaboration stance you
+can rely on when using or extending Kungfu. \\
+If you are a developer & Read for the architecture: local runtime facts,
+dual-first interfaces, and the polyglot membrane. \\
+If you are evaluating the project & Read for the proof path: private dogfood,
+KFD principles, Buildchain evidence, and public site bundles. \\
+\bottomrule
+\end{tabularx}

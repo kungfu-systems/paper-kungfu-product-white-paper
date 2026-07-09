@@ -36,6 +36,7 @@ const packageInfo = () => JSON.parse(read("package.json"));
 
 const normalizeLatex = (latex) => latex
   .replace(/%.*$/gm, "")
+  .replace(/\\calloutbox\{([^{}]*)\}\{([^{}]*)\}/g, "\n**$1**\n\n$2\n")
   .replace(/\\begin\{itemize\}\[leftmargin=\*\]/g, "")
   .replace(/\\begin\{itemize\}/g, "")
   .replace(/\\end\{itemize\}/g, "")
@@ -178,15 +179,16 @@ export const buildSiteBundles = () => {
     },
     principles,
     homepageSections: [
-      siteSection(sections.find((section) => section.title === "The Problem"), "first-screen", "problem-statement", 10),
-      siteSection(sections.find((section) => section.title === "Product Thesis"), "primary", "product-thesis", 20),
-      siteSection(sections.find((section) => section.title === "Principles"), "primary", "kfd-principles", 30),
-      siteSection(sections.find((section) => section.title === "Roadmap"), "support", "roadmap", 40),
-      siteSection(sections.find((section) => section.title === "Conclusion"), "support", "closing-thesis", 50),
+      siteSection(sections.find((section) => section.title === "Executive Summary"), "first-screen", "executive-summary", 10),
+      siteSection(sections.find((section) => section.title === "The Problem"), "primary", "problem-statement", 20),
+      siteSection(sections.find((section) => section.title === "Product Thesis"), "primary", "product-thesis", 30),
+      siteSection(sections.find((section) => section.title === "Principles"), "primary", "kfd-principles", 40),
+      siteSection(sections.find((section) => section.title === "Roadmap"), "support", "roadmap", 50),
+      siteSection(sections.find((section) => section.title === "Conclusion"), "support", "closing-thesis", 60),
     ].filter(Boolean),
     displayPlan: {
-      firstScreen: ["hero", "The Problem"],
-      primary: ["Product Thesis", "Principles"],
+      firstScreen: ["hero", "Executive Summary"],
+      primary: ["The Problem", "Product Thesis", "Principles"],
       support: ["Roadmap", "Conclusion"],
       hideFromBrandPage: ["full bibliography", "source bundle internals", "raw Buildchain passport fields"],
     },

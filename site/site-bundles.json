@@ -8,6 +8,7 @@
     "titleSource": ".buildchain/buildchain.toml",
     "paperEntrypoint": "paper/main.tex",
     "sectionSources": [
+      "paper/sections/00-executive-summary.tex",
       "paper/sections/01-problem.tex",
       "paper/sections/02-thesis.tex",
       "paper/sections/03-principles.tex",

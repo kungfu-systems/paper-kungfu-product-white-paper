@@ -8,6 +8,47 @@
 \usepackage{enumitem}
 \usepackage{booktabs}
 \usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{KFBlack}{HTML}{111827}
+\definecolor{KFSlate}{HTML}{374151}
+\definecolor{KFGreen}{HTML}{0F766E}
+\definecolor{KFLight}{HTML}{F3F7F6}
+\definecolor{KFLighter}{HTML}{FAFBFB}
+\definecolor{KFLine}{HTML}{D8E5E1}
+
+\titleformat{\section}{\Large\bfseries\color{KFBlack}}{\thesection}{0.75em}{}
+\titleformat{\subsection}{\large\bfseries\color{KFSlate}}{\thesubsection}{0.75em}{}
+\setlist[itemize]{leftmargin=1.4em,itemsep=0.25em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=1.6em,itemsep=0.25em,topsep=0.35em}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small Kungfu White Paper}
+\rhead{\small Real-World Work with Agents}
+\cfoot{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+
+\newcommand{\calloutbox}[2]{%
+  \begin{center}
+  \fcolorbox{KFLine}{KFLight}{%
+    \begin{minipage}{0.92\linewidth}
+    \textbf{\color{KFGreen}#1}\par\vspace{0.35em}
+    #2
+    \end{minipage}
+  }
+  \end{center}
+}
+
+\newcommand{\signalrow}[2]{%
+  \textbf{#1} & #2 \\
+}
 
 \hypersetup{
   colorlinks=true,
@@ -22,24 +63,31 @@
 
 \begin{document}
 
-\maketitle
+\begin{titlepage}
+\thispagestyle{empty}
+\raggedright
+{\small\color{KFGreen}\textbf{KUNGFU WHITE PAPER | JULY 2026}}\par
+\vspace{2.5cm}
+{\Huge\bfseries\color{KFBlack} Kungfu: Managing Real-World Work with Agents\par}
+\vspace{0.8cm}
+{\Large\color{KFSlate} A product thesis for durable facts, trusted value, and human-agent cooperation in real-world work.\par}
+\vspace{1.2cm}
+\calloutbox{Core thesis}{Kungfu helps people and agents manage real-world work through non-drifting facts, fact-based trust, trusted value, and observer-declared timelines.}
+\vspace{0.8cm}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.28\textwidth}>{\raggedright\arraybackslash}X}
+\toprule
+\signalrow{Audience}{Agent users, developers, operators, researchers, and early product evaluators.}
+\signalrow{Not only}{LLM tracing, debugging dashboards, IDE integration, or task management.}
+\signalrow{Product frame}{A local-first control plane and runtime fact layer for real-world work with agents.}
+\signalrow{Philosophy}{Cooperation between humans and agents should start from trusted value, not hidden pressure.}
+\bottomrule
+\end{tabularx}
+\vfill
+{\large Keren Dong\par}
+{\small Kungfu Origin Technology Limited \quad \href{mailto:keren.dong@kungfu.link}{keren.dong@kungfu.link}\par}
+\end{titlepage}
 
-\begin{abstract}
-Agents are moving from short-lived question answering into real-world work:
-coding, research, operations, planning, documentation, personal administration,
-and long-running projects that cross machines, tools, accounts, and time. The
-hard problem is no longer only model capability. It is managing durable facts,
-responsibility, trust, context, artifacts, and collaboration between humans and
-agents while real work changes underneath them. Kungfu is a product and
-infrastructure direction for this problem. It helps people and agents manage
-real-world work by providing a local-first runtime fact layer, dual-first human
-and agent interfaces, a cross-platform control plane, and an extensible
-polyglot architecture. Its central stance is that humans and agents should
-cooperate through trusted value, not hidden pressure or brittle workflow
-capture. This white paper states the product thesis, explains the KFD
-principles behind the trust model, describes the architecture, and outlines the
-roadmap from private dogfood to a public product.
-\end{abstract}
+\input{sections/00-executive-summary}
 
 \input{sections/01-problem}
 \input{sections/02-thesis}
