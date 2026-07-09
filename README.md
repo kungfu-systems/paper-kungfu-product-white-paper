@@ -11,7 +11,7 @@ Kungfu: Managing Real-World Work with Agents
 The paper explains Kungfu as a product and infrastructure direction for
 real-world work with agents. It is not a narrow LLM tracing paper. It connects
 the product thesis, KFD principles, runtime fact infrastructure, dual-first
-human/agent usability, local-first operation, and the roadmap from dogfood to
+human/agent usability, local-first operation, and the roadmap from internal dogfood to
 public release.
 
 Publisher: Kungfu Origin Technology Limited.
@@ -54,5 +54,5 @@ buildchain publication-artifact manifest --source-sha "$(git rev-parse HEAD)" --
 
 ## Status
 
-This is an initial white paper draft. It should be sharpened against real
-Kungfu dogfood evidence before being treated as a public launch statement.
+This is an initial white paper draft. It should be sharpened against private
+real-work dogfood evidence before being treated as a public launch statement.

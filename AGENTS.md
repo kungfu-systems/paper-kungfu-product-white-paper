@@ -9,6 +9,6 @@ Start here:
 - Read [`CONTRIBUTING.md`](CONTRIBUTING.md) before changing source files.
 
 Do not add credentials, private logs, unpublished investor correspondence,
-private operational data, or internal Atlas control-plane records. Keep the
-repository focused on public-safe white paper source, reproducible build
-instructions, and supporting notes.
+private operational data, or internal control-plane records. Keep the repository
+focused on public-safe white paper source, reproducible build instructions, and
+supporting notes.

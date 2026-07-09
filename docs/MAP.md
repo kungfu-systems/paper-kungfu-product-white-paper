@@ -15,5 +15,5 @@ Start here if you are reading or changing this repository.
 ## Public Boundary
 
 This repository is public-safe source for a Kungfu white paper. Do not add
-private operational records, private Atlas control-plane records, credentials,
+private operational records, internal control-plane records, credentials,
 tokens, unpublished commercial negotiation details, or private user data.
