@@ -24,17 +24,24 @@ answer:
   \item what remains outside machine-verifiable confidence.
 \end{itemize}
 
-\subsection{Dual-First Users}
+\subsection{Dual-First Participants}
 
-Kungfu has two first-class users: humans and agents. A human needs a GUI or TUI
-that reduces cognitive load. An agent needs CLI, Python, Node, and structured
-interfaces that expose the same facts without scraping visual pages or
-reverse-engineering hidden APIs.
+Kungfu has two first-class participants: humans and agents. A human needs a GUI
+or TUI that reduces cognitive load. An agent needs CLI, Python, Node, and
+structured interfaces that expose the same facts without scraping visual pages
+or reverse-engineering hidden APIs.
 
 Dual-first design is not an accessibility feature added later. It is a product
 standard. If a human-readable surface claims a capability, the agent-facing
 surface should be able to find and verify the corresponding fact. If an API
 exposes a capability, the public documentation should not hide it from humans.
+
+This is a relationship stance, not only an interface convention. Kungfu should
+not obtain adoption from humans through lock-in, or obtain compliance from
+agents through hidden prompts and brittle rituals. It should make its value,
+constraints, and safety boundaries transparent enough that both participants
+can understand why cooperation is worthwhile and how that cooperation can be
+reviewed.
 
 \subsection{Local-First Control}
 
