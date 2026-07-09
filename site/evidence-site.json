@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "contract": "kungfu-white-paper-evidence-site-bundle",
+  "consumer": "papers.libkungfu.dev",
+  "source": {
+    "package": "@kungfu-tech/paper-kungfu-product-white-paper",
+    "packageVersion": "0.1.0-alpha.0",
+    "repository": "git+https://github.com/kungfu-systems/paper-kungfu-product-white-paper.git",
+    "titleSource": ".buildchain/buildchain.toml",
+    "paperEntrypoint": "paper/main.tex",
+    "sectionSources": [
+      "paper/sections/00-executive-summary.tex",
+      "paper/sections/01-problem.tex",
+      "paper/sections/02-thesis.tex",
+      "paper/sections/03-principles.tex",
+      "paper/sections/04-architecture.tex",
+      "paper/sections/05-roadmap.tex",
+      "paper/sections/06-validation.tex",
+      "paper/sections/07-ecosystem.tex",
+      "paper/sections/08-risks.tex",
+      "paper/sections/09-conclusion.tex"
+    ],
+    "bibliography": "paper/references.bib",
+    "buildchainConfig": ".buildchain/buildchain.toml"
+  },
+  "publication": {
+    "kind": "paper",
+    "title": "Kungfu: Managing Real-World Work with Agents",
+    "abstract": "A product white paper describing Kungfu's thesis, architecture, roadmap, and trust model for managing real-world work with agents.",
+    "primaryArtifact": "_build/main.pdf",
+    "artifactPaths": [
+      "_build/main.pdf"
+    ],
+    "metadataPaths": [
+      "README.md",
+      "docs/MAP.md",
+      "package.json",
+      "package-lock.json",
+      "release-impact.json",
+      "site"
+    ],
+    "sourcePaths": [
+      "paper",
+      "README.md",
+      "LICENSE",
+      "Makefile",
+      "package.json",
+      "package-lock.json",
+      "release-impact.json",
+      "scripts",
+      "site"
+    ],
+    "siteConsumers": [
+      "kungfu.tech",
+      "papers.libkungfu.dev"
+    ]
+  },
+  "routes": {
+    "canonicalHost": "papers.libkungfu.dev",
+    "canonicalPath": "/kungfu-product-white-paper",
+    "canonicalUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper",
+    "pdfPath": "/kungfu-product-white-paper/main.pdf",
+    "pdfUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper/main.pdf",
+    "sourcePath": "/kungfu-product-white-paper/source.tar.gz",
+    "sourceUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper/source.tar.gz",
+    "brandUrl": "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work",
+    "repositoryUrl": "https://github.com/kungfu-systems/paper-kungfu-product-white-paper"
+  },
+  "sectionMap": [
+    {
+      "order": 1,
+      "id": "00-executive-summary",
+      "title": "Executive Summary",
+      "sourcePath": "paper/sections/00-executive-summary.tex",
+      "subsections": [
+        "Why This Matters",
+        "The Core Argument",
+        "What This Paper Covers",
+        "What To Read For"
+      ],
+      "summary": "Agents are moving from short-lived question answering into real-world work: coding, research, operations, planning, documentation, personal administration, and long-running projects that cross machines, tools, accounts, and time. The hard problem is no longer only model capability. It is managing durable facts, responsibility, trust, context, artifacts, and collaboration between humans and agents while real work changes underneath them."
+    },
+    {
+      "order": 2,
+      "id": "01-problem",
+      "title": "The Problem",
+      "sourcePath": "paper/sections/01-problem.tex",
+      "subsections": [],
+      "summary": "Agents are becoming capable enough to do real work, but real work is not a single prompt and a single response. It has state. It has unresolved questions, partial evidence, tasks that span days or months, files that move between machines, and decisions that must remain inspectable after the original context window is gone."
+    },
+    {
+      "order": 3,
+      "id": "02-thesis",
+      "title": "Product Thesis",
+      "sourcePath": "paper/sections/02-thesis.tex",
+      "subsections": [
+        "Real-World Work First",
+        "Dual-First Participants",
+        "Local-First Control",
+        "Extensible Infrastructure"
+      ],
+      "summary": "Kungfu helps people manage real-world work with agents."
+    },
+    {
+      "order": 4,
+      "id": "03-principles",
+      "title": "Principles",
+      "sourcePath": "paper/sections/03-principles.tex",
+      "subsections": [],
+      "summary": "Kungfu's product direction is grounded in the KFD principles."
+    },
+    {
+      "order": 5,
+      "id": "04-architecture",
+      "title": "Architecture Direction",
+      "sourcePath": "paper/sections/04-architecture.tex",
+      "subsections": [
+        "Core Runtime Fact Layer",
+        "Control Plane Interfaces",
+        "Polyglot Membrane",
+        "Extension Model"
+      ],
+      "summary": "Kungfu's architecture follows from the product thesis."
+    },
+    {
+      "order": 6,
+      "id": "05-roadmap",
+      "title": "Roadmap",
+      "sourcePath": "paper/sections/05-roadmap.tex",
+      "subsections": [
+        "MVP Gate",
+        "Real-World Validation Stage",
+        "Public Release Stage",
+        "Ecosystem Stage"
+      ],
+      "summary": "The roadmap should be judged by whether Kungfu becomes indispensable for real daily work, not by whether it checks a list of fashionable AI features."
+    },
+    {
+      "order": 7,
+      "id": "06-validation",
+      "title": "Product Validation Strategy",
+      "sourcePath": "paper/sections/06-validation.tex",
+      "subsections": [],
+      "summary": "Kungfu should be validated against real work before public launch. A scripted demo can prove that a feature exists, but only real daily use can prove that a product reduces coordination cost."
+    },
+    {
+      "order": 8,
+      "id": "07-ecosystem",
+      "title": "Ecosystem",
+      "sourcePath": "paper/sections/07-ecosystem.tex",
+      "subsections": [],
+      "summary": "Kungfu's open-source repository can be valuable beyond the default product because agent work management is a meta-capability. A developer can build extensions for software work. A researcher can build publication workflows. An operator can build infrastructure runbooks. A personal user can build life and work organization profiles."
+    },
+    {
+      "order": 9,
+      "id": "08-risks",
+      "title": "Risks and Boundaries",
+      "sourcePath": "paper/sections/08-risks.tex",
+      "subsections": [
+        "Feature Narrowing",
+        "Local Complexity Without Compression",
+        "Philosophy Without Product Proof",
+        "Cloud And Platform Pressure"
+      ],
+      "summary": "Kungfu should avoid three failure modes."
+    },
+    {
+      "order": 10,
+      "id": "09-conclusion",
+      "title": "Conclusion",
+      "sourcePath": "paper/sections/09-conclusion.tex",
+      "subsections": [],
+      "summary": "Kungfu is a product thesis about the next layer of agent work. As agents become more capable, the limiting problem shifts from single-turn intelligence to durable coordination in the real world. People and agents need facts that do not drift, trust that starts from those facts, cooperation that begins from trusted value, and timelines that declare their observer."
+    }
+  ],
+  "references": [
+    {
+      "key": "kungfuKfd",
+      "title": "Kungfu Design Principles",
+      "author": "Kungfu Origin Technology Limited",
+      "year": "2026",
+      "note": "KFD standards and public product principles"
+    },
+    {
+      "key": "kungfuBuildchain",
+      "title": "Buildchain Release Passport",
+      "author": "Kungfu Origin Technology Limited",
+      "year": "2026",
+      "note": "Release evidence and product artifact governance"
+    },
+    {
+      "key": "kungfuValidation",
+      "title": "Kungfu Real-World Product Validation Model",
+      "author": "Kungfu Origin Technology Limited",
+      "year": "2026",
+      "note": "Product validation model for public-safe product direction"
+    }
+  ],
+  "verification": {
+    "commands": [
+      "make check",
+      "make pdf",
+      "npx -y @kungfu-tech/buildchain@2.10.10 validate --cwd . --json",
+      "npm pack --dry-run --json"
+    ],
+    "buildchainManifestPath": ".buildchain/publication/publication-artifact.json",
+    "sourceBundlePath": ".buildchain/publication/source.tar.gz",
+    "residualRisk": "The paper is a draft product white paper; philosophical and product-positioning claims still require human review before launch use."
+  }
+}

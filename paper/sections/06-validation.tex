@@ -1,0 +1,28 @@
+\section{Product Validation Strategy}
+
+Kungfu should be validated against real work before public launch. A scripted
+demo can prove that a feature exists, but only real daily use can prove that a
+product reduces coordination cost.
+
+The validation workload should include long-running tasks, local and remote
+agents, repository coordination, task ledgers, review records, friction queues,
+execution evidence, and multi-machine timelines. These are the situations where
+runtime facts become hard to manage without a product designed for that
+purpose.
+
+The validation sequence is:
+
+\begin{enumerate}[leftmargin=*]
+  \item connect Kungfu to real work facts so the GUI can display current state;
+  \item let agents write runtime facts, execution evidence, friction, and task
+  state into Kungfu;
+  \item identify which semantics belong in the generic Kungfu core and which
+  should remain user-defined profiles;
+  \item measure whether Kungfu reduces drift, repeated coordination, and
+  context-recovery cost;
+  \item keep real-work pressure high enough that Kungfu must become useful
+  before public launch.
+\end{enumerate}
+
+The validation standard is load-bearing: if Kungfu cannot make real work easier
+to manage, the product thesis has not been proven.

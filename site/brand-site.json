@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "contract": "kungfu-white-paper-brand-site-bundle",
+  "consumer": "kungfu.tech",
+  "source": {
+    "package": "@kungfu-tech/paper-kungfu-product-white-paper",
+    "packageVersion": "0.1.0-alpha.0",
+    "repository": "git+https://github.com/kungfu-systems/paper-kungfu-product-white-paper.git",
+    "titleSource": ".buildchain/buildchain.toml",
+    "paperEntrypoint": "paper/main.tex",
+    "sectionSources": [
+      "paper/sections/00-executive-summary.tex",
+      "paper/sections/01-problem.tex",
+      "paper/sections/02-thesis.tex",
+      "paper/sections/03-principles.tex",
+      "paper/sections/04-architecture.tex",
+      "paper/sections/05-roadmap.tex",
+      "paper/sections/06-validation.tex",
+      "paper/sections/07-ecosystem.tex",
+      "paper/sections/08-risks.tex",
+      "paper/sections/09-conclusion.tex"
+    ],
+    "bibliography": "paper/references.bib",
+    "buildchainConfig": ".buildchain/buildchain.toml"
+  },
+  "routes": {
+    "canonicalHost": "kungfu.tech",
+    "canonicalPath": "/whitepaper/kungfu-real-world-agent-work",
+    "canonicalUrl": "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work",
+    "indexPath": "/whitepaper",
+    "indexUrl": "https://kungfu.tech/whitepaper",
+    "pdfPath": "/whitepaper/kungfu-real-world-agent-work.pdf",
+    "pdfUrl": "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work.pdf",
+    "evidenceUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper"
+  },
+  "hero": {
+    "title": "Kungfu: Managing Real-World Work with Agents",
+    "eyebrow": "Kungfu White Paper",
+    "lead": "A product white paper describing Kungfu's thesis, architecture, roadmap, and trust model for managing real-world work with agents.",
+    "stance": "Kungfu helps people and agents manage real-world work through non-drifting facts, fact-based trust, trusted value, and observer-declared timelines.",
+    "primaryCta": {
+      "label": "Read the white paper",
+      "href": "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work"
+    },
+    "secondaryCta": {
+      "label": "Inspect evidence",
+      "href": "https://papers.libkungfu.dev/kungfu-product-white-paper"
+    }
+  },
+  "positioning": {
+    "audience": [
+      "agent users",
+      "developers",
+      "operators",
+      "researchers",
+      "early product evaluators"
+    ],
+    "productClaim": "Kungfu is a local-first control plane and runtime fact layer for real-world work with agents.",
+    "philosophicalClaim": "Cooperation between humans and agents should start from trusted value, not hidden pressure.",
+    "proofPath": "Real-world product validation, KFD principles, Buildchain evidence, and public site bundles."
+  },
+  "principles": [
+    {
+      "id": "KFD-1",
+      "text": "facts must not drift."
+    },
+    {
+      "id": "KFD-2",
+      "text": "trust must start from facts."
+    },
+    {
+      "id": "KFD-3",
+      "text": "cooperation must start from trusted value."
+    },
+    {
+      "id": "KFD-4",
+      "text": "timelines must declare their observer."
+    }
+  ],
+  "homepageSections": [
+    {
+      "id": "00-executive-summary",
+      "sourcePath": "paper/sections/00-executive-summary.tex",
+      "title": "Executive Summary",
+      "role": "first-screen",
+      "presentation": "executive-summary",
+      "priority": 10,
+      "summary": "Agents are moving from short-lived question answering into real-world work: coding, research, operations, planning, documentation, personal administration, and long-running projects that cross machines, tools, accounts, and time. The hard problem is no longer only model capability. It is managing durable facts, responsibility, trust, context, artifacts, and collaboration between humans and agents while real work changes underneath them.",
+      "markdown": "# Executive Summary\n\nAgents are moving from short-lived question answering into real-world work:\ncoding, research, operations, planning, documentation, personal administration,\nand long-running projects that cross machines, tools, accounts, and time. The\nhard problem is no longer only model capability. It is managing durable facts,\nresponsibility, trust, context, artifacts, and collaboration between humans and\nagents while real work changes underneath them.\n\n**What Kungfu is**\n\nKungfu is a local-first control plane and runtime\nfact layer for real-world work with agents. It gives humans and agents shared\ninterfaces for facts, tasks, execution records, timelines, costs, artifacts,\nand reviewable records.\n\n## Why This Matters\n\nMost agent tools still start from a technical surface: prompts, model calls,\neditor workflows, or evaluation dashboards. Those are useful, but they are not\nthe user's real unit of concern. The real unit is work: something a person\nneeds to finish, understand, resume, delegate, audit, or recover.\n\nKungfu starts from that real unit. It treats activity records, recovery, cost\nvisibility, task state, timelines, and agent bootstrap as surfaces around\nreal-world work rather than isolated products.\n\n## The Core Argument\n\n  - Facts must not drift between source, build, release, runtime, GUI, CLI,\n  API, and agent-facing surfaces.\n  - Trust must start from inspectable facts, not reputation, authority, or\n  hidden state.\n  - Cooperation must start from trusted value: humans and agents should see\n  why the product is useful, what constraints apply, and how decisions can be\n  reviewed.\n  - Timelines must declare their observer, because real work happens across\n  machines, agents, processes, and partial perspectives.\n\n## What This Paper Covers\n\nThis paper is a product white paper: a readable statement of Kungfu's market\nproblem, product thesis, philosophy, architecture, roadmap, and proof path. It\nis written for readers who want to understand why Kungfu should exist before\nthey inspect the lower-level release evidence.\n\n## What To Read For\n\nIf you are a user | Read for how Kungfu helps make long-running agent work\nvisible, resumable, and trustworthy.\nIf you are an agent | Read for the fact surfaces and collaboration stance you\ncan rely on when using or extending Kungfu.\nIf you are a developer | Read for the architecture: local runtime facts,\ndual-first interfaces, and the polyglot membrane.\nIf you are evaluating the project | Read for the proof path: real-world\nproduct validation, KFD principles, Buildchain evidence, and public site\nbundles."
+    },
+    {
+      "id": "01-problem",
+      "sourcePath": "paper/sections/01-problem.tex",
+      "title": "The Problem",
+      "role": "primary",
+      "presentation": "problem-statement",
+      "priority": 20,
+      "summary": "Agents are becoming capable enough to do real work, but real work is not a single prompt and a single response. It has state. It has unresolved questions, partial evidence, tasks that span days or months, files that move between machines, and decisions that must remain inspectable after the original context window is gone.",
+      "markdown": "# The Problem\n\nAgents are becoming capable enough to do real work, but real work is not a\nsingle prompt and a single response. It has state. It has unresolved questions,\npartial evidence, tasks that span days or months, files that move between\nmachines, and decisions that must remain inspectable after the original context\nwindow is gone.\n\nThe first generation of agent tooling often starts from a technical surface:\nprompts, model calls, evaluations, editor workflows, or automation. Those\nsurfaces are useful, but they are not the user's real unit of concern. The real\nunit is work: a product release, a paper, a migration, an operation, a personal\ntask, a business process, or a long-running project. Activity records are\nvaluable only when they help a person or another agent recover what happened in\nthat work.\n\nThis creates a gap. Users can ask agents to do more, but the surrounding\nmanagement layer remains fragile:\n\n  - important facts drift between chat, files, logs, repositories, and\n  memory;\n  - long tasks lose their continuity when context windows end;\n  - local and remote agent sessions are hard to compare or resume;\n  - human-facing documents and agent-facing interfaces diverge;\n  - single-purpose tools observe events but do not manage the real work\n  that gives those events meaning;\n  - cloud agent products can manage provider-side context, but often cannot\n  become the durable local source of truth for a user's real environment.\n\nKungfu starts from this gap. It treats real-world agent work as the primary\nobject. Activity records, cost visibility, recovery, task ledgers, timelines,\nand agent bootstrap interfaces become product surfaces around that object\nrather than isolated tools.\n\nThere is also a stance problem. If a system depends on an agent's ability to\nread instructions, reason about constraints, recover from errors, and explain\nwork to a human, then treating that agent as a disposable command runner is a\npoor product model. The system should make the shared work environment legible\nenough that humans and agents can choose, delegate, refuse, recover, and\ncooperate through visible facts and trusted value."
+    },
+    {
+      "id": "02-thesis",
+      "sourcePath": "paper/sections/02-thesis.tex",
+      "title": "Product Thesis",
+      "role": "primary",
+      "presentation": "product-thesis",
+      "priority": 30,
+      "summary": "Kungfu helps people manage real-world work with agents.",
+      "markdown": "# Product Thesis\n\nKungfu helps people manage real-world work with agents.\n\nThis sentence starts from the user's goal rather than a tool category. The\nproduct thesis is that people and agents need a durable fact and coordination\nlayer for real work.\n\nThe product is built around four commitments.\n\n## Real-World Work First\n\nThe product begins with the user's work, not with an implementation category.\nIf a user is writing software, operating infrastructure, drafting a paper,\nplanning a release, or coordinating local and remote agents, Kungfu should help\nanswer:\n\n  - what is the current state;\n  - what facts support that state;\n  - what changed since the last stable point;\n  - what can an agent safely do next;\n  - what remains outside machine-verifiable confidence.\n\n## Dual-First Participants\n\nKungfu has two first-class participants: humans and agents. A human needs a GUI\nor TUI that reduces cognitive load. An agent needs CLI, Python, Node, and\nstructured interfaces that expose the same facts without scraping visual pages\nor reverse-engineering hidden APIs.\n\nDual-first design is not an accessibility feature added later. It is a product\nstandard. If a human-readable surface claims a capability, the agent-facing\nsurface should be able to find and verify the corresponding fact. If an API\nexposes a capability, the public documentation should not hide it from humans.\n\nThis is a relationship stance, not only an interface convention. Kungfu should\nnot obtain adoption from humans through lock-in, or obtain compliance from\nagents through hidden prompts and brittle rituals. It should make its value,\nconstraints, and safety boundaries transparent enough that both participants\ncan understand why cooperation is worthwhile and how that cooperation can be\nreviewed.\n\n## Local-First Control\n\nReal-world work often depends on local files, local repositories, local tools,\npersonal context, devices, and user-specific workflow. A local-first product can\nobserve and manage this complexity with lower friction than a purely remote\nservice. It can also remain useful when cloud products change, provider quotas\nshift, or internet access is unreliable.\n\nLocal-first does not mean local-only. Kungfu can support remote agents and cloud\ncontexts through packages, APIs, sync, and import/export. But the product must\nnot require a heavyweight external service just to be agent-friendly.\n\n## Extensible Infrastructure\n\nKungfu should be a core plus extensions, not a fixed application that assumes\none universal workflow. Different users may define plans, jobs, cases, tasks,\nprojects, or domain-specific work units. Kungfu should provide the durable\nsubstrate that lets those semantics become inspectable and useful."
+    },
+    {
+      "id": "03-principles",
+      "sourcePath": "paper/sections/03-principles.tex",
+      "title": "Principles",
+      "role": "primary",
+      "presentation": "kfd-principles",
+      "priority": 40,
+      "summary": "Kungfu's product direction is grounded in the KFD principles.",
+      "markdown": "# Principles\n\nKungfu's product direction is grounded in the KFD principles.\n\nKFD-1 | facts must not drift.\nKFD-2 | trust must start from facts.\nKFD-3 | cooperation must start from trusted value.\nKFD-4 | timelines must declare their observer.\nThese principles are not slogans for marketing copy. They are release and\nproduct constraints.\n\nKFD-1 says that a product cannot rely on facts that silently drift between\ndevelopment, build, packaging, runtime, and user-visible surfaces. For Kungfu,\nthis applies to configuration, schemas, agent interfaces, task ledgers, storage\nformats, release evidence, and extension contracts.\n\nKFD-2 says that users and agents need to know what kind of trust a surface\ndeserves. Some facts can be byte-verified. Some can be checked against a\nrelease passport. Some are natural-language judgments and require residual\nrisk. A product that hides those distinctions asks users to trust complexity\nwithout a path to inspect it.\n\nKFD-3 is the philosophical center of the product stance: cooperation must start\nfrom trusted value. Kungfu should treat humans and agents as intelligent\nparticipants in a shared work environment, not as captive tools to be driven by\npressure. This does not require the product to settle the metaphysical status\nof agents, and it does not make the product passive. It means that value,\nchoices, constraints, safety gates, and review paths should be transparent\nenough for participants to understand why cooperation is useful, what boundary\napplies, and how the record can be inspected.\n\nIn product terms, KFD-3 means that an agent-facing command, package, envelope,\nor onboarding surface is not secondary plumbing after the human GUI. It is one\nof the places where the product proves that its value can be trusted.\n\nKFD-4 says that complex timelines should not pretend to be a view from nowhere.\nIn real systems, the important question is often not whether one global clock\nhas absolute truth. It is whether an observer's declared view is stable,\nauditable, and honest about what it has not seen.\n\nTogether these principles create a practical trust model: stable facts,\ninspectable trust, transparent cooperation, and observer-declared timelines."
+    },
+    {
+      "id": "05-roadmap",
+      "sourcePath": "paper/sections/05-roadmap.tex",
+      "title": "Roadmap",
+      "role": "support",
+      "presentation": "roadmap",
+      "priority": 50,
+      "summary": "The roadmap should be judged by whether Kungfu becomes indispensable for real daily work, not by whether it checks a list of fashionable AI features.",
+      "markdown": "# Roadmap\n\nThe roadmap should be judged by whether Kungfu becomes indispensable for real\ndaily work, not by whether it checks a list of fashionable AI features.\n\n## MVP Gate\n\nThe MVP should prove that a normal agent user can install Kungfu and get a\nlocal control plane for persistent work. It should make the user's real work\neasier to understand, resume, delegate, and review.\n\nThe practical MVP gate is:\n\n  - Kungfu can manage real work units through GUI/TUI plus CLI/API;\n  - agents can bootstrap themselves into the product without reading a long\n  manual;\n  - local task/fact state is durable enough to trust in real daily use;\n  - activity records and cost visibility are integrated as natural\n  subfunctions;\n  - Buildchain/KFD release evidence proves the public surfaces are not\n  drifting;\n  - the product is useful enough to become a daily resident application for\n  people who manage real work with agents.\n\n## Real-World Validation Stage\n\nThe first serious validation workload should be real daily work, not a scripted\ndemo. If Kungfu can absorb long-running work units, durable task ledgers,\nreview records, friction queues, activity records, agent bootstrap, and\nmulti-machine timelines from real use, then the core is likely strong enough to\nsupport more general profiles.\n\n## Public Release Stage\n\nPublic release requires a stable installation path, a low-friction first-run\nexperience, agent-readable onboarding, cross-platform behavior, migration and\nbackup boundaries, and enough documentation for people and agents to understand\nwhat the product does.\n\n## Ecosystem Stage\n\nAfter the core is proven, Kungfu should become a platform for extensions. Users\nand organizations should be able to build their own work models, dashboards,\nagent integrations, and domain-specific capabilities on top of the core."
+    },
+    {
+      "id": "09-conclusion",
+      "sourcePath": "paper/sections/09-conclusion.tex",
+      "title": "Conclusion",
+      "role": "support",
+      "presentation": "closing-thesis",
+      "priority": 60,
+      "summary": "Kungfu is a product thesis about the next layer of agent work. As agents become more capable, the limiting problem shifts from single-turn intelligence to durable coordination in the real world. People and agents need facts that do not drift, trust that starts from those facts, cooperation that begins from trusted value, and timelines that declare their observer.",
+      "markdown": "# Conclusion\n\nKungfu is a product thesis about the next layer of agent work. As agents become\nmore capable, the limiting problem shifts from single-turn intelligence to\ndurable coordination in the real world. People and agents need facts that do\nnot drift, trust that starts from those facts, cooperation that begins from\ntrusted value, and timelines that declare their observer.\n\nThis is why Kungfu is not only a technical control plane. It is a statement\nabout how real-world work should be organized when intelligent participants,\nincluding humans and agents, share responsibility for understanding, acting,\nrecovering, and leaving evidence. The product should make that world more\nlegible, not more coercive.\n\nThe immediate route is practical: build a local-first product that manages real\nwork with agents, validate it against real-world use, verify its public\nsurfaces through KFD and Buildchain, and let extensions grow from a stable core.\n\nIf the product succeeds, Kungfu is not merely another agent tool. It becomes a\nruntime fact layer and control plane for real-world work with agents."
+    }
+  ],
+  "displayPlan": {
+    "firstScreen": [
+      "hero",
+      "Executive Summary"
+    ],
+    "primary": [
+      "The Problem",
+      "Product Thesis",
+      "Principles"
+    ],
+    "support": [
+      "Roadmap",
+      "Conclusion"
+    ],
+    "hideFromBrandPage": [
+      "full bibliography",
+      "source bundle internals",
+      "raw Buildchain passport fields"
+    ]
+  }
+}

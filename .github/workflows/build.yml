@@ -8,6 +8,12 @@ on:
         required: false
         default: ""
   pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - "dev/v*/v*.*"
+      - "alpha/v*/v*.*"
+      - "release/v*/v*.*"
+      - main
   push:
     branches:
       - "dev/**"
@@ -17,12 +23,41 @@ on:
 permissions:
   contents: read
   issues: write
+  id-token: write
 
 jobs:
   publication:
-    uses: kungfu-systems/buildchain/.github/workflows/publication-artifact.yml@v2
+    uses: kungfu-systems/buildchain/.github/workflows/.build.yml@v2
     with:
       buildchain-ref: ${{ inputs.buildchain-ref || '' }}
-      build-command: make pdf
-      verify-command: make check
-      artifact-name: publication-artifact
+      buildchain-contract-lock-path: .buildchain/contract-lock.json
+      runner-preset: custom
+      platforms-json: >-
+        [{"id":"linux-x64","name":"Linux x64","runner":"[\"ubuntu-24.04\"]"}]
+      setup-node: true
+      node-version: "24"
+      require-install: true
+      require-build: true
+      require-verify: true
+      artifact-name: paper-kungfu-product-white-paper
+      artifact-name-template: "{artifact}-{platform}-{shortSha}"
+      artifact-paths: |
+        README.md
+        LICENSE
+        docs
+        paper
+        site
+        _build/main.pdf
+        .buildchain/buildchain.toml
+        .buildchain/contract-lock.json
+        .buildchain/publication/publication-artifact.json
+        .buildchain/publication/publication-artifact-passport.json
+        .buildchain/publication/publication-registry.json
+        .buildchain/publication/source.tar.gz
+        package.json
+        package-lock.json
+        release-impact.json
+        scripts
+      release-candidate: true
+      expected-artifacts-json: >-
+        {"minFiles":18,"requiredPaths":["README.md","LICENSE","docs/MAP.md","paper/main.tex","paper/references.bib","site/brand-site.json","site/evidence-site.json","site/site-bundles.json","_build/main.pdf",".buildchain/buildchain.toml",".buildchain/contract-lock.json",".buildchain/publication/publication-artifact.json",".buildchain/publication/publication-artifact-passport.json",".buildchain/publication/publication-registry.json",".buildchain/publication/source.tar.gz","package.json","package-lock.json","release-impact.json","scripts/build-publication-artifact.mjs","scripts/check.mjs","scripts/npm-publish-transaction.mjs","scripts/update-site-bundles.mjs"]}

@@ -9,10 +9,9 @@ Kungfu: Managing Real-World Work with Agents
 ```
 
 The paper explains Kungfu as a product and infrastructure direction for
-real-world work with agents. It is not a narrow LLM tracing paper. It connects
-the product thesis, KFD principles, runtime fact infrastructure, dual-first
-human/agent usability, local-first operation, and the roadmap from dogfood to
-public release.
+real-world work with agents. It connects the product thesis, KFD principles,
+runtime fact infrastructure, dual-first human/agent usability, local-first
+operation, and the roadmap from real-world validation to public release.
 
 Publisher: Kungfu Origin Technology Limited.
 Contact: Keren Dong <keren.dong@kungfu.link>.
@@ -30,29 +29,66 @@ LaTeX is an implementation detail.
 - [`paper/references.bib`](paper/references.bib): bibliography.
 - [`docs/MAP.md`](docs/MAP.md): repository map.
 - [`.buildchain/buildchain.toml`](.buildchain/buildchain.toml): Buildchain
-  publication-artifact contract.
+  publication and release-management contract.
+- [`release-impact.json`](release-impact.json): release impact declaration used
+  by Buildchain release passports.
+- [`package.json`](package.json): npm package surface consumed by paper sites
+  and agents.
+
+## Site Bundles
+
+The npm package exposes two generated site bundles from the same paper source:
+
+- [`site/brand-site.json`](site/brand-site.json): product-facing bundle for
+  `site-kungfu-tech` / `kungfu.tech`.
+- [`site/evidence-site.json`](site/evidence-site.json): artifact and evidence
+  bundle for `papers.libkungfu.dev`.
+
+Regenerate them after changing the paper source:
+
+```sh
+make update-site-bundles
+```
 
 ## Build
 
-If `tectonic` is installed:
+Install dependencies:
 
 ```sh
-make pdf
+npm install
 ```
 
-Source-only checks:
+Run repository and release-surface checks:
 
 ```sh
-make check
+npm run check
 ```
 
-Buildchain publication artifact manifest:
+Build the PDF and Buildchain publication artifact:
 
 ```sh
-buildchain publication-artifact manifest --source-sha "$(git rev-parse HEAD)" --json
+npm run build
 ```
+
+NPM package dry-run:
+
+```sh
+npm pack --dry-run --json
+```
+
+The package coordinate is:
+
+```text
+@kungfu-tech/paper-kungfu-product-white-paper
+```
+
+Buildchain owns release promotion, Trusted Publishing, release passports, and
+GitHub Release publication for this repository. Local manual builds may still
+use `make pdf`, `make check`, and `make update-site-bundles` for debugging, but
+CI and publication should go through the Buildchain lifecycle declared in
+`.buildchain/buildchain.toml`.
 
 ## Status
 
-This is an initial white paper draft. It should be sharpened against real
-Kungfu dogfood evidence before being treated as a public launch statement.
+This is an initial white paper draft. It should be sharpened against real-world
+product validation evidence before being treated as a public launch statement.

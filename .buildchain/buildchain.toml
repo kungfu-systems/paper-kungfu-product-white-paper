@@ -7,18 +7,58 @@ name = "paper-kungfu-product-white-paper"
 [publication]
 kind = "paper"
 title = "Kungfu: Managing Real-World Work with Agents"
+version = "0.1.0-alpha.0"
 abstract = "A product white paper describing Kungfu's thesis, architecture, roadmap, and trust model for managing real-world work with agents."
 authors = ["Keren Dong"]
 primary_artifact = "_build/main.pdf"
 artifact_paths = ["_build/main.pdf"]
-metadata_paths = ["README.md", "docs/MAP.md"]
-source_paths = ["paper", "README.md", "LICENSE", "Makefile"]
-site_consumers = ["papers.libkungfu.dev"]
+metadata_paths = ["README.md", "docs/MAP.md", "package.json", "package-lock.json", "release-impact.json", "site"]
+source_paths = ["paper", "README.md", "LICENSE", "Makefile", "package.json", "package-lock.json", "release-impact.json", "scripts", "site"]
+site_consumers = ["kungfu.tech", "papers.libkungfu.dev"]
 manifest_path = ".buildchain/publication/publication-artifact.json"
 source_bundle_path = ".buildchain/publication/source.tar.gz"
 
+[publication.archive]
+id = "kungfu-product-white-paper"
+canonical_url = "https://papers.libkungfu.dev/kungfu-product-white-paper/"
+latest_url = "https://papers.libkungfu.dev/kungfu-product-white-paper/latest/"
+latest_evidence_url = "https://papers.libkungfu.dev/kungfu-product-white-paper/latest/buildchain.release.json"
+immutable_base_url = "https://papers.libkungfu.dev/archive"
+registry_path = ".buildchain/publication/publication-registry.json"
+
+[publication.toolchain]
+type = "latex-docker"
+image = "ghcr.io/kungfu-systems/build-images/latex-pdf-builder"
+digest = "sha256:c20f3809e96836c1c78e97c76939d12f1de3fed0ea9b7c40c43332ec2ea480f8"
+command = "mkdir -p _build && cd paper && latexmk -pdf -outdir=../_build main.tex"
+
+[version]
+required = true
+
+[[version.files]]
+type = "json"
+path = "package.json"
+key = "version"
+
+[[version.files]]
+type = "toml"
+path = ".buildchain/buildchain.toml"
+key = "publication.version"
+
+[publish]
+mode = "publish-final-version"
+auth = "trusted-publishing"
+package_set_order = "as-provided"
+main_package = "@kungfu-tech/paper-kungfu-product-white-paper"
+
+[lifecycle.install]
+command = "npm install"
+
 [lifecycle.build]
-command = "make pdf"
+command = "npm run build"
 
 [lifecycle.verify]
-command = "make check"
+command = "npm run check"
+
+[lifecycle.publish]
+command = "npm run publish:transaction"
