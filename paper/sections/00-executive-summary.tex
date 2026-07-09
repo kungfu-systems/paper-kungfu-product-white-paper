@@ -9,18 +9,18 @@ agents while real work changes underneath them.
 
 \calloutbox{What Kungfu is}{Kungfu is a local-first control plane and runtime
 fact layer for real-world work with agents. It gives humans and agents shared
-interfaces for facts, tasks, traces, timelines, costs, artifacts, and reviewable
-records.}
+interfaces for facts, tasks, execution records, timelines, costs, artifacts,
+and reviewable records.}
 
 \subsection{Why This Matters}
 
-Most agent tools still start from a technical surface: prompts, traces, model
-calls, IDE workflows, or evaluation dashboards. Those are useful, but they are
-not the user's real unit of concern. The real unit is work: something a person
+Most agent tools still start from a technical surface: prompts, model calls,
+editor workflows, or evaluation dashboards. Those are useful, but they are not
+the user's real unit of concern. The real unit is work: something a person
 needs to finish, understand, resume, delegate, audit, or recover.
 
-Kungfu starts from that real unit. It treats tracing, debugging, cost
-management, task state, timelines, and agent bootstrap as surfaces around
+Kungfu starts from that real unit. It treats activity records, recovery, cost
+visibility, task state, timelines, and agent bootstrap as surfaces around
 real-world work rather than isolated products.
 
 \subsection{The Core Argument}
@@ -37,11 +37,12 @@ real-world work rather than isolated products.
   machines, agents, processes, and partial perspectives.
 \end{itemize}
 
-\subsection{What This Paper Is Not}
+\subsection{What This Paper Covers}
 
-This is not a narrow LLM tracing paper and not a business plan. It is a product
-white paper: a readable statement of Kungfu's market problem, product thesis,
-philosophy, architecture, roadmap, and proof path.
+This paper is a product white paper: a readable statement of Kungfu's market
+problem, product thesis, philosophy, architecture, roadmap, and proof path. It
+is written for readers who want to understand why Kungfu should exist before
+they inspect the lower-level release evidence.
 
 \subsection{What To Read For}
 
@@ -53,7 +54,8 @@ If you are an agent & Read for the fact surfaces and collaboration stance you
 can rely on when using or extending Kungfu. \\
 If you are a developer & Read for the architecture: local runtime facts,
 dual-first interfaces, and the polyglot membrane. \\
-If you are evaluating the project & Read for the proof path: private dogfood,
-KFD principles, Buildchain evidence, and public site bundles. \\
+If you are evaluating the project & Read for the proof path: real-world
+product validation, KFD principles, Buildchain evidence, and public site
+bundles. \\
 \bottomrule
 \end{tabularx}

@@ -15,7 +15,7 @@
       "paper/sections/03-principles.tex",
       "paper/sections/04-architecture.tex",
       "paper/sections/05-roadmap.tex",
-      "paper/sections/06-dogfood.tex",
+      "paper/sections/06-validation.tex",
       "paper/sections/07-ecosystem.tex",
       "paper/sections/08-risks.tex",
       "paper/sections/09-conclusion.tex"
@@ -71,7 +71,7 @@
       "subsections": [
         "Why This Matters",
         "The Core Argument",
-        "What This Paper Is Not",
+        "What This Paper Covers",
         "What To Read For"
       ],
       "summary": "Agents are moving from short-lived question answering into real-world work: coding, research, operations, planning, documentation, personal administration, and long-running projects that cross machines, tools, accounts, and time. The hard problem is no longer only model capability. It is managing durable facts, responsibility, trust, context, artifacts, and collaboration between humans and agents while real work changes underneath them."
@@ -125,7 +125,7 @@
       "sourcePath": "paper/sections/05-roadmap.tex",
       "subsections": [
         "MVP Gate",
-        "Dogfood Stage",
+        "Real-World Validation Stage",
         "Public Release Stage",
         "Ecosystem Stage"
       ],
@@ -133,11 +133,11 @@
     },
     {
       "order": 7,
-      "id": "06-dogfood",
-      "title": "Dogfood Strategy",
-      "sourcePath": "paper/sections/06-dogfood.tex",
+      "id": "06-validation",
+      "title": "Product Validation Strategy",
+      "sourcePath": "paper/sections/06-validation.tex",
       "subsections": [],
-      "summary": "Kungfu dogfood is not a demo. It is the path by which Kungfu learns what real agent work management requires before public launch."
+      "summary": "Kungfu should be validated against real work before public launch. A scripted demo can prove that a feature exists, but only real daily use can prove that a product reduces coordination cost."
     },
     {
       "order": 8,
@@ -153,7 +153,7 @@
       "title": "Risks and Boundaries",
       "sourcePath": "paper/sections/08-risks.tex",
       "subsections": [
-        "Tracer Narrowing",
+        "Feature Narrowing",
         "Local Complexity Without Compression",
         "Philosophy Without Product Proof",
         "Cloud And Platform Pressure"
@@ -185,11 +185,11 @@
       "note": "Release evidence and product artifact governance"
     },
     {
-      "key": "kungfuDogfood",
-      "title": "Kungfu Private Real-Work Dogfood Model",
+      "key": "kungfuValidation",
+      "title": "Kungfu Real-World Product Validation Model",
       "author": "Kungfu Origin Technology Limited",
       "year": "2026",
-      "note": "Private dogfood model projected into public-safe product direction"
+      "note": "Product validation model for public-safe product direction"
     }
   ],
   "verification": {

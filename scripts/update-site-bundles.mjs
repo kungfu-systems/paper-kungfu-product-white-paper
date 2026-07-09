@@ -37,6 +37,14 @@ const packageInfo = () => JSON.parse(read("package.json"));
 const normalizeLatex = (latex) => latex
   .replace(/%.*$/gm, "")
   .replace(/\\calloutbox\{([^{}]*)\}\{([^{}]*)\}/g, "\n**$1**\n\n$2\n")
+  .replace(/\\begin\{tabularx\}\{[^{}]*\}\{[^{}]*\}/g, "")
+  .replace(/\\begin\{tabularx\}\{[^{}]*\}\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}/g, "")
+  .replace(/\\end\{tabularx\}/g, "")
+  .replace(/\\begin\{tabular\}\{[^{}]*\}/g, "")
+  .replace(/\\end\{tabular\}/g, "")
+  .replace(/\\begin\{center\}/g, "")
+  .replace(/\\end\{center\}/g, "")
+  .replace(/\\toprule|\\midrule|\\bottomrule/g, "")
   .replace(/\\begin\{itemize\}\[leftmargin=\*\]/g, "")
   .replace(/\\begin\{itemize\}/g, "")
   .replace(/\\end\{itemize\}/g, "")
@@ -48,6 +56,8 @@ const normalizeLatex = (latex) => latex
   .replace(/\\section\{([^}]*)\}/g, "# $1\n")
   .replace(/\\textit\{([^}]*)\}/g, "$1")
   .replace(/\\textbf\{([^}]*)\}/g, "$1")
+  .replace(/\s*&\s*/g, " | ")
+  .replace(/\s*\\\\\s*/g, "\n")
   .replace(/``/g, "\"")
   .replace(/''/g, "\"")
   .replace(/~/g, " ")
@@ -173,9 +183,9 @@ export const buildSiteBundles = () => {
     },
     positioning: {
       audience: ["agent users", "developers", "operators", "researchers", "early product evaluators"],
-      notOnly: ["LLM tracing", "debug dashboards", "IDE integration", "task management"],
       productClaim: "Kungfu is a local-first control plane and runtime fact layer for real-world work with agents.",
       philosophicalClaim: "Cooperation between humans and agents should start from trusted value, not hidden pressure.",
+      proofPath: "Real-world product validation, KFD principles, Buildchain evidence, and public site bundles.",
     },
     principles,
     homepageSections: [
