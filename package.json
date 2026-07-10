@@ -1,6 +1,6 @@
 {
   "name": "@kungfu-tech/paper-kungfu-product-white-paper",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0-alpha.1",
   "description": "Kungfu product white paper source and site bundles for managing real-world work with agents",
   "license": "Apache-2.0",
   "type": "module",
@@ -54,7 +54,7 @@
     "pdf": "make pdf"
   },
   "devDependencies": {
-    "@kungfu-tech/buildchain": "^2.11.1"
+    "@kungfu-tech/buildchain": "^2.11.9"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
