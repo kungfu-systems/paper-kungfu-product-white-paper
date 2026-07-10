@@ -3,6 +3,7 @@ import { dirname, join } from "node:path";
 
 const read = (path) => readFileSync(path, "utf8").replace(/\r\n/g, "\n");
 const compact = (value) => String(value || "").replace(/\s+/g, " ").trim();
+const artifactFilename = (path) => String(path || "").split("/").filter(Boolean).pop() || "";
 
 const parseTomlString = (toml, key) => {
   const match = toml.match(new RegExp(`^${key}\\s*=\\s*"([^"]*)"`, "m"));
@@ -138,6 +139,10 @@ const siteSection = (section, role, presentation, priority) => ({
 export const buildSiteBundles = () => {
   const buildchain = parseBuildchain();
   const pkg = packageInfo();
+  const pdfFilename = artifactFilename(buildchain.primaryArtifact);
+  if (!pdfFilename.endsWith(".pdf")) {
+    throw new Error("publication primary_artifact must declare a public PDF filename");
+  }
   const sections = sectionPaths().map(parseSection);
   const references = parseReferences();
   const principles = buildPrinciples(sections);
@@ -163,8 +168,8 @@ export const buildSiteBundles = () => {
       canonicalUrl: "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work",
       indexPath: "/whitepaper",
       indexUrl: "https://kungfu.tech/whitepaper",
-      pdfPath: "/whitepaper/kungfu-real-world-agent-work.pdf",
-      pdfUrl: "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work.pdf",
+      pdfPath: `/whitepaper/${pdfFilename}`,
+      pdfUrl: `https://kungfu.tech/whitepaper/${pdfFilename}`,
       evidenceUrl: "https://papers.libkungfu.dev/kungfu-product-white-paper",
     },
     hero: {
@@ -223,8 +228,8 @@ export const buildSiteBundles = () => {
       canonicalHost: "papers.libkungfu.dev",
       canonicalPath: "/kungfu-product-white-paper",
       canonicalUrl: "https://papers.libkungfu.dev/kungfu-product-white-paper",
-      pdfPath: "/kungfu-product-white-paper/main.pdf",
-      pdfUrl: "https://papers.libkungfu.dev/kungfu-product-white-paper/main.pdf",
+      pdfPath: `/kungfu-product-white-paper/${pdfFilename}`,
+      pdfUrl: `https://papers.libkungfu.dev/kungfu-product-white-paper/${pdfFilename}`,
       sourcePath: "/kungfu-product-white-paper/source.tar.gz",
       sourceUrl: "https://papers.libkungfu.dev/kungfu-product-white-paper/source.tar.gz",
       brandUrl: "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work",
