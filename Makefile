@@ -1,4 +1,5 @@
 SOURCE_DATE_EPOCH ?= $(shell git log -1 --format=%ct 2>/dev/null || printf '0')
+PDF_NAME := kungfu-managing-real-world-work-with-agents.pdf
 
 .PHONY: check update-site-bundles pdf clean
 
@@ -14,6 +15,7 @@ update-site-bundles:
 pdf:
 	mkdir -p _build
 	SOURCE_DATE_EPOCH="$(SOURCE_DATE_EPOCH)" tectonic --outdir _build paper/main.tex
+	mv _build/main.pdf _build/$(PDF_NAME)
 
 clean:
 	rm -rf _build

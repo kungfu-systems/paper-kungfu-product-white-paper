@@ -27,9 +27,9 @@
     "kind": "paper",
     "title": "Kungfu: Managing Real-World Work with Agents",
     "abstract": "A product white paper describing Kungfu's thesis, architecture, roadmap, and trust model for managing real-world work with agents.",
-    "primaryArtifact": "_build/main.pdf",
+    "primaryArtifact": "_build/kungfu-managing-real-world-work-with-agents.pdf",
     "artifactPaths": [
-      "_build/main.pdf"
+      "_build/kungfu-managing-real-world-work-with-agents.pdf"
     ],
     "metadataPaths": [
       "README.md",
@@ -59,8 +59,8 @@
     "canonicalHost": "papers.libkungfu.dev",
     "canonicalPath": "/kungfu-product-white-paper",
     "canonicalUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper",
-    "pdfPath": "/kungfu-product-white-paper/main.pdf",
-    "pdfUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper/main.pdf",
+    "pdfPath": "/kungfu-product-white-paper/kungfu-managing-real-world-work-with-agents.pdf",
+    "pdfUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper/kungfu-managing-real-world-work-with-agents.pdf",
     "sourcePath": "/kungfu-product-white-paper/source.tar.gz",
     "sourceUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper/source.tar.gz",
     "brandUrl": "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work",
