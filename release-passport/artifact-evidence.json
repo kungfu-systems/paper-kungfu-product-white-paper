@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "contract": "kungfu-buildchain-artifact-evidence",
+  "repository": "kungfu-systems/paper-kungfu-product-white-paper",
+  "release": {
+    "tag": "v0.1.0-alpha.1",
+    "sourceSha": "4db757eafe08932885d606f584b6a225bf20f569"
+  },
+  "generatedAt": "2026-07-10T01:32:16.106Z",
+  "runner": {
+    "kind": "github-hosted",
+    "os": "Linux",
+    "arch": "X64",
+    "labels": [],
+    "image": "ubuntu24"
+  },
+  "workflow": {
+    "name": "Buildchain Ref Promotion",
+    "runId": "29062548549",
+    "runAttempt": "1",
+    "url": "https://github.com/kungfu-systems/paper-kungfu-product-white-paper/actions/runs/29062548549"
+  },
+  "artifacts": []
+}
