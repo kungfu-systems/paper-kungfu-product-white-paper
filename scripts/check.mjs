@@ -35,7 +35,7 @@ for (const requiredFile of [
   ".buildchain/publication/publication-artifact-passport.json",
   ".buildchain/publication/publication-registry.json",
   ".buildchain/publication/source.tar.gz",
-  "_build/main.pdf",
+  "_build/kungfu-managing-real-world-work-with-agents.pdf",
   "release-impact.json",
 ]) {
   if (!packageJson.files?.includes(requiredFile)) {
@@ -58,6 +58,9 @@ for (const requiredExport of [
   if (!packageJson.exports?.[requiredExport]) {
     fail(`package.json exports must include ${requiredExport}`);
   }
+}
+if (packageJson.exports?.["./pdf"] !== "./_build/kungfu-managing-real-world-work-with-agents.pdf") {
+  fail("package.json ./pdf export must point to the title-derived PDF filename");
 }
 if (packageJson.publishConfig?.registry !== "https://registry.npmjs.org/" || packageJson.publishConfig?.access !== "public") {
   fail("package.json publishConfig must target public npmjs");
@@ -94,7 +97,7 @@ if (brandBundle.routes?.canonicalUrl !== "https://kungfu.tech/whitepaper/kungfu-
 if (brandBundle.routes?.indexUrl !== "https://kungfu.tech/whitepaper") {
   fail("brand site bundle must declare the kungfu.tech white paper index URL");
 }
-if (brandBundle.routes?.pdfUrl !== "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work.pdf") {
+if (brandBundle.routes?.pdfUrl !== "https://kungfu.tech/whitepaper/kungfu-managing-real-world-work-with-agents.pdf") {
   fail("brand site bundle must declare the kungfu.tech canonical PDF URL");
 }
 if (brandBundle.hero?.primaryCta?.href !== brandBundle.routes?.canonicalUrl) {
@@ -113,6 +116,9 @@ if (evidenceBundle.routes?.brandUrl !== brandBundle.routes?.canonicalUrl) {
 }
 if (brandBundle.routes?.evidenceUrl !== evidenceBundle.routes?.canonicalUrl) {
   fail("brand site evidenceUrl must point to the evidence canonicalUrl");
+}
+if (evidenceBundle.routes?.pdfUrl !== "https://papers.libkungfu.dev/kungfu-product-white-paper/kungfu-managing-real-world-work-with-agents.pdf") {
+  fail("evidence site bundle must declare the title-derived PDF URL");
 }
 
 try {

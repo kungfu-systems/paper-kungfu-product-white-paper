@@ -70,6 +70,10 @@ Build the PDF and Buildchain publication artifact:
 npm run build
 ```
 
+The public PDF artifact is written to
+`_build/kungfu-managing-real-world-work-with-agents.pdf`. Both site bundles use
+that title-derived filename so downloaded papers remain distinguishable.
+
 NPM package dry-run:
 
 ```sh
