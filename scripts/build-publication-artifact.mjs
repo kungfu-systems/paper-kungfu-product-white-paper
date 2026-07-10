@@ -85,7 +85,7 @@ run("npx", [
 ]);
 
 for (const path of [
-  "_build/kungfu-managing-real-world-work-with-agents.pdf",
+  "_build/kungfu-real-world-agent-work.pdf",
   ".buildchain/publication/publication-artifact.json",
   ".buildchain/publication/publication-artifact-passport.json",
   ".buildchain/publication/publication-registry.json",
