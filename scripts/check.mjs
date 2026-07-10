@@ -16,7 +16,7 @@ const promotionWorkflow = readFileSync(
 );
 for (const requiredSurface of [
   "buildchain-ref:",
-  "buildchain-ref: ${{ inputs['buildchain-ref'] || '' }}",
+  "buildchain-ref: ${{ inputs['buildchain-ref'] || 'v2-alpha' }}",
 ]) {
   if (!promotionWorkflow.includes(requiredSurface)) {
     fail(`Buildchain promotion workflow must include ${requiredSurface}`);
