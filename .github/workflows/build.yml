@@ -27,7 +27,7 @@ permissions:
 
 jobs:
   publication:
-    uses: kungfu-systems/buildchain/.github/workflows/.build.yml@v2
+    uses: kungfu-systems/buildchain/.github/workflows/.build.yml@v2-alpha
     with:
       buildchain-ref: ${{ inputs.buildchain-ref || '' }}
       buildchain-contract-lock-path: .buildchain/contract-lock.json
