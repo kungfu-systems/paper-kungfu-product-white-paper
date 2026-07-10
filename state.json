@@ -16,14 +16,27 @@
   "state_ref": "buildchain/release-state/0-1-0-alpha-2",
   "state_path": "/home/runner/work/paper-kungfu-product-white-paper/paper-kungfu-product-white-paper/.buildchain/release-state/v0.1.0-alpha.2.json",
   "evidence_path": "/home/runner/work/paper-kungfu-product-white-paper/paper-kungfu-product-white-paper/.buildchain/release-evidence/v0.1.0-alpha.2/evidence.json",
-  "state": "publishing",
-  "previous_state": "prepared",
+  "state": "published",
+  "previous_state": "publishing",
   "actor": "kungfu-origin",
   "run_id": "29076545313",
   "superseded_by": "",
   "failure": "",
-  "artifacts": [],
-  "evidence": [],
+  "artifacts": [
+    {
+      "group": "publication",
+      "kind": "npm",
+      "name": "@kungfu-tech/paper-kungfu-product-white-paper",
+      "ref": "0.1.0-alpha.2",
+      "digest": "sha512-Bmfh7LYXH9wc2Vcz/kEVXevwwd08gH7wZGd+G5RM3aif+gJi9NdYbmSfIOsuhB4Zdo4NeVMpVgvT7zmsqhDaaA==",
+      "role": "",
+      "required": true
+    }
+  ],
+  "evidence": [
+    ".buildchain/release-evidence/v0.1.0-alpha.2/evidence.json",
+    ".buildchain/release-evidence/v0.1.0-alpha.2/dist-tag-evidence.json"
+  ],
   "created_at": "2026-07-10T07:24:11.023Z",
-  "updated_at": "2026-07-10T07:24:13.008Z"
+  "updated_at": "2026-07-10T07:24:46.708Z"
 }
