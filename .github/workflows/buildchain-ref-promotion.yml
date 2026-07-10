@@ -9,6 +9,10 @@ on:
     types: [completed]
   workflow_dispatch:
     inputs:
+      buildchain-ref:
+        description: Temporary Buildchain runtime ref for trusted dry-run validation
+        required: false
+        default: ""
       sha:
         description: Verified alpha/release commit to promote. Defaults to the current workflow ref SHA.
         required: false
@@ -55,6 +59,7 @@ jobs:
       buildchain-issue-app-id: ${{ secrets.BUILDCHAIN_ISSUE_APP_ID }}
       buildchain-issue-app-private-key: ${{ secrets.BUILDCHAIN_ISSUE_APP_PRIVATE_KEY }}
     with:
+      buildchain-ref: ${{ inputs['buildchain-ref'] || '' }}
       target-ref: ${{ github.event.workflow_run.head_branch || inputs['target-ref'] }}
       target-sha: ${{ github.event.workflow_run.head_sha || inputs.sha || github.sha }}
       buildchain-contract-lock-path: .buildchain/contract-lock.json

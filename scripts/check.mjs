@@ -10,6 +10,19 @@ const fail = (message) => {
 const readJson = (path) => JSON.parse(readFileSync(path, "utf8"));
 const stable = (value) => `${JSON.stringify(value, null, 2)}\n`;
 
+const promotionWorkflow = readFileSync(
+  ".github/workflows/buildchain-ref-promotion.yml",
+  "utf8",
+);
+for (const requiredSurface of [
+  "buildchain-ref:",
+  "buildchain-ref: ${{ inputs['buildchain-ref'] || '' }}",
+]) {
+  if (!promotionWorkflow.includes(requiredSurface)) {
+    fail(`Buildchain promotion workflow must include ${requiredSurface}`);
+  }
+}
+
 for (const [path, expected] of Object.entries(buildSiteBundles())) {
   let actual;
   try {
