@@ -3,11 +3,7 @@ import { dirname, join } from "node:path";
 
 const read = (path) => readFileSync(path, "utf8").replace(/\r\n/g, "\n");
 const compact = (value) => String(value || "").replace(/\s+/g, " ").trim();
-const titleFilename = (title) => `${String(title || "")
-  .normalize("NFKD")
-  .toLowerCase()
-  .replace(/[^a-z0-9]+/g, "-")
-  .replace(/^-|-$/g, "")}.pdf`;
+const artifactFilename = (path) => String(path || "").split("/").filter(Boolean).pop() || "";
 
 const parseTomlString = (toml, key) => {
   const match = toml.match(new RegExp(`^${key}\\s*=\\s*"([^"]*)"`, "m"));
@@ -143,9 +139,9 @@ const siteSection = (section, role, presentation, priority) => ({
 export const buildSiteBundles = () => {
   const buildchain = parseBuildchain();
   const pkg = packageInfo();
-  const pdfFilename = titleFilename(buildchain.title);
-  if (buildchain.primaryArtifact !== `_build/${pdfFilename}`) {
-    throw new Error("publication primary_artifact must use the title-derived PDF filename");
+  const pdfFilename = artifactFilename(buildchain.primaryArtifact);
+  if (!pdfFilename.endsWith(".pdf")) {
+    throw new Error("publication primary_artifact must declare a public PDF filename");
   }
   const sections = sectionPaths().map(parseSection);
   const references = parseReferences();
