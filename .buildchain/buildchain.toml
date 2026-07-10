@@ -9,12 +9,12 @@ kind = "paper"
 title = "Kungfu: Managing Real-World Work with Agents"
 version = "0.1.0-alpha.1"
 abstract = "A product white paper describing Kungfu's thesis, architecture, roadmap, and trust model for managing real-world work with agents."
-authors = ["Keren Dong"]
+authors = [ "Keren Dong" ]
 primary_artifact = "_build/main.pdf"
-artifact_paths = ["_build/main.pdf"]
-metadata_paths = ["README.md", "docs/MAP.md", "package.json", "package-lock.json", "release-impact.json", "site"]
-source_paths = ["paper", "README.md", "LICENSE", "Makefile", "package.json", "package-lock.json", "release-impact.json", "scripts", "site"]
-site_consumers = ["kungfu.tech", "papers.libkungfu.dev"]
+artifact_paths = [ "_build/main.pdf" ]
+metadata_paths = [ "README.md", "docs/MAP.md", "package.json", "package-lock.json", "release-impact.json", "site" ]
+source_paths = [ "paper", "README.md", "LICENSE", "Makefile", "package.json", "package-lock.json", "release-impact.json", "scripts", "site" ]
+site_consumers = [ "kungfu.tech", "papers.libkungfu.dev" ]
 manifest_path = ".buildchain/publication/publication-artifact.json"
 source_bundle_path = ".buildchain/publication/source.tar.gz"
 
