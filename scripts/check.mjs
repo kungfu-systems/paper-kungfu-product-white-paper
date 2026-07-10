@@ -16,7 +16,7 @@ const promotionWorkflow = readFileSync(
 );
 for (const requiredSurface of [
   "buildchain-ref:",
-  "buildchain-ref: ${{ inputs['buildchain-ref'] || '' }}",
+  "buildchain-ref: ${{ inputs['buildchain-ref'] || 'v2-alpha' }}",
 ]) {
   if (!promotionWorkflow.includes(requiredSurface)) {
     fail(`Buildchain promotion workflow must include ${requiredSurface}`);
@@ -79,8 +79,8 @@ const contractLock = readJson(".buildchain/contract-lock.json");
 if (contractLock.contract !== "kungfu-buildchain-contract-lock") {
   fail(".buildchain/contract-lock.json must be a Buildchain contract lock");
 }
-if (contractLock.buildchain?.ref !== "v2") {
-  fail(".buildchain/contract-lock.json must lock the Buildchain v2 floating ref");
+if (contractLock.buildchain?.ref !== "v2-alpha") {
+  fail(".buildchain/contract-lock.json must lock the Buildchain v2-alpha floating ref");
 }
 const releaseImpact = readJson("release-impact.json");
 if (releaseImpact.contract !== "kungfu-buildchain-impact") {
