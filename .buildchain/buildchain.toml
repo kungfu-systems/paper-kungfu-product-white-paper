@@ -7,7 +7,7 @@ name = "paper-kungfu-product-white-paper"
 [publication]
 kind = "paper"
 title = "Kungfu: Managing Real-World Work with Agents"
-version = "0.1.0-alpha.0"
+version = "0.1.0-alpha.1"
 abstract = "A product white paper describing Kungfu's thesis, architecture, roadmap, and trust model for managing real-world work with agents."
 authors = ["Keren Dong"]
 primary_artifact = "_build/main.pdf"
