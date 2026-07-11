@@ -16,7 +16,8 @@ const promotionWorkflow = readFileSync(
 );
 for (const requiredSurface of [
   "buildchain-ref:",
-  "buildchain-ref: ${{ inputs['buildchain-ref'] || '' }}",
+  "inputs['buildchain-ref'] || (inputs['target-branch'] == 'alpha' && 'v2-alpha' || 'v2')",
+  "buildchain-contract-lock-path: ${{ inputs['target-branch'] == 'alpha' && '.buildchain/alpha-contract-lock.json' || '.buildchain/contract-lock.json' }}",
 ]) {
   if (!promotionWorkflow.includes(requiredSurface)) {
     fail(`Buildchain promotion workflow must include ${requiredSurface}`);
@@ -43,6 +44,7 @@ for (const requiredFile of [
   "site",
   "scripts",
   ".buildchain/buildchain.toml",
+  ".buildchain/alpha-contract-lock.json",
   ".buildchain/contract-lock.json",
   ".buildchain/publication/publication-artifact.json",
   ".buildchain/publication/publication-artifact-passport.json",
@@ -61,6 +63,7 @@ for (const requiredExport of [
   "./site/site-bundles.json",
   "./pdf",
   "./buildchain/contract-lock.json",
+  "./buildchain/alpha-contract-lock.json",
   "./publication-artifact.json",
   "./publication-artifact-passport.json",
   "./publication-registry.json",
@@ -76,11 +79,15 @@ if (packageJson.publishConfig?.registry !== "https://registry.npmjs.org/" || pac
   fail("package.json publishConfig must target public npmjs");
 }
 const contractLock = readJson(".buildchain/contract-lock.json");
+const alphaContractLock = readJson(".buildchain/alpha-contract-lock.json");
 if (contractLock.contract !== "kungfu-buildchain-contract-lock") {
   fail(".buildchain/contract-lock.json must be a Buildchain contract lock");
 }
 if (contractLock.buildchain?.ref !== "v2") {
   fail(".buildchain/contract-lock.json must lock the Buildchain v2 floating ref");
+}
+if (alphaContractLock.contract !== "kungfu-buildchain-contract-lock" || alphaContractLock.buildchain?.ref !== "v2-alpha") {
+  fail(".buildchain/alpha-contract-lock.json must lock the Buildchain v2-alpha floating ref");
 }
 const releaseImpact = readJson("release-impact.json");
 if (releaseImpact.contract !== "kungfu-buildchain-impact") {

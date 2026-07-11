@@ -59,10 +59,10 @@ jobs:
       buildchain-issue-app-id: ${{ secrets.BUILDCHAIN_ISSUE_APP_ID }}
       buildchain-issue-app-private-key: ${{ secrets.BUILDCHAIN_ISSUE_APP_PRIVATE_KEY }}
     with:
-      buildchain-ref: ${{ inputs['buildchain-ref'] || '' }}
+      buildchain-ref: ${{ inputs['buildchain-ref'] || (startsWith(github.event.workflow_run.head_branch || inputs['target-ref'], 'alpha/') && 'v2-alpha' || 'v2') }}
       target-ref: ${{ github.event.workflow_run.head_branch || inputs['target-ref'] }}
       target-sha: ${{ github.event.workflow_run.head_sha || inputs.sha || github.sha }}
-      buildchain-contract-lock-path: .buildchain/contract-lock.json
+      buildchain-contract-lock-path: ${{ startsWith(github.event.workflow_run.head_branch || inputs['target-ref'], 'alpha/') && '.buildchain/alpha-contract-lock.json' || '.buildchain/contract-lock.json' }}
       package-manager: npm
       artifact-name: paper-kungfu-product-white-paper
       release-candidate-workflow-file: build.yml
