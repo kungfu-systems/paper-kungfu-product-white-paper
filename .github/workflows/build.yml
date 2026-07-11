@@ -27,10 +27,11 @@ permissions:
 
 jobs:
   publication:
-    uses: kungfu-systems/buildchain/.github/workflows/.build.yml@v2
+    uses: kungfu-systems/buildchain/.github/workflows/build.yml@v2
     with:
       buildchain-ref: ${{ inputs.buildchain-ref || '' }}
-      buildchain-contract-lock-path: .buildchain/contract-lock.json
+      buildchain-alpha-contract-lock-path: .buildchain/alpha-contract-lock.json
+      buildchain-stable-contract-lock-path: .buildchain/contract-lock.json
       runner-preset: custom
       platforms-json: >-
         [{"id":"linux-x64","name":"Linux x64","runner":"[\"ubuntu-24.04\"]"}]
@@ -49,6 +50,7 @@ jobs:
         site
         _build/main.pdf
         .buildchain/buildchain.toml
+        .buildchain/alpha-contract-lock.json
         .buildchain/contract-lock.json
         .buildchain/publication/publication-artifact.json
         .buildchain/publication/publication-artifact-passport.json
@@ -59,5 +61,6 @@ jobs:
         release-impact.json
         scripts
       release-candidate: true
+      publish-channel: ${{ startsWith(github.base_ref, 'release/') && 'release' || (startsWith(github.base_ref, 'alpha/') && 'alpha' || 'none') }}
       expected-artifacts-json: >-
-        {"minFiles":18,"requiredPaths":["README.md","LICENSE","docs/MAP.md","paper/main.tex","paper/references.bib","site/brand-site.json","site/evidence-site.json","site/site-bundles.json","_build/main.pdf",".buildchain/buildchain.toml",".buildchain/contract-lock.json",".buildchain/publication/publication-artifact.json",".buildchain/publication/publication-artifact-passport.json",".buildchain/publication/publication-registry.json",".buildchain/publication/source.tar.gz","package.json","package-lock.json","release-impact.json","scripts/build-publication-artifact.mjs","scripts/check.mjs","scripts/npm-publish-transaction.mjs","scripts/update-site-bundles.mjs"]}
+        {"minFiles":19,"requiredPaths":["README.md","LICENSE","docs/MAP.md","paper/main.tex","paper/references.bib","site/brand-site.json","site/evidence-site.json","site/site-bundles.json","_build/main.pdf",".buildchain/buildchain.toml",".buildchain/alpha-contract-lock.json",".buildchain/contract-lock.json",".buildchain/publication/publication-artifact.json",".buildchain/publication/publication-artifact-passport.json",".buildchain/publication/publication-registry.json",".buildchain/publication/source.tar.gz","package.json","package-lock.json","release-impact.json","scripts/build-publication-artifact.mjs","scripts/check.mjs","scripts/npm-publish-transaction.mjs","scripts/update-site-bundles.mjs"]}
