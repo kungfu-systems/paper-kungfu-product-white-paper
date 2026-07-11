@@ -16,8 +16,8 @@ const promotionWorkflow = readFileSync(
 );
 for (const requiredSurface of [
   "buildchain-ref:",
-  "inputs['buildchain-ref'] || (inputs['target-branch'] == 'alpha' && 'v2-alpha' || 'v2')",
-  "buildchain-contract-lock-path: ${{ inputs['target-branch'] == 'alpha' && '.buildchain/alpha-contract-lock.json' || '.buildchain/contract-lock.json' }}",
+  "inputs['buildchain-ref'] || (startsWith(github.event.workflow_run.head_branch || inputs['target-ref'], 'alpha/') && 'v2-alpha' || 'v2')",
+  "buildchain-contract-lock-path: ${{ startsWith(github.event.workflow_run.head_branch || inputs['target-ref'], 'alpha/') && '.buildchain/alpha-contract-lock.json' || '.buildchain/contract-lock.json' }}",
 ]) {
   if (!promotionWorkflow.includes(requiredSurface)) {
     fail(`Buildchain promotion workflow must include ${requiredSurface}`);
