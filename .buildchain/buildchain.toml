@@ -29,7 +29,7 @@ registry_path = ".buildchain/publication/publication-registry.json"
 [publication.toolchain]
 type = "latex-docker"
 image = "ghcr.io/kungfu-systems/build-images/latex-pdf-builder"
-digest = "sha256:c20f3809e96836c1c78e97c76939d12f1de3fed0ea9b7c40c43332ec2ea480f8"
+digest = "sha256:f4dc7cb0e0b23cfc2fcde663a65f36c5e71e3ae8e6477e5a24f7ad5237300f10"
 command = "mkdir -p _build && cd paper && latexmk -pdf -outdir=../_build main.tex && mv ../_build/main.pdf ../_build/kungfu-real-world-agent-work.pdf"
 
 [version]
