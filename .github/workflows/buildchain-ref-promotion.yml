@@ -20,8 +20,6 @@ jobs:
       contents: write
       id-token: write
       issues: write
-    secrets:
-      BUILDCHAIN_PROMOTION_TOKEN: ${{ secrets.KUNGFU_GITHUB_TOKEN }}
     with:
       buildchain-ref: ${{ inputs.buildchain-ref || '' }}
       buildchain-contract-lock-path: .buildchain/contract-lock.json
