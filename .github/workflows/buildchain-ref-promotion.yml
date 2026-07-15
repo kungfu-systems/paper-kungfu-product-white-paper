@@ -14,7 +14,7 @@ on:
 
 jobs:
   paper-release:
-    uses: kungfu-systems/buildchain/.github/workflows/paper-release.yml@v2-alpha
+    uses: kungfu-systems/buildchain/.github/workflows/paper-release-sealed.yml@v2-alpha
     permissions:
       actions: read
       checks: write
@@ -24,8 +24,11 @@ jobs:
     with:
       buildchain-ref: ${{ inputs.buildchain-ref || '' }}
       buildchain-contract-lock-path: .buildchain/contract-lock.json
+      publisher-workflow-path: .github/workflows/buildchain-ref-promotion.yml
       toolchain-type: config
       verify-command: npm run check
       artifact-name: paper-kungfu-product-white-paper
+      artifact-paths: _build/kungfu-real-world-agent-work.pdf
+      github-release: true
       release-passport-product-name: Kungfu Product White Paper
       release-passport-impact-json: release-impact.json
