@@ -32,3 +32,5 @@ jobs:
       github-release: true
       release-passport-product-name: Kungfu Product White Paper
       release-passport-impact-json: release-impact.json
+    secrets:
+      BUILDCHAIN_PROMOTION_TOKEN: ${{ secrets.BUILDCHAIN_PROMOTION_TOKEN }}
