@@ -16,6 +16,7 @@ jobs:
   paper-release:
     uses: kungfu-systems/buildchain/.github/workflows/paper-release.yml@v2-alpha
     permissions:
+      actions: read
       checks: write
       contents: write
       id-token: write
