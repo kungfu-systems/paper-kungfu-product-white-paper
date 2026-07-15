@@ -3,13 +3,13 @@
   "contract": "kungfu-buildchain-contract-lock",
   "buildchain": {
     "ref": "v2-alpha",
-    "resolvedSha": "3fe00edb4d49a54df81a5bb3fb0196728d7efd88",
+    "resolvedSha": "2f0a26822b7171bfc4a9dbcd9a992d02d5f1a612",
     "contract": "kungfu-buildchain-runtime-contract-world",
-    "contractDigest": "sha256:74f2c7d82a73953aea28bcfb254627068e09def983d12a454d9edec33953db1c",
+    "contractDigest": "sha256:815f6cb83dfd14114c52450933adb69c7af45a620cc243ef16619bc75dafd1b3",
     "compatibilityDigest": "sha256:af162b86ab4506e9b5f1d3c59b41f3fd57fbad79ff4d749a7f12ff16460517f8",
     "majorLine": "v2",
     "compatibilityPolicy": "major-compatible",
-    "acceptedAt": "2026-07-15T04:45:48.784Z",
+    "acceptedAt": "2026-07-15T05:17:59.258Z",
     "surfaces": [
       {
         "id": "reusable-build",
