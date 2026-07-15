@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "contract": "kungfu-buildchain-impact",
+  "release": {
+    "tag": "v0.1.0-alpha.3",
+    "line": "v0.1",
+    "channel": "release",
+    "targetRef": "release/v0/v0.1"
+  },
+  "versionImpact": {
+    "final": "minor",
+    "source": "initial-publication-artifact-package",
+    "rationale": "This release opens the initial white paper publication artifact and npm package surface for downstream paper-site consumers."
+  },
+  "surfaceImpacts": [
+    {
+      "id": "white-paper-content",
+      "impact": "minor",
+      "class": "content",
+      "rationale": "The repository introduces the first public Kungfu product white paper content as a versioned publication artifact.",
+      "source": ""
+    },
+    {
+      "id": "publication-artifact-contract",
+      "impact": "minor",
+      "class": "release-evidence",
+      "rationale": "The repository now publishes Buildchain-managed PDF, publication manifest, passport, source bundle, and immutable archive registry facts.",
+      "source": ""
+    },
+    {
+      "id": "npm-package-surface",
+      "impact": "minor",
+      "class": "package",
+      "rationale": "The repository introduces @kungfu-tech/paper-kungfu-product-white-paper as the package coordinate for site and agent consumption.",
+      "source": ""
+    },
+    {
+      "id": "github-release-passport",
+      "impact": "minor",
+      "class": "release-governance",
+      "rationale": "The repository adds Buildchain release promotion, Trusted Publishing, GitHub Release assets, and release passport evidence.",
+      "source": ""
+    }
+  ],
+  "summary": "The first managed white paper release is minor-impact because it creates the public publication/package surfaces and release evidence model.",
+  "classification": "minor",
+  "breaking": false,
+  "migrationRequired": false
+}
