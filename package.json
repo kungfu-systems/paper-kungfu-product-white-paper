@@ -1,7 +1,7 @@
 {
   "name": "@kungfu-tech/paper-kungfu-product-white-paper",
   "version": "0.1.0-alpha.7",
-  "description": "Kungfu white paper on Project Cut continuity, libkungfu embedding, and KFD-compatible Agent Hubs",
+  "description": "Kungfu white paper on why long-running Agent work needs verified continuity beyond the session",
   "license": "Apache-2.0",
   "type": "module",
   "files": [
@@ -20,7 +20,7 @@
     ".buildchain/publication/publication-artifact-passport.json",
     ".buildchain/publication/publication-registry.json",
     ".buildchain/publication/source.tar.gz",
-    "_build/kungfu-real-world-agent-work.pdf",
+    "_build/kungfu-white-paper.pdf",
     "docs",
     "paper",
     "release-impact.json",
@@ -34,7 +34,7 @@
     "./paper/main.tex": "./paper/main.tex",
     "./paper/references.bib": "./paper/references.bib",
     "./paper/sections/*.tex": "./paper/sections/*.tex",
-    "./pdf": "./_build/kungfu-real-world-agent-work.pdf",
+    "./pdf": "./_build/kungfu-white-paper.pdf",
     "./buildchain/contract-lock.json": "./.buildchain/contract-lock.json",
     "./publication-artifact.json": "./.buildchain/publication/publication-artifact.json",
     "./publication-artifact-passport.json": "./.buildchain/publication/publication-artifact-passport.json",
