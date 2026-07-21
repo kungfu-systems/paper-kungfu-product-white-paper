@@ -7,12 +7,12 @@ name = "paper-kungfu-product-white-paper"
 [publication]
 kind = "paper"
 title = "Kungfu: Verified Continuity for Agent Work"
-version = "0.1.0-alpha.6"
+version = "0.1.0-alpha.7"
 abstract = "Project Cuts, an embeddable runtime, and an open responsibility standard for Agent work that outlives the chat."
 authors = [ "Keren Dong" ]
 primary_artifact = "_build/kungfu-real-world-agent-work.pdf"
 artifact_paths = [ "_build/kungfu-real-world-agent-work.pdf" ]
-metadata_paths = [ "README.md", "docs/MAP.md", "package.json", "package-lock.json", "release-impact.json", "site" ]
+metadata_paths = [ "README.md", "docs/MAP.md", "package.json", "package-lock.json", "release-impact.json", "site/brand-site.json", "site/evidence-site.json", "site/site-bundles.json" ]
 source_paths = [ "paper", "README.md", "LICENSE", "Makefile", "package.json", "package-lock.json", "release-impact.json", "scripts", "site" ]
 site_consumers = [ "kungfu.tech", "papers.libkungfu.dev" ]
 manifest_path = ".buildchain/publication/publication-artifact.json"
