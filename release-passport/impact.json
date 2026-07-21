@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "contract": "kungfu-buildchain-impact",
+  "release": {
+    "tag": "v0.1.0-alpha.7",
+    "line": "v0.1",
+    "channel": "release",
+    "targetRef": "release/v0/v0.1"
+  },
+  "versionImpact": {
+    "final": "minor",
+    "source": "project-cut-continuity-repositioning",
+    "rationale": "This prerelease completely repositions the paper around Project Cut continuity and the two-track Agent Builder strategy while preserving existing artifact routes."
+  },
+  "surfaceImpacts": [
+    {
+      "id": "white-paper-content",
+      "impact": "minor",
+      "class": "content",
+      "rationale": "The paper now makes Project Cut the first user object and specifies cross-session continuation, runtime, authority, evidence, maturity, and non-claim boundaries.",
+      "source": ""
+    },
+    {
+      "id": "agent-builder-positioning",
+      "impact": "minor",
+      "class": "product-positioning",
+      "rationale": "The builder path now explicitly recommends embedding libkungfu immediately while developing a participant-owned KFD-compatible Hub in parallel.",
+      "source": ""
+    },
+    {
+      "id": "site-bundle-content",
+      "impact": "minor",
+      "class": "downstream-content",
+      "rationale": "Generated brand and evidence bundles expose the new title, section map, claims, adoption path, and alpha residual-risk boundary to site consumers.",
+      "source": ""
+    },
+    {
+      "id": "publication-routes",
+      "impact": "patch",
+      "class": "release-governance",
+      "rationale": "The existing PDF filename, npm coordinate, canonical site routes, Buildchain archive identity, and historical release coordinates remain stable.",
+      "source": ""
+    }
+  ],
+  "summary": "The complete Project Cut continuity rewrite is minor-impact content and positioning work on the existing prerelease publication contract.",
+  "classification": "minor",
+  "breaking": false,
+  "migrationRequired": false
+}
