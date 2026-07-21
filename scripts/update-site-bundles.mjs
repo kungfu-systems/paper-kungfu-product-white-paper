@@ -57,6 +57,7 @@ const normalizeLatex = (latex) => latex
   .replace(/\\section\{([^}]*)\}/g, "# $1\n")
   .replace(/\\textit\{([^}]*)\}/g, "$1")
   .replace(/\\textbf\{([^}]*)\}/g, "$1")
+  .replace(/\\(?:cite|nocite)\{[^}]*\}/g, "")
   .replace(/\s*&\s*/g, " | ")
   .replace(/\s*\\\\\s*/g, "\n")
   .replace(/``/g, "\"")
@@ -116,10 +117,11 @@ const parseReferences = () => {
 };
 
 const buildPrinciples = (sections) => {
-  const principles = sections.find((section) => section.title === "Principles");
+  const principles = sections.find((section) => section.id === "06-validation");
   if (!principles) return [];
   const latex = read(principles.sourcePath);
-  return [...latex.matchAll(/(KFD-[0-9]+)\s*&\s*([^\\]+)\\\\/g)].map((match) => ({
+  const foundation = latex.match(/KFD begins with three commitments:([\s\S]*?)\\end\{center\}/)?.[1] || "";
+  return [...foundation.matchAll(/(KFD-[0-9]+)\s*&\s*([^\\]+)\\\\/g)].map((match) => ({
     id: match[1],
     text: match[2].trim(),
   }));
@@ -146,6 +148,7 @@ export const buildSiteBundles = () => {
   const sections = sectionPaths().map(parseSection);
   const references = parseReferences();
   const principles = buildPrinciples(sections);
+  const sectionById = (id) => sections.find((section) => section.id === id);
   const source = {
     package: pkg.name,
     packageVersion: pkg.version,
@@ -176,7 +179,7 @@ export const buildSiteBundles = () => {
       title: buildchain.title,
       eyebrow: "Kungfu White Paper",
       lead: buildchain.abstract,
-      stance: "Kungfu helps people and agents manage real-world work through non-drifting facts, fact-based trust, trusted value, and observer-declared timelines.",
+      stance: "Give your agent verified context. Keep the work when the chat ends.",
       primaryCta: {
         label: "Read the white paper",
         href: "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work",
@@ -187,24 +190,28 @@ export const buildSiteBundles = () => {
       },
     },
     positioning: {
-      audience: ["agent users", "developers", "operators", "researchers", "early product evaluators"],
-      productClaim: "Kungfu is a local-first control plane and runtime fact layer for real-world work with agents.",
-      philosophicalClaim: "Cooperation between humans and agents should start from trusted value, not hidden pressure.",
-      proofPath: "Real-world product validation, KFD principles, Buildchain evidence, and public site bundles.",
+      audience: ["Agent users", "Agent builders", "runtime engineers", "Hub architects", "technology decision makers"],
+      productClaim: "Project Cut is the first user object for verified work continuity across sessions and Agents.",
+      philosophicalClaim: "Build your Hub. Do not rebuild the runtime: embed libkungfu now and develop the KFD-compatible Hub boundary in parallel.",
+      proofPath: "Source-pinned libkungfu integration, exact KFD coordinates, first-party Project Cut evidence, and Buildchain release provenance.",
     },
     principles,
     homepageSections: [
-      siteSection(sections.find((section) => section.title === "Executive Summary"), "first-screen", "executive-summary", 10),
-      siteSection(sections.find((section) => section.title === "The Problem"), "primary", "problem-statement", 20),
-      siteSection(sections.find((section) => section.title === "Product Thesis"), "primary", "product-thesis", 30),
-      siteSection(sections.find((section) => section.title === "Principles"), "primary", "kfd-principles", 40),
-      siteSection(sections.find((section) => section.title === "Roadmap"), "support", "roadmap", 50),
-      siteSection(sections.find((section) => section.title === "Conclusion"), "support", "closing-thesis", 60),
+      siteSection(sectionById("00-executive-summary"), "first-screen", "executive-summary", 10),
+      siteSection(sectionById("01-problem"), "primary", "continuity-gap", 20),
+      siteSection(sectionById("02-thesis"), "primary", "builder-strategy", 30),
+      siteSection(sectionById("03-principles"), "primary", "project-cut", 40),
+      siteSection(sectionById("04-architecture"), "primary", "continuity-loop", 50),
+      siteSection(sectionById("05-roadmap"), "primary", "runtime-architecture", 60),
+      siteSection(sectionById("06-validation"), "primary", "kfd-principles", 70),
+      siteSection(sectionById("07-ecosystem"), "primary", "authority-and-evidence", 80),
+      siteSection(sectionById("08-risks"), "support", "adoption-and-roadmap", 90),
+      siteSection(sectionById("09-conclusion"), "support", "closing-thesis", 100),
     ].filter(Boolean),
     displayPlan: {
-      firstScreen: ["hero", "Executive Summary"],
-      primary: ["The Problem", "Product Thesis", "Principles"],
-      support: ["Roadmap", "Conclusion"],
+      firstScreen: ["hero", "Executive Summary: The Work Must Outlive the Chat"],
+      primary: ["The Continuity Gap", "The Strategic Choice for Agent Builders", "Project Cut: The First User Object", "How Work Continues Across Sessions", "The Runtime Beneath the Cut", "KFD and Independent Agent Hubs", "Authority, Trust, and Evidence"],
+      support: ["Current State, Adoption, and Roadmap", "Conclusion"],
       hideFromBrandPage: ["full bibliography", "source bundle internals", "raw Buildchain passport fields"],
     },
   };
@@ -245,10 +252,10 @@ export const buildSiteBundles = () => {
     })),
     references,
     verification: {
-      commands: ["make check", "make pdf", "npx -y @kungfu-tech/buildchain@2.10.10 validate --cwd . --json", "npm pack --dry-run --json"],
+      commands: ["npm run check", "npm run build", "npx --no-install buildchain validate --json", "npm pack --dry-run --json"],
       buildchainManifestPath: ".buildchain/publication/publication-artifact.json",
       sourceBundlePath: ".buildchain/publication/source.tar.gz",
-      residualRisk: "The paper is a draft product white paper; philosophical and product-positioning claims still require human review before launch use.",
+      residualRisk: "This is an alpha product and architecture paper based on first-party evidence; it does not establish external vendor adoption, certification, stable Hub interoperability, or broad production readiness.",
     },
   };
 
