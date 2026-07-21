@@ -1,32 +1,110 @@
-\section{Risks and Boundaries}
+\section{Current State, Adoption, and Roadmap}
 
-Kungfu should avoid three failure modes.
+This paper is an alpha positioning and architecture document. It recommends
+immediate implementation work while keeping capability claims below the public
+evidence ceiling.
 
-\subsection{Feature Narrowing}
+\subsection{What Exists Today}
 
-If Kungfu is understood only as a collection of technical features, it misses
-the higher-level need. Activity records, recovery, cost visibility, and event
-inspection are useful only when they help people and agents manage real-world
-work.
+As of 21 July 2026, the public surfaces support the following statements:
 
-\subsection{Local Complexity Without Compression}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.19\textwidth}>{\raggedright\arraybackslash}p{0.38\textwidth}>{\raggedright\arraybackslash}X}
+\toprule
+Surface & Supported statement & Open boundary \\
+\midrule
+Project Cut & Protocol, settlement implementation, retained first-party Cuts,
+and a qualified three-actor continuation case exist. & The complete ordinary
+user product loop and v4 release qualification remain open. \\
+\texttt{libkungfu} & Open source runtime code, exact-source quickstarts,
+runtime Facts, Episodes, verification, recovery, and product-layer contracts
+exist. & Builders should use source-pinned proofs of concept and cite exact
+package and platform facts; broad production readiness is not claimed. \\
+KFD & Package \texttt{1.0.0-alpha.40} publishes active KFD-1, 2, 3, 4, 5, and
+7 plus numbered draft KFD-6 and KFD-8 through KFD-13. & Pre-stable meanings,
+draft activation, adopter scope, and residual risk remain explicit. \\
+Agent Hub Profile & Transport-neutral \texttt{0.1.0-alpha.1} schemas,
+manifest, state model, and implementer guidance exist. & No stable
+certification, external vendor adoption, or plural-Hub production proof. \\
+Runtime Profile & A rooted 100-vector alpha suite, including 35 Core and 65
+Experimental vectors, and two reference adapters make the contract executable.
+& Passing is non-qualifying and binds only the exact adapter, suite, platform,
+transcript, and report. \\
+Buildchain & Artifact, package, source, publication, and release evidence is
+used across the public Kungfu system. & Release evidence is not project
+Admission, runtime authority, or proof of product meaning. \\
+\bottomrule
+\end{tabularx}
+\normalsize
 
-Local-first software can become hard to install, hard to operate, and hard to
-trust. Kungfu's complexity is justified only if it compresses complexity for
-users and agents. Storage, buildchain, GUI/TUI, polyglot APIs, and extensions
-must reduce real coordination cost, not merely move it.
+The fixed public dogfood snapshot at
+\texttt{2026-07-21T04:45:00Z} records 2,740 merged public pull requests across
+10 repositories in the preceding 30-day window and 148 retained public Project
+Cuts with 148 valid receipts at the Kungfu source commit recorded in the
+snapshot. These are
+work and evidence counts, not feature counts, Agent identity counts, external
+adoption, or proof that every review was an approval.\cite{kungfuDogfood}
 
-\subsection{Philosophy Without Product Proof}
+\subsection{The Builder Path: Inspect, Embed, Prove, Connect}
 
-KFD principles are valuable only if they are visible in product behavior:
-non-drifting facts, inspectable trust, transparent agent cooperation, and
-observer-declared timelines. The proof path is the product itself, the
-Buildchain release evidence, and real-world validation.
+\begin{enumerate}
+  \item \textbf{Inspect.} Read the exact source-linked quickstart, KFD decision
+  coordinates, Agent Hub Profile manifest, runtime facts, and known limits.
+  Choose the smallest host-language path and define what data remains outside
+  the adapter.
+  \item \textbf{Embed.} Link \texttt{libkungfu}, initialize an isolated local
+  runtime only through explicit product action, and project a narrow set of
+  lifecycle events. Deliver Project Cut inspect, verify, settle, recover, and
+  resume behavior inside the vendor's existing UX.
+  \item \textbf{Prove.} Exercise clean initialization, deterministic roots,
+  crash recovery, stale and conflicting candidates, revoked or widened
+  Warrants, independent Claim assessment, and fresh-Agent continuation. Bind
+  every public claim to exact source, suite, platform, evidence, and residual
+  risk.
+  \item \textbf{Connect.} Implement the participant-owned Hub adapter,
+  negotiate an exact mutually supported Profile, exchange only the required
+  responsibility evidence, and keep admission and verdict writing local.
+\end{enumerate}
 
-\subsection{Cloud And Platform Pressure}
+This is not a wait-for-stability sequence. Inspect, Embed, and the first Prove
+loop should begin now against pinned alpha coordinates. Hub architecture and
+policy work should proceed in parallel. Cross-Hub production claims should wait
+for the exact interoperability evidence they require.
 
-Large operating-system and model-provider platforms may move into adjacent
-spaces. Kungfu's opportunity is neutrality: cross-platform operation, local
-ownership, agent-readable interfaces, and data bundle portability. The product
-should not assume permanent dependence on a single OS, model provider, or cloud
-workflow.
+\subsection{Roadmap and Gates}
+
+The near-term product gate is a low-friction time-to-first-cut experience and a
+complete cut-to-cut continuation across a fresh Agent context. The runtime gate
+is deterministic, recoverable behavior across supported host layers without
+hidden authority in a projection. The Hub gate is receiver-owned admission,
+capability negotiation, disclosure control, conflict preservation, and portable
+exit across at least two independently owned implementations.
+
+Public package installation, stable compatibility, platform coverage, and any
+future certification program require their own release and governance evidence.
+A future Kungfu Cloud may implement the same KFD boundary, but it is not a
+prerequisite for adopting KFD or \texttt{libkungfu}, and this paper does not
+announce such a product.
+
+\subsection{Risks and Non-Claims}
+
+The primary risks are premature certainty and collapsed boundaries:
+
+\begin{itemize}
+  \item treating a Project Cut as a replacement for Git, Atlas, Episode,
+  policy, or decision authority;
+  \item marketing runtime embedding as automatic KFD certification;
+  \item rebuilding the runtime inside every Hub and creating incompatible local
+  fact semantics;
+  \item turning KFD into a central registry, cloud dependency, or mandatory
+  universal ontology;
+  \item exporting prompts, secrets, or private Episode bodies when rooted
+  disclosure would suffice; and
+  \item presenting first-party dogfood, reference adapters, or alpha suites as
+  external adoption, endorsement, broad production readiness, or a
+  multi-platform guarantee.
+\end{itemize}
+
+The safe alpha posture is ambitious in implementation and conservative in
+claims: integrate now, publish exact evidence, expose failure, and let stable
+promises follow independent qualification rather than precede it.

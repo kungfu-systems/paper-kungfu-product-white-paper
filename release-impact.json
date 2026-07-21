@@ -8,34 +8,34 @@
   },
   "versionImpact": {
     "final": "minor",
-    "source": "initial-publication-artifact-package",
-    "rationale": "This release opens the initial white paper publication artifact and npm package surface for downstream paper-site consumers."
+    "source": "project-cut-continuity-repositioning",
+    "rationale": "This prerelease completely repositions the paper around Project Cut continuity and the two-track Agent Builder strategy while preserving existing artifact routes."
   },
   "surfaceImpacts": [
     {
       "id": "white-paper-content",
       "impact": "minor",
       "class": "content",
-      "rationale": "The repository introduces the first public Kungfu product white paper content as a versioned publication artifact."
+      "rationale": "The paper now makes Project Cut the first user object and specifies cross-session continuation, runtime, authority, evidence, maturity, and non-claim boundaries."
     },
     {
-      "id": "publication-artifact-contract",
+      "id": "agent-builder-positioning",
       "impact": "minor",
-      "class": "release-evidence",
-      "rationale": "The repository now publishes Buildchain-managed PDF, publication manifest, passport, source bundle, and immutable archive registry facts."
+      "class": "product-positioning",
+      "rationale": "The builder path now explicitly recommends embedding libkungfu immediately while developing a participant-owned KFD-compatible Hub in parallel."
     },
     {
-      "id": "npm-package-surface",
+      "id": "site-bundle-content",
       "impact": "minor",
-      "class": "package",
-      "rationale": "The repository introduces @kungfu-tech/paper-kungfu-product-white-paper as the package coordinate for site and agent consumption."
+      "class": "downstream-content",
+      "rationale": "Generated brand and evidence bundles expose the new title, section map, claims, adoption path, and alpha residual-risk boundary to site consumers."
     },
     {
-      "id": "github-release-passport",
-      "impact": "minor",
+      "id": "publication-routes",
+      "impact": "patch",
       "class": "release-governance",
-      "rationale": "The repository adds Buildchain release promotion, Trusted Publishing, GitHub Release assets, and release passport evidence."
+      "rationale": "The existing PDF filename, npm coordinate, canonical site routes, Buildchain archive identity, and historical release coordinates remain stable."
     }
   ],
-  "summary": "The first managed white paper release is minor-impact because it creates the public publication/package surfaces and release evidence model."
+  "summary": "The complete Project Cut continuity rewrite is minor-impact content and positioning work on the existing prerelease publication contract."
 }

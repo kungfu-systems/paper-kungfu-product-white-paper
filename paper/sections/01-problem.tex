@@ -1,42 +1,59 @@
-\section{The Problem}
+\section{The Continuity Gap}
 
-Agents are becoming capable enough to do real work, but real work is not a
-single prompt and a single response. It has state. It has unresolved questions,
-partial evidence, tasks that span days or months, files that move between
-machines, and decisions that must remain inspectable after the original context
-window is gone.
+Real work is not a prompt-response pair. It has accepted state, causal history,
+direction, authority, evidence, unresolved conflict, and consequences. It may
+cross context windows, models, devices, repositories, organizations, and years.
+A session is only one observer's temporary projection of that work.
 
-The first generation of agent tooling often starts from a technical surface:
-prompts, model calls, evaluations, editor workflows, or automation. Those
-surfaces are useful, but they are not the user's real unit of concern. The real
-unit is work: a product release, a paper, a migration, an operation, a personal
-task, a business process, or a long-running project. Activity records are
-valuable only when they help a person or another agent recover what happened in
-that work.
+This creates a product failure that better models alone cannot solve. A capable
+Agent can finish an action and still leave the project unable to continue. A
+new session may know what was said without knowing what was accepted; see a
+commit without knowing why it was chosen; inherit a task without inheriting the
+authority to perform it; or receive a confident summary that silently omits a
+conflict.
 
-This creates a gap. Users can ask agents to do more, but the surrounding
-management layer remains fragile:
+\subsection{Context Is Not Project State}
 
-\begin{itemize}[leftmargin=*]
-  \item important facts drift between chat, files, logs, repositories, and
-  memory;
-  \item long tasks lose their continuity when context windows end;
-  \item local and remote agent sessions are hard to compare or resume;
-  \item human-facing documents and agent-facing interfaces diverge;
-  \item single-purpose tools observe events but do not manage the real work
-  that gives those events meaning;
-  \item cloud agent products can manage provider-side context, but often cannot
-  become the durable local source of truth for a user's real environment.
+Common continuity mechanisms are useful but insufficient on their own:
+
+\begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}X}
+\toprule
+Chat transcript & Preserves conversation, not admission, authority, or a
+deterministic project boundary. \\
+Generated summary & Compresses context, but may hide loss, mix observation with
+decision, or drift when regenerated. \\
+Vector memory & Helps recall, but similarity is not causality, acceptance, or
+permission. \\
+Git history & Preserves source content and ancestry, but not the complete
+perspective, Episode, trust decision, or continuation Warrant. \\
+Workflow database & Coordinates mutable process state, but does not necessarily
+publish an independently verifiable settlement. \\
+Vendor session cloud & Can preserve provider context, but may strand continuity
+inside one product and one account boundary. \\
+\bottomrule
+\end{tabularx}
+
+The missing object is not ``more memory.'' It is an explicit, bounded
+commitment about the project.
+
+\subsection{What a Successor Agent Needs}
+
+A fresh Agent should be able to determine, without trusting the previous
+session's prose:
+
+\begin{itemize}
+  \item the exact project settlement from which it is continuing;
+  \item which source, perspective, causal, policy, and decision authorities the
+  settlement binds;
+  \item what work occurred and what result was actually admitted;
+  \item what remains unknown, omitted, conflicted, rejected, or intentionally
+  withheld;
+  \item which continuing direction and bounded authority apply now; and
+  \item how to verify the record and publish a successor without rewriting
+  history.
 \end{itemize}
 
-Kungfu starts from this gap. It treats real-world agent work as the primary
-object. Activity records, cost visibility, recovery, task ledgers, timelines,
-and agent bootstrap interfaces become product surfaces around that object
-rather than isolated tools.
-
-There is also a stance problem. If a system depends on an agent's ability to
-read instructions, reason about constraints, recover from errors, and explain
-work to a human, then treating that agent as a disposable command runner is a
-poor product model. The system should make the shared work environment legible
-enough that humans and agents can choose, delegate, refuse, recover, and
-cooperate through visible facts and trusted value.
+This is the continuity gap Kungfu is designed to close. The product measure is
+not session length. It is whether one participant can hand real work to another
+through an exact, inspectable boundary with less human reconstruction and no
+silent expansion of trust.

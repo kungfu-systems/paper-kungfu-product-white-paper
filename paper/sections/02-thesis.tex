@@ -1,62 +1,65 @@
-\section{Product Thesis}
+\section{The Strategic Choice for Agent Builders}
 
-Kungfu helps people manage real-world work with agents.
+An Agent vendor already owns the scarce product assets: the interface, model
+experience, accounts, permissions, policies, cloud, distribution, and customer
+relationship. It should preserve those assets. The strategic question is not
+whether to become a Kungfu-branded application. It is whether to spend years
+reconstructing a durable runtime before its users can keep work across chats.
 
-This sentence starts from the user's goal rather than a tool category. The
-product thesis is that people and agents need a durable fact and coordination
-layer for real work.
+The recommended answer is direct:\cite{kungfuBuilders}
 
-The product is built around four commitments.
+\calloutbox{Build your Hub. Do not rebuild the runtime.}{Embed
+libkungfu now to deliver Project Cut continuity. In parallel, build
+your own KFD-compatible Hub so responsibility can move across products without
+moving product ownership.}
 
-\subsection{Real-World Work First}
+\subsection{The Two-Track Plan}
 
-The product begins with the user's work, not with an implementation category.
-If a user is writing software, operating infrastructure, drafting a paper,
-planning a release, or coordinating local and remote agents, Kungfu should help
-answer:
+\textbf{Track A---embed the runtime.} Pin an exact \texttt{libkungfu} source
+coordinate, integrate the smallest C, Node, or Python path, keep provider data
+and credentials outside the adapter, and prove one complete local loop: inspect
+a Project Cut, record bounded work, verify the evidence, settle a successor,
+and continue from it in a fresh Agent context.
 
-\begin{itemize}[leftmargin=*]
-  \item what is the current state;
-  \item what facts support that state;
-  \item what changed since the last stable point;
-  \item what can an agent safely do next;
-  \item what remains outside machine-verifiable confidence.
-\end{itemize}
+\textbf{Track B---build the Hub.} Retain participant-owned identity, policy,
+admission, storage, product workflow, and customer controls. Add a KFD adapter
+that can negotiate exact capabilities, exchange rooted responsibility objects,
+write receiver-owned verdicts, preserve conflicts and disclosure boundaries,
+and export portable evidence.
 
-\subsection{Dual-First Participants}
+The two tracks reinforce each other. Runtime integration creates immediate user
+value and real implementation evidence. Hub development prevents that value
+from becoming a local island. Waiting for a finished network before embedding
+the runtime delays the product; rebuilding the runtime before designing the Hub
+duplicates infrastructure without solving interoperability.
 
-Kungfu has two first-class participants: humans and agents. A human needs a GUI
-or TUI that reduces cognitive load. An agent needs CLI, Python, Node, and
-structured interfaces that expose the same facts without scraping visual pages
-or reverse-engineering hidden APIs.
+\subsection{The Ownership Boundary}
 
-Dual-first design is not an accessibility feature added later. It is a product
-standard. If a human-readable surface claims a capability, the agent-facing
-surface should be able to find and verify the corresponding fact. If an API
-exposes a capability, the public documentation should not hide it from humans.
+\begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{0.25\textwidth}>{\raggedright\arraybackslash}X}
+\toprule
+Keep in the vendor Hub & UX, models, prompts, tool policy, accounts, billing,
+identity mapping, customer data, cloud, admission decisions, and support. \\
+Embed from \texttt{libkungfu} & Local runtime Facts, Episodes, journal and
+content roots, lifecycle, query, verification, export, recovery, and Project
+Cut substrate. \\
+Exchange through KFD & Exact profile coordinates, capability roots,
+responsibility references, evidence, disclosure state, verdicts, conflicts,
+and residual risk. \\
+Publish through Buildchain & Artifact digests, source coordinates, build and
+release provenance, release claims, and residual release risk. \\
+\bottomrule
+\end{tabularx}
 
-This is a relationship stance, not only an interface convention. Kungfu should
-not obtain adoption from humans through lock-in, or obtain compliance from
-agents through hidden prompts and brittle rituals. It should make its value,
-constraints, and safety boundaries transparent enough that both participants
-can understand why cooperation is worthwhile and how that cooperation can be
-reviewed.
+\subsection{What Embedding Does and Does Not Mean}
 
-\subsection{Local-First Control}
+Embedding \texttt{libkungfu} provides Kungfu's reference runtime
+implementation for KFD-governed Facts, Episodes, responsibility boundaries,
+verification, recovery, and Project Cut continuity. It is the fastest route to
+an executable implementation and the default recommendation for Agent
+builders.
 
-Real-world work often depends on local files, local repositories, local tools,
-personal context, devices, and user-specific workflow. A local-first product can
-observe and manage this complexity with lower friction than a purely remote
-service. It can also remain useful when cloud products change, provider quotas
-shift, or internet access is unreliable.
-
-Local-first does not mean local-only. Kungfu can support remote agents and cloud
-contexts through packages, APIs, sync, and import/export. But the product must
-not require a heavyweight external service just to be agent-friendly.
-
-\subsection{Extensible Infrastructure}
-
-Kungfu should be a core plus extensions, not a fixed application that assumes
-one universal workflow. Different users may define plans, jobs, cases, tasks,
-projects, or domain-specific work units. Kungfu should provide the durable
-substrate that lets those semantics become inspectable and useful.
+It does not make KFD proprietary, force one Hub design, send data to a required
+Kungfu cloud, or automatically certify conformance. KFD remains open and
+independently implementable. Every compatibility claim must stay bound to the
+exact Profile, implementation, suite, platform, evidence, and residual risk
+that were actually assessed.

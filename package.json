@@ -1,7 +1,7 @@
 {
   "name": "@kungfu-tech/paper-kungfu-product-white-paper",
   "version": "0.1.0-alpha.5",
-  "description": "Kungfu product white paper source and site bundles for managing real-world work with agents",
+  "description": "Kungfu white paper on Project Cut continuity, libkungfu embedding, and KFD-compatible Agent Hubs",
   "license": "Apache-2.0",
   "type": "module",
   "files": [

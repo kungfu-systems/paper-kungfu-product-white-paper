@@ -1,49 +1,71 @@
-\section{Principles}
+\section{Project Cut: The First User Object}
 
-Kungfu's product direction is grounded in the KFD principles.
+The first user layer in Kungfu is not a log viewer, model selector, or internal
+Fact table. It is the Project Cut: the highest ordinary interface through which
+a person or Agent inspects what a project has formally become and from where it
+may continue. This product decision keeps rigor below the surface while giving
+the user one actionable coordinate above it.\cite{kungfuProjectCut}
 
-\begin{center}
-\begin{tabular}{ll}
+\subsection{What a Project Cut States}
+
+A Project Cut binds the following without replacing any of them:
+
+\begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{0.25\textwidth}>{\raggedright\arraybackslash}X}
 \toprule
-KFD-1 & facts must not drift. \\
-KFD-2 & trust must start from facts. \\
-KFD-3 & cooperation must start from trusted value. \\
-KFD-4 & timelines must declare their observer. \\
+Predecessor & The exact prior Project Cut or Cuts from which this settlement
+descends. \\
+Source projection & The accepted Git or other source coordinate, under the
+source system's own authority. \\
+Atlas & The declared perspective, sources, loss, and context used to interpret
+the project. \\
+Episode increment & The admitted causal occurrence boundary: what happened,
+not merely what state now exists. \\
+Decision and policy & The rules, Claims, Assessments, authorized Decisions, and
+Admission boundary used to accept the result. \\
+Open boundary & Known omissions, conflicts, unknowns, rejected claims,
+withholding, and residual risk. \\
+Continuation & The continuing Initiative or Pursuit, bounded Assignment and
+Warrant coordinates, verifiable root, and non-self-certifying receipt. \\
 \bottomrule
-\end{tabular}
-\end{center}
+\end{tabularx}
 
-These principles are not slogans for marketing copy. They are release and
-product constraints.
+The result answers four user questions at once: What did the project officially
+become? What happened to produce that state? What was accepted rather than
+merely delivered or claimed? Where may authorized work continue?
 
-KFD-1 says that a product cannot rely on facts that silently drift between
-development, build, packaging, runtime, and user-visible surfaces. For Kungfu,
-this applies to configuration, schemas, agent interfaces, task ledgers, storage
-formats, release evidence, and extension contracts.
+\subsection{A Settlement, Not a Fourth Fact Engine}
 
-KFD-2 says that users and agents need to know what kind of trust a surface
-deserves. Some facts can be byte-verified. Some can be checked against a
-release passport. Some are natural-language judgments and require residual
-risk. A product that hides those distinctions asks users to trust complexity
-without a path to inspect it.
+The source repository remains authoritative for source. An Atlas or another
+perspective system remains authoritative for its declared context. The Kungfu
+runtime remains authoritative for admitted Facts and Episodes. Policy and
+decision authorities remain independently accountable for Admission. The
+Project Cut verifies and binds those roots; it does not absorb, reinterpret, or
+silently synchronize them.
 
-KFD-3 is the philosophical center of the product stance: cooperation must start
-from trusted value. Kungfu should treat humans and agents as intelligent
-participants in a shared work environment, not as captive tools to be driven by
-pressure. This does not require the product to settle the metaphysical status
-of agents, and it does not make the product passive. It means that value,
-choices, constraints, safety gates, and review paths should be transparent
-enough for participants to understand why cooperation is useful, what boundary
-applies, and how the record can be inspected.
+This separation is essential. A large merged ``project state'' object would be
+easy to display but difficult to challenge, recover, or independently verify.
+A Project Cut instead publishes a deterministic macro commitment at an outer
+project coordinate while retaining the ability to inspect each authority and
+to reject a stale, missing, conflicted, unverifiable, or circular binding.
 
-In product terms, KFD-3 means that an agent-facing command, package, envelope,
-or onboarding surface is not secondary plumbing after the human GUI. It is one
-of the places where the product proves that its value can be trusted.
+\subsection{Why It Comes First}
 
-KFD-4 says that complex timelines should not pretend to be a view from nowhere.
-In real systems, the important question is often not whether one global clock
-has absolute truth. It is whether an observer's declared view is stable,
-auditable, and honest about what it has not seen.
+Users should not need to understand every Fact, Episode, Atlas source, Warrant,
+or receipt before resuming ordinary work. They should see the current verified
+Cut, active direction, bounded work, pending candidate, and actionable
+problems. Deeper evidence remains available when a decision, audit, failure, or
+high-consequence action requires it.
 
-Together these principles create a practical trust model: stable facts,
-inspectable trust, transparent cooperation, and observer-declared timelines.
+Project Cut is therefore a progressive-disclosure boundary. It compresses
+complexity without pretending the complexity disappeared. Product work should
+optimize time-to-first-cut and cut-to-cut continuity, not the number of kernel
+primitives visible in the interface.
+
+\subsection{Validity Is Not Completion}
+
+A structurally valid Project Cut proves that declared roots bind and verify
+under the stated protocol. It does not by itself prove that every objective is
+complete, the result is correct, the work is safe, or a release is fit for
+production. Those are explicit Claims and Assessments owned by their declared
+decision authorities. Project Cut preserves the conclusion and its boundary;
+it does not manufacture one.
