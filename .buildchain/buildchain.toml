@@ -7,7 +7,7 @@ name = "paper-kungfu-product-white-paper"
 [publication]
 kind = "paper"
 title = "Kungfu: Verified Continuity for Agent Work"
-version = "0.1.0-alpha.5"
+version = "0.1.0-alpha.6"
 abstract = "Project Cuts, an embeddable runtime, and an open responsibility standard for Agent work that outlives the chat."
 authors = [ "Keren Dong" ]
 primary_artifact = "_build/kungfu-real-world-agent-work.pdf"
