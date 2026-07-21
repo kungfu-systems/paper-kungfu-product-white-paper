@@ -8,8 +8,8 @@
   },
   "versionImpact": {
     "final": "minor",
-    "source": "project-cut-continuity-repositioning",
-    "rationale": "This prerelease completely repositions the paper around Project Cut continuity and the two-track Agent Builder strategy while preserving existing artifact routes."
+    "source": "session-continuity-thesis",
+    "rationale": "This prerelease makes the session-model failure explicit, preserves the Project Cut and builder strategy, and establishes a title-independent publication coordinate."
   },
   "surfaceImpacts": [
     {
@@ -34,8 +34,8 @@
       "id": "publication-routes",
       "impact": "patch",
       "class": "release-governance",
-      "rationale": "The existing PDF filename, npm coordinate, canonical site routes, Buildchain archive identity, and historical release coordinates remain stable."
+      "rationale": "The PDF and brand-site route move to the durable kungfu-white-paper coordinate; the npm coordinate and Buildchain archive identity remain stable."
     }
   ],
-  "summary": "The complete Project Cut continuity rewrite is minor-impact content and positioning work on the existing prerelease publication contract."
+  "summary": "The paper now opens with the session-continuity failure and publishes through a durable, title-independent white-paper coordinate."
 }

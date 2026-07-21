@@ -1,4 +1,4 @@
-# Kungfu: Verified Continuity for Agent Work
+# Kungfu: The Session Is Not the Work
 
 This repository tracks the source, site bundles, and Buildchain publication
 evidence for the Kungfu product white paper.
@@ -6,14 +6,20 @@ evidence for the Kungfu product white paper.
 Title:
 
 ```text
-Kungfu: Verified Continuity for Agent Work
+Kungfu: The Session Is Not the Work
 ```
 
 Subtitle:
 
 ```text
-Project Cuts, an embeddable runtime, and an open responsibility standard for
-work that outlives the chat.
+Verified continuity for agent work that outlives the chat.
+```
+
+Deck:
+
+```text
+Project Cuts, libkungfu, and KFD: a local runtime and open responsibility
+protocol for long-running agent work.
 ```
 
 The paper defines Project Cut as the first user object for cross-session Agent
@@ -88,10 +94,9 @@ Build the PDF and Buildchain publication artifact:
 npm run build
 ```
 
-The public PDF artifact is written to `_build/kungfu-real-world-agent-work.pdf`.
-The historical filename and public route remain stable even though the paper's
-title and positioning have advanced. Both site bundles use that filename so
-existing links and archived alpha releases remain valid.
+The public PDF artifact is written to `_build/kungfu-white-paper.pdf`. The
+artifact name and canonical route identify the publication rather than its
+current title, so future title changes do not require another URL migration.
 
 NPM package dry-run:
 

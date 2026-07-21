@@ -1,18 +1,27 @@
 \section{Executive Summary: The Work Must Outlive the Chat}
 
-Agents can already produce valuable code, research, plans, operations, and
-decisions. Yet the dominant product container is still a chat session. When
-that session closes, the next Agent often receives a transcript, a summary, or
-an unverified memory instead of an exact statement of what the project has
-become. The model may be capable while the work remains fragile.
+\textbf{The session is the right unit of interaction---and the wrong unit of
+continuity for long-running Agent work.} A session can host valuable code,
+research, plans, operations, and decisions. It cannot, by itself,
+authoritatively settle what the project has become, what was accepted, which
+authority still applies, or where another participant may safely continue.
+When the session closes, a transcript, summary, or unverified memory is not
+enough. The model may be capable while the work remains fragile.
 
-Kungfu addresses this continuity gap. Its highest ordinary product interface
-is the \textbf{Project Cut}: a verifiable project settlement that binds the
-accepted source state, the perspective used to understand it, the causal work
-that occurred, the decisions that admitted the result, unresolved risk, and
-the coordinate from which authorized work may continue. A Project Cut does not
-replace those authorities. It gives the next human or Agent one bounded answer
-to the question: \emph{where can this project safely continue?}
+Kungfu closes this gap through three distinct layers. A \textbf{Project Cut}
+is the verifiable settlement and continuation coordinate presented to the
+next human or Agent. \texttt{libkungfu} is the local runtime that records,
+verifies, recovers, and resumes that continuity inside a participant's Hub.
+KFD is the open responsibility protocol that lets independently owned Hubs
+exchange continuity evidence without sharing one central cloud or surrendering
+their product boundary.
+
+A Project Cut binds the accepted source state, the perspective used to
+understand it, the causal work that occurred, the decisions that admitted the
+result, unresolved risk, and the coordinate from which authorized work may
+continue. It does not replace those authorities. It gives the next participant
+one bounded answer to the question: \emph{where can this project safely
+continue?}
 
 \calloutbox{The product promise}{Give your agent verified context. Keep the
 work when the chat ends.}
