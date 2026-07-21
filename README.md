@@ -1,17 +1,35 @@
-# Kungfu Product White Paper
+# Kungfu: Verified Continuity for Agent Work
 
-This repository tracks the source for a Kungfu product white paper.
+This repository tracks the source, site bundles, and Buildchain publication
+evidence for the Kungfu product white paper.
 
-Working title:
+Title:
 
 ```text
-Kungfu: Managing Real-World Work with Agents
+Kungfu: Verified Continuity for Agent Work
 ```
 
-The paper explains Kungfu as a product and infrastructure direction for
-real-world work with agents. It connects the product thesis, KFD principles,
-runtime fact infrastructure, dual-first human/agent usability, local-first
-operation, and the roadmap from real-world validation to public release.
+Subtitle:
+
+```text
+Project Cuts, an embeddable runtime, and an open responsibility standard for
+work that outlives the chat.
+```
+
+The paper defines Project Cut as the first user object for cross-session Agent
+work, explains the `libkungfu` runtime beneath it, and separates KFD, Buildchain,
+and participant-owned Agent Hub responsibilities. Its recommended builder
+strategy is explicit:
+
+```text
+Embed libkungfu now. Deliver Project Cut continuity.
+Build your KFD-compatible Hub in parallel.
+```
+
+The document also records the alpha claim boundary. KFD remains open and
+independently implementable; embedding `libkungfu` does not automatically
+certify conformance; and the cited evidence is first-party rather than proof of
+external vendor adoption or broad production readiness.
 
 Publisher: Kungfu Origin Technology Limited.
 Contact: Keren Dong <keren.dong@kungfu.link>.
@@ -71,8 +89,9 @@ npm run build
 ```
 
 The public PDF artifact is written to `_build/kungfu-real-world-agent-work.pdf`.
-Both site bundles use that stable short filename so downloaded papers remain
-distinguishable without exposing the internal `main.tex` entrypoint.
+The historical filename and public route remain stable even though the paper's
+title and positioning have advanced. Both site bundles use that filename so
+existing links and archived alpha releases remain valid.
 
 NPM package dry-run:
 
@@ -94,5 +113,6 @@ CI and publication should go through the Buildchain lifecycle declared in
 
 ## Status
 
-This is an initial white paper draft. It should be sharpened against real-world
-product validation evidence before being treated as a public launch statement.
+This is an alpha product and architecture paper. Source-pinned integration and
+evaluation are encouraged now. Stable KFD Hub interoperability, certification,
+external vendor adoption, and broad production readiness are not claimed.

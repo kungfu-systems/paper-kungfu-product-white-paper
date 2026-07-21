@@ -1,28 +1,98 @@
-\section{Product Validation Strategy}
+\section{KFD and Independent Agent Hubs}
 
-Kungfu should be validated against real work before public launch. A scripted
-demo can prove that a feature exists, but only real daily use can prove that a
-product reduces coordination cost.
+KFD---Kung Fu Decisions---is an open engineering standard for a small, testable
+foundation for reliable action and continuity under uncertainty. It is a
+canonical public decision registry, not a Kungfu product API, a central service,
+a universal workflow language, or a belief test. Products, organizations,
+humans, Agents, and other bounded systems can adopt exact decisions within a
+declared scope and publish their own mappings, evidence, qualification, and
+residual risk.\cite{kungfuKfd}
 
-The validation workload should include long-running tasks, local and remote
-agents, repository coordination, task ledgers, review records, friction queues,
-execution evidence, and multi-machine timelines. These are the situations where
-runtime facts become hard to manage without a product designed for that
-purpose.
+\subsection{The Foundation}
 
-The validation sequence is:
+KFD begins with three commitments:
 
-\begin{enumerate}[leftmargin=*]
-  \item connect Kungfu to real work facts so the GUI can display current state;
-  \item let agents write runtime facts, execution evidence, friction, and task
-  state into Kungfu;
-  \item identify which semantics belong in the generic Kungfu core and which
-  should remain user-defined profiles;
-  \item measure whether Kungfu reduces drift, repeated coordination, and
-  context-recovery cost;
-  \item keep real-work pressure high enough that Kungfu must become useful
-  before public launch.
-\end{enumerate}
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+KFD-1 & Facts must not drift. \\
+KFD-2 & Trust must start from facts. \\
+KFD-3 & Cooperation must start from trusted value. \\
+\bottomrule
+\end{tabular}
+\end{center}
 
-The validation standard is load-bearing: if Kungfu cannot make real work easier
-to manage, the product thesis has not been proven.
+The later decisions make the foundation operational. Views remain bound to
+declared perspectives. Primitive discovery separates genesis from
+qualification. Real-world action keeps state, occurrence, and action
+coordinates distinct. Numbered drafts then allocate emerging responsibility
+for Atlas, Pursuit, Warrant, Decision and Admission, software work, and Project
+settlement.
+
+As of the alpha coordinate cited by this paper, the registry state is:
+
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.13\textwidth}>{\raggedright\arraybackslash}p{0.15\textwidth}>{\raggedright\arraybackslash}X}
+\toprule
+Decision & Status & Responsibility \\
+\midrule
+\texttt{KFD-1} & active & Non-drifting facts and verifiable coordinates. \\
+\texttt{KFD-2} & active & Fact-bound trust, assessment, and residual risk. \\
+\texttt{KFD-3} & active & Cooperation through visible value, constraints,
+choices, and records. \\
+\texttt{KFD-4} & active & Views bound to declared perspectives and loss. \\
+\texttt{KFD-5} & active & Primitive genesis separated from qualification. \\
+\texttt{KFD-6} & draft & Autonomous discovery grounded in causal
+experience. \\
+\texttt{KFD-7} & active & Fact--Episode separation and action responsibility
+geometry. \\
+\texttt{KFD-8} & draft & Atlas responsibility for admitted perspective. \\
+\texttt{KFD-9} & draft & Pursuit responsibility for continuing direction. \\
+\texttt{KFD-10} & draft & Explicit, bounded, revocable Warrant authority. \\
+\texttt{KFD-11} & draft & Claim, Assessment, Decision, and Admission
+separation. \\
+\texttt{KFD-12} & draft & Initiative and Assignment separation in software
+work. \\
+\texttt{KFD-13} & draft & Project settlement that binds authorities without
+absorbing them. \\
+\bottomrule
+\end{tabularx}
+\normalsize
+
+Active decisions are normative within their declared adoption scope. A numbered
+draft has an allocated identity but an open activation gate. A pre-number KFD
+Candidate remains non-normative lineage. Product evidence for Project Cut does
+not silently activate KFD-13.
+
+\subsection{The Hub Boundary}
+
+An Agent Hub is a participant-owned control plane for execution, identity,
+policy, accounts, models, user experience, admission, and customer
+relationships. It may be a local process, device service, vendor cloud,
+organizational system, or federation member. KFD standardizes only the
+responsibility exchange between Hubs.
+
+No KFD deployment requires one global identity provider, Hub registry,
+database, transport, clock, or KFD cloud. One Hub may use \texttt{libkungfu};
+another may implement the semantics independently. Each keeps its internal
+workflow and local verdict authority.
+
+\subsection{The Agent Hub Alpha Profile}
+
+KFD publishes a transport-neutral Agent Hub alpha Profile. A Profile coordinate
+binds its identifier, version, manifest digest, and repository commit. Peers
+negotiate an exact capability intersection, then exchange rooted responsibility
+proposals, candidate Fact admissions, supersession, completion Assessments, or
+Warrant revocations. The same semantics can travel through a local call, IPC,
+file, HTTP, gRPC, message bus, or offline bundle.\cite{kungfuAgentHub}
+
+Every receiver retains the right and responsibility to verify authority,
+disclosure, evidence, conflict, and policy before writing its verdict. Retries
+are content-stable, conflicts stay visible, partial knowledge is typed, and
+unknown required semantics fail closed.
+
+The Profile is alpha and is not itself a numbered KFD. It is not stable
+certification, proof of a conforming implementation, evidence of external vendor
+adoption, or proof of plural-Hub interoperability. Its purpose is to make the
+boundary implementable and falsifiable while independent builders gain real
+integration evidence.

@@ -1,25 +1,75 @@
-\section{Ecosystem}
+\section{Authority, Trust, and Evidence}
 
-Kungfu's open-source repository can be valuable beyond the default product
-because agent work management is a meta-capability. A developer can build
-extensions for software work. A researcher can build publication workflows. An
-operator can build infrastructure runbooks. A personal user can build life and
-work organization profiles.
+Continuity is unsafe when a system collapses transport, identity, occurrence,
+judgment, and authority into a single success flag. Kungfu and KFD preserve the
+separations that keep responsibility attributable.
 
-The ecosystem should be shaped by low-friction consistency:
+\calloutbox{Three non-substitution rules}{Delivery $\neq$ Admission. Occurrence
+$\neq$ Completion. Authentication $\neq$ Authority.}
 
-\begin{itemize}[leftmargin=*]
-  \item one coherent monorepo for the core product where splitting would create
-  agent friction;
-  \item package APIs for Python and Node where agents naturally integrate;
-  \item GUI/TUI entrypoints for humans who need visibility without more
-  cognitive load;
-  \item KFD and Buildchain release evidence so users and agents can inspect
-  what a release claims to provide;
-  \item extension contracts that let new profiles add semantics without
-  weakening the core fact model.
-\end{itemize}
+\subsection{Delivery Is Not Admission}
 
-This ecosystem does not require every user to adopt the same work semantics. It
-requires Kungfu to make it practical for users to define their own durable work
-models and still participate in the same trust model.
+A transport receipt can prove that bytes reached a declared endpoint under a
+binding. It cannot decide whether the receiver accepts the source, profile,
+authority, disclosure, evidence, or result. The producer proposes; the receiver
+owns its local verdict. This remains true for an in-process call as well as a
+cross-company network exchange.
+
+\subsection{Occurrence Is Not Completion}
+
+An Episode proves that a declared occurrence was recorded and sealed under its
+runtime boundary. A process exit code, tool response, generated artifact, or
+merged change may support a Claim, but none independently settles the Pursuit.
+Completion follows a visible chain:
+
+\begin{center}
+\textbf{Claim $\rightarrow$ Assessment $\rightarrow$ authorized Decision
+$\rightarrow$ Admission $\rightarrow$ Project Cut settlement}
+\end{center}
+
+The Claim states what is asserted. Assessment evaluates it against facts,
+criteria, evidence, and residual risk. Decision records what an authorized
+owner chooses. Admission changes accepted state or responsibility. Project Cut
+then binds the resulting authorities at the project level. A system may retain
+rejected and conflicted Claims without allowing them to change admitted state.
+
+\subsection{Authentication Is Not Authority}
+
+Authentication can prove control of an identifier under a particular binding.
+It does not prove permission, truth, completion, or fact admission. Warrant
+authority must be explicit, scoped, time-bounded where appropriate, revocable,
+and non-amplifying. A delegated Warrant must remain narrower than or equal to
+its parent across subject, action, consequence, time, disclosure, and further
+delegation.
+
+This protects both users and Agent vendors. A Hub can map identities and enforce
+policy according to its own customer and regulatory obligations without
+pretending that another Hub's authentication system governs its local facts.
+
+\subsection{Trust Starts from Facts}
+
+KFD trust is not one undifferentiated score. A Claim should identify the facts
+and evidence that support it, the assessment method and decision owner, what
+remains unverified, and who owns the residual risk. Byte verification,
+structural conformance, execution evidence, independent review, and
+natural-language judgment are different evidence classes. None should borrow
+the confidence of another without an explicit bridge.
+
+Buildchain applies this discipline to releases. A release Passport can bind an
+artifact to source, toolchain, checks, publication coordinates, declared
+impact, and residual risk. It does not certify the product's natural-language
+meaning or make an alpha Profile stable.\cite{kungfuBuildchain}
+
+\subsection{Disclosure and Exit}
+
+Portable evidence must not require portable secrets. A Hub may exchange roots,
+commitments, selected fields, or intentionally withheld states while keeping
+raw prompts, credentials, private files, and complete Episode bodies local.
+Redaction is not absence and must be declared. A receiving Hub decides whether
+the available disclosure is sufficient for its policy.
+
+Exit remains a trust property. Export should preserve exact profile
+coordinates, roots, predecessor relations, verdicts, conflicts, disclosure
+commitments, and binding-independent payload digests. A user's work should not
+become unverifiable merely because a vendor account, model, or transport is no
+longer available.
