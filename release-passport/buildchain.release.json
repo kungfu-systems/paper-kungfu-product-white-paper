@@ -59,7 +59,7 @@
     "promotionChannelTreeSha": "",
     "publishToolingSha": "ed1a26b40ab4d64a5dfeb65c6890ce34ce4c8a13",
     "releaseStateRef": "refs/heads/buildchain/release-state/0-1-0-alpha-6",
-    "releaseStateSha": "",
+    "releaseStateSha": "2d7cc9cca35b2fb68d7247d61e1ee62b0408f108",
     "package": {
       "name": "@kungfu-tech/paper-kungfu-product-white-paper",
       "version": "0.1.0-alpha.6"
