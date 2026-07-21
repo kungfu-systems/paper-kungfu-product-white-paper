@@ -1,5 +1,5 @@
 SOURCE_DATE_EPOCH ?= $(shell git log -1 --format=%ct 2>/dev/null || printf '0')
-PDF_NAME := kungfu-real-world-agent-work.pdf
+PDF_NAME := kungfu-white-paper.pdf
 
 .PHONY: check update-site-bundles pdf clean
 

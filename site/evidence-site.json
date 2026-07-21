@@ -25,11 +25,11 @@
   },
   "publication": {
     "kind": "paper",
-    "title": "Kungfu: Verified Continuity for Agent Work",
-    "abstract": "Project Cuts, an embeddable runtime, and an open responsibility standard for Agent work that outlives the chat.",
-    "primaryArtifact": "_build/kungfu-real-world-agent-work.pdf",
+    "title": "Kungfu: The Session Is Not the Work",
+    "abstract": "Verified continuity for Agent work that outlives the chat.",
+    "primaryArtifact": "_build/kungfu-white-paper.pdf",
     "artifactPaths": [
-      "_build/kungfu-real-world-agent-work.pdf"
+      "_build/kungfu-white-paper.pdf"
     ],
     "metadataPaths": [
       "README.md",
@@ -61,11 +61,11 @@
     "canonicalHost": "papers.libkungfu.dev",
     "canonicalPath": "/kungfu-product-white-paper",
     "canonicalUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper",
-    "pdfPath": "/kungfu-product-white-paper/kungfu-real-world-agent-work.pdf",
-    "pdfUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper/kungfu-real-world-agent-work.pdf",
+    "pdfPath": "/kungfu-product-white-paper/kungfu-white-paper.pdf",
+    "pdfUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper/kungfu-white-paper.pdf",
     "sourcePath": "/kungfu-product-white-paper/source.tar.gz",
     "sourceUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper/source.tar.gz",
-    "brandUrl": "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work",
+    "brandUrl": "https://kungfu.tech/whitepaper/kungfu-white-paper",
     "repositoryUrl": "https://github.com/kungfu-systems/paper-kungfu-product-white-paper"
   },
   "sectionMap": [
@@ -79,7 +79,7 @@
         "The Architecture in Five Responsibilities",
         "What This Paper Claims"
       ],
-      "summary": "Agents can already produce valuable code, research, plans, operations, and decisions. Yet the dominant product container is still a chat session. When that session closes, the next Agent often receives a transcript, a summary, or an unverified memory instead of an exact statement of what the project has become. The model may be capable while the work remains fragile."
+      "summary": "The session is the right unit of interaction—and the wrong unit of continuity for long-running Agent work. A session can host valuable code, research, plans, operations, and decisions. It cannot, by itself, authoritatively settle what the project has become, what was accepted, which authority still applies, or where another participant may safely continue. When the session closes, a transcript, summary, or unverified memory is not enough. The model may be capable while the work remains fragile."
     },
     {
       "order": 2,
@@ -152,7 +152,7 @@
         "The Hub Boundary",
         "The Agent Hub Alpha Profile"
       ],
-      "summary": "KFD---Kung Fu Decisions---is an open engineering standard for a small, testable foundation for reliable action and continuity under uncertainty. It is a canonical public decision registry, not a Kungfu product API, a central service, a universal workflow language, or a belief test. Products, organizations, humans, Agents, and other bounded systems can adopt exact decisions within a declared scope and publish their own mappings, evidence, qualification, and residual risk."
+      "summary": "KFD—Kung Fu Decisions—is an open engineering standard for a small, testable foundation for reliable action and continuity under uncertainty. It is a canonical public decision registry, not a Kungfu product API, a central service, a universal workflow language, or a belief test. Products, organizations, humans, Agents, and other bounded systems can adopt exact decisions within a declared scope and publish their own mappings, evidence, qualification, and residual risk."
     },
     {
       "order": 8,

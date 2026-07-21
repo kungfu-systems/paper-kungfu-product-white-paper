@@ -28,7 +28,7 @@ jobs:
       toolchain-type: config
       verify-command: npm run check
       artifact-name: paper-kungfu-product-white-paper
-      artifact-paths: _build/kungfu-real-world-agent-work.pdf
+      artifact-paths: _build/kungfu-white-paper.pdf
       github-release: true
       release-passport-product-name: Kungfu Product White Paper
       release-passport-impact-json: release-impact.json

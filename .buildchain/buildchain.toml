@@ -6,12 +6,12 @@ name = "paper-kungfu-product-white-paper"
 
 [publication]
 kind = "paper"
-title = "Kungfu: Verified Continuity for Agent Work"
+title = "Kungfu: The Session Is Not the Work"
 version = "0.1.0-alpha.7"
-abstract = "Project Cuts, an embeddable runtime, and an open responsibility standard for Agent work that outlives the chat."
+abstract = "Verified continuity for Agent work that outlives the chat."
 authors = [ "Keren Dong" ]
-primary_artifact = "_build/kungfu-real-world-agent-work.pdf"
-artifact_paths = [ "_build/kungfu-real-world-agent-work.pdf" ]
+primary_artifact = "_build/kungfu-white-paper.pdf"
+artifact_paths = [ "_build/kungfu-white-paper.pdf" ]
 metadata_paths = [ "README.md", "docs/MAP.md", "package.json", "package-lock.json", "release-impact.json", "site/brand-site.json", "site/evidence-site.json", "site/site-bundles.json" ]
 source_paths = [ "paper", "README.md", "LICENSE", "Makefile", "package.json", "package-lock.json", "release-impact.json", "scripts", "site" ]
 site_consumers = [ "kungfu.tech", "papers.libkungfu.dev" ]
@@ -30,7 +30,7 @@ registry_path = ".buildchain/publication/publication-registry.json"
 type = "latex-docker"
 image = "ghcr.io/kungfu-systems/build-images/latex-pdf-builder"
 digest = "sha256:f4dc7cb0e0b23cfc2fcde663a65f36c5e71e3ae8e6477e5a24f7ad5237300f10"
-command = "mkdir -p _build && cd paper && latexmk -pdf -outdir=../_build main.tex && mv ../_build/main.pdf ../_build/kungfu-real-world-agent-work.pdf"
+command = "mkdir -p _build && cd paper && latexmk -pdf -outdir=../_build main.tex && mv ../_build/main.pdf ../_build/kungfu-white-paper.pdf"
 
 [version]
 required = true

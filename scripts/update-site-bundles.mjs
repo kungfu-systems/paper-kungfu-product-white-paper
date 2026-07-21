@@ -62,6 +62,7 @@ const normalizeLatex = (latex) => latex
   .replace(/\s*\\\\\s*/g, "\n")
   .replace(/``/g, "\"")
   .replace(/''/g, "\"")
+  .replace(/---/g, "—")
   .replace(/~/g, " ")
   .replace(/\\&/g, "&")
   .replace(/\\_/g, "_")
@@ -167,8 +168,8 @@ export const buildSiteBundles = () => {
     source,
     routes: {
       canonicalHost: "kungfu.tech",
-      canonicalPath: "/whitepaper/kungfu-real-world-agent-work",
-      canonicalUrl: "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work",
+      canonicalPath: "/whitepaper/kungfu-white-paper",
+      canonicalUrl: "https://kungfu.tech/whitepaper/kungfu-white-paper",
       indexPath: "/whitepaper",
       indexUrl: "https://kungfu.tech/whitepaper",
       pdfPath: `/whitepaper/${pdfFilename}`,
@@ -182,7 +183,7 @@ export const buildSiteBundles = () => {
       stance: "Give your agent verified context. Keep the work when the chat ends.",
       primaryCta: {
         label: "Read the white paper",
-        href: "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work",
+        href: "https://kungfu.tech/whitepaper/kungfu-white-paper",
       },
       secondaryCta: {
         label: "Inspect evidence",
@@ -239,7 +240,7 @@ export const buildSiteBundles = () => {
       pdfUrl: `https://papers.libkungfu.dev/kungfu-product-white-paper/${pdfFilename}`,
       sourcePath: "/kungfu-product-white-paper/source.tar.gz",
       sourceUrl: "https://papers.libkungfu.dev/kungfu-product-white-paper/source.tar.gz",
-      brandUrl: "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work",
+      brandUrl: "https://kungfu.tech/whitepaper/kungfu-white-paper",
       repositoryUrl: "https://github.com/kungfu-systems/paper-kungfu-product-white-paper",
     },
     sectionMap: sections.map((section, index) => ({
