@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "contract": "kungfu-buildchain-impact",
+  "release": {
+    "tag": "v0.1.0-alpha.8",
+    "line": "v0.1",
+    "channel": "release",
+    "targetRef": "release/v0/v0.1"
+  },
+  "versionImpact": {
+    "final": "minor",
+    "source": "session-continuity-thesis",
+    "rationale": "This prerelease makes the session-model failure explicit, preserves the Project Cut and builder strategy, and establishes a title-independent publication coordinate."
+  },
+  "surfaceImpacts": [
+    {
+      "id": "white-paper-content",
+      "impact": "minor",
+      "class": "content",
+      "rationale": "The paper now makes Project Cut the first user object and specifies cross-session continuation, runtime, authority, evidence, maturity, and non-claim boundaries.",
+      "source": ""
+    },
+    {
+      "id": "agent-builder-positioning",
+      "impact": "minor",
+      "class": "product-positioning",
+      "rationale": "The builder path now explicitly recommends embedding libkungfu immediately while developing a participant-owned KFD-compatible Hub in parallel.",
+      "source": ""
+    },
+    {
+      "id": "site-bundle-content",
+      "impact": "minor",
+      "class": "downstream-content",
+      "rationale": "Generated brand and evidence bundles expose the new title, section map, claims, adoption path, and alpha residual-risk boundary to site consumers.",
+      "source": ""
+    },
+    {
+      "id": "publication-routes",
+      "impact": "patch",
+      "class": "release-governance",
+      "rationale": "The PDF and brand-site route move to the durable kungfu-white-paper coordinate; the npm coordinate and Buildchain archive identity remain stable.",
+      "source": ""
+    }
+  ],
+  "summary": "The paper now opens with the session-continuity failure and publishes through a durable, title-independent white-paper coordinate.",
+  "classification": "minor",
+  "breaking": false,
+  "migrationRequired": false
+}
