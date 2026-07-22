@@ -31,7 +31,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \lhead{\small Kungfu White Paper}
-\rhead{\small Real-World Work with Agents}
+\rhead{\small The Session Is Not the Work}
 \cfoot{\small\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 
@@ -54,12 +54,15 @@
   colorlinks=true,
   linkcolor=black,
   citecolor=black,
-  urlcolor=black
+  urlcolor=black,
+  pdftitle={Kungfu: The Session Is Not the Work},
+  pdfauthor={Keren Dong; Kungfu Origin Technology Limited},
+  pdfsubject={Verified continuity for agent work that outlives the chat}
 }
 
-\title{Kungfu: Managing Real-World Work with Agents}
+\title{Kungfu: The Session Is Not the Work}
 \author{Keren Dong\\Kungfu Origin Technology Limited\\\href{mailto:keren.dong@kungfu.link}{keren.dong@kungfu.link}}
-\date{White Paper Draft: July 2026}
+\date{Alpha White Paper: July 2026}
 
 \begin{document}
 
@@ -68,18 +71,22 @@
 \raggedright
 {\small\color{KFGreen}\textbf{KUNGFU WHITE PAPER | JULY 2026}}\par
 \vspace{2.5cm}
-{\Huge\bfseries\color{KFBlack} Kungfu: Managing Real-World Work with Agents\par}
+{\Huge\bfseries\color{KFBlack} Kungfu: The Session Is Not the Work\par}
 \vspace{0.8cm}
-{\Large\color{KFSlate} A product thesis for durable facts, trusted value, and human-agent cooperation in real-world work.\par}
+{\Large\color{KFSlate} Verified continuity for agent work that outlives the chat.\par}
+\vspace{0.55cm}
+{\normalsize\color{KFSlate} Project Cuts, \texttt{libkungfu}, and KFD: a local runtime and open responsibility protocol for long-running agent work.\par}
 \vspace{1.2cm}
-\calloutbox{Core thesis}{Kungfu helps people and agents manage real-world work through non-drifting facts, fact-based trust, trusted value, and observer-declared timelines.}
+\calloutbox{User promise}{Give your agent verified context. Keep the work when the chat ends.}
+\calloutbox{The move for Agent builders}{Embed \texttt{libkungfu} now. Deliver Project Cut continuity. Build your KFD-compatible Hub in parallel.}
 \vspace{0.8cm}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.28\textwidth}>{\raggedright\arraybackslash}X}
 \toprule
-\signalrow{Audience}{Agent users, developers, operators, researchers, and early product evaluators.}
-\signalrow{Product frame}{A local-first control plane and runtime fact layer for real-world work with agents.}
-\signalrow{Philosophy}{Cooperation between humans and agents should start from trusted value, not hidden pressure.}
-\signalrow{Proof path}{Real-world product validation, KFD principles, Buildchain evidence, and public site bundles.}
+\signalrow{First user object}{A Project Cut: the verified point from which a project can continue.}
+\signalrow{Reference runtime}{\texttt{libkungfu}: embeddable Facts, Episodes, verification, recovery, and Project Cut support.}
+\signalrow{Open standard}{KFD: portable responsibility and evidence semantics across independently owned systems.}
+\signalrow{Product boundary}{Each vendor keeps its interface, models, accounts, policy, cloud, and customer relationship.}
+\signalrow{Current status}{Alpha interfaces and first-party evidence; source-pinned integration is encouraged, certification is not claimed.}
 \bottomrule
 \end{tabularx}
 \vfill
@@ -99,7 +106,7 @@
 \input{sections/08-risks}
 \input{sections/09-conclusion}
 
-\nocite{kungfuKfd,kungfuBuildchain,kungfuValidation}
+\nocite{kungfuKfd,kungfuProjectCut,kungfuRuntime,kungfuAgentHub,kungfuBuilders,kungfuDogfood,kungfuBuildchain}
 \bibliographystyle{plain}
 \bibliography{references}
 

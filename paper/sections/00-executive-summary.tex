@@ -1,18 +1,22 @@
-\section{Executive Summary}
+\section{Executive Summary: The Work Must Outlive the Chat}
 
-Agents are moving from short-lived question answering into real-world work:
-coding, research, operations, planning, documentation, personal administration,
-and long-running projects that cross machines, tools, accounts, and time. The
-hard problem is no longer only model capability. It is managing durable facts,
-responsibility, trust, context, artifacts, and collaboration between humans and
-agents while real work changes underneath them.
+\textbf{The session is the right unit of interaction---and the wrong unit of
+continuity for long-running Agent work.} A session can host valuable code,
+research, plans, operations, and decisions. It cannot, by itself,
+authoritatively settle what the project has become, what was accepted, which
+authority still applies, or where another participant may safely continue.
+When the session closes, a transcript, summary, or unverified memory is not
+enough. The model may be capable while the work remains fragile.
 
-\calloutbox{What Kungfu is}{Kungfu is a local-first control plane and runtime
-fact layer for real-world work with agents. It gives humans and agents shared
-interfaces for facts, tasks, execution records, timelines, costs, artifacts,
-and reviewable records.}
+Kungfu closes this gap through three distinct layers. A \textbf{Project Cut}
+is the verifiable settlement and continuation coordinate presented to the
+next human or Agent. \texttt{libkungfu} is the local runtime that records,
+verifies, recovers, and resumes that continuity inside a participant's Hub.
+KFD is the open responsibility protocol that lets independently owned Hubs
+exchange continuity evidence without sharing one central cloud or surrendering
+their product boundary.
 
-Kungfu also provides the founding runtime proof for an open Agent Supply
+Together, these products provide the founding proof for an open Agent Supply
 Chain. KFD-3 makes product cooperation discoverable; Buildchain binds product
 claims to exact software artifacts; KFD-2 supports purpose-bound trust;
 libkungfu and \texttt{.kungfu} preserve durable work facts; and the public KFD
@@ -25,50 +29,64 @@ source-built runtime slices, and first-party qualification. It does not prove
 two independent production Hubs, external vendor adoption, industry-standard
 status, or blanket stable interoperability.
 
-\subsection{Why This Matters}
+A Project Cut binds the accepted source state, the perspective used to
+understand it, the causal work that occurred, the decisions that admitted the
+result, unresolved risk, and the coordinate from which authorized work may
+continue. It does not replace those authorities. It gives the next participant
+one bounded answer to the question: \emph{where can this project safely
+continue?}
 
-Most agent tools still start from a technical surface: prompts, model calls,
-editor workflows, or evaluation dashboards. Those are useful, but they are not
-the user's real unit of concern. The real unit is work: something a person
-needs to finish, understand, resume, delegate, audit, or recover.
+\calloutbox{The product promise}{Give your agent verified context. Keep the
+work when the chat ends.}
 
-Kungfu starts from that real unit. It treats activity records, recovery, cost
-visibility, task state, timelines, and agent bootstrap as surfaces around
-real-world work rather than isolated products.
+\subsection{One Product Decision, Two Adoption Paths}
 
-\subsection{The Core Argument}
+Users should encounter Project Cut continuity before they need to understand
+the runtime beneath it. Agent builders, however, need an immediate technical
+path. Kungfu therefore separates two responsibilities:
 
-\begin{itemize}
-  \item Facts must not drift between source, build, release, runtime, GUI, CLI,
-  API, and agent-facing surfaces.
-  \item Trust must start from inspectable facts, not reputation, authority, or
-  hidden state.
-  \item Cooperation must start from trusted value: humans and agents should see
-  why the product is useful, what constraints apply, and how decisions can be
-  reviewed.
-  \item Timelines must declare their observer, because real work happens across
-  machines, agents, processes, and partial perspectives.
-\end{itemize}
+\begin{enumerate}
+  \item embed \texttt{libkungfu} as the reference runtime for durable Facts,
+  Episodes, verification, recovery, and Project Cut continuity; and
+  \item build a participant-owned Hub that retains the vendor's user
+  experience, models, identity, accounts, policies, cloud, admission rules,
+  and customer relationship while exchanging portable responsibility evidence
+  through KFD.
+\end{enumerate}
 
-\subsection{What This Paper Covers}
+These paths should proceed in parallel. A vendor does not need to rebuild a
+journal, content-addressed evidence store, recovery engine, and cross-language
+fact layer before delivering continuity. Nor should embedding a runtime force
+the vendor to surrender its product boundary to a central Kungfu service.
 
-This paper is a product white paper: a readable statement of Kungfu's market
-problem, product thesis, philosophy, architecture, roadmap, and proof path. It
-is written for readers who want to understand why Kungfu should exist before
-they inspect the lower-level release evidence.
+\calloutbox{Recommended Agent Builder strategy}{Build your Hub. Do not rebuild
+the runtime. Embed libkungfu now, prove one source-pinned Project Cut
+loop, and develop your KFD-compatible Hub boundary in parallel.}
 
-\subsection{What To Read For}
+\subsection{The Architecture in Five Responsibilities}
 
-\begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}X}
+\begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{0.21\textwidth}>{\raggedright\arraybackslash}X}
 \toprule
-If you are a user & Read for how Kungfu helps make long-running agent work
-visible, resumable, and trustworthy. \\
-If you are an agent & Read for the fact surfaces and collaboration stance you
-can rely on when using or extending Kungfu. \\
-If you are a developer & Read for the architecture: local runtime facts,
-dual-first interfaces, and the polyglot membrane. \\
-If you are evaluating the project & Read for the proof path: real-world
-product validation, KFD principles, Buildchain evidence, and public site
-bundles. \\
+Project Cut & The project settlement and continuation coordinate presented to
+users and Agents. \\
+\texttt{libkungfu} & The reference implementation for runtime Facts, Episodes,
+journal authority, verification, export, and recovery. \\
+KFD & The open engineering standard for responsibility, evidence, trust, and
+continuity across independently implemented systems. \\
+Buildchain & Artifact, provenance, release, and evidence publication; not
+runtime or project authority. \\
+Vendor Agent Hub & Product experience, models, identity, policy, accounts,
+admission, cloud, and customer relationship. \\
 \bottomrule
 \end{tabularx}
+
+\subsection{What This Paper Claims}
+
+Kungfu provides a concrete architecture, open source implementation, and
+first-party evidence for work that survives session and Agent replacement. It
+does not claim that a transcript is a Project Cut, that delivery is admission,
+that an Episode proves completion, or that authentication grants authority. It
+does not claim external vendor adoption, stable KFD Hub interoperability,
+certification, or broad production readiness. The public interfaces described
+here are alpha surfaces and should be adopted through exact source and evidence
+coordinates.

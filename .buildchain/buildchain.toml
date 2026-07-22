@@ -6,15 +6,15 @@ name = "paper-kungfu-product-white-paper"
 
 [publication]
 kind = "paper"
-title = "Kungfu: Managing Real-World Work with Agents"
-version = "0.1.0-alpha.1"
-abstract = "A product white paper describing Kungfu's thesis, architecture, roadmap, and trust model for managing real-world work with agents."
-authors = ["Keren Dong"]
-primary_artifact = "_build/main.pdf"
-artifact_paths = ["_build/main.pdf"]
-metadata_paths = ["README.md", "docs/MAP.md", "package.json", "package-lock.json", "release-impact.json", "site"]
-source_paths = ["paper", "README.md", "LICENSE", "Makefile", "package.json", "package-lock.json", "release-impact.json", "scripts", "site"]
-site_consumers = ["kungfu.tech", "papers.libkungfu.dev"]
+title = "Kungfu: The Session Is Not the Work"
+version = "0.1.0-alpha.8"
+abstract = "Verified continuity for Agent work that outlives the chat."
+authors = [ "Keren Dong" ]
+primary_artifact = "_build/kungfu-white-paper.pdf"
+artifact_paths = [ "_build/kungfu-white-paper.pdf" ]
+metadata_paths = [ "README.md", "docs/MAP.md", "package.json", "package-lock.json", "release-impact.json", "site/brand-site.json", "site/evidence-site.json", "site/site-bundles.json" ]
+source_paths = [ "paper", "README.md", "LICENSE", "Makefile", "package.json", "package-lock.json", "release-impact.json", "scripts", "site" ]
+site_consumers = [ "kungfu.tech", "papers.libkungfu.dev" ]
 manifest_path = ".buildchain/publication/publication-artifact.json"
 source_bundle_path = ".buildchain/publication/source.tar.gz"
 
@@ -29,8 +29,8 @@ registry_path = ".buildchain/publication/publication-registry.json"
 [publication.toolchain]
 type = "latex-docker"
 image = "ghcr.io/kungfu-systems/build-images/latex-pdf-builder"
-digest = "sha256:c20f3809e96836c1c78e97c76939d12f1de3fed0ea9b7c40c43332ec2ea480f8"
-command = "mkdir -p _build && cd paper && latexmk -pdf -outdir=../_build main.tex"
+digest = "sha256:f4dc7cb0e0b23cfc2fcde663a65f36c5e71e3ae8e6477e5a24f7ad5237300f10"
+command = "mkdir -p _build && cd paper && latexmk -pdf -outdir=../_build main.tex && mv ../_build/main.pdf ../_build/kungfu-white-paper.pdf"
 
 [version]
 required = true

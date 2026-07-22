@@ -1,42 +1,28 @@
-\section{Architecture Direction}
+\section{How Work Continues Across Sessions}
 
-Kungfu's architecture follows from the product thesis.
+Continuity is a closed loop, not a saved transcript. Kungfu's target product
+loop is:\cite{kungfuProjectCut}
 
-\subsection{Core Runtime Fact Layer}
+\begin{enumerate}
+  \item inspect and verify the current Project Cut;
+  \item accept bounded work in a continuing Initiative or Pursuit, against the
+  exact Atlas and Warrant roots;
+  \item execute while preserving causal occurrence in an Episode;
+  \item submit a completion or state-change Claim with evidence;
+  \item independently assess the Claim and record the authorized Decision;
+  \item admit only the accepted result and prepare a candidate successor Cut;
+  \item verify and explicitly settle the exact candidate; and
+  \item start a fresh session or Agent from that successor Project Cut.
+\end{enumerate}
 
-At the center is a local runtime fact layer. It records durable facts about
-work, agents, execution records, tasks, artifacts, cost, state transitions, and
-observer timelines. The storage layer is not disposable cache. If Kungfu becomes a
-source of truth for long-running work, storage needs the operational qualities
-users expect from serious local infrastructure: verification, backup,
-recovery, migration, and clear failure modes.
+In short:
 
-\subsection{Control Plane Interfaces}
-
-Kungfu GUI and TUI are control planes for humans. They should make long-running
-agent work visible without forcing the user to read logs or reconstruct
-context manually. CLI, Python, and Node APIs are control planes for agents and
-automation. They should expose the same facts in structured form.
-
-The control plane is therefore not only a supervisor's panel over agent
-activity. It is a shared work environment where humans and agents can discover
-capabilities, inspect value evidence, understand constraints, and leave
-reviewable records.
-
-\subsection{Polyglot Membrane}
-
-The product needs a polyglot membrane because the best ecosystem for each layer
-is different:
-
-\begin{itemize}[leftmargin=*]
-  \item frontend and desktop surfaces benefit from Node, Electron, React, and
-  the web ecosystem;
-  \item agent integration benefits from Python and Node APIs;
-  \item durable high-performance core surfaces benefit from C++ where needed.
-\end{itemize}
-
-The membrane is not accidental complexity. It lets Kungfu compress complexity
-inside the product while exposing low-friction interfaces to humans and agents.
+\begin{center}
+\textbf{session ends $\rightarrow$ Project Cut remains $\rightarrow$ fresh
+Agent verifies $\rightarrow$ work occurs $\rightarrow$ Episode records
+$\rightarrow$ Claim is decided $\rightarrow$ result is admitted
+$\rightarrow$ successor Cut is published}
+\end{center}
 
 \subsection{Agent Supply Chain}
 
@@ -61,10 +47,42 @@ facts or make the trust decision. KFD does not become a central Hub, identity
 provider, database, or transport. Kungfu's JSON surfaces are edge projections,
 not a second authoritative data plane.
 
-\subsection{Extension Model}
+\subsection{Conservative Context Projection}
 
-Kungfu extensions should let other users define their own work semantics
-without forking the product. A research lab, operations team, developer,
-writer, or personal user may need a different semantic model. The core should
-support these variations through explicit schemas, extension packages, and
-capability declarations.
+A new Agent does not need every token from every prior session. It needs a
+bounded projection that can be traced back to admitted Facts, causal Episodes,
+declared perspective, continuing direction, and current authority. A useful
+projection may summarize or omit material, but it must declare that loss and
+must not upgrade an unknown, conflict, or withheld field into a verified fact.
+
+The full Project Cut remains the round-trip authority. A model-specific context
+pack is a replaceable view. If the view cannot preserve a load-bearing
+distinction, the system must expose the loss or refuse the projection rather
+than silently flattening it.
+
+\subsection{Session and Agent Replacement}
+
+The architecture treats sessions, models, and Agent processes as replaceable.
+The work should survive:
+
+\begin{itemize}
+  \item context-window exhaustion or deliberate context reset;
+  \item a new model or provider taking over the same bounded Assignment;
+  \item process crash and recovery from the journal and content roots;
+  \item movement between local and remote execution environments;
+  \item human review between producing and continuing Agents; and
+  \item exchange between independently owned Hubs that make their own
+  admission decisions.
+\end{itemize}
+
+The successor does not trust the predecessor because both are called Agents.
+It verifies the cut, evidence, authority, and receipt under its local policy.
+
+\subsection{Failure Must Stay Visible}
+
+Continuity is invalid if the next session starts from a missing Episode, stale
+Atlas, mismatched receipt, incomplete parent acceptance, changed source after a
+Claim, widened Warrant, conflicting successor, or unverifiable root. Kungfu
+preserves such conditions as typed failure, conflict, unavailability, or
+intentional withholding. Last-write-wins and confident prose are not recovery
+strategies.

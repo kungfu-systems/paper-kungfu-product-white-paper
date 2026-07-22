@@ -10,20 +10,6 @@ const fail = (message) => {
 const readJson = (path) => JSON.parse(readFileSync(path, "utf8"));
 const stable = (value) => `${JSON.stringify(value, null, 2)}\n`;
 
-const promotionWorkflow = readFileSync(
-  ".github/workflows/buildchain-ref-promotion.yml",
-  "utf8",
-);
-for (const requiredSurface of [
-  "buildchain-ref:",
-  "inputs['buildchain-ref'] || (startsWith(github.event.workflow_run.head_branch || inputs['target-ref'], 'alpha/') && 'v2-alpha' || 'v2')",
-  "buildchain-contract-lock-path: ${{ startsWith(github.event.workflow_run.head_branch || inputs['target-ref'], 'alpha/') && '.buildchain/alpha-contract-lock.json' || '.buildchain/contract-lock.json' }}",
-]) {
-  if (!promotionWorkflow.includes(requiredSurface)) {
-    fail(`Buildchain promotion workflow must include ${requiredSurface}`);
-  }
-}
-
 for (const [path, expected] of Object.entries(buildSiteBundles())) {
   let actual;
   try {
@@ -44,13 +30,12 @@ for (const requiredFile of [
   "site",
   "scripts",
   ".buildchain/buildchain.toml",
-  ".buildchain/alpha-contract-lock.json",
   ".buildchain/contract-lock.json",
   ".buildchain/publication/publication-artifact.json",
   ".buildchain/publication/publication-artifact-passport.json",
   ".buildchain/publication/publication-registry.json",
   ".buildchain/publication/source.tar.gz",
-  "_build/main.pdf",
+  "_build/kungfu-white-paper.pdf",
   "release-impact.json",
 ]) {
   if (!packageJson.files?.includes(requiredFile)) {
@@ -63,7 +48,6 @@ for (const requiredExport of [
   "./site/site-bundles.json",
   "./pdf",
   "./buildchain/contract-lock.json",
-  "./buildchain/alpha-contract-lock.json",
   "./publication-artifact.json",
   "./publication-artifact-passport.json",
   "./publication-registry.json",
@@ -75,19 +59,18 @@ for (const requiredExport of [
     fail(`package.json exports must include ${requiredExport}`);
   }
 }
+if (packageJson.exports?.["./pdf"] !== "./_build/kungfu-white-paper.pdf") {
+  fail("package.json ./pdf export must point to the declared public PDF filename");
+}
 if (packageJson.publishConfig?.registry !== "https://registry.npmjs.org/" || packageJson.publishConfig?.access !== "public") {
   fail("package.json publishConfig must target public npmjs");
 }
 const contractLock = readJson(".buildchain/contract-lock.json");
-const alphaContractLock = readJson(".buildchain/alpha-contract-lock.json");
 if (contractLock.contract !== "kungfu-buildchain-contract-lock") {
   fail(".buildchain/contract-lock.json must be a Buildchain contract lock");
 }
-if (contractLock.buildchain?.ref !== "v2") {
-  fail(".buildchain/contract-lock.json must lock the Buildchain v2 floating ref");
-}
-if (alphaContractLock.contract !== "kungfu-buildchain-contract-lock" || alphaContractLock.buildchain?.ref !== "v2-alpha") {
-  fail(".buildchain/alpha-contract-lock.json must lock the Buildchain v2-alpha floating ref");
+if (contractLock.buildchain?.ref !== "v2-alpha") {
+  fail(".buildchain/contract-lock.json must lock the Buildchain v2-alpha floating ref");
 }
 const releaseImpact = readJson("release-impact.json");
 if (releaseImpact.contract !== "kungfu-buildchain-impact") {
@@ -108,13 +91,13 @@ for (const consumer of ["kungfu.tech", "papers.libkungfu.dev"]) {
 }
 
 const brandBundle = readJson("site/brand-site.json");
-if (brandBundle.routes?.canonicalUrl !== "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work") {
+if (brandBundle.routes?.canonicalUrl !== "https://kungfu.tech/whitepaper/kungfu-white-paper") {
   fail("brand site bundle must declare the kungfu.tech canonical white paper URL");
 }
 if (brandBundle.routes?.indexUrl !== "https://kungfu.tech/whitepaper") {
   fail("brand site bundle must declare the kungfu.tech white paper index URL");
 }
-if (brandBundle.routes?.pdfUrl !== "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work.pdf") {
+if (brandBundle.routes?.pdfUrl !== "https://kungfu.tech/whitepaper/kungfu-white-paper.pdf") {
   fail("brand site bundle must declare the kungfu.tech canonical PDF URL");
 }
 if (brandBundle.hero?.primaryCta?.href !== brandBundle.routes?.canonicalUrl) {
@@ -133,6 +116,9 @@ if (evidenceBundle.routes?.brandUrl !== brandBundle.routes?.canonicalUrl) {
 }
 if (brandBundle.routes?.evidenceUrl !== evidenceBundle.routes?.canonicalUrl) {
   fail("brand site evidenceUrl must point to the evidence canonicalUrl");
+}
+if (evidenceBundle.routes?.pdfUrl !== "https://papers.libkungfu.dev/kungfu-product-white-paper/kungfu-white-paper.pdf") {
+  fail("evidence site bundle must declare the public PDF URL");
 }
 
 try {

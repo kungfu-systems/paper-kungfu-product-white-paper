@@ -1,7 +1,7 @@
 {
   "name": "@kungfu-tech/paper-kungfu-product-white-paper",
-  "version": "0.1.0-alpha.1",
-  "description": "Kungfu product white paper source and site bundles for managing real-world work with agents",
+  "version": "0.1.0-alpha.8",
+  "description": "Kungfu white paper on why long-running Agent work needs verified continuity beyond the session",
   "license": "Apache-2.0",
   "type": "module",
   "files": [
@@ -21,7 +21,7 @@
     ".buildchain/publication/publication-artifact-passport.json",
     ".buildchain/publication/publication-registry.json",
     ".buildchain/publication/source.tar.gz",
-    "_build/main.pdf",
+    "_build/kungfu-white-paper.pdf",
     "docs",
     "paper",
     "release-impact.json",
@@ -35,7 +35,7 @@
     "./paper/main.tex": "./paper/main.tex",
     "./paper/references.bib": "./paper/references.bib",
     "./paper/sections/*.tex": "./paper/sections/*.tex",
-    "./pdf": "./_build/main.pdf",
+    "./pdf": "./_build/kungfu-white-paper.pdf",
     "./buildchain/contract-lock.json": "./.buildchain/contract-lock.json",
     "./buildchain/alpha-contract-lock.json": "./.buildchain/alpha-contract-lock.json",
     "./publication-artifact.json": "./.buildchain/publication/publication-artifact.json",
