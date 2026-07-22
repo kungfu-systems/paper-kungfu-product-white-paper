@@ -121,6 +121,22 @@ if (evidenceBundle.routes?.pdfUrl !== "https://papers.libkungfu.dev/kungfu-produ
   fail("evidence site bundle must declare the public PDF URL");
 }
 
+for (const bundle of [brandBundle, evidenceBundle]) {
+  const supplyChain = bundle.agentSupplyChain;
+  if (!supplyChain || supplyChain.layers?.length !== 5) {
+    fail(`${bundle.site} agentSupplyChain must declare exactly five layers`);
+    continue;
+  }
+  for (const layer of supplyChain.layers) {
+    if (!Array.isArray(layer.evidenceCoordinates) || layer.evidenceCoordinates.length === 0) {
+      fail(`${bundle.site} agentSupplyChain layer ${layer.id} must declare immutable evidenceCoordinates`);
+    }
+    if (!Array.isArray(layer.knownLimits) || layer.knownLimits.length === 0) {
+      fail(`${bundle.site} agentSupplyChain layer ${layer.id} must declare knownLimits`);
+    }
+  }
+}
+
 try {
   execFileSync("git", ["diff", "--check"], { stdio: "pipe" });
 } catch (error) {

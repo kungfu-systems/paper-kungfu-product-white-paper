@@ -74,6 +74,10 @@ portability facts for renderers while leaving each product repository and
 immutable release artifact authoritative for its own mechanics and evidence.
 Sites may adapt presentation and navigation, but must preserve the five-layer
 order, maturity vocabulary, claim boundary, and non-claims.
+Each layer also carries exact immutable `evidenceCoordinates` and explicit
+`knownLimits`; consumers must not replace those release- or commit-bound
+coordinates with mutable branch links or omit the limits from machine-facing
+projections.
 
 Regenerate them after changing the paper source:
 
