@@ -38,6 +38,29 @@ is different:
 The membrane is not accidental complexity. It lets Kungfu compress complexity
 inside the product while exposing low-friction interfaces to humans and agents.
 
+\subsection{Agent Supply Chain}
+
+The public architecture separates five responsibilities that products often
+rebuild inside one private control plane:
+
+\begin{enumerate}[leftmargin=*]
+  \item KFD-3 exposes value, constraints, choices, commands, Exit, and records
+  so products can discover how to cooperate.
+  \item Buildchain binds product-owned declarations to an exact source cut,
+  build, artifacts, checks, and promotion evidence.
+  \item KFD-2 lets a receiver assess those claims for a declared purpose while
+  retaining residual risk and decision ownership.
+  \item libkungfu and \texttt{.kungfu} preserve admitted work facts, Episodes,
+  roots, exports, and recovery evidence; applications still own domain facts.
+  \item the KFD Agent Hub profile carries bounded responsibility objects across
+  independently owned products, with receiver-owned admission.
+\end{enumerate}
+
+The layers remain separable authorities. Buildchain does not invent product
+facts or make the trust decision. KFD does not become a central Hub, identity
+provider, database, or transport. Kungfu's JSON surfaces are edge projections,
+not a second authoritative data plane.
+
 \subsection{Extension Model}
 
 Kungfu extensions should let other users define their own work semantics

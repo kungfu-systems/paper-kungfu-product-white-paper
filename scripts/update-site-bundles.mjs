@@ -135,6 +135,29 @@ const siteSection = (section, role, presentation, priority) => ({
   markdown: section.markdown,
 });
 
+const agentSupplyChain = {
+  contract: "kungfu-agent-supply-chain-public-narrative/v1",
+  categoryStatement: "Kungfu is an open Agent Supply Chain protocol stack for discovering how Agent products cooperate, binding claims to exact software artifacts, establishing purpose-bound trust, preserving durable work facts, and carrying that work across independently owned Hubs.",
+  claimBoundary: "Kungfu does not claim that a multi-Hub ecosystem already exists. It proves that Agent discovery, software provenance, trust, durable work state, and portability no longer need to be rebuilt or locked inside each Hub.",
+  maturityVocabulary: ["proved-now", "enabled-by-protocol", "not-claimed"],
+  layers: [
+    { id: "kfd-3", order: 1, owner: "KFD", statement: "Discover how products cooperate through inspectable value, constraints, choices, commands, Exit, and records.", statusClass: "proved-now", humanRoute: "https://kfd.libkungfu.dev/3", agentRoute: "https://kfd.libkungfu.dev/manifest.json" },
+    { id: "buildchain", order: 2, owner: "Buildchain", statement: "Bind product-owned declarations to exact source, build, artifact, checks, and promotion evidence.", statusClass: "proved-now", humanRoute: "https://buildchain.libkungfu.dev/", agentRoute: "https://buildchain.libkungfu.dev/manifest.json" },
+    { id: "kfd-2", order: 3, owner: "KFD and receiver", statement: "Assess claims for a declared purpose while retaining residual risk and decision ownership.", statusClass: "proved-now", humanRoute: "https://kfd.libkungfu.dev/2", agentRoute: "https://kfd.libkungfu.dev/manifest.json" },
+    { id: "libkungfu", order: 4, owner: "Kungfu and adopter", statement: "Preserve admitted work facts, Episodes, roots, export, and recovery evidence while applications own domain facts.", statusClass: "proved-now", humanRoute: "https://libkungfu.dev/core/", agentRoute: "https://libkungfu.dev/core/manifest.json" },
+    { id: "agent-hub-portability", order: 5, owner: "KFD profile and each Hub", statement: "Carry bounded responsibility objects across independently owned products with receiver-owned admission.", statusClass: "enabled-by-protocol", humanRoute: "https://kfd.libkungfu.dev/protocols/agent-hub", agentRoute: "https://kfd.libkungfu.dev/manifest.json" },
+  ],
+  notClaimed: [
+    "two independent production Hubs",
+    "external vendor adoption or endorsement",
+    "industry-standard status",
+    "universal trust or blanket stable compatibility",
+    "public Kungfu Cloud",
+    "lossless one-click migration",
+  ],
+  vendorNextAction: "Assign an owner, run a bounded assessment, build one adapter or conformance spike, submit protocol gaps, then decide to adopt, co-shape, or monitor.",
+};
+
 export const buildSiteBundles = () => {
   const buildchain = parseBuildchain();
   const pkg = packageInfo();
@@ -187,6 +210,7 @@ export const buildSiteBundles = () => {
       philosophicalClaim: "Cooperation between humans and agents should start from trusted value, not hidden pressure.",
       proofPath: "Real-world product validation, KFD principles, Buildchain evidence, and public site bundles.",
     },
+    agentSupplyChain,
     principles,
     homepageSections: [
       siteSection(sections.find((section) => section.title === "Executive Summary"), "first-screen", "executive-summary", 10),
@@ -245,6 +269,7 @@ export const buildSiteBundles = () => {
       sourceBundlePath: ".buildchain/publication/source.tar.gz",
       residualRisk: "The paper is a draft product white paper; philosophical and product-positioning claims still require human review before launch use.",
     },
+    agentSupplyChain,
   };
 
   return {
