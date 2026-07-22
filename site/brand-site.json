@@ -4,7 +4,7 @@
   "consumer": "kungfu.tech",
   "source": {
     "package": "@kungfu-tech/paper-kungfu-product-white-paper",
-    "packageVersion": "0.1.0-alpha.9",
+    "packageVersion": "0.1.0-alpha.10",
     "repository": "git+https://github.com/kungfu-systems/paper-kungfu-product-white-paper.git",
     "titleSource": ".buildchain/buildchain.toml",
     "paperEntrypoint": "paper/main.tex",
@@ -73,8 +73,18 @@
         "id": "kfd-3",
         "order": 1,
         "owner": "KFD",
+        "input": "Product-owned value, constraints, choices, commands, Exit, and record declarations",
+        "output": "A stable human-and-agent discovery surface for bounded cooperation",
         "statement": "Discover how products cooperate through inspectable value, constraints, choices, commands, Exit, and records.",
         "statusClass": "proved-now",
+        "evidenceCoordinates": [
+          "npm:@kungfu-tech/kfd@1.0.0-alpha.41#README.md",
+          "npm:@kungfu-tech/kfd@1.0.0-alpha.41#.buildchain/kfd-3/collaboration-interface.artifact.json"
+        ],
+        "knownLimits": [
+          "KFD-3 discovery is inspectable product guidance, not a hidden prompt or forced adoption mechanism.",
+          "The current evidence proves the KFD alpha surface, not external vendor adoption or stable certification."
+        ],
         "humanRoute": "https://kfd.libkungfu.dev/3",
         "agentRoute": "https://kfd.libkungfu.dev/manifest.json"
       },
@@ -82,8 +92,18 @@
         "id": "buildchain",
         "order": 2,
         "owner": "Buildchain",
+        "input": "KFD-3-discoverable product declarations and an exact source cut",
+        "output": "Artifact-bound provenance, checks, and promotion evidence",
         "statement": "Bind product-owned declarations to exact source, build, artifact, checks, and promotion evidence.",
         "statusClass": "proved-now",
+        "evidenceCoordinates": [
+          "npm:@kungfu-tech/buildchain@2.14.14-alpha.4#dist/site/product-mechanism.json",
+          "npm:@kungfu-tech/buildchain@2.14.14-alpha.4#dist/site/release-provenance.json"
+        ],
+        "knownLimits": [
+          "Buildchain does not create product facts or make the receiver's trust decision.",
+          "A passing Passport proves an exact release relation, not blanket certification, safety, or adoption."
+        ],
         "humanRoute": "https://buildchain.libkungfu.dev/",
         "agentRoute": "https://buildchain.libkungfu.dev/manifest.json"
       },
@@ -91,8 +111,18 @@
         "id": "kfd-2",
         "order": 3,
         "owner": "KFD and receiver",
+        "input": "Exact-artifact evidence, a declared purpose, and receiver policy",
+        "output": "A purpose-bound assessment with residual risk and decision ownership",
         "statement": "Assess claims for a declared purpose while retaining residual risk and decision ownership.",
         "statusClass": "proved-now",
+        "evidenceCoordinates": [
+          "npm:@kungfu-tech/kfd@1.0.0-alpha.41#decisions/KFD-2.md",
+          "npm:@kungfu-tech/kfd@1.0.0-alpha.41#.buildchain/kfd-2/public-release-trust.claim.json"
+        ],
+        "knownLimits": [
+          "KFD-2 is purpose-, cut-, and evidence-bound; it is not a company reputation score or universal trust certificate.",
+          "A prior assessment does not authorize a changed artifact, purpose, receiver policy, or future release."
+        ],
         "humanRoute": "https://kfd.libkungfu.dev/2",
         "agentRoute": "https://kfd.libkungfu.dev/manifest.json"
       },
@@ -100,8 +130,18 @@
         "id": "libkungfu",
         "order": 4,
         "owner": "Kungfu and adopter",
+        "input": "Receiver-admitted work facts, commands, Episodes, and roots",
+        "output": "Ordered durable records, export, recovery, and qualification evidence",
         "statement": "Preserve admitted work facts, Episodes, roots, export, and recovery evidence while applications own domain facts.",
         "statusClass": "proved-now",
+        "evidenceCoordinates": [
+          "git+https://github.com/kungfu-systems/kungfu.git#7eeb5bd1b45492f4da27eaacbe63eddfd6245176:docs/qualification/vendor-agent-hub-embedding.md",
+          "git+https://github.com/kungfu-systems/kungfu.git#7eeb5bd1b45492f4da27eaacbe63eddfd6245176:examples/opencode-kungfu/qualification/run.mjs"
+        ],
+        "knownLimits": [
+          "Applications retain authority over domain facts; libkungfu owns admitted runtime records and ordering within its declared boundary.",
+          "JSON is an edge projection, not a second authoritative data plane, and qualification remains platform- and cut-specific."
+        ],
         "humanRoute": "https://libkungfu.dev/core/",
         "agentRoute": "https://libkungfu.dev/core/manifest.json"
       },
@@ -109,8 +149,18 @@
         "id": "agent-hub-portability",
         "order": 5,
         "owner": "KFD profile and each Hub",
+        "input": "Bounded responsibility objects with rooted evidence and explicit authority",
+        "output": "Portable envelopes, conformance results, and receiver-owned admission decisions",
         "statement": "Carry bounded responsibility objects across independently owned products with receiver-owned admission.",
         "statusClass": "enabled-by-protocol",
+        "evidenceCoordinates": [
+          "npm:@kungfu-tech/kfd@1.0.0-alpha.41#protocols/agent-hub/manifest.json",
+          "npm:@kungfu-tech/kfd@1.0.0-alpha.41#protocols/agent-hub/README.md"
+        ],
+        "knownLimits": [
+          "The public profile enables independent implementations but does not prove a second independent production Hub.",
+          "Portability preserves bounded roots, verdicts, conflicts, commitments, and digests; it does not promise lossless one-click migration."
+        ],
         "humanRoute": "https://kfd.libkungfu.dev/protocols/agent-hub",
         "agentRoute": "https://kfd.libkungfu.dev/manifest.json"
       }

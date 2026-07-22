@@ -7,7 +7,7 @@ name = "paper-kungfu-product-white-paper"
 [publication]
 kind = "paper"
 title = "Kungfu: The Session Is Not the Work"
-version = "0.1.0-alpha.9"
+version = "0.1.0-alpha.10"
 abstract = "Verified continuity for Agent work that outlives the chat."
 authors = [ "Keren Dong" ]
 primary_artifact = "_build/kungfu-white-paper.pdf"
