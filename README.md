@@ -68,6 +68,13 @@ The npm package exposes two generated site bundles from the same paper source:
 - [`site/evidence-site.json`](site/evidence-site.json): artifact and evidence
   bundle for `papers.libkungfu.dev`.
 
+The `agentSupplyChain` object in both generated bundles is the cross-product
+public narrative contract. It composes KFD, Buildchain, Kungfu runtime, and Hub
+portability facts for renderers while leaving each product repository and
+immutable release artifact authoritative for its own mechanics and evidence.
+Sites may adapt presentation and navigation, but must preserve the five-layer
+order, maturity vocabulary, claim boundary, and non-claims.
+
 Regenerate them after changing the paper source:
 
 ```sh
