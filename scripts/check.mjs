@@ -128,6 +128,11 @@ for (const bundle of [brandBundle, evidenceBundle]) {
     continue;
   }
   for (const layer of supplyChain.layers) {
+    for (const field of ["owner", "input", "output"]) {
+      if (typeof layer[field] !== "string" || layer[field].trim() === "") {
+        fail(`${bundle.site} agentSupplyChain layer ${layer.id} must declare ${field}`);
+      }
+    }
     if (!Array.isArray(layer.evidenceCoordinates) || layer.evidenceCoordinates.length === 0) {
       fail(`${bundle.site} agentSupplyChain layer ${layer.id} must declare immutable evidenceCoordinates`);
     }
