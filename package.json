@@ -1,6 +1,6 @@
 {
   "name": "@kungfu-tech/paper-kungfu-product-white-paper",
-  "version": "0.1.0-alpha.8",
+  "version": "0.1.0-alpha.9",
   "description": "Kungfu white paper on why long-running Agent work needs verified continuity beyond the session",
   "license": "Apache-2.0",
   "type": "module",
