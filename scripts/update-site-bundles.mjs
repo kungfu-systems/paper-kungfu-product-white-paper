@@ -155,7 +155,7 @@ const agentSupplyChain = {
     "public Kungfu Cloud",
     "lossless one-click migration",
   ],
-  vendorNextAction: "Assign an owner, run a bounded assessment, build one adapter or conformance spike, submit protocol gaps, then decide to adopt, co-shape, or monitor.",
+  vendorNextAction: "Assign a technical and product owner, run a bounded 30-day assessment, build one adapter or conformance spike, submit protocol gaps, then decide to adopt, co-shape, or monitor.",
 };
 
 export const buildSiteBundles = () => {
