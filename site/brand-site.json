@@ -4,7 +4,7 @@
   "consumer": "kungfu.tech",
   "source": {
     "package": "@kungfu-tech/paper-kungfu-product-white-paper",
-    "packageVersion": "0.1.0-alpha.8",
+    "packageVersion": "0.1.0-alpha.9",
     "repository": "git+https://github.com/kungfu-systems/paper-kungfu-product-white-paper.git",
     "titleSource": ".buildchain/buildchain.toml",
     "paperEntrypoint": "paper/main.tex",
