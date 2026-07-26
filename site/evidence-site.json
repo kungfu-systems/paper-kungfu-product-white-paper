@@ -200,7 +200,7 @@
     "commands": [
       "make check",
       "make pdf",
-      "npx -y @kungfu-tech/buildchain@2.10.10 validate --cwd . --json",
+      "npx -y @kungfu-tech/buildchain@3.0.0 validate --cwd . --json",
       "npm pack --dry-run --json"
     ],
     "buildchainManifestPath": ".buildchain/publication/publication-artifact.json",

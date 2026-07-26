@@ -16,7 +16,7 @@ const promotionWorkflow = readFileSync(
 );
 for (const requiredSurface of [
   "buildchain-ref:",
-  "inputs['buildchain-ref'] || (startsWith(github.event.workflow_run.head_branch || inputs['target-ref'], 'alpha/') && 'v2-alpha' || 'v2')",
+  "inputs['buildchain-ref'] || (startsWith(github.event.workflow_run.head_branch || inputs['target-ref'], 'alpha/') && 'v3-alpha' || 'v3')",
   "buildchain-contract-lock-path: ${{ startsWith(github.event.workflow_run.head_branch || inputs['target-ref'], 'alpha/') && '.buildchain/alpha-contract-lock.json' || '.buildchain/contract-lock.json' }}",
 ]) {
   if (!promotionWorkflow.includes(requiredSurface)) {
@@ -83,11 +83,11 @@ const alphaContractLock = readJson(".buildchain/alpha-contract-lock.json");
 if (contractLock.contract !== "kungfu-buildchain-contract-lock") {
   fail(".buildchain/contract-lock.json must be a Buildchain contract lock");
 }
-if (contractLock.buildchain?.ref !== "v2") {
-  fail(".buildchain/contract-lock.json must lock the Buildchain v2 floating ref");
+if (contractLock.buildchain?.ref !== "v3") {
+  fail(".buildchain/contract-lock.json must lock the Buildchain v3 floating ref");
 }
-if (alphaContractLock.contract !== "kungfu-buildchain-contract-lock" || alphaContractLock.buildchain?.ref !== "v2-alpha") {
-  fail(".buildchain/alpha-contract-lock.json must lock the Buildchain v2-alpha floating ref");
+if (alphaContractLock.contract !== "kungfu-buildchain-contract-lock" || alphaContractLock.buildchain?.ref !== "v3-alpha") {
+  fail(".buildchain/alpha-contract-lock.json must lock the Buildchain v3-alpha floating ref");
 }
 const releaseImpact = readJson("release-impact.json");
 if (releaseImpact.contract !== "kungfu-buildchain-impact") {
