@@ -56,7 +56,7 @@
     "pdf": "make pdf"
   },
   "devDependencies": {
-    "@kungfu-tech/buildchain": "^2.11.9"
+    "@kungfu-tech/buildchain": "^3.0.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
