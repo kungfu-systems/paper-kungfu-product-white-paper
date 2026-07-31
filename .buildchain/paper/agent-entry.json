@@ -4,7 +4,7 @@
   "runtime": {
     "package": "@kungfu-tech/buildchain",
     "version": "3.0.3-alpha.3",
-    "sourceSha": "acddf9d7047a40de692ae4463aa84039283e5bc0"
+    "sourceSha": "105aedb246d98d66483c64bf06bada0523143353"
   },
   "repository": {
     "developmentRef": "dev/v0/v0.1",
@@ -28,5 +28,5 @@
     "forcePush": false,
     "remoteAcceptance": "required-buildchain-check"
   },
-  "entryDigest": "sha256:7ee55f375ba0782972ef80017299d9b43949d7d963510358fe942922d3b44e0e"
+  "entryDigest": "sha256:ef474df54eb6f769f10c170267d49731e08d4f7bc566c3d5a41697ab52e3e7f5"
 }

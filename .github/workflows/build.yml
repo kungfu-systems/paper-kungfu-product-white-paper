@@ -15,9 +15,9 @@ permissions:
 
 jobs:
   publication:
-    uses: kungfu-systems/buildchain/.github/workflows/publication-artifact.yml@acddf9d7047a40de692ae4463aa84039283e5bc0
+    uses: kungfu-systems/buildchain/.github/workflows/publication-artifact.yml@105aedb246d98d66483c64bf06bada0523143353
     with:
-      buildchain-ref: acddf9d7047a40de692ae4463aa84039283e5bc0
+      buildchain-ref: 105aedb246d98d66483c64bf06bada0523143353
       buildchain-contract-lock-path: .buildchain/contract-lock.json
       toolchain-type: config
       verify-command: make check
