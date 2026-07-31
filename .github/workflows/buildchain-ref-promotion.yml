@@ -77,6 +77,12 @@ jobs:
       publish-dist-tag: ${{ startsWith(github.event.workflow_run.head_branch || inputs['target-ref'], 'alpha/') && 'alpha' || 'latest' }}
       publish-package-set-order: as-provided
       publish-package-main: "@kungfu-tech/paper-kungfu-product-white-paper"
+      publication-auto-admission: true
+      publication-auto-no-gate: true
+      publication-publisher-workflow-path: .github/workflows/buildchain-ref-promotion.yml
+      publication-product: "Kungfu Product White Paper"
+      publication-target: "npm:@kungfu-tech/paper-kungfu-product-white-paper"
+      publication-package-name: "@kungfu-tech/paper-kungfu-product-white-paper"
       release-passport: true
       release-passport-product-name: "Kungfu Product White Paper"
       release-passport-impact-json: release-impact.json
