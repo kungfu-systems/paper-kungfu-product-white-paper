@@ -1,0 +1,48 @@
+{
+  "name": "@kungfu-tech/paper-kungfu-product-white-paper",
+  "version": "0.1.0-alpha.12",
+  "private": false,
+  "description": "Kungfu: Continuity for Agent Work publication artifact package.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kungfu-systems/paper-kungfu-product-white-paper.git"
+  },
+  "type": "module",
+  "files": [
+    ".buildchain/publication/",
+    "buildchain-publication-package.json",
+    "_build/main.pdf",
+    "_build/main.pdf",
+    "_build/main.pdf",
+    "README.md",
+    "docs/MAP.md",
+    "package.json",
+    "package-lock.json",
+    "release-impact.json",
+    "site"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    "./publication-artifact.json": "./.buildchain/publication/publication-artifact.json",
+    "./publication-artifact-passport.json": "./.buildchain/publication/publication-artifact-passport.json",
+    "./publication-registry.json": "./.buildchain/publication/publication-registry.json"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "buildchain": {
+    "contract": "kungfu-buildchain-publication-npm-package",
+    "publicationManifest": ".buildchain/publication/publication-artifact.json",
+    "publicationPassport": ".buildchain/publication/publication-artifact-passport.json",
+    "publicationRegistry": ".buildchain/publication/publication-registry.json",
+    "publicationRegistryHydration": ".buildchain/publication/registry-hydration.json",
+    "primaryArtifact": "_build/main.pdf",
+    "sourceBundle": ".buildchain/publication/source.tar.gz",
+    "siteConsumers": [
+      "kungfu.tech",
+      "papers.libkungfu.dev"
+    ]
+  }
+}

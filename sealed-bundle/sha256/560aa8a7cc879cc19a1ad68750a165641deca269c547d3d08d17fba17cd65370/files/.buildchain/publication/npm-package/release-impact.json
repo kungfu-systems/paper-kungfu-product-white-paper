@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "contract": "kungfu-buildchain-impact",
+  "release": {
+    "line": "v0.1",
+    "channel": "alpha",
+    "targetRef": "alpha/v0/v0.1"
+  },
+  "versionImpact": {
+    "final": "minor",
+    "source": "tex-gyre-white-paper-alpha-12",
+    "rationale": "This Alpha retains the continuity narrative introduced in Alpha 11 and restores the intended TeX Gyre typography through a reproducible pinned builder image."
+  },
+  "surfaceImpacts": [
+    {
+      "id": "continuity-white-paper",
+      "impact": "minor",
+      "class": "content",
+      "rationale": "The paper now explains why durable Work identity, governed evidence, bounded authority, and continuity across replaceable Agents are necessary for long-running agent work."
+    },
+    {
+      "id": "project-work-agent-model",
+      "impact": "minor",
+      "class": "product-model",
+      "rationale": "The public narrative introduces Project, Work, and Agent together with Agent Work Lab as the product entry point and evidence surface."
+    },
+    {
+      "id": "foundation-triad-and-machine-life-bridge",
+      "impact": "minor",
+      "class": "research-narrative",
+      "rationale": "The paper presents the Foundation Triad at a first-reader gradient and connects present product continuity to the longer-horizon Machine Life direction."
+    },
+    {
+      "id": "commercial-publication-design",
+      "impact": "patch",
+      "class": "presentation",
+      "rationale": "The PDF retains its commercial editorial system, Kungfu CLI evidence view, and kungfu.tech cover contact while restoring TeX Gyre Pagella, Heros, and Cursor through a reproducible pinned Docker build."
+    }
+  ],
+  "summary": "Alpha 12 preserves the continuity product thesis and Machine Life bridge while restoring the intended TeX Gyre publication typography."
+}
