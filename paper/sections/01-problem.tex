@@ -1,42 +1,47 @@
 \section{The Problem}
 
-Agents are becoming capable enough to do real work, but real work is not a
-single prompt and a single response. It has state. It has unresolved questions,
-partial evidence, tasks that span days or months, files that move between
-machines, and decisions that must remain inspectable after the original context
-window is gone.
+Agent products are becoming better at performing work inside one invocation.
+Real work, however, is not one invocation. A release, investigation, migration,
+paper, operation, or personal project accumulates partial results, changed
+assumptions, rejected approaches, unresolved risks, external effects, and
+decisions that must remain inspectable after the originating session is gone.
 
-The first generation of agent tooling often starts from a technical surface:
-prompts, model calls, evaluations, editor workflows, or automation. Those
-surfaces are useful, but they are not the user's real unit of concern. The real
-unit is work: a product release, a paper, a migration, an operation, a personal
-task, a business process, or a long-running project. Activity records are
-valuable only when they help a person or another agent recover what happened in
-that work.
+The central failure is not merely limited context length. It is that the unit
+the user cares about---the Work---is often represented only indirectly through
+chat history, provider state, temporary files, and human memory. When those
+surfaces diverge, the user becomes the recovery protocol.
 
-This creates a gap. Users can ask agents to do more, but the surrounding
-management layer remains fragile:
+\subsection{Conversation Is Not Work State}
 
-\begin{itemize}[leftmargin=*]
-  \item important facts drift between chat, files, logs, repositories, and
-  memory;
-  \item long tasks lose their continuity when context windows end;
-  \item local and remote agent sessions are hard to compare or resume;
-  \item human-facing documents and agent-facing interfaces diverge;
-  \item single-purpose tools observe events but do not manage the real work
-  that gives those events meaning;
-  \item cloud agent products can manage provider-side context, but often cannot
-  become the durable local source of truth for a user's real environment.
-\end{itemize}
+A transcript mixes instructions, guesses, corrections, tool output, obsolete
+plans, and social language. Copying it into a new process can reproduce noise
+without preserving authority or current truth. Summarizing it can silently
+erase negative evidence, uncertainty, and the reason a direction changed.
 
-Kungfu starts from this gap. It treats real-world agent work as the primary
-object. Activity records, cost visibility, recovery, task ledgers, timelines,
-and agent bootstrap interfaces become product surfaces around that object
-rather than isolated tools.
+Continuity therefore requires more than memory retrieval. A fresh Agent needs
+to know which Project and Work it is joining, which facts have been admitted,
+what causally happened, which outcome remains in pursuit, what actions are
+allowed, and how completion will be reviewed.
 
-There is also a stance problem. If a system depends on an agent's ability to
-read instructions, reason about constraints, recover from errors, and explain
-work to a human, then treating that agent as a disposable command runner is a
-poor product model. The system should make the shared work environment legible
-enough that humans and agents can choose, delegate, refuse, recover, and
-cooperate through visible facts and trusted value.
+\subsection{Process Success Is Not Work Completion}
+
+Provider processes report technical outcomes: exit status, generated files,
+tool calls, or natural-language confidence. None is sufficient to decide that
+the user's Work is complete. The result may address the wrong Work, rely on
+stale facts, exceed authority, omit required evidence, or leave downstream
+settlement unresolved.
+
+A responsible system must retain provider output as evidence while leaving
+completion to an independently inspectable assessment and decision.
+
+\subsection{Provider Context Is Not User-Owned Continuity}
+
+Cloud providers can preserve conversations and proprietary session state, but
+real Projects also depend on local repositories, files, tools, decisions,
+release artifacts, and multiple Agent vendors. A user's durable Work identity
+should not disappear when an account, model, editor, process, or provider
+changes.
+
+The product opportunity is therefore precise: give Work a local, portable,
+inspectable identity that survives the Agent process currently performing it.
+Kungfu starts from this boundary.

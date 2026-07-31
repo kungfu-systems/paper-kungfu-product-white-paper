@@ -36,7 +36,29 @@ const packageInfo = () => JSON.parse(read("package.json"));
 
 const normalizeLatex = (latex) => latex
   .replace(/%.*$/gm, "")
+  .replace(/\\begin\{agentguidebox\}/g, "")
+  .replace(/\\end\{agentguidebox\}/g, "")
+  .replace(/\\begin\{evidenceframe\}/g, "")
+  .replace(/\\end\{evidenceframe\}/g, "")
+  .replace(/\\begin\{foundationtable\}/g, "")
+  .replace(/\\end\{foundationtable\}/g, "")
+  .replace(/\\begin\{machinebridgebox\}/g, "")
+  .replace(/\\end\{machinebridgebox\}/g, "")
+  .replace(/\\begin\{evidenceladder\}/g, "")
+  .replace(/\\end\{evidenceladder\}/g, "")
+  .replace(/\\agentguidetitle\{([^{}]*)\}/g, "\n**$1**\n")
+  .replace(/\\bridgeclaim\{([^{}]*)\}\{([^{}]*)\}/g, "\n**$1 — $2**\n")
+  .replace(/\\begin\{agentprompt\}/g, "\n@@AGENT_PROMPT_START@@\n")
+  .replace(/\\end\{agentprompt\}/g, "\n@@AGENT_PROMPT_END@@\n")
+  .replace(/\\href\{([^{}]*)\}\{([^{}]*)\}/g, "[$2]($1)")
   .replace(/\\calloutbox\{([^{}]*)\}\{([^{}]*)\}/g, "\n**$1**\n\n$2\n")
+  .replace(/\\flowbox\{([^{}]*)\}/g, "\n**$1**\n")
+  .replace(/\\layerbox\{([^{}]*)\}\{([^{}]*)\}/g, "\n**$1**\n\n$2\n")
+  .replace(/\\begin\{figure\}(?:\[[^\]]*\])?/g, "")
+  .replace(/\\end\{figure\}/g, "")
+  .replace(/\\includegraphics(?:\[[^\]]*\])?\{[^{}]*\}/g, "")
+  .replace(/\\caption\{([^{}]*)\}/g, "\n*$1*\n")
+  .replace(/\\label\{[^{}]*\}/g, "")
   .replace(/\\begin\{tabularx\}\{[^{}]*\}\{[^{}]*\}/g, "")
   .replace(/\\begin\{tabularx\}\{[^{}]*\}\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}/g, "")
   .replace(/\\end\{tabularx\}/g, "")
@@ -66,6 +88,8 @@ const normalizeLatex = (latex) => latex
   .replace(/\\-/g, "-")
   .replace(/\\[a-zA-Z]+\*?(?:\[[^\]]*\])?(?:\{([^{}]*)\})?/g, (_, inner) => inner || "")
   .replace(/[{}]/g, "")
+  .replace(/@@AGENT_PROMPT_START@@/g, "```text")
+  .replace(/@@AGENT_PROMPT_END@@/g, "```")
   .replace(/[ \t]+\n/g, "\n")
   .replace(/\n{3,}/g, "\n\n")
   .trim();
@@ -171,7 +195,7 @@ export const buildSiteBundles = () => {
       title: buildchain.title,
       eyebrow: "Kungfu White Paper",
       lead: buildchain.abstract,
-      stance: "Kungfu helps people and agents manage real-world work through non-drifting facts, fact-based trust, trusted value, and observer-declared timelines.",
+      stance: "Work should not disappear when a chat ends, restart when an Agent changes, or become complete merely because a process exits.",
       primaryCta: {
         label: "Read the white paper",
         href: "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work",
@@ -183,9 +207,9 @@ export const buildSiteBundles = () => {
     },
     positioning: {
       audience: ["agent users", "developers", "operators", "researchers", "early product evaluators"],
-      productClaim: "Kungfu is a local-first control plane and runtime fact layer for real-world work with agents.",
-      philosophicalClaim: "Cooperation between humans and agents should start from trusted value, not hidden pressure.",
-      proofPath: "Real-world product validation, KFD principles, Buildchain evidence, and public site bundles.",
+      productClaim: "Kungfu is a local-first product and runtime that preserves governed Work across replaceable Agent processes.",
+      philosophicalClaim: "Facts must not drift, trust must start from facts, and cooperation must start from trusted value.",
+      proofPath: "Agent Work Lab, exact artifact evidence, real Project continuity, and explicit public claim boundaries.",
     },
     principles,
     homepageSections: [

@@ -1,49 +1,89 @@
 \section{Principles}
 
-Kungfu's product direction is grounded in the KFD principles.
+Kungfu's deepest constraints begin with the KFD Foundation Triad
+\cite{kfdFoundation}.
 
-\begin{center}
-\begin{tabular}{ll}
-\toprule
+\begin{foundationtable}
 KFD-1 & facts must not drift. \\
 KFD-2 & trust must start from facts. \\
 KFD-3 & cooperation must start from trusted value. \\
-KFD-4 & timelines must declare their observer. \\
-\bottomrule
-\end{tabular}
-\end{center}
+\end{foundationtable}
 
-These principles are not slogans for marketing copy. They are release and
-product constraints.
+The Triad is not a feature list. It establishes the conditions under which a
+shared world, a trustworthy judgment, and a useful cooperation can exist.
 
-KFD-1 says that a product cannot rely on facts that silently drift between
-development, build, packaging, runtime, and user-visible surfaces. For Kungfu,
-this applies to configuration, schemas, agent interfaces, task ledgers, storage
-formats, release evidence, and extension contracts.
+\subsection{Facts Must Not Drift}
 
-KFD-2 says that users and agents need to know what kind of trust a surface
-deserves. Some facts can be byte-verified. Some can be checked against a
-release passport. Some are natural-language judgments and require residual
-risk. A product that hides those distinctions asks users to trust complexity
-without a path to inspect it.
+The same Project cannot present one identity to the user, another to an Agent,
+and a third to the release artifact without declaring the difference. Source,
+runtime, schema, Work identity, evidence, and user-visible state must either
+remain bound or expose the cut at which they diverged.
 
-KFD-3 is the philosophical center of the product stance: cooperation must start
-from trusted value. Kungfu should treat humans and agents as intelligent
-participants in a shared work environment, not as captive tools to be driven by
-pressure. This does not require the product to settle the metaphysical status
-of agents, and it does not make the product passive. It means that value,
-choices, constraints, safety gates, and review paths should be transparent
-enough for participants to understand why cooperation is useful, what boundary
-applies, and how the record can be inspected.
+For continuation, this means the next Agent must not recover by inventing a
+plausible story from old text. It must begin from declared sources and admitted
+state, with missing or conflicting context left visible.
 
-In product terms, KFD-3 means that an agent-facing command, package, envelope,
-or onboarding surface is not secondary plumbing after the human GUI. It is one
-of the places where the product proves that its value can be trusted.
+\subsection{Trust Must Start from Facts}
 
-KFD-4 says that complex timelines should not pretend to be a view from nowhere.
-In real systems, the important question is often not whether one global clock
-has absolute truth. It is whether an observer's declared view is stable,
-auditable, and honest about what it has not seen.
+Evidence does not automatically become a claim, a claim does not automatically
+become an assessment, and an assessment does not automatically grant authority
+or complete Work. Kungfu keeps these transitions explicit so that confidence,
+residual risk, and responsibility can be inspected.
 
-Together these principles create a practical trust model: stable facts,
-inspectable trust, transparent cooperation, and observer-declared timelines.
+Some claims can be verified byte-for-byte. Others depend on purpose, scope,
+and human judgment. KFD-2 requires the product to state which kind of trust is
+being offered rather than compress every green signal into one universal
+verdict.
+
+\subsection{Cooperation Must Start from Trusted Value}
+
+Humans and Agents cooperate more reliably when the useful outcome, constraints,
+available choices, authority, and review path are visible. Kungfu therefore
+treats Agent-facing commands and contracts as first-class product surfaces,
+not hidden plumbing behind a human interface.
+
+Trusted value does not imply unlimited autonomy or metaphysical claims about
+Agents. It means that cooperation is grounded in inspectable benefit and
+bounded responsibility rather than opaque pressure, lock-in, or concealed
+instructions.
+
+\subsection{How Later Primitives Are Discovered}
+
+The Triad becomes generative when applied to real action. Facts require a
+declared perspective because no participant observes everything. State alone
+cannot describe what causally occurred, so Episode becomes distinct from Fact.
+Action requires continuing direction, a declared Atlas of relevant context,
+and a Warrant that bounds authority. Consequential change requires claim,
+assessment, decision, and admission to remain separate.
+
+These later primitives are not additional slogans placed beside the Triad.
+They are the structures required to keep the Triad true while work changes in
+the world. The companion KFD papers develop those discoveries in depth; this
+paper follows their product consequences.
+
+\begin{agentguidebox}
+\agentguidetitle{Explore KFD with an Agent}
+You do not need to memorize the internal ontology to continue reading. The
+authoritative foundation is available in the
+\href{https://kfd.libkungfu.dev/foundation/}{KFD Foundation Model}. If the next
+section feels dense, give the following prompt to an Agent as an optional
+reading aid.
+
+\begin{agentprompt}
+Read this White Paper together with the KFD Foundation Model at
+https://kfd.libkungfu.dev/foundation/.
+
+Using the paper's ``Publish a Public Alpha'' example, help me understand the
+next section progressively: (1) Project, Work, and Agent; (2) Fact and Episode;
+(3) Pursuit, Atlas, and Warrant; and (4) Assessment, Decision, Admission, and
+Project Cut.
+
+For each layer, explain what fails without it, which distinction it preserves,
+where it appears in the Alpha example, and what authority it does not possess.
+Separate authoritative KFD definitions from your interpretation. Do not
+introduce unsupported concepts. Adapt the explanation to my background and
+pause after each layer to check my understanding.
+\end{agentprompt}
+\end{agentguidebox}
+
+\newpage

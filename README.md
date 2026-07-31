@@ -5,13 +5,15 @@ This repository tracks the source for a Kungfu product white paper.
 Working title:
 
 ```text
-Kungfu: Managing Real-World Work with Agents
+Kungfu: Continuity for Agent Work
 ```
 
-The paper explains Kungfu as a product and infrastructure direction for
-real-world work with agents. It connects the product thesis, KFD principles,
-runtime fact infrastructure, dual-first human/agent usability, local-first
-operation, and the roadmap from real-world validation to public release.
+The paper explains Kungfu as a local-first product and runtime that lets Work
+continue across chat boundaries and replaceable Agent processes. It connects
+the Project / Work / Agent product model, Agent Work Lab, the KFD Foundation
+Triad, Fact and Episode continuity, bounded action authority, Work settlement,
+the Agent Supply Chain, and the research bridge from Work continuity to
+machine-subject continuity.
 
 Publisher: Kungfu Origin Technology Limited.
 Contact: Keren Dong <keren.dong@kungfu.link>.
@@ -26,6 +28,8 @@ LaTeX is an implementation detail.
 
 - [`paper/main.tex`](paper/main.tex): LaTeX entrypoint.
 - [`paper/sections/`](paper/sections/): paper sections.
+- [`paper/assets/`](paper/assets/): public-safe figures generated from retained
+  product evidence.
 - [`paper/references.bib`](paper/references.bib): bibliography.
 - [`docs/MAP.md`](docs/MAP.md): repository map.
 - [`.buildchain/buildchain.toml`](.buildchain/buildchain.toml): Buildchain
@@ -90,5 +94,7 @@ CI and publication should go through the Buildchain lifecycle declared in
 
 ## Status
 
-This is an initial white paper draft. It should be sharpened against real-world
-product validation evidence before being treated as a public launch statement.
+This is an alpha white paper grounded in the current source-built Kungfu
+product and its exact qualified evidence. It is not a public-release or
+production-fitness claim; the paper states the remaining distribution and
+longitudinal validation boundaries explicitly.

@@ -1,47 +1,124 @@
-\section{Architecture Direction}
+\section{How Continuity Works}
 
-Kungfu's architecture follows from the product thesis.
+The first-layer product remains Project, Work, and Agent. Beneath it, Kungfu
+preserves enough semantic structure for a fresh process to continue without
+pretending that a transcript is truth.
 
-\subsection{Core Runtime Fact Layer}
+\begin{center}
+\layerbox{Product experience}{Project, Work, and Agent provide the complete
+first layer and the ordinary path from opening a Project to reviewed
+completion.}
 
-At the center is a local runtime fact layer. It records durable facts about
-work, agents, execution records, tasks, artifacts, cost, state transitions, and
-observer timelines. The storage layer is not disposable cache. If Kungfu becomes a
-source of truth for long-running work, storage needs the operational qualities
-users expect from serious local infrastructure: verification, backup,
-recovery, migration, and clear failure modes.
+\vspace{0.25em}$\downarrow$\vspace{0.25em}
 
-\subsection{Control Plane Interfaces}
+\layerbox{Semantic and action runtime}{Fact and Episode retain state and causal
+experience; Pursuit, Atlas, and Warrant bind direction, perspective, and
+authority.}
 
-Kungfu GUI and TUI are control planes for humans. They should make long-running
-agent work visible without forcing the user to read logs or reconstruct
-context manually. CLI, Python, and Node APIs are control planes for agents and
-automation. They should expose the same facts in structured form.
+\vspace{0.25em}$\downarrow$\vspace{0.25em}
 
-The control plane is therefore not only a supervisor's panel over agent
-activity. It is a shared work environment where humans and agents can discover
-capabilities, inspect value evidence, understand constraints, and leave
-reviewable records.
+\layerbox{Responsibility and settlement}{Initiative, Assignment, assessment,
+decision, admission, and Project Cut govern who owns Work and what can complete
+it.}
 
-\subsection{Polyglot Membrane}
+\vspace{0.25em}$\downarrow$\vspace{0.25em}
 
-The product needs a polyglot membrane because the best ecosystem for each layer
-is different:
+\layerbox{Supply chain and extension}{KFD, Buildchain, libkungfu, KFX, and Agent
+Hubs preserve independent authorities across construction, capability, and
+transport.}
+
+\vspace{0.45em}
+{\small\color{KFSlate}\textit{Higher layers expose value; lower layers retain
+the authority that makes the value trustworthy.}}
+\end{center}
+
+\subsection{Fact and Episode}
+
+A Fact is admitted state at an explicit cut. An Episode is a realized causal
+occurrence across cuts. The distinction matters because a user may need both
+to know the current state and to understand how it became current.
+
+An Agent run is therefore retained as an Episode with evidence and lineage,
+not merged directly into one mutable narrative. Failed attempts and partial
+results can remain useful causal history without becoming current truth.
+
+In the Alpha example, the exact source revision and the absence of one required
+platform result can be retained as declared facts at the relevant cut. Agent
+A's investigation is an Episode: it explains how the Work reached a partial
+state without turning every sentence in the Agent's output into admitted
+truth.
+
+\newpage
+
+\subsection{The Action Loop}
+
+Kungfu organizes action through three coordinates over admitted Facts:
 
 \begin{itemize}[leftmargin=*]
-  \item frontend and desktop surfaces benefit from Node, Electron, React, and
-  the web ecosystem;
-  \item agent integration benefits from Python and Node APIs;
-  \item durable high-performance core surfaces benefit from C++ where needed.
+  \item \textbf{Pursuit}: the continuing direction and success conditions;
+  \item \textbf{Atlas}: the declared perspective, sources, and current cut;
+  \item \textbf{Warrant}: the explicit, bounded authority to act.
 \end{itemize}
 
-The membrane is not accidental complexity. It lets Kungfu compress complexity
-inside the product while exposing low-friction interfaces to humans and agents.
+The resulting loop is:
 
-\subsection{Extension Model}
+\begin{quote}
+Fact cut $\rightarrow$ select or revise Pursuit $\rightarrow$ declare Atlas
+$\rightarrow$ verify Warrant $\rightarrow$ act $\rightarrow$ record Episode
+$\rightarrow$ assess and admit claims $\rightarrow$ next Fact cut.
+\end{quote}
 
-Kungfu extensions should let other users define their own work semantics
-without forking the product. A research lab, operations team, developer,
-writer, or personal user may need a different semantic model. The core should
-support these variations through explicit schemas, extension packages, and
-capability declarations.
+An immutable binding can prove which exact roots met for one action, but the
+receipt does not create new authority. Missing, stale, incompatible, or
+ambiguous roots fail closed rather than being repaired through model guesswork.
+
+For the same Work, the Pursuit is an exact, reviewable public Alpha. The Atlas
+declares the repository, release requirements, available platform evidence,
+and the missing result. A Warrant may allow Agent B to edit release notes and
+run candidate checks while withholding publication. The fresh Agent can
+continue intelligently without inheriting authority it was never granted.
+
+\subsection{Responsibility and Settlement}
+
+Work Control gives the loop a responsibility model. An Initiative retains a
+continuing intended change. An Assignment gives one bounded responsibility a
+holder, relations, execution lease, evidence requirements, review state, and
+typed continuation. A Portfolio may observe multiple Projects but cannot
+override their independent completion authority.
+
+Completion requires an accepted decision and, where applicable, Project Cut
+settlement. A process exit, passing build, merged pull request, or delivery
+artifact can contribute evidence without acquiring authority to close Work.
+
+Project Cut binds declared source, the current Atlas, admitted Episode delta,
+policies, omissions, and risk into one content-addressed continuation point.
+It does not absorb the independent authority of source control, Work Control,
+the journal, or a release system.
+
+In the example, Agent B's successful process remains evidence. Independent
+review decides whether the required outcome has been met, and settlement binds
+the accepted source, evidence, omissions, and decision. That is the difference
+between continuing the Work and merely continuing a conversation about it.
+
+\subsection{Journal Authority and Rebuildable Views}
+
+The local journal owns semantic identity, admission, ordering, causality,
+lifecycle, cuts, and receipts. Content-addressed storage owns immutable bodies
+when the journal commits their roots. JSON, Git views, dashboards, and GUI
+projections are rebuildable views; they do not become authority merely because
+they are easier to read.
+
+This hierarchy lets higher product layers add convenience without silently
+changing truth. It also lets different complete products---desktop, terminal,
+CLI, SDK, or an Agent-facing integration---share one core without requiring
+one another.
+
+\subsection{Progressive Disclosure}
+
+Most users should experience this architecture as a simple sequence: open a
+Project, choose Work, run an Agent, and review the result. When something is
+missing, disputed, denied, or unsafe, explain views reveal the exact Fact,
+Episode, perspective, authority, responsibility, and receipt involved.
+
+The ontology exists to make ordinary product behavior trustworthy. It is not
+an entrance examination for using the product.

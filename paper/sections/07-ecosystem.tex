@@ -1,25 +1,78 @@
 \section{Ecosystem}
 
-Kungfu's open-source repository can be valuable beyond the default product
-because agent work management is a meta-capability. A developer can build
-extensions for software work. A researcher can build publication workflows. An
-operator can build infrastructure runbooks. A personal user can build life and
-work organization profiles.
+Kungfu is designed as one core with multiple complete products. A desktop
+application, terminal interface, CLI, SDK, extension, or Agent Hub may add
+convenience and domain value, but no higher layer acquires authority merely by
+being closer to the user.
 
-The ecosystem should be shaped by low-friction consistency:
+\subsection{The Agent Supply Chain}
+
+The current supply-chain model separates five responsibilities:
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{0.23\textwidth}>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Layer} & \textbf{Responsibility} \\
+\midrule
+KFD-3 cooperation & Declares participant, capability, constraint, and value interfaces. \\
+Buildchain & Binds exact source, artifact, build, gate, promotion, and release evidence. \\
+KFD-2 assessment & Decides what the evidence means for one receiver and purpose. \\
+libkungfu / .kungfu & Retains local Facts, Episodes, Work state, export, and recovery authority. \\
+Agent Hub & Transports artifacts and declarations while leaving admission to the receiver. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+No layer swallows another. Build evidence is not trust assessment. Assessment
+is not execution authority. Transport is not admission. A Hub cannot complete
+receiver-owned Work merely because it delivered an artifact.
+
+\subsection{Keep the Existing Agent Relationship}
+
+Agent vendors can retain their models, interfaces, accounts, billing, cloud
+execution, and customer relationships. Kungfu can operate as the continuity
+and responsibility substrate beneath those products. This makes neutrality a
+practical architecture rather than a demand that every user adopt one new
+execution surface.
+
+\subsection{Three Adoption Paths}
+
+The same core can enter the market through different needs without presenting
+all of them on one first screen:
 
 \begin{itemize}[leftmargin=*]
-  \item one coherent monorepo for the core product where splitting would create
-  agent friction;
-  \item package APIs for Python and Node where agents naturally integrate;
-  \item GUI/TUI entrypoints for humans who need visibility without more
-  cognitive load;
-  \item KFD and Buildchain release evidence so users and agents can inspect
-  what a release claims to provide;
-  \item extension contracts that let new profiles add semantics without
-  weakening the core fact model.
+  \item \textbf{Agent users} enter through Agent Work Lab and Kungfu Episodes,
+  then keep real Projects and Work continuous across sessions and providers.
+  \item \textbf{Developers and teams} enter through libkungfu, SDKs, Work
+  Control, and Project Cut when they need durable local state, review, and
+  settlement inside existing products.
+  \item \textbf{Agent builders} enter through KFD declarations and the Agent
+  Hub protocol when they need portable evidence without surrendering their
+  model, interface, cloud, billing, or customer relationship.
 \end{itemize}
 
-This ecosystem does not require every user to adopt the same work semantics. It
-requires Kungfu to make it practical for users to define their own durable work
-models and still participate in the same trust model.
+Continuity is the common wedge. Trust and accountability are the ceiling that
+makes the substrate valuable as Work becomes more consequential.
+
+\subsection{Profile Suite and KFX}
+
+Profile Suites turn neutral primitives into coherent domain products without
+forking the core. KFX contributes views, adapters, and services through
+declared capabilities and runtime isolation tiers. Discovery or first-party
+identity does not authorize execution. Launch requires the applicable release
+evidence, core policy, admitted Work and Warrant, declared capability, granted
+capability, and host isolation.
+
+This structure allows capabilities to become inspectable, versioned, and
+replaceable. It also creates a boundary that future research can reinterpret
+as an executable organ without requiring the present product to make a
+machine-life claim.
+
+\subsection{Open Standard, Founding Implementation}
+
+KFD is an open engineering standard and protocol direction. Kungfu is its
+founding implementation, not a central registry with automatic authority over
+other implementations. A credible Agent Hub ecosystem therefore requires
+plural, independently owned receivers that can reject, reinterpret, or admit
+the same delivered evidence for their own purposes.

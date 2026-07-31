@@ -1,28 +1,67 @@
 \section{Product Validation Strategy}
 
-Kungfu should be validated against real work before public launch. A scripted
-demo can prove that a feature exists, but only real daily use can prove that a
-product reduces coordination cost.
+Kungfu separates evidence classes so that an impressive demonstration does
+not silently become a production claim.
 
-The validation workload should include long-running tasks, local and remote
-agents, repository coordination, task ledgers, review records, friction queues,
-execution evidence, and multi-machine timelines. These are the situations where
-runtime facts become hard to manage without a product designed for that
-purpose.
+\subsection{A Ladder of Evidence}
 
-The validation sequence is:
+\begin{evidenceladder}
+  \item \textbf{Contract evidence} proves that product surfaces and authority
+  objects obey checked structural rules.
+  \item \textbf{Source qualification} proves that the exact source tree passes
+  declared platform and subsystem gates.
+  \item \textbf{Installed-artifact evidence} proves that one retained build
+  artifact performs the bounded behavior under test.
+  \item \textbf{Provider-bound evidence} identifies the selected executable,
+  version, runtime profile, platform, plan, attempts, assessment, and report.
+  \item \textbf{Longitudinal evidence} tests real Work across time, failure,
+  replacement, recovery, and human intervention.
+  \item \textbf{Independent adoption evidence} requires a receiver or Hub not
+  controlled by the founding implementation.
+\end{evidenceladder}
 
-\begin{enumerate}[leftmargin=*]
-  \item connect Kungfu to real work facts so the GUI can display current state;
-  \item let agents write runtime facts, execution evidence, friction, and task
-  state into Kungfu;
-  \item identify which semantics belong in the generic Kungfu core and which
-  should remain user-defined profiles;
-  \item measure whether Kungfu reduces drift, repeated coordination, and
-  context-recovery cost;
-  \item keep real-work pressure high enough that Kungfu must become useful
-  before public launch.
-\end{enumerate}
+Higher evidence classes do not erase the need for lower ones, and lower
+classes do not inherit the claims of higher ones.
 
-The validation standard is load-bearing: if Kungfu cannot make real work easier
-to manage, the product thesis has not been proven.
+\subsection{Agent Work Lab}
+
+The exact installed-artifact Agent Work Lab path proves one bounded result:
+two distinct fresh processes can preserve one Work identity, retain a partial
+first result, withhold copied chat from the second process, recover the
+required state, and complete the fixture through the declared oracle
+\cite{agentWorkLab}.
+
+The report exposes each continuity check rather than offering only a cinematic
+success. Same-Agent and cross-Agent modes extend the same structure to
+configured providers, binding provider and execution evidence while retaining
+confinement and model-quality limits.
+
+\subsection{What the Current Evidence Does Not Prove}
+
+Current qualification does not establish:
+
+\begin{itemize}[leftmargin=*]
+  \item that a particular model is intelligent, safe, or better than another;
+  \item general production continuity or every real Project shape;
+  \item complete public Kungfu v4 distribution;
+  \item equivalent polished behavior on every supported platform;
+  \item physical power-loss durability or distributed repair;
+  \item universal native-code confinement;
+  \item a public KFX marketplace or independent production Agent Hubs; or
+  \item a persistent self-maintaining machine subject.
+\end{itemize}
+
+These are not rhetorical disclaimers. They determine which experiment or
+release gate must be completed next.
+
+\subsection{The Real-Work Test}
+
+The decisive product question is whether Kungfu reduces the user's recovery
+and coordination burden. A valid real-work study should compare matched Work
+with and without governed continuation, retain negative outcomes, and measure
+how often users must restate context, repair mistaken assumptions, reconstruct
+authority, or determine whether a provider process actually completed the
+intended result.
+
+Kungfu succeeds as a product only if the deeper evidence model makes ordinary
+Work easier to continue and trust.
