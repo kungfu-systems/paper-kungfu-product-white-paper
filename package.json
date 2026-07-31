@@ -53,10 +53,15 @@
     "check": "node scripts/check.mjs",
     "publish:transaction": "node scripts/npm-publish-transaction.mjs",
     "update:site-bundles": "node scripts/update-site-bundles.mjs",
-    "pdf": "make pdf"
+    "pdf": "make pdf",
+    "buildchain:paper": "buildchain paper",
+    "paper:preflight": "buildchain paper preflight --json",
+    "paper:work:start": "buildchain paper work start",
+    "paper:work:submit": "buildchain paper work submit",
+    "paper:status": "buildchain paper status --json"
   },
   "devDependencies": {
-    "@kungfu-tech/buildchain": "^3.0.0"
+    "@kungfu-tech/buildchain": "3.0.3-alpha.3"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
@@ -65,5 +70,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kungfu-systems/paper-kungfu-product-white-paper.git"
-  }
+  },
+  "private": true,
+  "packageManager": "pnpm@11.7.0"
 }

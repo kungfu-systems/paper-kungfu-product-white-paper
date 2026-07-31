@@ -1,0 +1,35 @@
+name: Paper Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "alpha/**"
+      - "release/**"
+
+permissions:
+  contents: read
+
+jobs:
+  paper-release:
+    uses: kungfu-systems/buildchain/.github/workflows/paper-release-sealed.yml@f30bb2678cacbae947eb46411c13eda75e9e35b0
+    permissions:
+      actions: read
+      checks: write
+      contents: read
+      id-token: write
+      issues: write
+      pull-requests: write
+    with:
+      buildchain-ref: f30bb2678cacbae947eb46411c13eda75e9e35b0
+      buildchain-contract-lock-path: .buildchain/contract-lock.json
+      publisher-workflow-path: .github/workflows/paper-release.yml
+      toolchain-type: config
+      verify-command: make check
+      artifact-paths: "_build/main.pdf"
+      release-passport-product-name: "Kungfu: Continuity for Agent Work"
+    secrets:
+      KUNGFU_GOVERNANCE_AUDITOR_APP_PRIVATE_KEY: ${{ secrets.KUNGFU_GOVERNANCE_AUDITOR_APP_PRIVATE_KEY }}
+      BUILDCHAIN_GENERATED_WRITE_APP_CLIENT_ID: ${{ secrets.BUILDCHAIN_GENERATED_WRITE_APP_CLIENT_ID }}
+      BUILDCHAIN_GENERATED_WRITE_APP_PRIVATE_KEY: ${{ secrets.BUILDCHAIN_GENERATED_WRITE_APP_PRIVATE_KEY }}
+      BUILDCHAIN_GENERATED_WRITE_TOKEN: ${{ secrets.BUILDCHAIN_GENERATED_WRITE_TOKEN }}
