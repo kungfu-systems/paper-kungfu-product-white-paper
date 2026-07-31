@@ -1,59 +1,47 @@
-\section{The Continuity Gap}
+\section{The Problem}
 
-Real work is not a prompt-response pair. It has accepted state, causal history,
-direction, authority, evidence, unresolved conflict, and consequences. It may
-cross context windows, models, devices, repositories, organizations, and years.
-A session is only one observer's temporary projection of that work.
+Agent products are becoming better at performing work inside one invocation.
+Real work, however, is not one invocation. A release, investigation, migration,
+paper, operation, or personal project accumulates partial results, changed
+assumptions, rejected approaches, unresolved risks, external effects, and
+decisions that must remain inspectable after the originating session is gone.
 
-This creates a product failure that better models alone cannot solve. A capable
-Agent can finish an action and still leave the project unable to continue. A
-new session may know what was said without knowing what was accepted; see a
-commit without knowing why it was chosen; inherit a task without inheriting the
-authority to perform it; or receive a confident summary that silently omits a
-conflict.
+The central failure is not merely limited context length. It is that the unit
+the user cares about---the Work---is often represented only indirectly through
+chat history, provider state, temporary files, and human memory. When those
+surfaces diverge, the user becomes the recovery protocol.
 
-\subsection{Context Is Not Project State}
+\subsection{Conversation Is Not Work State}
 
-Common continuity mechanisms are useful but insufficient on their own:
+A transcript mixes instructions, guesses, corrections, tool output, obsolete
+plans, and social language. Copying it into a new process can reproduce noise
+without preserving authority or current truth. Summarizing it can silently
+erase negative evidence, uncertainty, and the reason a direction changed.
 
-\begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}X}
-\toprule
-Chat transcript & Preserves conversation, not admission, authority, or a
-deterministic project boundary. \\
-Generated summary & Compresses context, but may hide loss, mix observation with
-decision, or drift when regenerated. \\
-Vector memory & Helps recall, but similarity is not causality, acceptance, or
-permission. \\
-Git history & Preserves source content and ancestry, but not the complete
-perspective, Episode, trust decision, or continuation Warrant. \\
-Workflow database & Coordinates mutable process state, but does not necessarily
-publish an independently verifiable settlement. \\
-Vendor session cloud & Can preserve provider context, but may strand continuity
-inside one product and one account boundary. \\
-\bottomrule
-\end{tabularx}
+Continuity therefore requires more than memory retrieval. A fresh Agent needs
+to know which Project and Work it is joining, which facts have been admitted,
+what causally happened, which outcome remains in pursuit, what actions are
+allowed, and how completion will be reviewed.
 
-The missing object is not ``more memory.'' It is an explicit, bounded
-commitment about the project.
+\subsection{Process Success Is Not Work Completion}
 
-\subsection{What a Successor Agent Needs}
+Provider processes report technical outcomes: exit status, generated files,
+tool calls, or natural-language confidence. None is sufficient to decide that
+the user's Work is complete. The result may address the wrong Work, rely on
+stale facts, exceed authority, omit required evidence, or leave downstream
+settlement unresolved.
 
-A fresh Agent should be able to determine, without trusting the previous
-session's prose:
+A responsible system must retain provider output as evidence while leaving
+completion to an independently inspectable assessment and decision.
 
-\begin{itemize}
-  \item the exact project settlement from which it is continuing;
-  \item which source, perspective, causal, policy, and decision authorities the
-  settlement binds;
-  \item what work occurred and what result was actually admitted;
-  \item what remains unknown, omitted, conflicted, rejected, or intentionally
-  withheld;
-  \item which continuing direction and bounded authority apply now; and
-  \item how to verify the record and publish a successor without rewriting
-  history.
-\end{itemize}
+\subsection{Provider Context Is Not User-Owned Continuity}
 
-This is the continuity gap Kungfu is designed to close. The product measure is
-not session length. It is whether one participant can hand real work to another
-through an exact, inspectable boundary with less human reconstruction and no
-silent expansion of trust.
+Cloud providers can preserve conversations and proprietary session state, but
+real Projects also depend on local repositories, files, tools, decisions,
+release artifacts, and multiple Agent vendors. A user's durable Work identity
+should not disappear when an account, model, editor, process, or provider
+changes.
+
+The product opportunity is therefore precise: give Work a local, portable,
+inspectable identity that survives the Agent process currently performing it.
+Kungfu starts from this boundary.

@@ -1,78 +1,75 @@
-\section{The Runtime Beneath the Cut}
+\section{Roadmap}
 
-Project Cut is the first user object, but it can be trusted only because its
-inputs and lifecycle remain verifiable beneath the product surface.
-\texttt{libkungfu} is the reference implementation of that runtime substrate.
-It owns how local Facts and Episodes are recorded, ordered, stored, queried,
-verified, exported, and recovered while the embedding application owns its
-domain facts and product decisions.\cite{kungfuRuntime}
+Kungfu's roadmap no longer begins with inventing a control plane for agent
+activity. The current source-built product already has a smaller first layer,
+a visible continuity experiment, native Work responsibility, and a qualified
+evidence path. The remaining path is to turn those mechanisms into an
+accessible public product and then prove that their value survives real use.
 
-\subsection{Fact and Episode}
+\subsection{Current Product Baseline}
 
-A \textbf{Fact} is admitted state under a declared authority. An
-\textbf{Episode} is a realized causal occurrence: work happened, observations
-were produced, or an attempted action failed. They are related but not
-substitutable. State can change only through declared admission; occurrence can
-be preserved even when no completion Claim is accepted.
+The current baseline includes:
 
-Action adds three independently addressable responsibilities:
-
-\begin{itemize}
-  \item \textbf{Pursuit}: why the action continues and what success means;
-  \item \textbf{Atlas}: what perspective, sources, and declared loss inform the
-  action; and
-  \item \textbf{Warrant}: who may do what, to which subject, under what limits,
-  duration, consequence, and revocation boundary.
+\begin{itemize}[leftmargin=*]
+  \item the accepted and implemented Project / Work / Agent first-layer
+  contract \cite{projectWorkAgent};
+  \item GUI, TUI, CLI, and API surfaces over the same underlying Work state;
+  \item Agent Work Lab modes for a bundled offline demonstration, same-Agent
+  continuation, and cross-Agent handoff;
+  \item native Initiative and Assignment responsibility with independent
+  review and completion semantics;
+  \item Fact, Episode, action, evidence, and Project Cut authority surfaces;
+  \item Profile Suite and KFX extension mechanisms with explicit capability
+  and admission boundaries; and
+  \item Buildchain evidence that binds exact source, artifact, gate, and
+  publication records.
 \end{itemize}
 
-These coordinates prevent a context packet from impersonating intent or
-authority. A rich Atlas does not grant permission. A Warrant does not make a
-Claim true. An Episode does not prove the Pursuit complete.
+These mechanisms make a coherent alpha product. They do not yet constitute a
+general public-release or production-fitness claim.
 
-\subsection{Local Semantic Authority}
+\subsection{First-Run Gate}
 
-The append-only journal is the highest local semantic authority for typed
-identity, admission, order, causality, lifecycle, Cuts, refs, and receipts.
-Content-addressed storage is authoritative for immutable body bytes only when
-they verify against a journal-committed root. SQLite, CLI, GUI, JSON, Python,
-Node, and other projections remain rebuildable access surfaces; they do not gain
-hidden authority by being convenient.
+A fresh installation should deliver visible value within minutes:
 
-This design makes interruption recoverable. A process may crash after writing
-content but before admission, or after preparing a candidate but before
-settlement. Recovery derives the visible state from committed records instead
-of guessing from whichever projection was last updated.
+\begin{enumerate}[leftmargin=*]
+  \item open Kungfu without learning internal ontology;
+  \item see two fresh processes continue one Work item without copied chat;
+  \item understand which continuity checks passed or failed;
+  \item create or import a real Project; and
+  \item run the next Work with an Agent the user already trusts.
+\end{enumerate}
 
-\subsection{Product and Distribution Layers}
+The bounded offline experiment establishes comprehension and mechanism. It
+must lead directly into real Project use rather than remain a disconnected
+demo.
 
-\begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}X}
-\toprule
-Project Cut & Binds accepted project authorities and exposes continuation. \\
-Initiative and Assignment & Organize continuing direction and bounded work in
-the Agent Work Domain Profile. \\
-Runtime substrate & Provides journal-backed Fact admission/query and Episode
-lifecycle/replay. \\
-\texttt{libkungfu} & Embeds the same local truth-source loop in C, Python, Node,
-Rust hosts, desktop products, workers, or services. \\
-Standalone CLI/TUI & Gives Agents and operators headless discovery, record,
-query, verification, maintenance, and export. \\
-GUI & Presents the human control surface without owning storage semantics. \\
-\texttt{.kungfu} format & Carries portable facts, declared schemas,
-verification, and preservation rules without requiring one GUI or language. \\
-\bottomrule
-\end{tabularx}
+\subsection{Public Alpha Gate}
 
-Each layer is an adoption boundary, not a bundle requirement. An Agent vendor
-may embed \texttt{libkungfu} without adopting Kungfu's GUI. A language SDK must
-not become mandatory authority for another host. A cloud service may synchronize
-or exchange runtime evidence without making cloud availability a prerequisite
-for local truth.
+Public Alpha requires a stable installation and launch path, truthful
+cross-platform package evidence, coherent GUI/TUI/CLI onboarding, migration
+and backup boundaries, provider discovery, and failure messages that do not
+expose implementation complexity as user homework.
 
-\subsection{Buildchain Is Release Evidence, Not Runtime State}
+The product should make unavailable or weakly confined providers visible
+without converting absence of proof into either a silent pass or a universal
+security failure.
 
-Buildchain binds source, toolchain, artifact, package, release, and publication
-evidence. It can prove which PDF, binary, package, or site bundle a release
-published and which residual risks were declared. It does not decide project
-Admission, record runtime Episodes, or replace a Project Cut. Keeping release
-provenance separate prevents a valid build from being presented as proof that
-the work itself was correct or complete.\cite{kungfuBuildchain}
+\subsection{Longitudinal Work Gate}
+
+After first-run continuity, Kungfu must prove that one real Pursuit survives
+multiple days, fresh Agent contexts, at least one provider replacement, failed
+attempts, changed understanding, review, restart, and no-chat recovery. The
+measurement should include repeated human explanation, unsupported claims,
+unauthorized effects, recovery time, evidence quality, and residual risk.
+
+This is the point at which continuity becomes a durable product property
+rather than a first-run effect.
+
+\subsection{Ecosystem Gate}
+
+The next ecosystem stage is not an unrestricted marketplace. It is a plural
+set of independently owned Agent Hubs and KFX products that exchange declared
+artifacts and Work evidence while preserving receiver-owned assessment and
+admission. Independent implementations and real external users are required
+before this direction can be described as adoption.

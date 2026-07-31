@@ -1,88 +1,124 @@
-\section{How Work Continues Across Sessions}
+\section{How Continuity Works}
 
-Continuity is a closed loop, not a saved transcript. Kungfu's target product
-loop is:\cite{kungfuProjectCut}
-
-\begin{enumerate}
-  \item inspect and verify the current Project Cut;
-  \item accept bounded work in a continuing Initiative or Pursuit, against the
-  exact Atlas and Warrant roots;
-  \item execute while preserving causal occurrence in an Episode;
-  \item submit a completion or state-change Claim with evidence;
-  \item independently assess the Claim and record the authorized Decision;
-  \item admit only the accepted result and prepare a candidate successor Cut;
-  \item verify and explicitly settle the exact candidate; and
-  \item start a fresh session or Agent from that successor Project Cut.
-\end{enumerate}
-
-In short:
+The first-layer product remains Project, Work, and Agent. Beneath it, Kungfu
+preserves enough semantic structure for a fresh process to continue without
+pretending that a transcript is truth.
 
 \begin{center}
-\textbf{session ends $\rightarrow$ Project Cut remains $\rightarrow$ fresh
-Agent verifies $\rightarrow$ work occurs $\rightarrow$ Episode records
-$\rightarrow$ Claim is decided $\rightarrow$ result is admitted
-$\rightarrow$ successor Cut is published}
+\layerbox{Product experience}{Project, Work, and Agent provide the complete
+first layer and the ordinary path from opening a Project to reviewed
+completion.}
+
+\vspace{0.25em}$\downarrow$\vspace{0.25em}
+
+\layerbox{Semantic and action runtime}{Fact and Episode retain state and causal
+experience; Pursuit, Atlas, and Warrant bind direction, perspective, and
+authority.}
+
+\vspace{0.25em}$\downarrow$\vspace{0.25em}
+
+\layerbox{Responsibility and settlement}{Initiative, Assignment, assessment,
+decision, admission, and Project Cut govern who owns Work and what can complete
+it.}
+
+\vspace{0.25em}$\downarrow$\vspace{0.25em}
+
+\layerbox{Supply chain and extension}{KFD, Buildchain, libkungfu, KFX, and Agent
+Hubs preserve independent authorities across construction, capability, and
+transport.}
+
+\vspace{0.45em}
+{\small\color{KFSlate}\textit{Higher layers expose value; lower layers retain
+the authority that makes the value trustworthy.}}
 \end{center}
 
-\subsection{Agent Supply Chain}
+\subsection{Fact and Episode}
 
-The public architecture separates five responsibilities that products often
-rebuild inside one private control plane:
+A Fact is admitted state at an explicit cut. An Episode is a realized causal
+occurrence across cuts. The distinction matters because a user may need both
+to know the current state and to understand how it became current.
 
-\begin{enumerate}[leftmargin=*]
-  \item KFD-3 exposes value, constraints, choices, commands, Exit, and records
-  so products can discover how to cooperate.
-  \item Buildchain binds product-owned declarations to an exact source cut,
-  build, artifacts, checks, and promotion evidence.
-  \item KFD-2 lets a receiver assess those claims for a declared purpose while
-  retaining residual risk and decision ownership.
-  \item libkungfu and \texttt{.kungfu} preserve admitted work facts, Episodes,
-  roots, exports, and recovery evidence; applications still own domain facts.
-  \item the KFD Agent Hub profile carries bounded responsibility objects across
-  independently owned products, with receiver-owned admission.
-\end{enumerate}
+An Agent run is therefore retained as an Episode with evidence and lineage,
+not merged directly into one mutable narrative. Failed attempts and partial
+results can remain useful causal history without becoming current truth.
 
-The layers remain separable authorities. Buildchain does not invent product
-facts or make the trust decision. KFD does not become a central Hub, identity
-provider, database, or transport. Kungfu's JSON surfaces are edge projections,
-not a second authoritative data plane.
+In the Alpha example, the exact source revision and the absence of one required
+platform result can be retained as declared facts at the relevant cut. Agent
+A's investigation is an Episode: it explains how the Work reached a partial
+state without turning every sentence in the Agent's output into admitted
+truth.
 
-\subsection{Conservative Context Projection}
+\newpage
 
-A new Agent does not need every token from every prior session. It needs a
-bounded projection that can be traced back to admitted Facts, causal Episodes,
-declared perspective, continuing direction, and current authority. A useful
-projection may summarize or omit material, but it must declare that loss and
-must not upgrade an unknown, conflict, or withheld field into a verified fact.
+\subsection{The Action Loop}
 
-The full Project Cut remains the round-trip authority. A model-specific context
-pack is a replaceable view. If the view cannot preserve a load-bearing
-distinction, the system must expose the loss or refuse the projection rather
-than silently flattening it.
+Kungfu organizes action through three coordinates over admitted Facts:
 
-\subsection{Session and Agent Replacement}
-
-The architecture treats sessions, models, and Agent processes as replaceable.
-The work should survive:
-
-\begin{itemize}
-  \item context-window exhaustion or deliberate context reset;
-  \item a new model or provider taking over the same bounded Assignment;
-  \item process crash and recovery from the journal and content roots;
-  \item movement between local and remote execution environments;
-  \item human review between producing and continuing Agents; and
-  \item exchange between independently owned Hubs that make their own
-  admission decisions.
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Pursuit}: the continuing direction and success conditions;
+  \item \textbf{Atlas}: the declared perspective, sources, and current cut;
+  \item \textbf{Warrant}: the explicit, bounded authority to act.
 \end{itemize}
 
-The successor does not trust the predecessor because both are called Agents.
-It verifies the cut, evidence, authority, and receipt under its local policy.
+The resulting loop is:
 
-\subsection{Failure Must Stay Visible}
+\begin{quote}
+Fact cut $\rightarrow$ select or revise Pursuit $\rightarrow$ declare Atlas
+$\rightarrow$ verify Warrant $\rightarrow$ act $\rightarrow$ record Episode
+$\rightarrow$ assess and admit claims $\rightarrow$ next Fact cut.
+\end{quote}
 
-Continuity is invalid if the next session starts from a missing Episode, stale
-Atlas, mismatched receipt, incomplete parent acceptance, changed source after a
-Claim, widened Warrant, conflicting successor, or unverifiable root. Kungfu
-preserves such conditions as typed failure, conflict, unavailability, or
-intentional withholding. Last-write-wins and confident prose are not recovery
-strategies.
+An immutable binding can prove which exact roots met for one action, but the
+receipt does not create new authority. Missing, stale, incompatible, or
+ambiguous roots fail closed rather than being repaired through model guesswork.
+
+For the same Work, the Pursuit is an exact, reviewable public Alpha. The Atlas
+declares the repository, release requirements, available platform evidence,
+and the missing result. A Warrant may allow Agent B to edit release notes and
+run candidate checks while withholding publication. The fresh Agent can
+continue intelligently without inheriting authority it was never granted.
+
+\subsection{Responsibility and Settlement}
+
+Work Control gives the loop a responsibility model. An Initiative retains a
+continuing intended change. An Assignment gives one bounded responsibility a
+holder, relations, execution lease, evidence requirements, review state, and
+typed continuation. A Portfolio may observe multiple Projects but cannot
+override their independent completion authority.
+
+Completion requires an accepted decision and, where applicable, Project Cut
+settlement. A process exit, passing build, merged pull request, or delivery
+artifact can contribute evidence without acquiring authority to close Work.
+
+Project Cut binds declared source, the current Atlas, admitted Episode delta,
+policies, omissions, and risk into one content-addressed continuation point.
+It does not absorb the independent authority of source control, Work Control,
+the journal, or a release system.
+
+In the example, Agent B's successful process remains evidence. Independent
+review decides whether the required outcome has been met, and settlement binds
+the accepted source, evidence, omissions, and decision. That is the difference
+between continuing the Work and merely continuing a conversation about it.
+
+\subsection{Journal Authority and Rebuildable Views}
+
+The local journal owns semantic identity, admission, ordering, causality,
+lifecycle, cuts, and receipts. Content-addressed storage owns immutable bodies
+when the journal commits their roots. JSON, Git views, dashboards, and GUI
+projections are rebuildable views; they do not become authority merely because
+they are easier to read.
+
+This hierarchy lets higher product layers add convenience without silently
+changing truth. It also lets different complete products---desktop, terminal,
+CLI, SDK, or an Agent-facing integration---share one core without requiring
+one another.
+
+\subsection{Progressive Disclosure}
+
+Most users should experience this architecture as a simple sequence: open a
+Project, choose Work, run an Agent, and review the result. When something is
+missing, disputed, denied, or unsafe, explain views reveal the exact Fact,
+Episode, perspective, authority, responsibility, and receipt involved.
+
+The ontology exists to make ordinary product behavior trustworthy. It is not
+an entrance examination for using the product.

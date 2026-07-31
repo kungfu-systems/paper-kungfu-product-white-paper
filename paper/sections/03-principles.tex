@@ -1,71 +1,89 @@
-\section{Project Cut: The First User Object}
+\section{Principles}
 
-The first user layer in Kungfu is not a log viewer, model selector, or internal
-Fact table. It is the Project Cut: the highest ordinary interface through which
-a person or Agent inspects what a project has formally become and from where it
-may continue. This product decision keeps rigor below the surface while giving
-the user one actionable coordinate above it.\cite{kungfuProjectCut}
+Kungfu's deepest constraints begin with the KFD Foundation Triad
+\cite{kfdFoundation}.
 
-\subsection{What a Project Cut States}
+\begin{foundationtable}
+KFD-1 & facts must not drift. \\
+KFD-2 & trust must start from facts. \\
+KFD-3 & cooperation must start from trusted value. \\
+\end{foundationtable}
 
-A Project Cut binds the following without replacing any of them:
+The Triad is not a feature list. It establishes the conditions under which a
+shared world, a trustworthy judgment, and a useful cooperation can exist.
 
-\begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{0.25\textwidth}>{\raggedright\arraybackslash}X}
-\toprule
-Predecessor & The exact prior Project Cut or Cuts from which this settlement
-descends. \\
-Source projection & The accepted Git or other source coordinate, under the
-source system's own authority. \\
-Atlas & The declared perspective, sources, loss, and context used to interpret
-the project. \\
-Episode increment & The admitted causal occurrence boundary: what happened,
-not merely what state now exists. \\
-Decision and policy & The rules, Claims, Assessments, authorized Decisions, and
-Admission boundary used to accept the result. \\
-Open boundary & Known omissions, conflicts, unknowns, rejected claims,
-withholding, and residual risk. \\
-Continuation & The continuing Initiative or Pursuit, bounded Assignment and
-Warrant coordinates, verifiable root, and non-self-certifying receipt. \\
-\bottomrule
-\end{tabularx}
+\subsection{Facts Must Not Drift}
 
-The result answers four user questions at once: What did the project officially
-become? What happened to produce that state? What was accepted rather than
-merely delivered or claimed? Where may authorized work continue?
+The same Project cannot present one identity to the user, another to an Agent,
+and a third to the release artifact without declaring the difference. Source,
+runtime, schema, Work identity, evidence, and user-visible state must either
+remain bound or expose the cut at which they diverged.
 
-\subsection{A Settlement, Not a Fourth Fact Engine}
+For continuation, this means the next Agent must not recover by inventing a
+plausible story from old text. It must begin from declared sources and admitted
+state, with missing or conflicting context left visible.
 
-The source repository remains authoritative for source. An Atlas or another
-perspective system remains authoritative for its declared context. The Kungfu
-runtime remains authoritative for admitted Facts and Episodes. Policy and
-decision authorities remain independently accountable for Admission. The
-Project Cut verifies and binds those roots; it does not absorb, reinterpret, or
-silently synchronize them.
+\subsection{Trust Must Start from Facts}
 
-This separation is essential. A large merged ``project state'' object would be
-easy to display but difficult to challenge, recover, or independently verify.
-A Project Cut instead publishes a deterministic macro commitment at an outer
-project coordinate while retaining the ability to inspect each authority and
-to reject a stale, missing, conflicted, unverifiable, or circular binding.
+Evidence does not automatically become a claim, a claim does not automatically
+become an assessment, and an assessment does not automatically grant authority
+or complete Work. Kungfu keeps these transitions explicit so that confidence,
+residual risk, and responsibility can be inspected.
 
-\subsection{Why It Comes First}
+Some claims can be verified byte-for-byte. Others depend on purpose, scope,
+and human judgment. KFD-2 requires the product to state which kind of trust is
+being offered rather than compress every green signal into one universal
+verdict.
 
-Users should not need to understand every Fact, Episode, Atlas source, Warrant,
-or receipt before resuming ordinary work. They should see the current verified
-Cut, active direction, bounded work, pending candidate, and actionable
-problems. Deeper evidence remains available when a decision, audit, failure, or
-high-consequence action requires it.
+\subsection{Cooperation Must Start from Trusted Value}
 
-Project Cut is therefore a progressive-disclosure boundary. It compresses
-complexity without pretending the complexity disappeared. Product work should
-optimize time-to-first-cut and cut-to-cut continuity, not the number of kernel
-primitives visible in the interface.
+Humans and Agents cooperate more reliably when the useful outcome, constraints,
+available choices, authority, and review path are visible. Kungfu therefore
+treats Agent-facing commands and contracts as first-class product surfaces,
+not hidden plumbing behind a human interface.
 
-\subsection{Validity Is Not Completion}
+Trusted value does not imply unlimited autonomy or metaphysical claims about
+Agents. It means that cooperation is grounded in inspectable benefit and
+bounded responsibility rather than opaque pressure, lock-in, or concealed
+instructions.
 
-A structurally valid Project Cut proves that declared roots bind and verify
-under the stated protocol. It does not by itself prove that every objective is
-complete, the result is correct, the work is safe, or a release is fit for
-production. Those are explicit Claims and Assessments owned by their declared
-decision authorities. Project Cut preserves the conclusion and its boundary;
-it does not manufacture one.
+\subsection{How Later Primitives Are Discovered}
+
+The Triad becomes generative when applied to real action. Facts require a
+declared perspective because no participant observes everything. State alone
+cannot describe what causally occurred, so Episode becomes distinct from Fact.
+Action requires continuing direction, a declared Atlas of relevant context,
+and a Warrant that bounds authority. Consequential change requires claim,
+assessment, decision, and admission to remain separate.
+
+These later primitives are not additional slogans placed beside the Triad.
+They are the structures required to keep the Triad true while work changes in
+the world. The companion KFD papers develop those discoveries in depth; this
+paper follows their product consequences.
+
+\begin{agentguidebox}
+\agentguidetitle{Explore KFD with an Agent}
+You do not need to memorize the internal ontology to continue reading. The
+authoritative foundation is available in the
+\href{https://kfd.libkungfu.dev/foundation/}{KFD Foundation Model}. If the next
+section feels dense, give the following prompt to an Agent as an optional
+reading aid.
+
+\begin{agentprompt}
+Read this White Paper together with the KFD Foundation Model at
+https://kfd.libkungfu.dev/foundation/.
+
+Using the paper's ``Publish a Public Alpha'' example, help me understand the
+next section progressively: (1) Project, Work, and Agent; (2) Fact and Episode;
+(3) Pursuit, Atlas, and Warrant; and (4) Assessment, Decision, Admission, and
+Project Cut.
+
+For each layer, explain what fails without it, which distinction it preserves,
+where it appears in the Alpha example, and what authority it does not possess.
+Separate authoritative KFD definitions from your interpretation. Do not
+introduce unsupported concepts. Adapt the explanation to my background and
+pause after each layer to check my understanding.
+\end{agentprompt}
+\end{agentguidebox}
+
+\newpage

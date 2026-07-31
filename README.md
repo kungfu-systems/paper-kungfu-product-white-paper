@@ -1,41 +1,19 @@
-# Kungfu: The Session Is Not the Work
+# Kungfu Product White Paper
 
-This repository tracks the source, site bundles, and Buildchain publication
-evidence for the Kungfu product white paper.
+This repository tracks the source for a Kungfu product white paper.
 
-Title:
-
-```text
-Kungfu: The Session Is Not the Work
-```
-
-Subtitle:
+Working title:
 
 ```text
-Verified continuity for agent work that outlives the chat.
+Kungfu: Continuity for Agent Work
 ```
 
-Deck:
-
-```text
-Project Cuts, libkungfu, and KFD: a local runtime and open responsibility
-protocol for long-running agent work.
-```
-
-The paper defines Project Cut as the first user object for cross-session Agent
-work, explains the `libkungfu` runtime beneath it, and separates KFD, Buildchain,
-and participant-owned Agent Hub responsibilities. Its recommended builder
-strategy is explicit:
-
-```text
-Embed libkungfu now. Deliver Project Cut continuity.
-Build your KFD-compatible Hub in parallel.
-```
-
-The document also records the alpha claim boundary. KFD remains open and
-independently implementable; embedding `libkungfu` does not automatically
-certify conformance; and the cited evidence is first-party rather than proof of
-external vendor adoption or broad production readiness.
+The paper explains Kungfu as a local-first product and runtime that lets Work
+continue across chat boundaries and replaceable Agent processes. It connects
+the Project / Work / Agent product model, Agent Work Lab, the KFD Foundation
+Triad, Fact and Episode continuity, bounded action authority, Work settlement,
+the Agent Supply Chain, and the research bridge from Work continuity to
+machine-subject continuity.
 
 Publisher: Kungfu Origin Technology Limited.
 Contact: Keren Dong <keren.dong@kungfu.link>.
@@ -50,6 +28,8 @@ LaTeX is an implementation detail.
 
 - [`paper/main.tex`](paper/main.tex): LaTeX entrypoint.
 - [`paper/sections/`](paper/sections/): paper sections.
+- [`paper/assets/`](paper/assets/): public-safe figures generated from retained
+  product evidence.
 - [`paper/references.bib`](paper/references.bib): bibliography.
 - [`docs/MAP.md`](docs/MAP.md): repository map.
 - [`.buildchain/buildchain.toml`](.buildchain/buildchain.toml): Buildchain
@@ -67,17 +47,6 @@ The npm package exposes two generated site bundles from the same paper source:
   `site-kungfu-tech` / `kungfu.tech`.
 - [`site/evidence-site.json`](site/evidence-site.json): artifact and evidence
   bundle for `papers.libkungfu.dev`.
-
-The `agentSupplyChain` object in both generated bundles is the cross-product
-public narrative contract. It composes KFD, Buildchain, Kungfu runtime, and Hub
-portability facts for renderers while leaving each product repository and
-immutable release artifact authoritative for its own mechanics and evidence.
-Sites may adapt presentation and navigation, but must preserve the five-layer
-order, maturity vocabulary, claim boundary, and non-claims.
-Each layer also carries its `owner`, declared `input` and `output`, exact
-immutable `evidenceCoordinates`, and explicit `knownLimits`; consumers must not
-replace those release- or commit-bound coordinates with mutable branch links or
-omit the limits from machine-facing projections.
 
 Regenerate them after changing the paper source:
 
@@ -105,10 +74,6 @@ Build the PDF and Buildchain publication artifact:
 npm run build
 ```
 
-The public PDF artifact is written to `_build/kungfu-white-paper.pdf`. The
-artifact name and canonical route identify the publication rather than its
-current title, so future title changes do not require another URL migration.
-
 NPM package dry-run:
 
 ```sh
@@ -129,6 +94,7 @@ CI and publication should go through the Buildchain lifecycle declared in
 
 ## Status
 
-This is an alpha product and architecture paper. Source-pinned integration and
-evaluation are encouraged now. Stable KFD Hub interoperability, certification,
-external vendor adoption, and broad production readiness are not claimed.
+This is an alpha white paper grounded in the current source-built Kungfu
+product and its exact qualified evidence. It is not a public-release or
+production-fitness claim; the paper states the remaining distribution and
+longitudinal validation boundaries explicitly.

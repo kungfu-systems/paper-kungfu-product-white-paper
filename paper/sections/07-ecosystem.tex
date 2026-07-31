@@ -1,89 +1,78 @@
-\section{Authority, Trust, and Evidence}
+\section{Ecosystem}
 
-Continuity is unsafe when a system collapses transport, identity, occurrence,
-judgment, and authority into a single success flag. Kungfu and KFD preserve the
-separations that keep responsibility attributable.
+Kungfu is designed as one core with multiple complete products. A desktop
+application, terminal interface, CLI, SDK, extension, or Agent Hub may add
+convenience and domain value, but no higher layer acquires authority merely by
+being closer to the user.
 
-\calloutbox{Three non-substitution rules}{Delivery $\neq$ Admission. Occurrence
-$\neq$ Completion. Authentication $\neq$ Authority.}
+\subsection{The Agent Supply Chain}
 
-\subsection{Delivery Is Not Admission}
-
-A transport receipt can prove that bytes reached a declared endpoint under a
-binding. It cannot decide whether the receiver accepts the source, profile,
-authority, disclosure, evidence, or result. The producer proposes; the receiver
-owns its local verdict. This remains true for an in-process call as well as a
-cross-company network exchange.
-
-\subsection{Occurrence Is Not Completion}
-
-An Episode proves that a declared occurrence was recorded and sealed under its
-runtime boundary. A process exit code, tool response, generated artifact, or
-merged change may support a Claim, but none independently settles the Pursuit.
-Completion follows a visible chain:
+The current supply-chain model separates five responsibilities:
 
 \begin{center}
-\textbf{Claim $\rightarrow$ Assessment $\rightarrow$ authorized Decision
-$\rightarrow$ Admission $\rightarrow$ Project Cut settlement}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{0.23\textwidth}>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Layer} & \textbf{Responsibility} \\
+\midrule
+KFD-3 cooperation & Declares participant, capability, constraint, and value interfaces. \\
+Buildchain & Binds exact source, artifact, build, gate, promotion, and release evidence. \\
+KFD-2 assessment & Decides what the evidence means for one receiver and purpose. \\
+libkungfu / .kungfu & Retains local Facts, Episodes, Work state, export, and recovery authority. \\
+Agent Hub & Transports artifacts and declarations while leaving admission to the receiver. \\
+\bottomrule
+\end{tabularx}
 \end{center}
 
-The Claim states what is asserted. Assessment evaluates it against facts,
-criteria, evidence, and residual risk. Decision records what an authorized
-owner chooses. Admission changes accepted state or responsibility. Project Cut
-then binds the resulting authorities at the project level. A system may retain
-rejected and conflicted Claims without allowing them to change admitted state.
+No layer swallows another. Build evidence is not trust assessment. Assessment
+is not execution authority. Transport is not admission. A Hub cannot complete
+receiver-owned Work merely because it delivered an artifact.
 
-\subsection{Authentication Is Not Authority}
+\subsection{Keep the Existing Agent Relationship}
 
-Authentication can prove control of an identifier under a particular binding.
-It does not prove permission, truth, completion, or fact admission. Warrant
-authority must be explicit, scoped, time-bounded where appropriate, revocable,
-and non-amplifying. A delegated Warrant must remain narrower than or equal to
-its parent across subject, action, consequence, time, disclosure, and further
-delegation.
+Agent vendors can retain their models, interfaces, accounts, billing, cloud
+execution, and customer relationships. Kungfu can operate as the continuity
+and responsibility substrate beneath those products. This makes neutrality a
+practical architecture rather than a demand that every user adopt one new
+execution surface.
 
-This protects both users and Agent vendors. A Hub can map identities and enforce
-policy according to its own customer and regulatory obligations without
-pretending that another Hub's authentication system governs its local facts.
+\subsection{Three Adoption Paths}
 
-\subsection{Trust Starts from Facts}
+The same core can enter the market through different needs without presenting
+all of them on one first screen:
 
-KFD trust is not one undifferentiated score. A Claim should identify the facts
-and evidence that support it, the assessment method and decision owner, what
-remains unverified, and who owns the residual risk. Byte verification,
-structural conformance, execution evidence, independent review, and
-natural-language judgment are different evidence classes. None should borrow
-the confidence of another without an explicit bridge.
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Agent users} enter through Agent Work Lab and Kungfu Episodes,
+  then keep real Projects and Work continuous across sessions and providers.
+  \item \textbf{Developers and teams} enter through libkungfu, SDKs, Work
+  Control, and Project Cut when they need durable local state, review, and
+  settlement inside existing products.
+  \item \textbf{Agent builders} enter through KFD declarations and the Agent
+  Hub protocol when they need portable evidence without surrendering their
+  model, interface, cloud, billing, or customer relationship.
+\end{itemize}
 
-Buildchain applies this discipline to releases. A release Passport can bind an
-artifact to source, toolchain, checks, publication coordinates, declared
-impact, and residual risk. It does not certify the product's natural-language
-meaning or make an alpha Profile stable.\cite{kungfuBuildchain}
+Continuity is the common wedge. Trust and accountability are the ceiling that
+makes the substrate valuable as Work becomes more consequential.
 
-For vendors, the immediate path is deliberately bounded: assign technical and
-product owners, run a 30-day assessment of the five Agent Supply Chain layers
-and their exact evidence, build one adapter or conformance spike, submit
-protocol gaps, and decide whether to adopt, co-shape, or monitor. The value of
-acting early is the chance to shape an open responsibility boundary before
-incompatible private state models harden. That is a migration-cost argument,
-not a claim of endorsement or an obligation to integrate.
+\subsection{Profile Suite and KFX}
 
-Independent Hubs should compete on product experience, models, tools, policy,
-accounts, cloud, and customer relationships. The shared protocol removes the
-need to recreate discovery, provenance, bounded trust, durable work exchange,
-and Exit as proprietary lock-in. A second conforming production Hub remains an
-ecosystem milestone, not present evidence.
+Profile Suites turn neutral primitives into coherent domain products without
+forking the core. KFX contributes views, adapters, and services through
+declared capabilities and runtime isolation tiers. Discovery or first-party
+identity does not authorize execution. Launch requires the applicable release
+evidence, core policy, admitted Work and Warrant, declared capability, granted
+capability, and host isolation.
 
-\subsection{Disclosure and Exit}
+This structure allows capabilities to become inspectable, versioned, and
+replaceable. It also creates a boundary that future research can reinterpret
+as an executable organ without requiring the present product to make a
+machine-life claim.
 
-Portable evidence must not require portable secrets. A Hub may exchange roots,
-commitments, selected fields, or intentionally withheld states while keeping
-raw prompts, credentials, private files, and complete Episode bodies local.
-Redaction is not absence and must be declared. A receiving Hub decides whether
-the available disclosure is sufficient for its policy.
+\subsection{Open Standard, Founding Implementation}
 
-Exit remains a trust property. Export should preserve exact profile
-coordinates, roots, predecessor relations, verdicts, conflicts, disclosure
-commitments, and binding-independent payload digests. A user's work should not
-become unverifiable merely because a vendor account, model, or transport is no
-longer available.
+KFD is an open engineering standard and protocol direction. Kungfu is its
+founding implementation, not a central registry with automatic authority over
+other implementations. A credible Agent Hub ecosystem therefore requires
+plural, independently owned receivers that can reject, reinterpret, or admit
+the same delivered evidence for their own purposes.
