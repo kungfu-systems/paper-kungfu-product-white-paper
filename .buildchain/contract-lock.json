@@ -3,18 +3,18 @@
   "contract": "kungfu-buildchain-contract-lock",
   "buildchain": {
     "ref": "v3",
-    "resolvedSha": "9e904de2c85dbea7c799780ee166510b3336d812",
+    "resolvedSha": "f30bb2678cacbae947eb46411c13eda75e9e35b0",
     "contract": "kungfu-buildchain-runtime-contract-world",
-    "contractDigest": "sha256:914720131f07664cd187a1033f357c4952ef1008f5553cb6b285a75f786a7fbc",
-    "compatibilityDigest": "sha256:199fd83a7da33b0f654692ca973b33155e376ed50f0ce1f5864e1b6b18e0500a",
+    "contractDigest": "sha256:000dd17acb6a55f563392cd49d22a5c64ec178c80292b92e6630e58ca6d5aeee",
+    "compatibilityDigest": "sha256:61af7d0871220bc0909008bdc571905ad500cccf853e7841bc5d462a34b2d436",
     "majorLine": "v3",
     "compatibilityPolicy": "major-compatible",
-    "acceptedAt": "2026-07-26T04:20:00.000Z",
+    "acceptedAt": "2026-07-31T16:03:39.814Z",
     "surfaces": [
       {
         "id": "reusable-build",
         "kind": "workflow",
-        "breakingDigest": "sha256:a6a35370d6b0d0f46e1b2712dcc01961fe53c2febde95409a27a485c10a36650"
+        "breakingDigest": "sha256:dfbedd543ae0c067982b5c8c02d98dd2f7f7df88752be97fb330da6b0ba30faa"
       },
       {
         "id": "channel-build-router",
@@ -34,7 +34,12 @@
       {
         "id": "web-surface",
         "kind": "workflow",
-        "breakingDigest": "sha256:da569f90374e878948e3d5160ed9929338ce0572473ca8ee54867b0fe1aaeace"
+        "breakingDigest": "sha256:27f0cb9c7d97288850d215be8696b323471c41fd1cdf3a2ff3ebf21f62541960"
+      },
+      {
+        "id": "auditable-demo",
+        "kind": "workflow",
+        "breakingDigest": "sha256:425f8d3d1ba205dd6fe35a20f1dc6dad7d7c563872283e3af79fea4d5c475692"
       },
       {
         "id": "promote-buildchain-ref-action",
@@ -104,7 +109,7 @@
       {
         "id": "controller:build-lifecycle",
         "kind": "controller",
-        "breakingDigest": "sha256:30745921541e9b0f70475bb2178c2559f6aef248f6680670ccd44d8c5a69a6b1"
+        "breakingDigest": "sha256:6b8d38e92b2c67b5bc83fae0a3fd95bfa47582fbc176e6cdeebe7630a57534cb"
       },
       {
         "id": "controller:build-channel-router",

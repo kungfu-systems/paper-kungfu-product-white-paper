@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "contract": "kungfu-buildchain-paper-provisioning-authority",
+  "repository": "kungfu-systems/paper-kungfu-product-white-paper",
+  "package": {
+    "name": "@kungfu-tech/paper-kungfu-product-white-paper",
+    "registry": "https://registry.npmjs.org/",
+    "bootstrapVersion": "0.0.0-bootstrap.0"
+  },
+  "runtime": {
+    "repository": "kungfu-systems/buildchain",
+    "version": "3.0.3-alpha.3",
+    "ref": "f30bb2678cacbae947eb46411c13eda75e9e35b0",
+    "resolvedSha": "f30bb2678cacbae947eb46411c13eda75e9e35b0"
+  },
+  "workflows": {
+    "build": {
+      "path": ".github/workflows/build.yml",
+      "sourceDigest": "sha256:c175f884a2a992317393b0a32e60b9cc38a1019cc0c9f5300258b64402f39c5b",
+      "reusablePath": ".github/workflows/publication-artifact.yml",
+      "reusableRef": "f30bb2678cacbae947eb46411c13eda75e9e35b0"
+    },
+    "release": {
+      "path": ".github/workflows/paper-release.yml",
+      "sourceDigest": "sha256:30d58de925278f31c682a43ecf584e0bf7700d3323fffbcdb49afe8cf6027208",
+      "reusablePath": ".github/workflows/paper-release-sealed.yml",
+      "reusableRef": "f30bb2678cacbae947eb46411c13eda75e9e35b0"
+    }
+  },
+  "admission": {
+    "contractLockPath": ".buildchain/contract-lock.json",
+    "contractLockDigest": "sha256:9af52036f06edced4012d26e7600674d526eb8d5e88f7993e2da89ea391ad122",
+    "acceptedRef": "f30bb2678cacbae947eb46411c13eda75e9e35b0",
+    "acceptedSha": "f30bb2678cacbae947eb46411c13eda75e9e35b0"
+  },
+  "trustedPublisher": {
+    "type": "github",
+    "repository": "kungfu-systems/paper-kungfu-product-white-paper",
+    "workflow": "paper-release.yml",
+    "environment": ""
+  },
+  "policy": {
+    "repositoryActions": {
+      "defaultWorkflowPermissions": "read",
+      "canApprovePullRequestReviews": false
+    },
+    "generatedWrites": {
+      "preferredAuthority": "github-app",
+      "compatibilityAuthority": "narrow-token",
+      "githubTokenFallback": false,
+      "permissions": [
+        "checks:write",
+        "contents:write",
+        "pull-requests:write"
+      ],
+      "tokenPersistence": "runtime-only"
+    },
+    "release": {
+      "protectedReviewRequired": true,
+      "versionState": "not-required",
+      "identityOnlyPullRequests": false,
+      "manualVersionStateRepairPullRequests": false
+    },
+    "roles": {
+      "actor": "repository-development-role",
+      "pusher": "repository-development-role",
+      "reviewer": "independent-review-role",
+      "generatedWriteAuthority": "github-app-or-narrow-token"
+    },
+    "policyDigest": "sha256:42aafcd084e0de8f569176df4397120e226b4f619b0ff3db804bbb528e1313af"
+  },
+  "authorityDigest": "sha256:45722bf093135e6c0ab3c0d2332bfc0f70ceea435c6dbd0ebac0556865957497"
+}

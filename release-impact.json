@@ -8,8 +8,8 @@
   },
   "versionImpact": {
     "final": "minor",
-    "source": "continuity-white-paper-alpha-11",
-    "rationale": "This Alpha substantially reframes the product white paper around continuity for long-running agent work while preserving the existing publication and package coordinates."
+    "source": "tex-gyre-white-paper-alpha-12",
+    "rationale": "This Alpha retains the continuity narrative introduced in Alpha 11 and restores the intended TeX Gyre typography through a reproducible pinned builder image."
   },
   "surfaceImpacts": [
     {
@@ -34,8 +34,8 @@
       "id": "commercial-publication-design",
       "impact": "patch",
       "class": "presentation",
-      "rationale": "The PDF gains a commercial editorial system, a real Kungfu CLI evidence view, and a kungfu.tech cover contact while retaining a reproducible pinned Docker build."
+      "rationale": "The PDF retains its commercial editorial system, Kungfu CLI evidence view, and kungfu.tech cover contact while restoring TeX Gyre Pagella, Heros, and Cursor through a reproducible pinned Docker build."
     }
   ],
-  "summary": "Alpha 11 is a minor-impact narrative release that makes continuity for agent work the present product thesis and Machine Life the future direction."
+  "summary": "Alpha 12 preserves the continuity product thesis and Machine Life bridge while restoring the intended TeX Gyre publication typography."
 }
