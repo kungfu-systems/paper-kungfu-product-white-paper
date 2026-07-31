@@ -27,11 +27,14 @@ on:
         default: "true"
 
 permissions:
+  actions: write
+  artifact-metadata: write
+  attestations: write
   contents: write
-  actions: read
   checks: write
   issues: write
   id-token: write
+  pull-requests: write
 
 jobs:
   reject-manual-apply:
