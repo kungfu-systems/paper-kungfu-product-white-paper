@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "contract": "kungfu-buildchain-impact",
+  "release": {
+    "tag": "v0.1.0-alpha.11",
+    "line": "v0.1",
+    "channel": "alpha",
+    "targetRef": "alpha/v0/v0.1"
+  },
+  "versionImpact": {
+    "final": "minor",
+    "source": "continuity-white-paper-alpha-11",
+    "rationale": "This Alpha substantially reframes the product white paper around continuity for long-running agent work while preserving the existing publication and package coordinates."
+  },
+  "surfaceImpacts": [
+    {
+      "id": "continuity-white-paper",
+      "impact": "minor",
+      "class": "content",
+      "rationale": "The paper now explains why durable Work identity, governed evidence, bounded authority, and continuity across replaceable Agents are necessary for long-running agent work.",
+      "source": ""
+    },
+    {
+      "id": "project-work-agent-model",
+      "impact": "minor",
+      "class": "product-model",
+      "rationale": "The public narrative introduces Project, Work, and Agent together with Agent Work Lab as the product entry point and evidence surface.",
+      "source": ""
+    },
+    {
+      "id": "foundation-triad-and-machine-life-bridge",
+      "impact": "minor",
+      "class": "research-narrative",
+      "rationale": "The paper presents the Foundation Triad at a first-reader gradient and connects present product continuity to the longer-horizon Machine Life direction.",
+      "source": ""
+    },
+    {
+      "id": "commercial-publication-design",
+      "impact": "patch",
+      "class": "presentation",
+      "rationale": "The PDF gains a commercial editorial system, a real Kungfu CLI evidence view, and a kungfu.tech cover contact while retaining a reproducible pinned Docker build.",
+      "source": ""
+    }
+  ],
+  "summary": "Alpha 11 is a minor-impact narrative release that makes continuity for agent work the present product thesis and Machine Life the future direction.",
+  "classification": "minor",
+  "breaking": false,
+  "migrationRequired": false
+}

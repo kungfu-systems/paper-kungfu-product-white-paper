@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "contract": "kungfu-buildchain-release-passport",
+  "generatedAt": "2026-07-31T12:48:14.862Z",
+  "surfaceTimestampPolicy": {
+    "generatedAt": "2026-07-31T12:48:14.862Z",
+    "publishedAt": "2026-07-31T12:48:14.862Z",
+    "reproducible": true,
+    "timestampPolicy": "ci-injected",
+    "deterministicInputs": [
+      "release.sourceSha",
+      "release.releaseSha",
+      "release.releaseMaterialSha",
+      "artifact-evidence.json",
+      "publish evidence",
+      "release-state transaction",
+      "controller receipt references",
+      "sourceRevision",
+      "sourceDateEpoch",
+      "package content",
+      "declared Buildchain surface manifest contract"
+    ],
+    "sourceDateEpoch": "0",
+    "sourceRevision": "695b849203b5879f6169f1806f31c1b1e860fdf6",
+    "timestampPolicyDetails": {
+      "contract": "kungfu-buildchain-surface-timestamp-policy",
+      "timestampFields": [
+        "generatedAt",
+        "publishedAt",
+        "surfaceTimestampPolicy.generatedAt",
+        "surfaceTimestampPolicy.publishedAt"
+      ],
+      "timestampFieldsParticipateInArtifactDigest": true,
+      "artifactDigestScope": "release passport JSON and release evidence bundle",
+      "note": "Human-readable timestamps are separate from reproducibility inputs; do not infer reproducibility from epoch timestamps."
+    }
+  },
+  "product": {
+    "name": "Kungfu Product White Paper",
+    "repository": "kungfu-systems/paper-kungfu-product-white-paper",
+    "mechanism": "product-mechanism.json"
+  },
+  "release": {
+    "tag": "v0.1.0-alpha.11",
+    "publicTag": "v0.1.0-alpha.11",
+    "internalTag": "v0.1.0-alpha.11",
+    "internalVersion": "0.1.0-alpha.11",
+    "publishedVersion": "0.1.0-alpha.11",
+    "versionLabel": "0.1.0-alpha.11",
+    "line": "v0.1",
+    "sourceSha": "695b849203b5879f6169f1806f31c1b1e860fdf6",
+    "channel": "alpha",
+    "targetRef": "alpha/v0/v0.1",
+    "releaseSha": "695b849203b5879f6169f1806f31c1b1e860fdf6",
+    "releaseMaterialSha": "695b849203b5879f6169f1806f31c1b1e860fdf6",
+    "builtSourceSha": "",
+    "builtSourceTreeSha": "",
+    "promotionChannelSha": "",
+    "promotionChannelTreeSha": "",
+    "publishToolingSha": "695b849203b5879f6169f1806f31c1b1e860fdf6",
+    "releaseStateRef": "refs/heads/buildchain/release-state/0-1-0-alpha-11",
+    "releaseStateSha": "",
+    "package": {
+      "name": "@kungfu-tech/paper-kungfu-product-white-paper",
+      "version": "0.1.0-alpha.11"
+    },
+    "exactRef": "refs/tags/v0.1.0-alpha.11"
+  },
+  "workflow": {
+    "name": "Buildchain Ref Promotion",
+    "runId": "30631084731",
+    "runAttempt": "2",
+    "url": "https://github.com/kungfu-systems/paper-kungfu-product-white-paper/actions/runs/30631084731"
+  },
+  "runnerPolicy": {
+    "productionDefault": "github-hosted",
+    "compatibilityFixture": "self-hosted",
+    "note": "Runner facts are recorded in artifact evidence; the protocol does not require self-hosted runners."
+  },
+  "trustedPublishing": {
+    "provider": "npm",
+    "enabled": true,
+    "auth": "trusted-publishing",
+    "workflowRunId": "30631084731",
+    "workflowRunAttempt": "2",
+    "evidence": ""
+  },
+  "transaction": {
+    "id": "44e201ce69f2664faace328872fa10bdfff82ac872c68911d6bed04cba06306d",
+    "version": "0.1.0-alpha.11",
+    "state": "complete",
+    "previousState": "finalizing",
+    "exactTag": "v0.1.0-alpha.11",
+    "releaseSha": "695b849203b5879f6169f1806f31c1b1e860fdf6",
+    "releaseMaterialSha": "695b849203b5879f6169f1806f31c1b1e860fdf6",
+    "stateRef": "buildchain/release-state/0-1-0-alpha-11",
+    "statePath": "/home/runner/work/paper-kungfu-product-white-paper/paper-kungfu-product-white-paper/.buildchain/release-state/v0.1.0-alpha.11.json",
+    "stateSha": "",
+    "evidencePath": "/home/runner/work/paper-kungfu-product-white-paper/paper-kungfu-product-white-paper/.buildchain/release-evidence/v0.1.0-alpha.11/evidence.json",
+    "updatedAt": "2026-07-31T12:48:12.622Z",
+    "result": {
+      "command": "finalize",
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    }
+  },
+  "distTagPromotion": {
+    "path": "../release-evidence/v0.1.0-alpha.11/dist-tag-evidence.json",
+    "sha256": "906160e4e657d37bf94daf5be430410bca65f690498b2322e8200c3d7bb1993c",
+    "fields": {
+      "schema": 1,
+      "contract": "kungfu-buildchain-dist-tag-promotion-evidence",
+      "mode": "publish-final-version",
+      "auth": "trusted-publishing",
+      "distTag": "alpha",
+      "source": "existing-evidence",
+      "packages": [
+        {
+          "name": "@kungfu-tech/paper-kungfu-product-white-paper",
+          "version": "0.1.0-alpha.11",
+          "distTag": "alpha",
+          "role": "",
+          "digest": "sha512-HcO5hdNwtHl2qW0u//izfqSFWOdE8eFCYcvurYkNYcGsMdpVGcIFUiSHjWAsDfP+nqC1zZcNV3pUWGt0LKthIg=="
+        }
+      ]
+    }
+  },
+  "versionImpact": {
+    "final": "minor",
+    "source": "continuity-white-paper-alpha-11",
+    "rationale": "This Alpha substantially reframes the product white paper around continuity for long-running agent work while preserving the existing publication and package coordinates."
+  },
+  "surfaceImpacts": [
+    {
+      "id": "continuity-white-paper",
+      "impact": "minor",
+      "class": "content",
+      "rationale": "The paper now explains why durable Work identity, governed evidence, bounded authority, and continuity across replaceable Agents are necessary for long-running agent work.",
+      "source": ""
+    },
+    {
+      "id": "project-work-agent-model",
+      "impact": "minor",
+      "class": "product-model",
+      "rationale": "The public narrative introduces Project, Work, and Agent together with Agent Work Lab as the product entry point and evidence surface.",
+      "source": ""
+    },
+    {
+      "id": "foundation-triad-and-machine-life-bridge",
+      "impact": "minor",
+      "class": "research-narrative",
+      "rationale": "The paper presents the Foundation Triad at a first-reader gradient and connects present product continuity to the longer-horizon Machine Life direction.",
+      "source": ""
+    },
+    {
+      "id": "commercial-publication-design",
+      "impact": "patch",
+      "class": "presentation",
+      "rationale": "The PDF gains a commercial editorial system, a real Kungfu CLI evidence view, and a kungfu.tech cover contact while retaining a reproducible pinned Docker build.",
+      "source": ""
+    }
+  ],
+  "artifacts": [
+    {
+      "group": "publication",
+      "kind": "npm",
+      "name": "@kungfu-tech/paper-kungfu-product-white-paper",
+      "ref": "0.1.0-alpha.11",
+      "digest": "sha512-HcO5hdNwtHl2qW0u//izfqSFWOdE8eFCYcvurYkNYcGsMdpVGcIFUiSHjWAsDfP+nqC1zZcNV3pUWGt0LKthIg==",
+      "evidence": "../release-evidence/v0.1.0-alpha.11/evidence.json"
+    }
+  ],
+  "evidence": {
+    "artifactEvidence": "artifact-evidence.json",
+    "publishEvidence": "evidence.json",
+    "transactionState": "",
+    "buildSummary": "",
+    "buildFacts": [],
+    "platformArtifactManifests": [],
+    "distTagPromotionEvidence": "../release-evidence/v0.1.0-alpha.11/dist-tag-evidence.json",
+    "kfd1": "",
+    "kfd2": "",
+    "kfd3": "",
+    "kfdSupport": "",
+    "kfdAgentHub": "",
+    "invariantPassports": "",
+    "impact": "impact.json",
+    "checkReport": "check-report.json",
+    "agentIndex": "agent-index.json"
+  },
+  "recovery": {
+    "rollback": "Use the previous exact release tag or previous floating channel ref.",
+    "verify": "buildchain verify release-passport buildchain.release.json"
+  }
+}
