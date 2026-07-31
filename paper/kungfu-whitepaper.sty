@@ -1,0 +1,266 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{kungfu-whitepaper}[2026/07/31 Kungfu commercial editorial system]
+
+\RequirePackage[letterpaper,top=0.72in,bottom=0.72in,left=0.78in,right=0.78in,
+  headheight=18pt,headsep=0.23in,footskip=0.38in]{geometry}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{mathpazo}
+\RequirePackage[scaled=0.94]{helvet}
+\RequirePackage{courier}
+\RequirePackage{microtype}
+\RequirePackage[table]{xcolor}
+\RequirePackage{graphicx}
+\RequirePackage{enumitem}
+\RequirePackage{booktabs}
+\RequirePackage{longtable}
+\RequirePackage{tabularx}
+\RequirePackage{array}
+\RequirePackage{parskip}
+\RequirePackage{titlesec}
+\RequirePackage{fancyhdr}
+\RequirePackage{caption}
+\RequirePackage{ragged2e}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
+\RequirePackage{hyperref}
+
+\definecolor{Ink}{HTML}{09171D}
+\definecolor{InkSoft}{HTML}{13282F}
+\definecolor{Slate}{HTML}{40525A}
+\definecolor{Muted}{HTML}{73858B}
+\definecolor{Jade}{HTML}{08A88A}
+\definecolor{JadeDark}{HTML}{087563}
+\definecolor{Cyan}{HTML}{43D6CC}
+\definecolor{Paper}{HTML}{F6F4EE}
+\definecolor{PaperCool}{HTML}{EEF5F2}
+\definecolor{White}{HTML}{FFFFFF}
+\definecolor{Line}{HTML}{CCD9D5}
+\definecolor{Warn}{HTML}{D6A84A}
+
+% Compatibility names used by the source sections.
+\colorlet{KFBlack}{Ink}
+\colorlet{KFSlate}{Slate}
+\colorlet{KFGreen}{JadeDark}
+\colorlet{KFLight}{PaperCool}
+\colorlet{KFLighter}{White}
+\colorlet{KFLine}{Line}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=JadeDark,
+  citecolor=JadeDark,
+  urlcolor=JadeDark,
+  pdfborder={0 0 0}
+}
+
+\AtBeginDocument{\RaggedRight}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.47em}
+\setlength{\emergencystretch}{1.5em}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.24}
+
+\setlist[itemize]{
+  leftmargin=1.25em,
+  itemsep=0.28em,
+  topsep=0.38em,
+  label=\textcolor{JadeDark}{\small\textbullet}
+}
+\setlist[enumerate]{leftmargin=1.55em,itemsep=0.3em,topsep=0.4em}
+
+\newlist{evidenceladder}{enumerate}{1}
+\setlist[evidenceladder]{
+  label=\colorbox{JadeDark}{\makebox[1.55em][c]{%
+    \color{White}\sffamily\bfseries\arabic*}},
+  leftmargin=3.15em,
+  labelsep=0.72em,
+  itemsep=0.58em,
+  topsep=0.48em,
+  parsep=0pt
+}
+
+\titleformat{\section}[display]
+  {\sffamily\bfseries\color{Ink}}
+  {\sffamily\bfseries\fontsize{8.5}{10}\selectfont\color{Jade}
+    SECTION \thesection}
+  {0.08in}
+  {\fontsize{25}{28}\selectfont}
+\titlespacing*{\section}{0pt}{0.08in}{0.19in}
+
+\titleformat{\subsection}
+  {\sffamily\bfseries\fontsize{13.3}{15.5}\selectfont\color{Ink}}
+  {\color{JadeDark}\thesubsection}
+  {0.65em}
+  {}
+\titlespacing*{\subsection}{0pt}{0.2in}{0.07in}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\sffamily\bfseries\scriptsize\color{JadeDark}KUNGFU WHITE PAPER}
+\rhead{\sffamily\scriptsize\color{Muted}\nouppercase{\leftmark}}
+\lfoot{\sffamily\scriptsize\color{Muted}Kungfu Origin Technology Limited}
+\rfoot{\sffamily\bfseries\scriptsize\color{JadeDark}\thepage}
+\renewcommand{\sectionmark}[1]{\markboth{\thesection\quad #1}{}}
+\renewcommand{\headrule}{%
+  \hbox to\headwidth{\color{Line}\leaders\hrule height 0.6pt\hfill}}
+\renewcommand{\footrule}{%
+  \hbox to\headwidth{\color{Line}\leaders\hrule height 0.6pt\hfill}}
+\fancypagestyle{plain}{\pagestyle{fancy}}
+
+\captionsetup{
+  font={sf,small},
+  labelfont={bf,color=JadeDark},
+  textfont={color=Slate},
+  justification=raggedright,
+  singlelinecheck=false,
+  skip=7pt
+}
+
+\newcommand{\eyebrow}[1]{%
+  {\sffamily\bfseries\footnotesize\color{Jade}\MakeUppercase{#1}}%
+}
+
+\newtcolorbox{softcard}[1][]{
+  enhanced,
+  colback=White,
+  colframe=Line,
+  boxrule=0.6pt,
+  arc=2.2mm,
+  left=3.5mm,right=3.5mm,top=3mm,bottom=3mm,
+  #1
+}
+
+\newtcolorbox{darkcard}[1][]{
+  enhanced,
+  colback=InkSoft,
+  colframe=InkSoft,
+  boxrule=0pt,
+  arc=2.2mm,
+  left=4mm,right=4mm,top=3.5mm,bottom=3.5mm,
+  #1
+}
+
+\newcommand{\calloutbox}[2]{%
+  \begin{tcolorbox}[
+    enhanced,
+    colback=PaperCool,
+    colframe=Line,
+    boxrule=0.6pt,
+    borderline west={3pt}{0pt}{Jade},
+    arc=2mm,
+    left=4mm,right=4mm,top=3mm,bottom=3mm]
+    {\sffamily\bfseries\color{JadeDark}#1}\par\vspace{0.12em}
+    #2
+  \end{tcolorbox}
+}
+
+\newcommand{\flowbox}[1]{%
+  \tcbox[
+    on line,
+    colback=White,
+    colframe=Line,
+    boxrule=0.6pt,
+    arc=1.6mm,
+    left=1.7mm,right=1.7mm,top=2.6mm,bottom=2.6mm]{%
+      \makebox[0.137\textwidth][c]{%
+        \sffamily\bfseries\scriptsize\color{Ink}#1}}
+}
+
+\newcommand{\layerbox}[2]{%
+  \begin{tcolorbox}[
+    enhanced,
+    width=0.94\linewidth,
+    colback=White,
+    colframe=Line,
+    boxrule=0.6pt,
+    arc=2mm,
+    left=3.5mm,right=3.5mm,top=2.5mm,bottom=2.5mm]
+    {\sffamily\bfseries\fontsize{12}{13.5}\selectfont\color{Ink}#1}\par
+    {\small\color{Slate}#2}
+  \end{tcolorbox}
+}
+
+\newtcolorbox{agentguidebox}{
+  enhanced,
+  colback=Ink,
+  colframe=Ink,
+  boxrule=0pt,
+  arc=2.4mm,
+  left=4.2mm,right=4.2mm,top=3.5mm,bottom=3.5mm,
+  before upper={\color{PaperCool}\hypersetup{urlcolor=Cyan}}
+}
+
+\newcommand{\agentguidetitle}[1]{%
+  {\sffamily\bfseries\fontsize{13}{15}\selectfont\color{Cyan}#1}%
+  \par\vspace{0.16em}%
+}
+
+\newenvironment{agentprompt}{%
+  \par\vspace{0.4em}\begingroup\small\ttfamily\color{White}\RaggedRight
+}{%
+  \par\endgroup
+}
+
+\newtcolorbox{evidenceframe}{
+  enhanced,
+  colback=Ink,
+  colframe=Ink,
+  boxrule=0pt,
+  arc=2.5mm,
+  left=2.5mm,right=2.5mm,top=2.5mm,bottom=2.5mm
+}
+
+\newcommand{\signalrow}[2]{%
+  {\sffamily\bfseries\color{Ink}#1} & {\color{Slate}#2} \\
+}
+
+\newcommand{\foundationstatement}[2]{%
+  {\sffamily\bfseries\fontsize{13}{14.5}\selectfont\color{JadeDark}#1} &
+  {\sffamily\bfseries\fontsize{12.5}{14}\selectfont\color{Ink}#2} \\
+}
+
+\newenvironment{foundationtable}{%
+  \begin{center}
+  \renewcommand{\arraystretch}{1.72}%
+  \begin{tabular}{%
+    >{\sffamily\bfseries\fontsize{13}{14.5}\selectfont\color{JadeDark}}p{0.82in}%
+    >{\sffamily\bfseries\fontsize{12.5}{14}\selectfont\color{Ink}\arraybackslash}p{0.78\linewidth}}
+  \toprule
+}{%
+  \bottomrule
+  \end{tabular}
+  \end{center}
+}
+
+\newcommand{\machinebridge}[2]{%
+  \begin{tcolorbox}[
+    enhanced,
+    colback=Ink,
+    colframe=Ink,
+    boxrule=0pt,
+    arc=2.5mm,
+    left=5mm,right=5mm,top=4.5mm,bottom=4.5mm]
+    {\sffamily\bfseries\footnotesize\color{Cyan}FROM WORK CONTINUITY}\par
+    {\sffamily\bfseries\fontsize{20}{23}\selectfont\color{White}#1}\par
+    \vspace{0.12in}
+    {\color{PaperCool}#2}
+  \end{tcolorbox}
+}
+
+\newtcolorbox{machinebridgebox}{
+  enhanced,
+  colback=Ink,
+  colframe=Ink,
+  boxrule=0pt,
+  arc=2.5mm,
+  left=5mm,right=5mm,top=4.5mm,bottom=4.5mm,
+  before upper={\color{PaperCool}\hypersetup{urlcolor=Cyan,citecolor=Cyan}}
+}
+
+\newcommand{\bridgeclaim}[2]{%
+  {\sffamily\bfseries\footnotesize\color{Cyan}\MakeUppercase{#1}}\par
+  {\sffamily\bfseries\fontsize{15}{17.5}\selectfont\color{White}#2}\par
+  \vspace{0.08in}%
+}

@@ -1,65 +1,197 @@
-\section{The Strategic Choice for Agent Builders}
+\section{Product Thesis}
 
-An Agent vendor already owns the scarce product assets: the interface, model
-experience, accounts, permissions, policies, cloud, distribution, and customer
-relationship. It should preserve those assets. The strategic question is not
-whether to become a Kungfu-branded application. It is whether to spend years
-reconstructing a durable runtime before its users can keep work across chats.
+\calloutbox{Product thesis}{Work should survive the chat and the Agent process
+doing it. Kungfu makes that continuity visible, governed, and independently
+reviewable.}
 
-The recommended answer is direct:\cite{kungfuBuilders}
+This thesis begins with an outcome rather than a tool category. Kungfu does
+not ask users to replace Codex, Claude, OpenCode, or another preferred Agent.
+It provides the durable Project and Work state that those replaceable
+processes can enter, advance, review, and leave.
 
-\calloutbox{Build your Hub. Do not rebuild the runtime.}{Embed
-libkungfu now to deliver Project Cut continuity. In parallel, build
-your own KFD-compatible Hub so responsibility can move across products without
-moving product ownership.}
+\subsection{Project, Work, and Agent}
 
-\subsection{The Two-Track Plan}
+A Project is the directory the user already understands plus Project-local
+Kungfu evidence. Work is one bounded outcome in that Project. An Agent is a
+selected provider process, not the owner of the Project or the permanent
+identity of the Work.
 
-\textbf{Track A---embed the runtime.} Pin an exact \texttt{libkungfu} source
-coordinate, integrate the smallest C, Node, or Python path, keep provider data
-and credentials outside the adapter, and prove one complete local loop: inspect
-a Project Cut, record bounded work, verify the evidence, settle a successor,
-and continue from it in a fresh Agent context.
+This model deliberately excludes internal authority objects from first-use
+navigation. A user should not need to choose an Initiative, Assignment,
+Profile, Warrant, or Project Cut to start ordinary Work. Those objects remain
+available through explain, evidence, diagnostics, and advanced APIs when their
+precision becomes useful.
 
-\textbf{Track B---build the Hub.} Retain participant-owned identity, policy,
-admission, storage, product workflow, and customer controls. Add a KFD adapter
-that can negotiate exact capabilities, exchange rooted responsibility objects,
-write receiver-owned verdicts, preserve conflicts and disclosure boundaries,
-and export portable evidence.
+\subsection{Who Needs Continuity First}
 
-The two tracks reinforce each other. Runtime integration creates immediate user
-value and real implementation evidence. Hub development prevents that value
-from becoming a local island. Waiting for a finished network before embedding
-the runtime delays the product; rebuilding the runtime before designing the Hub
-duplicates infrastructure without solving interoperability.
+The earliest users are people for whom repeated explanation and mistaken
+continuation are already expensive. They include:
 
-\subsection{The Ownership Boundary}
+\begin{itemize}[leftmargin=*]
+  \item developers, researchers, and operators carrying consequential Work
+  across many Agent sessions;
+  \item teams that need another person or Agent to review what actually
+  happened before accepting completion; and
+  \item Agent builders that want durable Work and evidence without owning a
+  second proprietary continuity stack.
+\end{itemize}
 
-\begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{0.25\textwidth}>{\raggedright\arraybackslash}X}
-\toprule
-Keep in the vendor Hub & UX, models, prompts, tool policy, accounts, billing,
-identity mapping, customer data, cloud, admission decisions, and support. \\
-Embed from \texttt{libkungfu} & Local runtime Facts, Episodes, journal and
-content roots, lifecycle, query, verification, export, recovery, and Project
-Cut substrate. \\
-Exchange through KFD & Exact profile coordinates, capability roots,
-responsibility references, evidence, disclosure state, verdicts, conflicts,
-and residual risk. \\
-Publish through Buildchain & Artifact digests, source coordinates, build and
-release provenance, release claims, and residual release risk. \\
-\bottomrule
-\end{tabularx}
+The first adoption wedge is the individual or small team already switching
+between sessions, models, terminals, and repositories. The immediate value is
+less restatement and safer continuation. Responsibility, settlement, and Hub
+interoperability become valuable as the Work and number of participants grow.
 
-\subsection{What Embedding Does and Does Not Mean}
+This problem is becoming urgent because Agent capability is increasing faster
+than the continuity of the systems around it. Longer tasks, parallel Agents,
+provider choice, and more consequential tool use create more handoffs precisely
+when a transcript is least able to serve as the Work record.
 
-Embedding \texttt{libkungfu} provides Kungfu's reference runtime
-implementation for KFD-governed Facts, Episodes, responsibility boundaries,
-verification, recovery, and Project Cut continuity. It is the fastest route to
-an executable implementation and the default recommendation for Agent
-builders.
+\subsection{A Running Example: Publish a Public Alpha}
 
-It does not make KFD proprietary, force one Hub design, send data to a required
-Kungfu cloud, or automatically certify conformance. KFD remains open and
-independently implementable. Every compatibility claim must stay bound to the
-exact Profile, implementation, suite, platform, evidence, and residual risk
-that were actually assessed.
+Consider one bounded Work item inside a software Project:
+
+\calloutbox{The Work}{Publish a public Alpha from one exact source revision,
+with release notes, required platform evidence, independent review, and no
+publication before the declared gates pass.}
+
+\begin{enumerate}[leftmargin=*]
+  \item Agent A inspects the Project, drafts release notes, and runs available
+  checks. It stops after discovering that one required platform result is
+  missing.
+  \item The chat and process end. Kungfu retains the partial result, exact
+  source, observed evidence, missing requirement, and next eligible action.
+  \item Agent B starts fresh without Agent A's transcript. It enters the same
+  Work, recognizes what is complete and what is blocked, and continues from
+  declared Project evidence.
+  \item Agent B may prepare or verify a candidate under its Warrant, but it
+  cannot turn process success into publication authority.
+  \item An independent review accepts or rejects the result. Only the
+  applicable settlement path can complete the Work.
+\end{enumerate}
+
+The example will recur below. Its purpose is not to make software release the
+only Kungfu domain. It makes visible the same continuity problem found in
+research, operations, writing, and other work whose outcome outlives one
+conversation.
+
+\subsection{The Subtraction Test: Activity Without Continuity}
+
+Now remove Kungfu while leaving the familiar toolchain in place. The complete
+transcript is stored and indexed. The Git repository and issue remain. CI is
+green. Logs and traces are searchable. Agent B has a credential capable of
+publishing. Every component is useful and may remain authoritative for its own
+object, yet their combination still cannot demonstrate that Agent B is
+continuing the same Work.
+
+The failure becomes visible by removing the required semantics one at a time:
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{No stable fact cut.}
+    The branch advances after Agent A's checks, while its summary still says
+    ``all available checks passed.'' Agent B can retrieve the sentence but
+    cannot bind it to the source revision, contract world, and omissions that
+    made it true. Without the KFD-1 obligation and an exact Fact cut, apparent
+    continuity joins evidence from different worlds.
+
+  \item \textbf{No fact-grounded assessment.}
+    A transcript, vector index, issue comment, and model summary all preserve
+    statements. None alone says whether a statement is an observation, a
+    claim, admitted state, rejected evidence, or residual risk. Without the
+    KFD-2 obligation, retrieval can restore memory while leaving Agent B unable
+    to justify reliance on it.
+
+  \item \textbf{No causal Episode or declared perspective.}
+    Logs show that commands ran, but not which occurrence explains the current
+    Work state. The local machine saw one platform pass while a remote worker
+    never produced its required result. Without causal Episodes and a declared
+    Atlas or observer cut, a global-looking history can silently flatten
+    partial and incompatible views.
+
+  \item \textbf{No bounded authority.}
+    Agent B can invoke the publication API, but capability does not answer
+    whether this Agent may publish this candidate, for this purpose, at this
+    cut. Without the KFD-3 cooperation boundary and a Warrant, continuity can
+    degrade into hidden control, inherited privilege, or provider-specific
+    workflow capture.
+
+  \item \textbf{No independent completion decision.}
+    CI success, a merged change, or a zero exit code may be valuable evidence.
+    If any of them can close the Work automatically, the execution path has
+    acquired authority over the outcome it is supposed to prove. Without
+    responsibility, assessment, decision, and Project Cut settlement, the
+    system confuses process success with accepted completion.
+\end{itemize}
+
+\calloutbox{The subtraction result}{Agent B can continue producing activity,
+but it cannot demonstrate that it is continuing the same Work. The system has
+retained text, artifacts, events, and capability without retaining one
+governed continuity contract across them.}
+
+The claim is not that only software named KFD or Kungfu can support long-term
+Agent Work. Another system may implement different names and storage choices.
+But if it supports replaceable Agents, justified recovery, bounded action, and
+independent completion, it must supply functional equivalents of these
+obligations. Continuity without non-drifting facts is narrative continuity;
+continuity without fact-grounded trust is cached claims; continuity without
+transparent-value cooperation is retained control rather than durable
+cooperation.
+
+\subsection{One Work, Replaceable Agents}
+
+An Agent invocation may inspect, propose, edit, test, or review. Its output is
+retained as one causal occurrence in a longer Work lineage. A later invocation
+can be the same provider, a different provider, or a differently configured
+model. Replacement should change available cognition, not silently create a
+new Work identity.
+
+This is the central architectural move: cognition is episodic; Work is
+durable.
+
+\subsection{How Kungfu Fits the Existing Stack}
+
+Kungfu does not need to replace the tools that already perform useful parts of
+the Work:
+
+\begin{itemize}[leftmargin=*]
+  \item Agent products provide cognition and an execution interface;
+  \item Git and artifact systems retain source and produced objects;
+  \item issue trackers and documents express plans, discussion, and human
+  coordination;
+  \item workflow engines sequence declared operations; and
+  \item observability systems report events, traces, and resource behavior.
+\end{itemize}
+
+Kungfu binds the continuing Work identity, admitted facts, causal Episodes,
+bounded authority, responsibility, and completion decision across those
+surfaces. It is complementary when an existing tool remains authoritative for
+its own object; it is differentiated by refusing to confuse any one of those
+objects with the whole Work.
+
+\subsection{Local-First, Not Local-Only}
+
+Projects depend on local files, repositories, tools, and user-specific
+context. Kungfu therefore keeps the authoritative Work record local and makes
+its evidence inspectable without requiring a hosted service. Remote Agents,
+cloud execution, package transport, and future Agent Hubs can participate, but
+the receiver retains authority over what enters its Project and what counts as
+completion.
+
+\subsection{Dual-First Participation}
+
+Humans need an interface that compresses complexity. Agents need structured
+interfaces that expose the same facts without scraping a GUI or guessing from
+prose. Kungfu therefore treats GUI, TUI, CLI, and SDKs as complete product
+surfaces over one core rather than as a human product plus secondary automation
+hooks.
+
+Dual-first does not mean that humans and Agents possess identical roles or
+authority. It means that both can inspect the shared Work, understand visible
+constraints, and leave reviewable evidence without one interface inventing a
+different reality.
+
+\subsection{Review Before Completion}
+
+A provider run can succeed while Work remains open. Kungfu retains the run and
+its evidence, then requires the applicable review and settlement path to
+decide completion. This protects users from a common category error: treating
+the behavior of an execution process as authority over the state of the Work.

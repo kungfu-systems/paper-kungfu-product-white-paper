@@ -3,39 +3,39 @@
   "contract": "kungfu-buildchain-impact",
   "release": {
     "line": "v0.1",
-    "channel": "release",
-    "targetRef": "release/v0/v0.1"
+    "channel": "alpha",
+    "targetRef": "alpha/v0/v0.1"
   },
   "versionImpact": {
     "final": "minor",
-    "source": "session-continuity-thesis",
-    "rationale": "This prerelease makes the session-model failure explicit, preserves the Project Cut and builder strategy, and establishes a title-independent publication coordinate."
+    "source": "continuity-white-paper-alpha-11",
+    "rationale": "This Alpha substantially reframes the product white paper around continuity for long-running agent work while preserving the existing publication and package coordinates."
   },
   "surfaceImpacts": [
     {
-      "id": "white-paper-content",
+      "id": "continuity-white-paper",
       "impact": "minor",
       "class": "content",
-      "rationale": "The paper now makes Project Cut the first user object and specifies cross-session continuation, runtime, authority, evidence, maturity, and non-claim boundaries."
+      "rationale": "The paper now explains why durable Work identity, governed evidence, bounded authority, and continuity across replaceable Agents are necessary for long-running agent work."
     },
     {
-      "id": "agent-builder-positioning",
+      "id": "project-work-agent-model",
       "impact": "minor",
-      "class": "product-positioning",
-      "rationale": "The builder path now explicitly recommends embedding libkungfu immediately while developing a participant-owned KFD-compatible Hub in parallel."
+      "class": "product-model",
+      "rationale": "The public narrative introduces Project, Work, and Agent together with Agent Work Lab as the product entry point and evidence surface."
     },
     {
-      "id": "site-bundle-content",
+      "id": "foundation-triad-and-machine-life-bridge",
       "impact": "minor",
-      "class": "downstream-content",
-      "rationale": "Generated brand and evidence bundles expose the new title, section map, claims, adoption path, and alpha residual-risk boundary to site consumers."
+      "class": "research-narrative",
+      "rationale": "The paper presents the Foundation Triad at a first-reader gradient and connects present product continuity to the longer-horizon Machine Life direction."
     },
     {
-      "id": "publication-routes",
+      "id": "commercial-publication-design",
       "impact": "patch",
-      "class": "release-governance",
-      "rationale": "The PDF and brand-site route move to the durable kungfu-white-paper coordinate; the npm coordinate and Buildchain archive identity remain stable."
+      "class": "presentation",
+      "rationale": "The PDF gains a commercial editorial system, a real Kungfu CLI evidence view, and a kungfu.tech cover contact while retaining a reproducible pinned Docker build."
     }
   ],
-  "summary": "The paper now opens with the session-continuity failure and publishes through a durable, title-independent white-paper coordinate."
+  "summary": "Alpha 11 is a minor-impact narrative release that makes continuity for agent work the present product thesis and Machine Life the future direction."
 }

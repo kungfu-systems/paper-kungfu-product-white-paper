@@ -4,7 +4,7 @@
   "consumer": "papers.libkungfu.dev",
   "source": {
     "package": "@kungfu-tech/paper-kungfu-product-white-paper",
-    "packageVersion": "0.1.0-alpha.10",
+    "packageVersion": "0.1.0-alpha.11",
     "repository": "git+https://github.com/kungfu-systems/paper-kungfu-product-white-paper.git",
     "titleSource": ".buildchain/buildchain.toml",
     "paperEntrypoint": "paper/main.tex",
@@ -25,11 +25,11 @@
   },
   "publication": {
     "kind": "paper",
-    "title": "Kungfu: The Session Is Not the Work",
-    "abstract": "Verified continuity for Agent work that outlives the chat.",
-    "primaryArtifact": "_build/kungfu-white-paper.pdf",
+    "title": "Kungfu: Continuity for Agent Work",
+    "abstract": "A product white paper describing how Kungfu gives Work durable identity, governed evidence, bounded authority, and continuity across replaceable Agent processes.",
+    "primaryArtifact": "_build/main.pdf",
     "artifactPaths": [
-      "_build/kungfu-white-paper.pdf"
+      "_build/main.pdf"
     ],
     "metadataPaths": [
       "README.md",
@@ -37,9 +37,7 @@
       "package.json",
       "package-lock.json",
       "release-impact.json",
-      "site/brand-site.json",
-      "site/evidence-site.json",
-      "site/site-bundles.json"
+      "site"
     ],
     "sourcePaths": [
       "paper",
@@ -61,312 +59,204 @@
     "canonicalHost": "papers.libkungfu.dev",
     "canonicalPath": "/kungfu-product-white-paper",
     "canonicalUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper",
-    "pdfPath": "/kungfu-product-white-paper/kungfu-white-paper.pdf",
-    "pdfUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper/kungfu-white-paper.pdf",
+    "pdfPath": "/kungfu-product-white-paper/main.pdf",
+    "pdfUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper/main.pdf",
     "sourcePath": "/kungfu-product-white-paper/source.tar.gz",
     "sourceUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper/source.tar.gz",
-    "brandUrl": "https://kungfu.tech/whitepaper/kungfu-white-paper",
+    "brandUrl": "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work",
     "repositoryUrl": "https://github.com/kungfu-systems/paper-kungfu-product-white-paper"
   },
   "sectionMap": [
     {
       "order": 1,
       "id": "00-executive-summary",
-      "title": "Executive Summary: The Work Must Outlive the Chat",
+      "title": "Executive Summary",
       "sourcePath": "paper/sections/00-executive-summary.tex",
       "subsections": [
-        "One Product Decision, Two Adoption Paths",
-        "The Architecture in Five Responsibilities",
-        "What This Paper Claims"
+        "The First Layer",
+        "The First Proof",
+        "The Core Argument",
+        "Current Claim Boundary"
       ],
-      "summary": "The session is the right unit of interaction—and the wrong unit of continuity for long-running Agent work. A session can host valuable code, research, plans, operations, and decisions. It cannot, by itself, authoritatively settle what the project has become, what was accepted, which authority still applies, or where another participant may safely continue. When the session closes, a transcript, summary, or unverified memory is not enough. The model may be capable while the work remains fragile."
+      "summary": "An Agent can be useful for an hour and still fail the work that matters. The chat ends, the context window is replaced, a different provider takes over, or the process exits successfully while the actual outcome remains unresolved. The next Agent then asks the user to reconstruct the project from memory. The model may be new, but the coordination failure is old: the Work never acquired an identity independent of the conversation that happened to contain it."
     },
     {
       "order": 2,
       "id": "01-problem",
-      "title": "The Continuity Gap",
+      "title": "The Problem",
       "sourcePath": "paper/sections/01-problem.tex",
       "subsections": [
-        "Context Is Not Project State",
-        "What a Successor Agent Needs"
+        "Conversation Is Not Work State",
+        "Process Success Is Not Work Completion",
+        "Provider Context Is Not User-Owned Continuity"
       ],
-      "summary": "Real work is not a prompt-response pair. It has accepted state, causal history, direction, authority, evidence, unresolved conflict, and consequences. It may cross context windows, models, devices, repositories, organizations, and years. A session is only one observer's temporary projection of that work."
+      "summary": "Agent products are becoming better at performing work inside one invocation. Real work, however, is not one invocation. A release, investigation, migration, paper, operation, or personal project accumulates partial results, changed assumptions, rejected approaches, unresolved risks, external effects, and decisions that must remain inspectable after the originating session is gone."
     },
     {
       "order": 3,
       "id": "02-thesis",
-      "title": "The Strategic Choice for Agent Builders",
+      "title": "Product Thesis",
       "sourcePath": "paper/sections/02-thesis.tex",
       "subsections": [
-        "The Two-Track Plan",
-        "The Ownership Boundary",
-        "What Embedding Does and Does Not Mean"
+        "Project, Work, and Agent",
+        "Who Needs Continuity First",
+        "A Running Example: Publish a Public Alpha",
+        "The Subtraction Test: Activity Without Continuity",
+        "One Work, Replaceable Agents",
+        "How Kungfu Fits the Existing Stack",
+        "Local-First, Not Local-Only",
+        "Dual-First Participation",
+        "Review Before Completion"
       ],
-      "summary": "An Agent vendor already owns the scarce product assets: the interface, model experience, accounts, permissions, policies, cloud, distribution, and customer relationship. It should preserve those assets. The strategic question is not whether to become a Kungfu-branded application. It is whether to spend years reconstructing a durable runtime before its users can keep work across chats."
+      "summary": "**Product thesis**"
     },
     {
       "order": 4,
       "id": "03-principles",
-      "title": "Project Cut: The First User Object",
+      "title": "Principles",
       "sourcePath": "paper/sections/03-principles.tex",
       "subsections": [
-        "What a Project Cut States",
-        "A Settlement, Not a Fourth Fact Engine",
-        "Why It Comes First",
-        "Validity Is Not Completion"
+        "Facts Must Not Drift",
+        "Trust Must Start from Facts",
+        "Cooperation Must Start from Trusted Value",
+        "How Later Primitives Are Discovered"
       ],
-      "summary": "The first user layer in Kungfu is not a log viewer, model selector, or internal Fact table. It is the Project Cut: the highest ordinary interface through which a person or Agent inspects what a project has formally become and from where it may continue. This product decision keeps rigor below the surface while giving the user one actionable coordinate above it."
+      "summary": "Kungfu's deepest constraints begin with the KFD Foundation Triad kfdFoundation."
     },
     {
       "order": 5,
       "id": "04-architecture",
-      "title": "How Work Continues Across Sessions",
+      "title": "How Continuity Works",
       "sourcePath": "paper/sections/04-architecture.tex",
       "subsections": [
-        "Agent Supply Chain",
-        "Conservative Context Projection",
-        "Session and Agent Replacement",
-        "Failure Must Stay Visible"
+        "Fact and Episode",
+        "The Action Loop",
+        "Responsibility and Settlement",
+        "Journal Authority and Rebuildable Views",
+        "Progressive Disclosure"
       ],
-      "summary": "Continuity is a closed loop, not a saved transcript. Kungfu's target product loop is:"
+      "summary": "The first-layer product remains Project, Work, and Agent. Beneath it, Kungfu preserves enough semantic structure for a fresh process to continue without pretending that a transcript is truth."
     },
     {
       "order": 6,
       "id": "05-roadmap",
-      "title": "The Runtime Beneath the Cut",
+      "title": "Roadmap",
       "sourcePath": "paper/sections/05-roadmap.tex",
       "subsections": [
-        "Fact and Episode",
-        "Local Semantic Authority",
-        "Product and Distribution Layers",
-        "Buildchain Is Release Evidence, Not Runtime State"
+        "Current Product Baseline",
+        "First-Run Gate",
+        "Public Alpha Gate",
+        "Longitudinal Work Gate",
+        "Ecosystem Gate"
       ],
-      "summary": "Project Cut is the first user object, but it can be trusted only because its inputs and lifecycle remain verifiable beneath the product surface. libkungfu is the reference implementation of that runtime substrate. It owns how local Facts and Episodes are recorded, ordered, stored, queried, verified, exported, and recovered while the embedding application owns its domain facts and product decisions."
+      "summary": "Kungfu's roadmap no longer begins with inventing a control plane for agent activity. The current source-built product already has a smaller first layer, a visible continuity experiment, native Work responsibility, and a qualified evidence path. The remaining path is to turn those mechanisms into an accessible public product and then prove that their value survives real use."
     },
     {
       "order": 7,
       "id": "06-validation",
-      "title": "KFD and Independent Agent Hubs",
+      "title": "Product Validation Strategy",
       "sourcePath": "paper/sections/06-validation.tex",
       "subsections": [
-        "The Foundation",
-        "The Hub Boundary",
-        "The Agent Hub Alpha Profile"
+        "A Ladder of Evidence",
+        "Agent Work Lab",
+        "What the Current Evidence Does Not Prove",
+        "The Real-Work Test"
       ],
-      "summary": "KFD—Kung Fu Decisions—is an open engineering standard for a small, testable foundation for reliable action and continuity under uncertainty. It is a canonical public decision registry, not a Kungfu product API, a central service, a universal workflow language, or a belief test. Products, organizations, humans, Agents, and other bounded systems can adopt exact decisions within a declared scope and publish their own mappings, evidence, qualification, and residual risk."
+      "summary": "Kungfu separates evidence classes so that an impressive demonstration does not silently become a production claim."
     },
     {
       "order": 8,
       "id": "07-ecosystem",
-      "title": "Authority, Trust, and Evidence",
+      "title": "Ecosystem",
       "sourcePath": "paper/sections/07-ecosystem.tex",
       "subsections": [
-        "Delivery Is Not Admission",
-        "Occurrence Is Not Completion",
-        "Authentication Is Not Authority",
-        "Trust Starts from Facts",
-        "Disclosure and Exit"
+        "The Agent Supply Chain",
+        "Keep the Existing Agent Relationship",
+        "Three Adoption Paths",
+        "Profile Suite and KFX",
+        "Open Standard, Founding Implementation"
       ],
-      "summary": "Continuity is unsafe when a system collapses transport, identity, occurrence, judgment, and authority into a single success flag. Kungfu and KFD preserve the separations that keep responsibility attributable."
+      "summary": "Kungfu is designed as one core with multiple complete products. A desktop application, terminal interface, CLI, SDK, extension, or Agent Hub may add convenience and domain value, but no higher layer acquires authority merely by being closer to the user."
     },
     {
       "order": 9,
       "id": "08-risks",
-      "title": "Current State, Adoption, and Roadmap",
+      "title": "Risks and Boundaries",
       "sourcePath": "paper/sections/08-risks.tex",
       "subsections": [
-        "What Exists Today",
-        "The Builder Path: Inspect, Embed, Prove, Connect",
-        "Roadmap and Gates",
-        "Risks and Non-Claims"
+        "The Demo Trap",
+        "Ontology Before Value",
+        "Evidence Becoming Authority",
+        "Local Complexity Without Compression",
+        "Premature Ecosystem Claims",
+        "The Machine-Life Category Error"
       ],
-      "summary": "This paper is an alpha positioning and architecture document. It recommends immediate implementation work while keeping capability claims below the public evidence ceiling."
+      "summary": "Kungfu's opportunity depends on preserving several distinctions under product pressure."
     },
     {
       "order": 10,
       "id": "09-conclusion",
       "title": "Conclusion",
       "sourcePath": "paper/sections/09-conclusion.tex",
-      "subsections": [],
-      "summary": "The market is moving from Agents that answer inside a chat to Agents that carry responsibility across real work. The decisive product question is no longer only how intelligent one session can be. It is whether the work remains verifiable, recoverable, and continuable after that session disappears."
+      "subsections": [
+        "From Work Continuity to Subject Continuity"
+      ],
+      "summary": "Kungfu begins from a simple product truth: the user cares about the Work, not the lifetime of the chat that currently contains it. A fresh Agent should be able to enter the same Project, identify the same bounded outcome, recover what is known and what happened, continue under explicit authority, and leave evidence for independent review."
     }
   ],
   "references": [
     {
-      "key": "kungfuKfd",
-      "title": "KFD---Kung Fu Decisions",
-      "author": "Kungfu Origin Technology Limited",
-      "year": "2026",
-      "note": "Open engineering standard, package 1.0.0-alpha.40, source commit ada402f671a878ff21e2f0d1c1b21c0458bac7a5"
-    },
-    {
-      "key": "kungfuProjectCut",
-      "title": "Project Cut-Centered Product Loop",
-      "author": "Kungfu Origin Technology Limited",
-      "year": "2026",
-      "note": "Accepted architecture decision and linked qualification contract; public product-loop release qualification remains incomplete"
-    },
-    {
       "key": "kungfuRuntime",
-      "title": "Kungfu Product Layers and Fact--Episode Runtime Architecture",
+      "title": "{Kungfu: Continuity for Agent Work",
       "author": "Kungfu Origin Technology Limited",
       "year": "2026",
-      "note": "Reference implementation architecture at source commit 4ae3fb33acea77055f73e2ccc882eb36bbeb9186"
+      "note": "Product source, architecture decisions, qualification reports, and public claim boundaries"
     },
     {
-      "key": "kungfuAgentHub",
-      "title": "KFD Agent Hub Profile",
-      "author": "Kungfu Origin Technology Limited",
+      "key": "kfdFoundation",
+      "title": "{The Foundation Triad for Real-World Agent Work",
+      "author": "Keren Dong",
       "year": "2026",
-      "note": "Transport-neutral profile 0.1.0-alpha.1; experimental and non-certifying"
+      "note": "KFD-1 non-drifting facts, KFD-2 fact-grounded trust, and KFD-3 cooperation grounded in trusted value"
     },
     {
-      "key": "kungfuBuilders",
-      "title": "For Agent Builders: Build Your Hub, Do Not Rebuild the Runtime",
+      "key": "projectWorkAgent",
+      "title": "{Project, Work, and Agent Are the Complete First-Layer Product Model",
       "author": "Kungfu Origin Technology Limited",
       "year": "2026",
-      "note": "Product architecture and source-pinned adoption boundary"
+      "note": "Accepted and implemented Kungfu architecture decision"
     },
     {
-      "key": "kungfuDogfood",
-      "title": "Kungfu Public Dogfood Evidence Snapshot",
+      "key": "agentWorkLab",
+      "title": "{Kungfu Agent Work Lab Auditable Demo Artifact Pipeline",
       "author": "Kungfu Origin Technology Limited",
       "year": "2026",
-      "note": "Fixed observed snapshot kungfu-systems-2026-07-21T04:45:00Z; not live analytics or external adoption evidence"
+      "note": "Exact installed-artifact continuity fixture, Gate, rendered evidence, and Release Passport boundary"
     },
     {
       "key": "kungfuBuildchain",
-      "title": "Buildchain Release Evidence",
+      "title": "{Buildchain Release Passport",
       "author": "Kungfu Origin Technology Limited",
       "year": "2026",
-      "note": "Artifact, package, source, publication, and release provenance; not runtime or project authority"
+      "note": "Exact source, artifact, gate, promotion, publication, and release evidence"
+    },
+    {
+      "key": "machineLife",
+      "title": "{Semantic Autopoiesis: An Engineering Roadmap for Machine Life through KFD and Recursive Dogfood",
+      "author": "Keren Dong",
+      "year": "2026",
+      "note": "Companion research paper separating observed mechanisms, engineering inferences, hypotheses, and non-claims"
     }
   ],
   "verification": {
     "commands": [
-      "npm run check",
-      "npm run build",
-      "npx --no-install buildchain validate --json",
+      "make check",
+      "make pdf",
+      "npx -y @kungfu-tech/buildchain@3.0.0 validate --cwd . --json",
       "npm pack --dry-run --json"
     ],
     "buildchainManifestPath": ".buildchain/publication/publication-artifact.json",
     "sourceBundlePath": ".buildchain/publication/source.tar.gz",
-    "residualRisk": "This is an alpha product and architecture paper based on first-party evidence; it does not establish external vendor adoption, certification, stable Hub interoperability, or broad production readiness."
-  },
-  "agentSupplyChain": {
-    "contract": "kungfu-agent-supply-chain-public-narrative/v1",
-    "categoryStatement": "Kungfu is an open Agent Supply Chain protocol stack for discovering how Agent products cooperate, binding claims to exact software artifacts, establishing purpose-bound trust, preserving durable work facts, and carrying that work across independently owned Hubs.",
-    "claimBoundary": "Kungfu does not claim that a multi-Hub ecosystem already exists. It proves that Agent discovery, software provenance, trust, durable work state, and portability no longer need to be rebuilt or locked inside each Hub.",
-    "maturityVocabulary": [
-      "proved-now",
-      "enabled-by-protocol",
-      "not-claimed"
-    ],
-    "layers": [
-      {
-        "id": "kfd-3",
-        "order": 1,
-        "owner": "KFD",
-        "input": "Product-owned value, constraints, choices, commands, Exit, and record declarations",
-        "output": "A stable human-and-agent discovery surface for bounded cooperation",
-        "statement": "Discover how products cooperate through inspectable value, constraints, choices, commands, Exit, and records.",
-        "statusClass": "proved-now",
-        "evidenceCoordinates": [
-          "npm:@kungfu-tech/kfd@1.0.0-alpha.41#README.md",
-          "npm:@kungfu-tech/kfd@1.0.0-alpha.41#.buildchain/kfd-3/collaboration-interface.artifact.json"
-        ],
-        "knownLimits": [
-          "KFD-3 discovery is inspectable product guidance, not a hidden prompt or forced adoption mechanism.",
-          "The current evidence proves the KFD alpha surface, not external vendor adoption or stable certification."
-        ],
-        "humanRoute": "https://kfd.libkungfu.dev/3",
-        "agentRoute": "https://kfd.libkungfu.dev/manifest.json"
-      },
-      {
-        "id": "buildchain",
-        "order": 2,
-        "owner": "Buildchain",
-        "input": "KFD-3-discoverable product declarations and an exact source cut",
-        "output": "Artifact-bound provenance, checks, and promotion evidence",
-        "statement": "Bind product-owned declarations to exact source, build, artifact, checks, and promotion evidence.",
-        "statusClass": "proved-now",
-        "evidenceCoordinates": [
-          "npm:@kungfu-tech/buildchain@2.14.14-alpha.4#dist/site/product-mechanism.json",
-          "npm:@kungfu-tech/buildchain@2.14.14-alpha.4#dist/site/release-provenance.json"
-        ],
-        "knownLimits": [
-          "Buildchain does not create product facts or make the receiver's trust decision.",
-          "A passing Passport proves an exact release relation, not blanket certification, safety, or adoption."
-        ],
-        "humanRoute": "https://buildchain.libkungfu.dev/",
-        "agentRoute": "https://buildchain.libkungfu.dev/manifest.json"
-      },
-      {
-        "id": "kfd-2",
-        "order": 3,
-        "owner": "KFD and receiver",
-        "input": "Exact-artifact evidence, a declared purpose, and receiver policy",
-        "output": "A purpose-bound assessment with residual risk and decision ownership",
-        "statement": "Assess claims for a declared purpose while retaining residual risk and decision ownership.",
-        "statusClass": "proved-now",
-        "evidenceCoordinates": [
-          "npm:@kungfu-tech/kfd@1.0.0-alpha.41#decisions/KFD-2.md",
-          "npm:@kungfu-tech/kfd@1.0.0-alpha.41#.buildchain/kfd-2/public-release-trust.claim.json"
-        ],
-        "knownLimits": [
-          "KFD-2 is purpose-, cut-, and evidence-bound; it is not a company reputation score or universal trust certificate.",
-          "A prior assessment does not authorize a changed artifact, purpose, receiver policy, or future release."
-        ],
-        "humanRoute": "https://kfd.libkungfu.dev/2",
-        "agentRoute": "https://kfd.libkungfu.dev/manifest.json"
-      },
-      {
-        "id": "libkungfu",
-        "order": 4,
-        "owner": "Kungfu and adopter",
-        "input": "Receiver-admitted work facts, commands, Episodes, and roots",
-        "output": "Ordered durable records, export, recovery, and qualification evidence",
-        "statement": "Preserve admitted work facts, Episodes, roots, export, and recovery evidence while applications own domain facts.",
-        "statusClass": "proved-now",
-        "evidenceCoordinates": [
-          "git+https://github.com/kungfu-systems/kungfu.git#7eeb5bd1b45492f4da27eaacbe63eddfd6245176:docs/qualification/vendor-agent-hub-embedding.md",
-          "git+https://github.com/kungfu-systems/kungfu.git#7eeb5bd1b45492f4da27eaacbe63eddfd6245176:examples/opencode-kungfu/qualification/run.mjs"
-        ],
-        "knownLimits": [
-          "Applications retain authority over domain facts; libkungfu owns admitted runtime records and ordering within its declared boundary.",
-          "JSON is an edge projection, not a second authoritative data plane, and qualification remains platform- and cut-specific."
-        ],
-        "humanRoute": "https://libkungfu.dev/core/",
-        "agentRoute": "https://libkungfu.dev/core/manifest.json"
-      },
-      {
-        "id": "agent-hub-portability",
-        "order": 5,
-        "owner": "KFD profile and each Hub",
-        "input": "Bounded responsibility objects with rooted evidence and explicit authority",
-        "output": "Portable envelopes, conformance results, and receiver-owned admission decisions",
-        "statement": "Carry bounded responsibility objects across independently owned products with receiver-owned admission.",
-        "statusClass": "enabled-by-protocol",
-        "evidenceCoordinates": [
-          "npm:@kungfu-tech/kfd@1.0.0-alpha.41#protocols/agent-hub/manifest.json",
-          "npm:@kungfu-tech/kfd@1.0.0-alpha.41#protocols/agent-hub/README.md"
-        ],
-        "knownLimits": [
-          "The public profile enables independent implementations but does not prove a second independent production Hub.",
-          "Portability preserves bounded roots, verdicts, conflicts, commitments, and digests; it does not promise lossless one-click migration."
-        ],
-        "humanRoute": "https://kfd.libkungfu.dev/protocols/agent-hub",
-        "agentRoute": "https://kfd.libkungfu.dev/manifest.json"
-      }
-    ],
-    "notClaimed": [
-      "two independent production Hubs",
-      "external vendor adoption or endorsement",
-      "industry-standard status",
-      "universal trust or blanket stable compatibility",
-      "public Kungfu Cloud",
-      "lossless one-click migration"
-    ],
-    "vendorNextAction": "Assign a technical and product owner, run a bounded 30-day assessment, build one adapter or conformance spike, submit protocol gaps, then decide to adopt, co-shape, or monitor."
+    "residualRisk": "The paper is a draft product white paper; philosophical and product-positioning claims still require human review before launch use."
   }
 }
