@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "contract": "kungfu-buildchain-paper-agent-entry",
+  "runtime": {
+    "package": "@kungfu-tech/buildchain",
+    "version": "3.0.3-alpha.3",
+    "sourceSha": "acddf9d7047a40de692ae4463aa84039283e5bc0"
+  },
+  "repository": {
+    "developmentRef": "dev/v0/v0.1",
+    "pullRequestTarget": "dev/v0/v0.1"
+  },
+  "commands": {
+    "verify": "pnpm paper:agent:verify",
+    "start": "pnpm paper:work:start -- <topic> --execute --json",
+    "submit": "pnpm paper:work:submit -- --execute --json"
+  },
+  "policy": {
+    "localMutation": "dry-run-first",
+    "protectedBranchPatterns": [
+      "main",
+      "dev/**",
+      "alpha/**",
+      "release/**",
+      "publish-gate/**"
+    ],
+    "workBranchPattern": "^(?:feature|fix|docs|chore|ci|refactor)\\/[a-z0-9](?:[a-z0-9._-]*[a-z0-9])?(?:\\/[a-z0-9](?:[a-z0-9._-]*[a-z0-9])?)*$",
+    "forcePush": false,
+    "remoteAcceptance": "required-buildchain-check"
+  },
+  "entryDigest": "sha256:7ee55f375ba0782972ef80017299d9b43949d7d963510358fe942922d3b44e0e"
+}
