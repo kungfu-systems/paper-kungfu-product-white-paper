@@ -15,6 +15,7 @@ _build/
 .buildchain/release-candidate/
 .buildchain/release-passport/
 .buildchain/runtime/
+.buildchain/promotion-shell/
 .buildchain/test-publish/
 build/
 dist/
