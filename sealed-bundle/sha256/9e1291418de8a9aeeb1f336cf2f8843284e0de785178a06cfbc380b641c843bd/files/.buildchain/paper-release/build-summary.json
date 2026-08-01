@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "contract": "kungfu-buildchain-paper-release-build-summary",
+  "repository": "kungfu-systems/paper-kungfu-product-white-paper",
+  "sourceSha": "51bb83401a01e37b1b9e115f8febeb7fc13c16fc",
+  "package": {
+    "name": "@kungfu-tech/paper-kungfu-product-white-paper",
+    "version": "0.1.0-alpha.14"
+  },
+  "reproducibility": {
+    "receiptPath": ".buildchain/publication/reproducibility-receipt.json",
+    "receiptDigest": "sha256:cb609ae58b8ca2b8b20bd10a271580fd98a32707f454d097fa5786f18056f16f",
+    "npmIntegrity": "sha512-BLML15VzOzG6OJpWhsNnBYjaQPbiH6hBbtSk6R5JD9k9i1Ng14h4R5/Fys6gwZZK3QcMyJ3LidunVG+iFZbPHA==",
+    "npmSha256": "2dc3f0ba311403109bb926e6158132bb59428f1fa64902d9889a28dce365343c"
+  },
+  "publication": {
+    "manifestPath": ".buildchain/publication/publication-artifact.json",
+    "passportPath": ".buildchain/publication/publication-artifact-passport.json",
+    "registryPath": ".buildchain/publication/publication-registry.json",
+    "primaryArtifact": "_build/main.pdf"
+  },
+  "platforms": [
+    {
+      "id": "paper",
+      "manifestPath": ".buildchain/publication/publication-artifact.json"
+    }
+  ]
+}

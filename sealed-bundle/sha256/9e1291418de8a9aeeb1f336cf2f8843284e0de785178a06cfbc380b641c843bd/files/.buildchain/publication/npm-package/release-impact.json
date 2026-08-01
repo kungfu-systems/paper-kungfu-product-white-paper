@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "contract": "kungfu-buildchain-impact",
+  "release": {
+    "line": "v0.1",
+    "channel": "alpha",
+    "targetRef": "alpha/v0/v0.1"
+  },
+  "versionImpact": {
+    "final": "minor",
+    "source": "canonical-white-paper-reader-route-alpha-14",
+    "rationale": "This Alpha aligns the public reader and PDF under the kungfu-white-paper basename and removes the incorrectly named compatibility routes."
+  },
+  "surfaceImpacts": [
+    {
+      "id": "continuity-white-paper",
+      "impact": "minor",
+      "class": "content",
+      "rationale": "The paper now explains why durable Work identity, governed evidence, bounded authority, and continuity across replaceable Agents are necessary for long-running agent work."
+    },
+    {
+      "id": "project-work-agent-model",
+      "impact": "minor",
+      "class": "product-model",
+      "rationale": "The public narrative introduces Project, Work, and Agent together with Agent Work Lab as the product entry point and evidence surface."
+    },
+    {
+      "id": "foundation-triad-and-machine-life-bridge",
+      "impact": "minor",
+      "class": "research-narrative",
+      "rationale": "The paper presents the Foundation Triad at a first-reader gradient and connects present product continuity to the longer-horizon Machine Life direction."
+    },
+    {
+      "id": "commercial-publication-design",
+      "impact": "patch",
+      "class": "presentation",
+      "rationale": "The publication retains its commercial editorial system, Kungfu CLI evidence view, kungfu.tech cover contact, and reproducible TeX Gyre build while using only the canonical kungfu-white-paper reader and PDF routes."
+    }
+  ],
+  "summary": "Alpha 14 preserves the qualified White Paper content while aligning its reader and PDF filenames and removing incorrectly named aliases."
+}

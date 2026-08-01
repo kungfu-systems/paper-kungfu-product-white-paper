@@ -1,0 +1,11 @@
+[
+  {
+    "group": "node",
+    "kind": "npm",
+    "name": "@kungfu-tech/paper-kungfu-product-white-paper",
+    "ref": "0.1.0-alpha.14",
+    "digest": "sha512-BLML15VzOzG6OJpWhsNnBYjaQPbiH6hBbtSk6R5JD9k9i1Ng14h4R5/Fys6gwZZK3QcMyJ3LidunVG+iFZbPHA==",
+    "integrity": "sha512-BLML15VzOzG6OJpWhsNnBYjaQPbiH6hBbtSk6R5JD9k9i1Ng14h4R5/Fys6gwZZK3QcMyJ3LidunVG+iFZbPHA==",
+    "role": "main"
+  }
+]
