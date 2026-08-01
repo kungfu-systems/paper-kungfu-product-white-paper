@@ -42,8 +42,8 @@
           "productionReleaseHeadPrefix": "release/",
           "productionStatusUrl": "https://libkungfu.dev/.well-known/kungfu-release-status.json",
           "readbackUrls": [
-            "https://papers.libkungfu.dev/paper-kungfu-product-white-paper/",
-            "https://papers.libkungfu.dev/paper-kungfu-product-white-paper/latest/buildchain.release.json"
+            "https://papers.libkungfu.dev/kungfu-product-white-paper/",
+            "https://papers.libkungfu.dev/kungfu-product-white-paper/latest/buildchain.release.json"
           ],
           "updateCommand": "node scripts/paper-propagation.cjs consume --lock \"$BUILDCHAIN_PROPAGATION_LOCK_PATH\"",
           "prepareCommand": "corepack pnpm@11.9.0 install --lockfile-only --ignore-scripts --registry=https://registry.npmjs.org/ --config.minimumReleaseAge=0 && corepack pnpm@11.9.0 install --frozen-lockfile --ignore-scripts --registry=https://registry.npmjs.org/ --config.minimumReleaseAge=0",
