@@ -3,8 +3,8 @@
   "contract": "kungfu-buildchain-paper-agent-entry",
   "runtime": {
     "package": "@kungfu-tech/buildchain",
-    "version": "3.0.4-alpha.2",
-    "sourceSha": "9e775fa1f698d857f8325c9c89777ea07ee98294"
+    "version": "3.0.4-alpha.3",
+    "sourceSha": "337b3f3bad4aaea1fd76d3e5fd16ed7899ae88ec"
   },
   "repository": {
     "developmentRef": "dev/v0/v0.1",
@@ -28,5 +28,5 @@
     "forcePush": false,
     "remoteAcceptance": "required-buildchain-check"
   },
-  "entryDigest": "sha256:dd29b3dd8159dba80d1ed964b2e559ab6502cef07a275e71acd0363db1859da5"
+  "entryDigest": "sha256:b9e7e57a4e9867bb1cfc2c7eb55840a82c3665d91190931aa7e0e8c6cccab072"
 }
