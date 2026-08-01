@@ -1,2 +1,3 @@
 minimumReleaseAgeExclude:
   - '@kungfu-tech/buildchain@3.0.4-alpha.4'
+  - '@kungfu-tech/buildchain@3.0.4-alpha.5'
