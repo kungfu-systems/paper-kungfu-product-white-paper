@@ -62,7 +62,7 @@
     "paper:agent:verify": "buildchain paper agent verify --json"
   },
   "devDependencies": {
-    "@kungfu-tech/buildchain": "3.0.4-alpha.10"
+    "@kungfu-tech/buildchain": "3.0.4-alpha.13"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
