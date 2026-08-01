@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "version": "0.1.0-alpha.13",
+  "channel": "alpha",
+  "source_sha": "6734a1a2e3d4f3ea559497da79bb8bd73dd49453",
+  "release_sha": "6734a1a2e3d4f3ea559497da79bb8bd73dd49453",
+  "target_ref": "alpha/v0/v0.1",
+  "release_material_sha": "6734a1a2e3d4f3ea559497da79bb8bd73dd49453",
+  "publish_tooling_sha": "6734a1a2e3d4f3ea559497da79bb8bd73dd49453",
+  "artifacts": [
+    {
+      "group": "node",
+      "kind": "npm",
+      "name": "@kungfu-tech/paper-kungfu-product-white-paper",
+      "ref": "0.1.0-alpha.13",
+      "digest": "sha512-6eYBRozmtGrKNkhEIkN12bxfyf4MNjP9V/mEXmwqyTzTRrAm3KRAGpH7gJlZoPVztAmMPpNpxgHob4skBzDWbA=="
+    }
+  ]
+}
