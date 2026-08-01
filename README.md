@@ -48,6 +48,9 @@ The npm package exposes two generated site bundles from the same paper source:
 - [`site/evidence-site.json`](site/evidence-site.json): artifact and evidence
   bundle for `papers.libkungfu.dev`.
 
+The canonical brand-site PDF route is `/whitepaper/kungfu-white-paper.pdf`;
+the previous filename remains declared as a compatibility alias.
+
 Regenerate them after changing the paper source:
 
 ```sh
