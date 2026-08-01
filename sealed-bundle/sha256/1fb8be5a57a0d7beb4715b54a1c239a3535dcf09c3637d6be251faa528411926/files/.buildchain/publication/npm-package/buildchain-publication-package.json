@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "contract": "kungfu-buildchain-publication-npm-package",
+  "package": {
+    "name": "@kungfu-tech/paper-kungfu-product-white-paper",
+    "version": "0.1.0-alpha.13",
+    "distTag": "alpha",
+    "auth": "trusted-publishing"
+  },
+  "project": {
+    "name": "paper-kungfu-product-white-paper",
+    "type": "publication-artifact"
+  },
+  "publication": {
+    "kind": "paper",
+    "title": "Kungfu: Continuity for Agent Work",
+    "version": "0.1.0-alpha.13",
+    "primaryArtifact": "_build/main.pdf",
+    "manifestPath": ".buildchain/publication/publication-artifact.json",
+    "passportPath": ".buildchain/publication/publication-artifact-passport.json",
+    "registryPath": ".buildchain/publication/publication-registry.json",
+    "registryHydrationPath": ".buildchain/publication/registry-hydration.json",
+    "sourceBundlePath": ".buildchain/publication/source.tar.gz",
+    "artifactPaths": [
+      "_build/main.pdf",
+      "_build/main.pdf"
+    ],
+    "metadataPaths": [
+      "README.md",
+      "docs/MAP.md",
+      "package.json",
+      "package-lock.json",
+      "release-impact.json",
+      "site"
+    ],
+    "siteConsumers": [
+      "kungfu.tech",
+      "papers.libkungfu.dev"
+    ]
+  },
+  "outputDir": ".buildchain/publication/npm-package",
+  "files": [
+    {
+      "path": "_build/main.pdf",
+      "bytes": 670547,
+      "sha256": "399edf5135e7b9a4682409af0a494fcb98589d156ecaff7818b03974fc6c78de"
+    },
+    {
+      "path": "_build/main.pdf",
+      "bytes": 670547,
+      "sha256": "399edf5135e7b9a4682409af0a494fcb98589d156ecaff7818b03974fc6c78de"
+    },
+    {
+      "path": ".buildchain/publication/publication-artifact-passport.json",
+      "bytes": 9840,
+      "sha256": "7e4d3d01aba5866886bba229fd0748546254c7363aba7b096a7ba82215e5797d"
+    },
+    {
+      "path": ".buildchain/publication/publication-artifact.json",
+      "bytes": 10946,
+      "sha256": "3d0bdfdf8228d16f6c00ba7059299b3b554470d884919cd7153e1cf01f859e52"
+    },
+    {
+      "path": ".buildchain/publication/publication-registry.json",
+      "bytes": 57394,
+      "sha256": "891dff29659df43a3a8f478f15e553e3a0329458cafc4ca63967185987d5c8c9"
+    },
+    {
+      "path": ".buildchain/publication/registry-hydration.json",
+      "bytes": 5209,
+      "sha256": "2ee49a2e4de2be3a6eb069e836bb63cb0661f2fc6c7e9fd3fdab74ece240730c"
+    },
+    {
+      "path": ".buildchain/publication/source.tar.gz",
+      "bytes": 403470,
+      "sha256": "45a9b29da9592ae73721cc68e6d87022b28387804da014a8c4b0387413d0fcbc"
+    },
+    {
+      "path": "docs/MAP.md",
+      "bytes": 1507,
+      "sha256": "2fb40e2d8ab651dde481f4ac4a161f6365572266ba43b12430af099cc4ac266d"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 1794,
+      "sha256": "5bbfc28a9f4f9fd22531673f63b0b35e142eb7ebe4f8e4d19e5bdf5dd559b539"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1700,
+      "sha256": "949740958fb0a1568d4ac99026b64dc00dcc48de2ac9a9355bda47cef58d6c13"
+    },
+    {
+      "path": "package.json",
+      "bytes": 2909,
+      "sha256": "f5f3dcfb37a21e97c11c3d6021a7cc95321980e79b17d7d1b21aaa6df06ca887"
+    },
+    {
+      "path": "README.md",
+      "bytes": 324,
+      "sha256": "9c76c50b966dd8daeeb83a59dc1ca69735609508b7c7289f232f5cdd0b61d09e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3065,
+      "sha256": "c324ea76686b418523e8f748837b6e2a75b6256e027ab4d16c93b64a3e40dfd1"
+    },
+    {
+      "path": "release-impact.json",
+      "bytes": 1845,
+      "sha256": "cc2286f6131999637fbb2476c0f0fc5187fae0982957f5e06bcfbf256a9a2e59"
+    }
+  ]
+}

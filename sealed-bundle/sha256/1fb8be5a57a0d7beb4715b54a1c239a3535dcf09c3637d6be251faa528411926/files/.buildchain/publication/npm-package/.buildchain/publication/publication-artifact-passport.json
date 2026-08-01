@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "contract": "kungfu-buildchain-publication-artifact-passport",
+  "status": "passed",
+  "manifestDigest": "sha256:3724936dd4f3dede01eb69428fb079f1c384006d148efc4df5c0df30b1e19be2",
+  "source": {
+    "repository": "https://github.com/kungfu-systems/paper-kungfu-product-white-paper",
+    "sha": "6734a1a2e3d4f3ea559497da79bb8bd73dd49453",
+    "treeSha": "81d27f31564455270d84a49235479b38f7462963",
+    "sourcePaths": [
+      "paper",
+      "README.md",
+      "LICENSE",
+      "Makefile",
+      "package.json",
+      "package-lock.json",
+      "release-impact.json",
+      "scripts",
+      "site"
+    ],
+    "sourceFiles": [
+      {
+        "path": "LICENSE",
+        "bytes": 11357,
+        "sha256": "aaa62ccb6cf175f529bfc10e3e979353178ac122ce331dce2ca43475a9ff7706"
+      },
+      {
+        "path": "Makefile",
+        "bytes": 556,
+        "sha256": "06928f3d8c204022ffbbf8972215e283fd1a584aa2024418d778e98e9c9cac01"
+      },
+      {
+        "path": "package-lock.json",
+        "bytes": 1794,
+        "sha256": "5bbfc28a9f4f9fd22531673f63b0b35e142eb7ebe4f8e4d19e5bdf5dd559b539"
+      },
+      {
+        "path": "package.json",
+        "bytes": 2909,
+        "sha256": "f5f3dcfb37a21e97c11c3d6021a7cc95321980e79b17d7d1b21aaa6df06ca887"
+      },
+      {
+        "path": "paper/assets/agent-work-lab-continuity.png",
+        "bytes": 353822,
+        "sha256": "85772389709762f2892604f5ca2e22c65e992ab9601bcfbc69b005e87730cdd2"
+      },
+      {
+        "path": "paper/kungfu-whitepaper.sty",
+        "bytes": 6827,
+        "sha256": "f1874cd8ec9fac32e973da8e2bff94991f7b5d4399eb8b2602ef97cf1f870191"
+      },
+      {
+        "path": "paper/main.tex",
+        "bytes": 4327,
+        "sha256": "cda34be93b54f51c388d1b6e46aa569102a46366cfa23d4be30b6f3d52901b93"
+      },
+      {
+        "path": "paper/references.bib",
+        "bytes": 2263,
+        "sha256": "ca877d71d26d23c5cf0e4ccbd150177ee8ab9e673c8a4bd2d7740971de88eca8"
+      },
+      {
+        "path": "paper/sections/00-executive-summary.tex",
+        "bytes": 4816,
+        "sha256": "7efd1d168cda7eef8827318b5573be91b60b41d0a385bcd14b76082e239726a1"
+      },
+      {
+        "path": "paper/sections/01-problem.tex",
+        "bytes": 2415,
+        "sha256": "5095f2f2416dce8b82f9c0f867ae1cf9012d65ac7c2b0b21626aef01c1e40c7a"
+      },
+      {
+        "path": "paper/sections/02-thesis.tex",
+        "bytes": 9701,
+        "sha256": "1b0008c66c97ba94881f953c0440583eda5c69fa1ce5a0373858a944399dfd45"
+      },
+      {
+        "path": "paper/sections/03-principles.tex",
+        "bytes": 4008,
+        "sha256": "8825385c6f14c402ed1212c92c313a35ce8759d1d66fa131d444bf6a554f5c2b"
+      },
+      {
+        "path": "paper/sections/04-architecture.tex",
+        "bytes": 5528,
+        "sha256": "e06268916a8190087019466e38a91018fc36340d98e6c42ba22f8aac68abd641"
+      },
+      {
+        "path": "paper/sections/05-roadmap.tex",
+        "bytes": 3326,
+        "sha256": "f71c03272fe80086584a3cf4be7dd9b4f25ac4fce0f5509934f32624bcc6b049"
+      },
+      {
+        "path": "paper/sections/06-validation.tex",
+        "bytes": 3038,
+        "sha256": "3c8d465c2398f140fb1b243be5519d509c11cfd220685c1cc87bfbfb50710af9"
+      },
+      {
+        "path": "paper/sections/07-ecosystem.tex",
+        "bytes": 3668,
+        "sha256": "9f5e46828bb80cc23e5db91ac8522334bd0005ebffc0dd18ac44dc0c0e57c575"
+      },
+      {
+        "path": "paper/sections/08-risks.tex",
+        "bytes": 2404,
+        "sha256": "b4db2147e70660792c8c05b43ee4933eb223c1d1c32390f8d0ea62ee05f9e03b"
+      },
+      {
+        "path": "paper/sections/09-conclusion.tex",
+        "bytes": 2747,
+        "sha256": "3ed208816412374f98efe4bf5c75c5d926f0a1dcf7165f356964262344b63516"
+      },
+      {
+        "path": "paper/visual-proof.tex",
+        "bytes": 15779,
+        "sha256": "1d3eb8ab438f031249bef8c273bd2fd2482d557065b5d6138bb1bb05fac7ab3e"
+      },
+      {
+        "path": "README.md",
+        "bytes": 3065,
+        "sha256": "c324ea76686b418523e8f748837b6e2a75b6256e027ab4d16c93b64a3e40dfd1"
+      },
+      {
+        "path": "release-impact.json",
+        "bytes": 1845,
+        "sha256": "cc2286f6131999637fbb2476c0f0fc5187fae0982957f5e06bcfbf256a9a2e59"
+      },
+      {
+        "path": "scripts/build-publication-artifact.mjs",
+        "bytes": 2907,
+        "sha256": "ba02cac8f42d01fa7405826c080f5c1daa936ffbd406074f27157c60300a2a45"
+      },
+      {
+        "path": "scripts/check.mjs",
+        "bytes": 5888,
+        "sha256": "a98e876c70b8a2f740ebc408c6e7febc64e9c3c82fe162cf24663c014535c1f1"
+      },
+      {
+        "path": "scripts/npm-publish-transaction.mjs",
+        "bytes": 8136,
+        "sha256": "86e58e874d7eafd7cb13d1982c766dafe39ca3bc504f725b42d08d98281f60fc"
+      },
+      {
+        "path": "scripts/update-site-bundles.mjs",
+        "bytes": 12507,
+        "sha256": "d55c75496f9429ae1a504f51e39ba1c3ec0d87f4f1d6aa43e6eba022736b7117"
+      },
+      {
+        "path": "site/brand-site.json",
+        "bytes": 32605,
+        "sha256": "db5d952dd55c46df0008c95fa6f848c30d06f391b3b0d609b5f98d6be15163f7"
+      },
+      {
+        "path": "site/evidence-site.json",
+        "bytes": 10774,
+        "sha256": "4dfa075a74d53c208db5d066d33adc2ce05fc8974c7f623bce91ae86bac976e1"
+      },
+      {
+        "path": "site/site-bundles.json",
+        "bytes": 1476,
+        "sha256": "c8f90bf060d9932c936b6efa2483ae7fc4d1f557609c67fe72a927575ed79738"
+      }
+    ],
+    "sourceBundle": {
+      "path": ".buildchain/publication/source.tar.gz",
+      "bytes": 403470,
+      "sha256": "45a9b29da9592ae73721cc68e6d87022b28387804da014a8c4b0387413d0fcbc"
+    }
+  },
+  "toolchain": {
+    "type": "latex-docker",
+    "trustClassification": "pinned-docker-toolchain",
+    "command": "mkdir -p _build && cd paper && latexmk -pdf -outdir=../_build main.tex",
+    "image": "ghcr.io/kungfu-systems/build-images/latex-pdf-builder",
+    "digest": "sha256:5ae0e5211ade2937b17a76502a4fd2bcecc5220bd10086ffe9739d5dbbc18d38",
+    "machineVerifiable": true,
+    "invocation": "docker-image-digest"
+  },
+  "artifacts": [
+    {
+      "path": "_build/main.pdf",
+      "bytes": 670547,
+      "sha256": "399edf5135e7b9a4682409af0a494fcb98589d156ecaff7818b03974fc6c78de"
+    }
+  ],
+  "publicationArchive": {
+    "contract": "kungfu-buildchain-publication-artifact-archive",
+    "id": "kungfu-product-white-paper",
+    "version": "0.1.0-alpha.13",
+    "routes": {
+      "canonicalUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper/",
+      "latestUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper/latest/",
+      "latestEvidenceUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper/latest/buildchain.release.json",
+      "immutableVersionPrefix": "https://papers.libkungfu.dev/archive/kungfu-product-white-paper/v0.1.0-alpha.13/",
+      "immutableVersionUrl": "https://papers.libkungfu.dev/archive/kungfu-product-white-paper/v0.1.0-alpha.13/",
+      "artifactUrlPrefix": "https://papers.libkungfu.dev/archive/kungfu-product-white-paper/v0.1.0-alpha.13/"
+    },
+    "registry": {
+      "contract": "kungfu-buildchain-publication-artifact-registry",
+      "path": ".buildchain/publication/publication-registry.json"
+    },
+    "publicArtifacts": {
+      "manifest": {
+        "path": ".buildchain/publication/publication-artifact.json",
+        "url": "https://papers.libkungfu.dev/archive/kungfu-product-white-paper/v0.1.0-alpha.13/publication-artifact.json",
+        "sha256": "3724936dd4f3dede01eb69428fb079f1c384006d148efc4df5c0df30b1e19be2"
+      },
+      "passport": {
+        "path": ".buildchain/publication/publication-artifact-passport.json",
+        "url": "https://papers.libkungfu.dev/archive/kungfu-product-white-paper/v0.1.0-alpha.13/publication-artifact-passport.json"
+      },
+      "sourceBundle": {
+        "path": ".buildchain/publication/source.tar.gz",
+        "url": "https://papers.libkungfu.dev/archive/kungfu-product-white-paper/v0.1.0-alpha.13/source.tar.gz",
+        "sha256": "45a9b29da9592ae73721cc68e6d87022b28387804da014a8c4b0387413d0fcbc",
+        "bytes": 403470
+      },
+      "artifacts": [
+        {
+          "path": "_build/main.pdf",
+          "bytes": 670547,
+          "sha256": "399edf5135e7b9a4682409af0a494fcb98589d156ecaff7818b03974fc6c78de",
+          "role": "primary",
+          "url": "https://papers.libkungfu.dev/archive/kungfu-product-white-paper/v0.1.0-alpha.13/main.pdf"
+        }
+      ]
+    },
+    "appendOnly": true,
+    "sameVersionRepublish": "fail-on-digest-change",
+    "immutablePathPolicy": "do-not-sync-delete-immutable-prefixes"
+  },
+  "responsibility": {
+    "producer": "publication repository",
+    "renderer": "site repository",
+    "buildchain": "artifact contract, manifest, source bundle, and evidence generation"
+  },
+  "auditBoundary": {
+    "machineVerified": [
+      "declared publication artifact files exist",
+      "declared publication metadata files exist",
+      "declared publication source files are hashed",
+      "source bundle digest is recorded",
+      "publication PDF build toolchain image digest is declared"
+    ],
+    "outsideBoundary": [
+      "paper scientific claims",
+      "bibliography quality",
+      "human review of publication content"
+    ]
+  },
+  "residualRisk": [
+    {
+      "id": "publication-semantic-review",
+      "definedBy": "https://kfd.libkungfu.dev/schemas/kfd-2/trust-taxonomy.schema.json#/$defs/residualRisk",
+      "riskType": "natural-language-semantic-risk",
+      "trustImpact": "downgrade-warning",
+      "machineProvability": "not-machine-verifiable",
+      "agentAction": "semantic-review-required",
+      "owner": "publication maintainers",
+      "reason": "Buildchain verifies declared files and hashes; it does not peer-review paper claims.",
+      "note": "Buildchain verifies declared files and hashes; it does not peer-review paper claims."
+    }
+  ]
+}

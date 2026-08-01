@@ -1,0 +1,110 @@
+{
+  "appendOnly": true,
+  "contract": "kungfu-buildchain-publication-artifact-registry",
+  "immutablePathPolicy": "do-not-sync-delete-immutable-prefixes",
+  "publication": {
+    "canonicalUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper/",
+    "id": "kungfu-product-white-paper",
+    "kind": "paper",
+    "latestEvidenceUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper/latest/buildchain.release.json",
+    "latestUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper/latest/",
+    "siteConsumers": [
+      "kungfu.tech",
+      "papers.libkungfu.dev"
+    ],
+    "title": "Kungfu: Managing Real-World Work with Agents"
+  },
+  "registrySha256": "d0defcbeb58e88151cc9561147e9afd151437b951c8a6401d49377169a4284f5",
+  "sameVersionRepublish": "fail-on-digest-change",
+  "schemaVersion": 1,
+  "versions": [
+    {
+      "artifacts": [
+        {
+          "bytes": 50012,
+          "path": "_build/kungfu-real-world-agent-work.pdf",
+          "role": "primary",
+          "sha256": "7bdc1f7adaa88e41e1cc7717a593acba32f5ab1ba58baaaf1ef41da0876a8e16",
+          "url": "https://papers.libkungfu.dev/archive/kungfu-product-white-paper/v0.1.0-alpha.3/kungfu-real-world-agent-work.pdf"
+        }
+      ],
+      "immutableDigest": "sha256:69e1100089b698c5ce34f108f2efe9f7faed1f04a94c30c9ce36f206b2429e13",
+      "immutableEvidenceSha256": "69e1100089b698c5ce34f108f2efe9f7faed1f04a94c30c9ce36f206b2429e13",
+      "manifest": {
+        "path": ".buildchain/publication/publication-artifact.json",
+        "sha256": "a344ddc4ec2915ca621ad9b1af4112e0067628f8a7a177b0bb9013617bf3c11b",
+        "url": "https://papers.libkungfu.dev/archive/kungfu-product-white-paper/v0.1.0-alpha.3/publication-artifact.json"
+      },
+      "metadata": [
+        {
+          "bytes": 1507,
+          "path": "docs/MAP.md",
+          "sha256": "2fb40e2d8ab651dde481f4ac4a161f6365572266ba43b12430af099cc4ac266d"
+        },
+        {
+          "bytes": 1742,
+          "path": "package-lock.json",
+          "sha256": "096074025fdcd16e3ecc7e83093afb0a7dd748cbc4fc40408dcbf9990345bd42"
+        },
+        {
+          "bytes": 2486,
+          "path": "package.json",
+          "sha256": "a4bfad63ef5b34f0140a8c14edd7d3ae2816b626b7fc2c828a87e6c782876f97"
+        },
+        {
+          "bytes": 2841,
+          "path": "README.md",
+          "sha256": "d24eff3aa52d5a57d8fa0e39822557e8359cfc91c2122c72f4958dd905beeed6"
+        },
+        {
+          "bytes": 1618,
+          "path": "release-impact.json",
+          "sha256": "a3a4518abdd70da3a08a21cccd8aa0abe74f3755dc768fc072487489c942d466"
+        },
+        {
+          "bytes": 19210,
+          "path": "site/brand-site.json",
+          "sha256": "dea41e5b41890b3b8dc3ff82857f64dc20f189bce3f55ea659c5d49b9c3be3e9"
+        },
+        {
+          "bytes": 8398,
+          "path": "site/evidence-site.json",
+          "sha256": "7157b65cec00863e0959b3598233281bc62dab9c1c74dcf25cad4ff25eaa75f6"
+        },
+        {
+          "bytes": 1475,
+          "path": "site/site-bundles.json",
+          "sha256": "32cc6846ff02323420baa4c611333fa152212059b7c1f43957b614690d15949d"
+        }
+      ],
+      "passport": {
+        "path": ".buildchain/publication/publication-artifact-passport.json",
+        "sha256": "aa9543fa3de2f3c22f9e69ad82c2100d286bb4badd57e8d82ba6774f6bd44dcf",
+        "url": "https://papers.libkungfu.dev/archive/kungfu-product-white-paper/v0.1.0-alpha.3/publication-artifact-passport.json"
+      },
+      "publishedAt": "2026-07-15T03:29:10.000Z",
+      "recordSha256": "feb778dfbdb58d6124a771707697b785bd7af0b42b0bcc0b2a405e6381dc63cb",
+      "routes": {
+        "artifactUrlPrefix": "https://papers.libkungfu.dev/archive/kungfu-product-white-paper/v0.1.0-alpha.3/",
+        "canonicalUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper/",
+        "immutableVersionPrefix": "https://papers.libkungfu.dev/archive/kungfu-product-white-paper/v0.1.0-alpha.3/",
+        "immutableVersionUrl": "https://papers.libkungfu.dev/archive/kungfu-product-white-paper/v0.1.0-alpha.3/",
+        "latestEvidenceUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper/latest/buildchain.release.json",
+        "latestUrl": "https://papers.libkungfu.dev/kungfu-product-white-paper/latest/"
+      },
+      "source": {
+        "repository": "https://github.com/kungfu-systems/paper-kungfu-product-white-paper",
+        "sha": "c072993c6c2c7251d57457db734d4185daa00a68",
+        "sourceBundle": {
+          "bytes": 30001,
+          "path": ".buildchain/publication/source.tar.gz",
+          "sha256": "6dc9b5221105726f7df46d11e96c0694880022b790b5a5378f20224d3c44b609",
+          "url": "https://papers.libkungfu.dev/archive/kungfu-product-white-paper/v0.1.0-alpha.3/source.tar.gz"
+        },
+        "treeSha": "7090b43a9492ee356af01eb489659bff0f6b5a96"
+      },
+      "status": "published",
+      "version": "0.1.0-alpha.3"
+    }
+  ]
+}

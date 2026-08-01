@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "contract": "kungfu-buildchain-impact",
+  "release": {
+    "line": "v0.1",
+    "channel": "alpha",
+    "targetRef": "alpha/v0/v0.1"
+  },
+  "versionImpact": {
+    "final": "minor",
+    "source": "canonical-white-paper-pdf-route-alpha-13",
+    "rationale": "This Alpha preserves the qualified paper content while making the public PDF filename match the White Paper identity and retaining the previous route as a compatibility alias."
+  },
+  "surfaceImpacts": [
+    {
+      "id": "continuity-white-paper",
+      "impact": "minor",
+      "class": "content",
+      "rationale": "The paper now explains why durable Work identity, governed evidence, bounded authority, and continuity across replaceable Agents are necessary for long-running agent work."
+    },
+    {
+      "id": "project-work-agent-model",
+      "impact": "minor",
+      "class": "product-model",
+      "rationale": "The public narrative introduces Project, Work, and Agent together with Agent Work Lab as the product entry point and evidence surface."
+    },
+    {
+      "id": "foundation-triad-and-machine-life-bridge",
+      "impact": "minor",
+      "class": "research-narrative",
+      "rationale": "The paper presents the Foundation Triad at a first-reader gradient and connects present product continuity to the longer-horizon Machine Life direction."
+    },
+    {
+      "id": "commercial-publication-design",
+      "impact": "patch",
+      "class": "presentation",
+      "rationale": "The PDF retains its commercial editorial system, Kungfu CLI evidence view, kungfu.tech cover contact, and reproducible TeX Gyre build while adopting the canonical kungfu-white-paper.pdf route."
+    }
+  ],
+  "summary": "Alpha 13 preserves the qualified White Paper content while canonicalizing its public PDF filename and retaining the previous route as an alias."
+}

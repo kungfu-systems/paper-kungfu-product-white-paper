@@ -1,0 +1,423 @@
+{
+  "schema": 1,
+  "id": "95294972cb7240b0b7afdd2359d8aeb8f67f4172135ce6ae082401cc3add95be",
+  "repository": "kungfu-systems/paper-kungfu-product-white-paper",
+  "target_ref": "alpha/v0/v0.1",
+  "source_sha": "6734a1a2e3d4f3ea559497da79bb8bd73dd49453",
+  "release_sha": "6734a1a2e3d4f3ea559497da79bb8bd73dd49453",
+  "release_material_sha": "6734a1a2e3d4f3ea559497da79bb8bd73dd49453",
+  "publish_tooling_sha": "6734a1a2e3d4f3ea559497da79bb8bd73dd49453",
+  "version": "0.1.0-alpha.13",
+  "exact_tag": "v0.1.0-alpha.13",
+  "channel": "alpha",
+  "line": "v0.1",
+  "version_strategy": "",
+  "lifecycle_identity": "lifecycle.publish",
+  "state_ref": "buildchain/release-state/0-1-0-alpha-13",
+  "state_path": "/home/runner/work/paper-kungfu-product-white-paper/paper-kungfu-product-white-paper/.buildchain/release-state/v0.1.0-alpha.13.json",
+  "evidence_path": "/home/runner/work/paper-kungfu-product-white-paper/paper-kungfu-product-white-paper/.buildchain/release-evidence/v0.1.0-alpha.13/evidence.json",
+  "state": "sealed",
+  "previous_state": "prepared",
+  "actor": "kungfu-origin",
+  "run_id": "30677400423",
+  "superseded_by": "",
+  "failure": "",
+  "artifacts": [],
+  "evidence": [],
+  "sealed_bundle": {
+    "schemaVersion": 1,
+    "contract": "kungfu-buildchain-publication-sealed-bundle",
+    "root": "sha256:1fb8be5a57a0d7beb4715b54a1c239a3535dcf09c3637d6be251faa528411926",
+    "candidate": {
+      "schemaVersion": 1,
+      "contract": "kungfu-buildchain-publication-artifact-candidate",
+      "repository": "kungfu-systems/paper-kungfu-product-white-paper",
+      "sourceSha": "6734a1a2e3d4f3ea559497da79bb8bd73dd49453",
+      "sourceTreeSha": "81d27f31564455270d84a49235479b38f7462963",
+      "runtimeSha": "f30bb2678cacbae947eb46411c13eda75e9e35b0",
+      "manifestDigest": "3724936dd4f3dede01eb69428fb079f1c384006d148efc4df5c0df30b1e19be2",
+      "passportDigest": "128ba4f2c972df1c52fe02860dafa0aeb9f64ac696fd44a81245fac4459530b8",
+      "controllerReceiptDigest": "1cd2c239de01ed8615db32b92a58b6a901f60f390dade4bbfb9380fae6c0e127",
+      "files": [
+        {
+          "path": "_build/main.pdf",
+          "size": 670547,
+          "sha256": "399edf5135e7b9a4682409af0a494fcb98589d156ecaff7818b03974fc6c78de"
+        },
+        {
+          "path": ".buildchain/paper-release/build-summary.json",
+          "size": 1151,
+          "sha256": "228e4ccbc2be706c1fc41c23ca39fb3e7b755ba56031e6f431f113bc01a11ac0"
+        },
+        {
+          "path": ".buildchain/paper-release/publish-required-artifacts.json",
+          "size": 390,
+          "sha256": "cb12cfc057c3b865c5eb1a5e5d424c3903f07230db70f85c09526504627aa6a4"
+        },
+        {
+          "path": ".buildchain/publication/npm-package/_build/main.pdf",
+          "size": 670547,
+          "sha256": "399edf5135e7b9a4682409af0a494fcb98589d156ecaff7818b03974fc6c78de"
+        },
+        {
+          "path": ".buildchain/publication/npm-package/.buildchain/publication/publication-artifact-passport.json",
+          "size": 9840,
+          "sha256": "7e4d3d01aba5866886bba229fd0748546254c7363aba7b096a7ba82215e5797d"
+        },
+        {
+          "path": ".buildchain/publication/npm-package/.buildchain/publication/publication-artifact.json",
+          "size": 10946,
+          "sha256": "3d0bdfdf8228d16f6c00ba7059299b3b554470d884919cd7153e1cf01f859e52"
+        },
+        {
+          "path": ".buildchain/publication/npm-package/.buildchain/publication/publication-registry.json",
+          "size": 57394,
+          "sha256": "891dff29659df43a3a8f478f15e553e3a0329458cafc4ca63967185987d5c8c9"
+        },
+        {
+          "path": ".buildchain/publication/npm-package/.buildchain/publication/registry-hydration.json",
+          "size": 5209,
+          "sha256": "2ee49a2e4de2be3a6eb069e836bb63cb0661f2fc6c7e9fd3fdab74ece240730c"
+        },
+        {
+          "path": ".buildchain/publication/npm-package/.buildchain/publication/source.tar.gz",
+          "size": 403470,
+          "sha256": "45a9b29da9592ae73721cc68e6d87022b28387804da014a8c4b0387413d0fcbc"
+        },
+        {
+          "path": ".buildchain/publication/npm-package/buildchain-publication-package.json",
+          "size": 3547,
+          "sha256": "7e6d1f12bca14678c9afe63d7dddee1bfd28168aeb9d288eb7fb7e4e104400c4"
+        },
+        {
+          "path": ".buildchain/publication/npm-package/docs/MAP.md",
+          "size": 1507,
+          "sha256": "2fb40e2d8ab651dde481f4ac4a161f6365572266ba43b12430af099cc4ac266d"
+        },
+        {
+          "path": ".buildchain/publication/npm-package/package-lock.json",
+          "size": 1794,
+          "sha256": "5bbfc28a9f4f9fd22531673f63b0b35e142eb7ebe4f8e4d19e5bdf5dd559b539"
+        },
+        {
+          "path": ".buildchain/publication/npm-package/package.json",
+          "size": 1700,
+          "sha256": "949740958fb0a1568d4ac99026b64dc00dcc48de2ac9a9355bda47cef58d6c13"
+        },
+        {
+          "path": ".buildchain/publication/npm-package/README.md",
+          "size": 324,
+          "sha256": "9c76c50b966dd8daeeb83a59dc1ca69735609508b7c7289f232f5cdd0b61d09e"
+        },
+        {
+          "path": ".buildchain/publication/npm-package/release-impact.json",
+          "size": 1845,
+          "sha256": "cc2286f6131999637fbb2476c0f0fc5187fae0982957f5e06bcfbf256a9a2e59"
+        },
+        {
+          "path": ".buildchain/publication/npm-tarball/kungfu-tech-paper-kungfu-product-white-paper-0.1.0-alpha.13.tgz",
+          "size": 1084238,
+          "sha256": "d71e396c70975201c5b6417c42eb2b3191d057bed02a841e7164527677837988"
+        },
+        {
+          "path": ".buildchain/publication/publication-artifact-passport.json",
+          "size": 9840,
+          "sha256": "7e4d3d01aba5866886bba229fd0748546254c7363aba7b096a7ba82215e5797d"
+        },
+        {
+          "path": ".buildchain/publication/publication-artifact.json",
+          "size": 10946,
+          "sha256": "3d0bdfdf8228d16f6c00ba7059299b3b554470d884919cd7153e1cf01f859e52"
+        },
+        {
+          "path": ".buildchain/publication/publication-registry.json",
+          "size": 57394,
+          "sha256": "891dff29659df43a3a8f478f15e553e3a0329458cafc4ca63967185987d5c8c9"
+        },
+        {
+          "path": ".buildchain/publication/registry-hydration.json",
+          "size": 5209,
+          "sha256": "2ee49a2e4de2be3a6eb069e836bb63cb0661f2fc6c7e9fd3fdab74ece240730c"
+        },
+        {
+          "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.0.json",
+          "size": 4847,
+          "sha256": "2d8cf16ea6cc3fb9c73ca718c21c08b77f0e12d15ff236293ae609340d54beb1"
+        },
+        {
+          "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.1.json",
+          "size": 4847,
+          "sha256": "50835cdd4dc3ed0913da5e357dc049013cf14836cdc4805b6fc60cacdf4c30c9"
+        },
+        {
+          "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.10.json",
+          "size": 4933,
+          "sha256": "1b51dbbab6562c5cd397d92e032a66731b5829e47dba18e8ad1340c00a4399d7"
+        },
+        {
+          "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.11.json",
+          "size": 4904,
+          "sha256": "fdff7de509f51131c6160c2f175993c581f78f5d6cab3cd295ed6a6ab9a19ad1"
+        },
+        {
+          "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.12.json",
+          "size": 53377,
+          "sha256": "d749210c2bad4105d4df5e2a0ee62117b1f7f54b442296785b8596c586d59a78"
+        },
+        {
+          "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.2.json",
+          "size": 4895,
+          "sha256": "a24f12f9ed31e5859073856d460d718143bd3964222fb9242bb6ea28d7db7fd0"
+        },
+        {
+          "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.3.json",
+          "size": 4895,
+          "sha256": "8b367b499ea304aec725c5274bd78364f987ca8745694eb2f130fd19c06a904c"
+        },
+        {
+          "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.4.json",
+          "size": 4895,
+          "sha256": "76a52d9b505d109fce45e69f859e5395c348ecc1186d9ef140d9e2f4e82ed1b9"
+        },
+        {
+          "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.5.json",
+          "size": 4952,
+          "sha256": "89d363cd0704cfbdb36d9abef15ec06d8c4249a5399e42e51dc7b12f949927da"
+        },
+        {
+          "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.6.json",
+          "size": 4952,
+          "sha256": "b33c68437363d7210dfd9e702d87f14c980620d5978c3b856505f40bf41ad194"
+        },
+        {
+          "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.7.json",
+          "size": 4952,
+          "sha256": "b6b97ef3f323bcfd7412dbccd182fbb390c600c9bec576aedbbdb42521983adb"
+        },
+        {
+          "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.8.json",
+          "size": 4925,
+          "sha256": "f6e5a6a6c6b8dff3069a144852896b8136a6b075bf8fc5c938cf699bf9c70e72"
+        },
+        {
+          "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.9.json",
+          "size": 4925,
+          "sha256": "8ffb91fd3895418638af98210f1473adfc9a79686d278d2c9499a3adc90f39ed"
+        },
+        {
+          "path": ".buildchain/publication/reproducibility-receipt.json",
+          "size": 28367,
+          "sha256": "2c3909edcf3976e3b28ab2aa58ed3f3dc43a9a86a66a41b384d2ecc39bd9351e"
+        },
+        {
+          "path": ".buildchain/publication/source.tar.gz",
+          "size": 403470,
+          "sha256": "45a9b29da9592ae73721cc68e6d87022b28387804da014a8c4b0387413d0fcbc"
+        }
+      ],
+      "candidateDigest": "1fb8be5a57a0d7beb4715b54a1c239a3535dcf09c3637d6be251faa528411926"
+    },
+    "files": [
+      {
+        "path": "_build/main.pdf",
+        "size": 670547,
+        "sha256": "399edf5135e7b9a4682409af0a494fcb98589d156ecaff7818b03974fc6c78de"
+      },
+      {
+        "path": ".buildchain/paper-release/build-summary.json",
+        "size": 1151,
+        "sha256": "228e4ccbc2be706c1fc41c23ca39fb3e7b755ba56031e6f431f113bc01a11ac0"
+      },
+      {
+        "path": ".buildchain/paper-release/publish-required-artifacts.json",
+        "size": 390,
+        "sha256": "cb12cfc057c3b865c5eb1a5e5d424c3903f07230db70f85c09526504627aa6a4"
+      },
+      {
+        "path": ".buildchain/publication/npm-package/_build/main.pdf",
+        "size": 670547,
+        "sha256": "399edf5135e7b9a4682409af0a494fcb98589d156ecaff7818b03974fc6c78de"
+      },
+      {
+        "path": ".buildchain/publication/npm-package/.buildchain/publication/publication-artifact-passport.json",
+        "size": 9840,
+        "sha256": "7e4d3d01aba5866886bba229fd0748546254c7363aba7b096a7ba82215e5797d"
+      },
+      {
+        "path": ".buildchain/publication/npm-package/.buildchain/publication/publication-artifact.json",
+        "size": 10946,
+        "sha256": "3d0bdfdf8228d16f6c00ba7059299b3b554470d884919cd7153e1cf01f859e52"
+      },
+      {
+        "path": ".buildchain/publication/npm-package/.buildchain/publication/publication-registry.json",
+        "size": 57394,
+        "sha256": "891dff29659df43a3a8f478f15e553e3a0329458cafc4ca63967185987d5c8c9"
+      },
+      {
+        "path": ".buildchain/publication/npm-package/.buildchain/publication/registry-hydration.json",
+        "size": 5209,
+        "sha256": "2ee49a2e4de2be3a6eb069e836bb63cb0661f2fc6c7e9fd3fdab74ece240730c"
+      },
+      {
+        "path": ".buildchain/publication/npm-package/.buildchain/publication/source.tar.gz",
+        "size": 403470,
+        "sha256": "45a9b29da9592ae73721cc68e6d87022b28387804da014a8c4b0387413d0fcbc"
+      },
+      {
+        "path": ".buildchain/publication/npm-package/buildchain-publication-package.json",
+        "size": 3547,
+        "sha256": "7e6d1f12bca14678c9afe63d7dddee1bfd28168aeb9d288eb7fb7e4e104400c4"
+      },
+      {
+        "path": ".buildchain/publication/npm-package/docs/MAP.md",
+        "size": 1507,
+        "sha256": "2fb40e2d8ab651dde481f4ac4a161f6365572266ba43b12430af099cc4ac266d"
+      },
+      {
+        "path": ".buildchain/publication/npm-package/package-lock.json",
+        "size": 1794,
+        "sha256": "5bbfc28a9f4f9fd22531673f63b0b35e142eb7ebe4f8e4d19e5bdf5dd559b539"
+      },
+      {
+        "path": ".buildchain/publication/npm-package/package.json",
+        "size": 1700,
+        "sha256": "949740958fb0a1568d4ac99026b64dc00dcc48de2ac9a9355bda47cef58d6c13"
+      },
+      {
+        "path": ".buildchain/publication/npm-package/README.md",
+        "size": 324,
+        "sha256": "9c76c50b966dd8daeeb83a59dc1ca69735609508b7c7289f232f5cdd0b61d09e"
+      },
+      {
+        "path": ".buildchain/publication/npm-package/release-impact.json",
+        "size": 1845,
+        "sha256": "cc2286f6131999637fbb2476c0f0fc5187fae0982957f5e06bcfbf256a9a2e59"
+      },
+      {
+        "path": ".buildchain/publication/npm-tarball/kungfu-tech-paper-kungfu-product-white-paper-0.1.0-alpha.13.tgz",
+        "size": 1084238,
+        "sha256": "d71e396c70975201c5b6417c42eb2b3191d057bed02a841e7164527677837988"
+      },
+      {
+        "path": ".buildchain/publication/publication-artifact-passport.json",
+        "size": 9840,
+        "sha256": "7e4d3d01aba5866886bba229fd0748546254c7363aba7b096a7ba82215e5797d"
+      },
+      {
+        "path": ".buildchain/publication/publication-artifact.json",
+        "size": 10946,
+        "sha256": "3d0bdfdf8228d16f6c00ba7059299b3b554470d884919cd7153e1cf01f859e52"
+      },
+      {
+        "path": ".buildchain/publication/publication-registry.json",
+        "size": 57394,
+        "sha256": "891dff29659df43a3a8f478f15e553e3a0329458cafc4ca63967185987d5c8c9"
+      },
+      {
+        "path": ".buildchain/publication/registry-hydration.json",
+        "size": 5209,
+        "sha256": "2ee49a2e4de2be3a6eb069e836bb63cb0661f2fc6c7e9fd3fdab74ece240730c"
+      },
+      {
+        "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.0.json",
+        "size": 4847,
+        "sha256": "2d8cf16ea6cc3fb9c73ca718c21c08b77f0e12d15ff236293ae609340d54beb1"
+      },
+      {
+        "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.1.json",
+        "size": 4847,
+        "sha256": "50835cdd4dc3ed0913da5e357dc049013cf14836cdc4805b6fc60cacdf4c30c9"
+      },
+      {
+        "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.10.json",
+        "size": 4933,
+        "sha256": "1b51dbbab6562c5cd397d92e032a66731b5829e47dba18e8ad1340c00a4399d7"
+      },
+      {
+        "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.11.json",
+        "size": 4904,
+        "sha256": "fdff7de509f51131c6160c2f175993c581f78f5d6cab3cd295ed6a6ab9a19ad1"
+      },
+      {
+        "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.12.json",
+        "size": 53377,
+        "sha256": "d749210c2bad4105d4df5e2a0ee62117b1f7f54b442296785b8596c586d59a78"
+      },
+      {
+        "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.2.json",
+        "size": 4895,
+        "sha256": "a24f12f9ed31e5859073856d460d718143bd3964222fb9242bb6ea28d7db7fd0"
+      },
+      {
+        "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.3.json",
+        "size": 4895,
+        "sha256": "8b367b499ea304aec725c5274bd78364f987ca8745694eb2f130fd19c06a904c"
+      },
+      {
+        "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.4.json",
+        "size": 4895,
+        "sha256": "76a52d9b505d109fce45e69f859e5395c348ecc1186d9ef140d9e2f4e82ed1b9"
+      },
+      {
+        "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.5.json",
+        "size": 4952,
+        "sha256": "89d363cd0704cfbdb36d9abef15ec06d8c4249a5399e42e51dc7b12f949927da"
+      },
+      {
+        "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.6.json",
+        "size": 4952,
+        "sha256": "b33c68437363d7210dfd9e702d87f14c980620d5978c3b856505f40bf41ad194"
+      },
+      {
+        "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.7.json",
+        "size": 4952,
+        "sha256": "b6b97ef3f323bcfd7412dbccd182fbb390c600c9bec576aedbbdb42521983adb"
+      },
+      {
+        "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.8.json",
+        "size": 4925,
+        "sha256": "f6e5a6a6c6b8dff3069a144852896b8136a6b075bf8fc5c938cf699bf9c70e72"
+      },
+      {
+        "path": ".buildchain/publication/registry-inputs/0.1.0-alpha.9.json",
+        "size": 4925,
+        "sha256": "8ffb91fd3895418638af98210f1473adfc9a79686d278d2c9499a3adc90f39ed"
+      },
+      {
+        "path": ".buildchain/publication/reproducibility-receipt.json",
+        "size": 28367,
+        "sha256": "2c3909edcf3976e3b28ab2aa58ed3f3dc43a9a86a66a41b384d2ecc39bd9351e"
+      },
+      {
+        "path": ".buildchain/publication/source.tar.gz",
+        "size": 403470,
+        "sha256": "45a9b29da9592ae73721cc68e6d87022b28387804da014a8c4b0387413d0fcbc"
+      }
+    ],
+    "npm": {
+      "name": "@kungfu-tech/paper-kungfu-product-white-paper",
+      "version": "0.1.0-alpha.13",
+      "path": ".buildchain/publication/npm-tarball/kungfu-tech-paper-kungfu-product-white-paper-0.1.0-alpha.13.tgz",
+      "size": 1084238,
+      "sha256": "d71e396c70975201c5b6417c42eb2b3191d057bed02a841e7164527677837988",
+      "integrity": "sha512-6eYBRozmtGrKNkhEIkN12bxfyf4MNjP9V/mEXmwqyTzTRrAm3KRAGpH7gJlZoPVztAmMPpNpxgHob4skBzDWbA=="
+    },
+    "releaseAssets": [
+      {
+        "path": "_build/main.pdf",
+        "size": 670547,
+        "sha256": "399edf5135e7b9a4682409af0a494fcb98589d156ecaff7818b03974fc6c78de"
+      }
+    ],
+    "completion": {
+      "githubReleaseRequired": true
+    },
+    "durablePath": "sealed-bundle/sha256/1fb8be5a57a0d7beb4715b54a1c239a3535dcf09c3637d6be251faa528411926",
+    "resumeCommand": "buildchain paper resume --version \"0.1.0-alpha.13\" --state-ref \"refs/heads/buildchain/release-state/0-1-0-alpha-13\""
+  },
+  "publication_state": "sealed",
+  "milestones": {},
+  "resume_command": "buildchain paper resume --version \"0.1.0-alpha.13\" --state-ref \"refs/heads/buildchain/release-state/0-1-0-alpha-13\"",
+  "created_at": "2026-08-01T01:14:59.931Z",
+  "updated_at": "2026-08-01T01:14:59.931Z"
+}
