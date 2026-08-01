@@ -58,10 +58,11 @@
     "paper:preflight": "buildchain paper preflight --json",
     "paper:work:start": "buildchain paper work start",
     "paper:work:submit": "buildchain paper work submit",
-    "paper:status": "buildchain paper status --json"
+    "paper:status": "buildchain paper status --json",
+    "paper:agent:verify": "buildchain paper agent verify --json"
   },
   "devDependencies": {
-    "@kungfu-tech/buildchain": "3.0.3-alpha.3"
+    "@kungfu-tech/buildchain": "3.0.4-alpha.2"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
