@@ -187,8 +187,9 @@ export const buildSiteBundles = () => {
       canonicalUrl: "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work",
       indexPath: "/whitepaper",
       indexUrl: "https://kungfu.tech/whitepaper",
-      pdfPath: "/whitepaper/kungfu-real-world-agent-work.pdf",
-      pdfUrl: "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work.pdf",
+      pdfPath: "/whitepaper/kungfu-white-paper.pdf",
+      pdfUrl: "https://kungfu.tech/whitepaper/kungfu-white-paper.pdf",
+      pdfAliases: ["/whitepaper/kungfu-real-world-agent-work.pdf"],
       evidenceUrl: "https://papers.libkungfu.dev/kungfu-product-white-paper",
     },
     hero: {

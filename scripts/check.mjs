@@ -114,8 +114,11 @@ if (brandBundle.routes?.canonicalUrl !== "https://kungfu.tech/whitepaper/kungfu-
 if (brandBundle.routes?.indexUrl !== "https://kungfu.tech/whitepaper") {
   fail("brand site bundle must declare the kungfu.tech white paper index URL");
 }
-if (brandBundle.routes?.pdfUrl !== "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work.pdf") {
+if (brandBundle.routes?.pdfUrl !== "https://kungfu.tech/whitepaper/kungfu-white-paper.pdf") {
   fail("brand site bundle must declare the kungfu.tech canonical PDF URL");
+}
+if (JSON.stringify(brandBundle.routes?.pdfAliases) !== JSON.stringify(["/whitepaper/kungfu-real-world-agent-work.pdf"])) {
+  fail("brand site bundle must preserve the previous PDF route as an alias");
 }
 if (brandBundle.hero?.primaryCta?.href !== brandBundle.routes?.canonicalUrl) {
   fail("brand site primary CTA must point to routes.canonicalUrl");
