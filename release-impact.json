@@ -8,8 +8,8 @@
   },
   "versionImpact": {
     "final": "minor",
-    "source": "tex-gyre-white-paper-alpha-12",
-    "rationale": "This Alpha retains the continuity narrative introduced in Alpha 11 and restores the intended TeX Gyre typography through a reproducible pinned builder image."
+    "source": "canonical-white-paper-pdf-route-alpha-13",
+    "rationale": "This Alpha preserves the qualified paper content while making the public PDF filename match the White Paper identity and retaining the previous route as a compatibility alias."
   },
   "surfaceImpacts": [
     {
@@ -34,8 +34,8 @@
       "id": "commercial-publication-design",
       "impact": "patch",
       "class": "presentation",
-      "rationale": "The PDF retains its commercial editorial system, Kungfu CLI evidence view, and kungfu.tech cover contact while restoring TeX Gyre Pagella, Heros, and Cursor through a reproducible pinned Docker build."
+      "rationale": "The PDF retains its commercial editorial system, Kungfu CLI evidence view, kungfu.tech cover contact, and reproducible TeX Gyre build while adopting the canonical kungfu-white-paper.pdf route."
     }
   ],
-  "summary": "Alpha 12 preserves the continuity product thesis and Machine Life bridge while restoring the intended TeX Gyre publication typography."
+  "summary": "Alpha 13 preserves the qualified White Paper content while canonicalizing its public PDF filename and retaining the previous route as an alias."
 }
