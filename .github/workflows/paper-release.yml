@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   paper-release:
-    uses: kungfu-systems/buildchain/.github/workflows/paper-release-sealed.yml@9e775fa1f698d857f8325c9c89777ea07ee98294
+    uses: kungfu-systems/buildchain/.github/workflows/paper-release-sealed.yml@337b3f3bad4aaea1fd76d3e5fd16ed7899ae88ec
     permissions:
       actions: read
       checks: write
@@ -21,7 +21,7 @@ jobs:
       issues: write
       pull-requests: write
     with:
-      buildchain-ref: 9e775fa1f698d857f8325c9c89777ea07ee98294
+      buildchain-ref: 337b3f3bad4aaea1fd76d3e5fd16ed7899ae88ec
       buildchain-contract-lock-path: .buildchain/contract-lock.json
       publisher-workflow-path: .github/workflows/paper-release.yml
       toolchain-type: config

@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "contract": "kungfu-buildchain-paper-release-propagation",
+  "sourceNode": "paper-kungfu-product-white-paper",
+  "graph": {
+    "schemaVersion": 1,
+    "contract": "kungfu-buildchain-release-propagation-graph",
+    "nodes": [
+      {
+        "id": "paper-kungfu-product-white-paper",
+        "repository": "kungfu-systems/paper-kungfu-product-white-paper",
+        "package": "@kungfu-tech/paper-kungfu-product-white-paper"
+      },
+      {
+        "id": "site-kungfu-tech",
+        "repository": "kungfu-systems/site-kungfu-tech",
+        "lockPath": "buildchain.upstreams/paper-kungfu-product-white-paper.release.json",
+        "baseRef": "main",
+        "executionProfile": {
+          "contract": "kungfu-buildchain-github-web-surface-execution",
+          "workflow": "buildchain-web-surface.yml",
+          "productionReleaseLabel": "buildchain-release",
+          "productionReleaseHeadPrefix": "feature/release-",
+          "productionStatusUrl": "https://kungfu.tech/.well-known/kungfu-release-status.json",
+          "readbackUrls": [
+            "https://kungfu.tech/whitepaper/manifest.json"
+          ],
+          "updateCommand": "node scripts/paper-propagation.mjs --lock \"$BUILDCHAIN_PROPAGATION_LOCK_PATH\"",
+          "prepareCommand": "corepack pnpm@11.7.0 install --lockfile-only --ignore-scripts --registry=https://registry.npmjs.org/ --config.minimumReleaseAge=0 && corepack pnpm@11.7.0 install --frozen-lockfile --ignore-scripts --registry=https://registry.npmjs.org/ --config.minimumReleaseAge=0",
+          "verifyCommand": "pnpm run check"
+        }
+      },
+      {
+        "id": "site-libkungfu-dev",
+        "repository": "kungfu-systems/site-libkungfu-dev",
+        "lockPath": "buildchain.upstreams/paper-kungfu-product-white-paper.release.json",
+        "baseRef": "main",
+        "executionProfile": {
+          "contract": "kungfu-buildchain-github-web-surface-execution",
+          "workflow": "buildchain-web-surface.yml",
+          "productionReleaseLabel": "buildchain-release",
+          "productionReleaseHeadPrefix": "release/",
+          "productionStatusUrl": "https://libkungfu.dev/.well-known/kungfu-release-status.json",
+          "readbackUrls": [
+            "https://papers.libkungfu.dev/paper-kungfu-product-white-paper/",
+            "https://papers.libkungfu.dev/paper-kungfu-product-white-paper/latest/buildchain.release.json"
+          ],
+          "updateCommand": "node scripts/paper-propagation.cjs consume --lock \"$BUILDCHAIN_PROPAGATION_LOCK_PATH\"",
+          "prepareCommand": "corepack pnpm@11.9.0 install --lockfile-only --ignore-scripts --registry=https://registry.npmjs.org/ --config.minimumReleaseAge=0 && corepack pnpm@11.9.0 install --frozen-lockfile --ignore-scripts --registry=https://registry.npmjs.org/ --config.minimumReleaseAge=0",
+          "verifyCommand": "pnpm run check"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "paper-kungfu-product-white-paper-to-site-kungfu-tech",
+        "from": "paper-kungfu-product-white-paper",
+        "to": "site-kungfu-tech",
+        "channelPolicy": "preserve"
+      },
+      {
+        "id": "paper-kungfu-product-white-paper-to-site-libkungfu-dev",
+        "from": "paper-kungfu-product-white-paper",
+        "to": "site-libkungfu-dev",
+        "channelPolicy": "preserve"
+      }
+    ]
+  },
+  "targets": [
+    "site-kungfu-tech",
+    "site-libkungfu-dev"
+  ]
+}
