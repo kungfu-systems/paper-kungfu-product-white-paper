@@ -8,8 +8,8 @@
   },
   "versionImpact": {
     "final": "minor",
-    "source": "canonical-white-paper-pdf-route-alpha-13",
-    "rationale": "This Alpha preserves the qualified paper content while making the public PDF filename match the White Paper identity and retaining the previous route as a compatibility alias."
+    "source": "canonical-white-paper-reader-route-alpha-14",
+    "rationale": "This Alpha aligns the public reader and PDF under the kungfu-white-paper basename and removes the incorrectly named compatibility routes."
   },
   "surfaceImpacts": [
     {
@@ -34,8 +34,8 @@
       "id": "commercial-publication-design",
       "impact": "patch",
       "class": "presentation",
-      "rationale": "The PDF retains its commercial editorial system, Kungfu CLI evidence view, kungfu.tech cover contact, and reproducible TeX Gyre build while adopting the canonical kungfu-white-paper.pdf route."
+      "rationale": "The publication retains its commercial editorial system, Kungfu CLI evidence view, kungfu.tech cover contact, and reproducible TeX Gyre build while using only the canonical kungfu-white-paper reader and PDF routes."
     }
   ],
-  "summary": "Alpha 13 preserves the qualified White Paper content while canonicalizing its public PDF filename and retaining the previous route as an alias."
+  "summary": "Alpha 14 preserves the qualified White Paper content while aligning its reader and PDF filenames and removing incorrectly named aliases."
 }

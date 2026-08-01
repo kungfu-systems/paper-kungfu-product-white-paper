@@ -183,13 +183,13 @@ export const buildSiteBundles = () => {
     source,
     routes: {
       canonicalHost: "kungfu.tech",
-      canonicalPath: "/whitepaper/kungfu-real-world-agent-work",
-      canonicalUrl: "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work",
+      canonicalPath: "/whitepaper/kungfu-white-paper",
+      canonicalUrl: "https://kungfu.tech/whitepaper/kungfu-white-paper",
       indexPath: "/whitepaper",
       indexUrl: "https://kungfu.tech/whitepaper",
       pdfPath: "/whitepaper/kungfu-white-paper.pdf",
       pdfUrl: "https://kungfu.tech/whitepaper/kungfu-white-paper.pdf",
-      pdfAliases: ["/whitepaper/kungfu-real-world-agent-work.pdf"],
+      pdfAliases: [],
       evidenceUrl: "https://papers.libkungfu.dev/kungfu-product-white-paper",
     },
     hero: {
@@ -199,7 +199,7 @@ export const buildSiteBundles = () => {
       stance: "Work should not disappear when a chat ends, restart when an Agent changes, or become complete merely because a process exits.",
       primaryCta: {
         label: "Read the white paper",
-        href: "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work",
+        href: "https://kungfu.tech/whitepaper/kungfu-white-paper",
       },
       secondaryCta: {
         label: "Inspect evidence",
@@ -252,7 +252,7 @@ export const buildSiteBundles = () => {
       pdfUrl: "https://papers.libkungfu.dev/kungfu-product-white-paper/main.pdf",
       sourcePath: "/kungfu-product-white-paper/source.tar.gz",
       sourceUrl: "https://papers.libkungfu.dev/kungfu-product-white-paper/source.tar.gz",
-      brandUrl: "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work",
+      brandUrl: "https://kungfu.tech/whitepaper/kungfu-white-paper",
       repositoryUrl: "https://github.com/kungfu-systems/paper-kungfu-product-white-paper",
     },
     sectionMap: sections.map((section, index) => ({

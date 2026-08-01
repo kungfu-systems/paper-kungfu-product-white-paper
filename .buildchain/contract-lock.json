@@ -3,13 +3,13 @@
   "contract": "kungfu-buildchain-contract-lock",
   "buildchain": {
     "ref": "v3",
-    "resolvedSha": "f30bb2678cacbae947eb46411c13eda75e9e35b0",
+    "resolvedSha": "0395e290736c49c38982fc85d916d09ba07a5f16",
     "contract": "kungfu-buildchain-runtime-contract-world",
-    "contractDigest": "sha256:000dd17acb6a55f563392cd49d22a5c64ec178c80292b92e6630e58ca6d5aeee",
-    "compatibilityDigest": "sha256:61af7d0871220bc0909008bdc571905ad500cccf853e7841bc5d462a34b2d436",
+    "contractDigest": "sha256:d8f901b337b92e121193cf838d36846ae5476820481ae25a8f6bcf20d4edf889",
+    "compatibilityDigest": "sha256:3bbcaf835844260ed98414d3bd176667245d12131e13fc748e4c2fae12399691",
     "majorLine": "v3",
     "compatibilityPolicy": "major-compatible",
-    "acceptedAt": "2026-07-31T16:03:39.814Z",
+    "acceptedAt": "2026-08-01T07:56:05.888Z",
     "surfaces": [
       {
         "id": "reusable-build",
@@ -144,7 +144,7 @@
       {
         "id": "controller:release-propagation",
         "kind": "controller",
-        "breakingDigest": "sha256:d7a1f15990ce8bd13149474888232c7d4451dd2a49bebf4d4ce1336695da430e"
+        "breakingDigest": "sha256:b873ceb65618972bea615afcb9c616c138ce834b3246ec7237ef87c1618d68bd"
       },
       {
         "id": "controller:binary-distribution",

@@ -108,7 +108,7 @@ for (const consumer of ["kungfu.tech", "papers.libkungfu.dev"]) {
 }
 
 const brandBundle = readJson("site/brand-site.json");
-if (brandBundle.routes?.canonicalUrl !== "https://kungfu.tech/whitepaper/kungfu-real-world-agent-work") {
+if (brandBundle.routes?.canonicalUrl !== "https://kungfu.tech/whitepaper/kungfu-white-paper") {
   fail("brand site bundle must declare the kungfu.tech canonical white paper URL");
 }
 if (brandBundle.routes?.indexUrl !== "https://kungfu.tech/whitepaper") {
@@ -117,8 +117,8 @@ if (brandBundle.routes?.indexUrl !== "https://kungfu.tech/whitepaper") {
 if (brandBundle.routes?.pdfUrl !== "https://kungfu.tech/whitepaper/kungfu-white-paper.pdf") {
   fail("brand site bundle must declare the kungfu.tech canonical PDF URL");
 }
-if (JSON.stringify(brandBundle.routes?.pdfAliases) !== JSON.stringify(["/whitepaper/kungfu-real-world-agent-work.pdf"])) {
-  fail("brand site bundle must preserve the previous PDF route as an alias");
+if (JSON.stringify(brandBundle.routes?.pdfAliases) !== JSON.stringify([])) {
+  fail("brand site bundle must not publish a PDF alias with a different filename");
 }
 if (brandBundle.hero?.primaryCta?.href !== brandBundle.routes?.canonicalUrl) {
   fail("brand site primary CTA must point to routes.canonicalUrl");

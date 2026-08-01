@@ -1,6 +1,6 @@
 {
   "name": "@kungfu-tech/paper-kungfu-product-white-paper",
-  "version": "0.1.0-alpha.13",
+  "version": "0.1.0-alpha.14",
   "description": "Kungfu product white paper source and site bundles for continuity across replaceable Agent processes",
   "license": "Apache-2.0",
   "type": "module",
@@ -58,10 +58,11 @@
     "paper:preflight": "buildchain paper preflight --json",
     "paper:work:start": "buildchain paper work start",
     "paper:work:submit": "buildchain paper work submit",
-    "paper:status": "buildchain paper status --json"
+    "paper:status": "buildchain paper status --json",
+    "paper:agent:verify": "buildchain paper agent verify --json"
   },
   "devDependencies": {
-    "@kungfu-tech/buildchain": "3.0.3-alpha.3"
+    "@kungfu-tech/buildchain": "3.0.4-alpha.4"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",

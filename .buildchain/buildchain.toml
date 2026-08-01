@@ -7,7 +7,7 @@ name = "paper-kungfu-product-white-paper"
 [publication]
 kind = "paper"
 title = "Kungfu: Continuity for Agent Work"
-version = "0.1.0-alpha.13"
+version = "0.1.0-alpha.14"
 abstract = "A product white paper describing how Kungfu gives Work durable identity, governed evidence, bounded authority, and continuity across replaceable Agent processes."
 authors = ["Keren Dong"]
 primary_artifact = "_build/main.pdf"
