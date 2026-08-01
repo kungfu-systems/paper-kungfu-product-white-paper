@@ -14,8 +14,8 @@ permissions:
 
 jobs:
   check:
-    uses: kungfu-systems/buildchain/.github/workflows/check.yml@2d0688f6efa343abf7de827d5c6a057f28ce9d71
+    uses: kungfu-systems/buildchain/.github/workflows/check.yml@ecd6e8e0312fa77ecc5e05554944b162fb144718
     with:
-      buildchain-ref: 2d0688f6efa343abf7de827d5c6a057f28ce9d71
+      buildchain-ref: ecd6e8e0312fa77ecc5e05554944b162fb144718
       require-version-state: true
       upload-artifacts: true
