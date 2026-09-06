@@ -265,7 +265,7 @@ export const buildSiteBundles = () => {
     })),
     references,
     verification: {
-      commands: ["make check", "make pdf", "npx -y @kungfu-tech/buildchain@3.0.0 validate --cwd . --json", "npm pack --dry-run --json"],
+      commands: ["make check", "make pdf", "pnpm exec buildchain validate --cwd . --json", "npm pack --dry-run --json"],
       buildchainManifestPath: ".buildchain/publication/publication-artifact.json",
       sourceBundlePath: ".buildchain/publication/source.tar.gz",
       residualRisk: "The paper is a draft product white paper; philosophical and product-positioning claims still require human review before launch use.",

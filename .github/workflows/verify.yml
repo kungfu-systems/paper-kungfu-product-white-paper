@@ -1,3 +1,6 @@
+# Next-development contract: kungfu-buildchain-next-development-transition/v1
+# Durable controller: kungfu-buildchain-next-development-controller/v1
+# A completed Alpha remains successful and its refs remain immutable while the next-development transition is incomplete.
 name: Verify
 
 on:
@@ -14,8 +17,8 @@ permissions:
 
 jobs:
   check:
-    uses: kungfu-systems/buildchain/.github/workflows/check.yml@97ecea8df0b8593c63fcf57f3f277ebb7081f017
+    uses: kungfu-systems/buildchain/.github/workflows/check.yml@v4-alpha
     with:
-      buildchain-ref: 97ecea8df0b8593c63fcf57f3f277ebb7081f017
+      buildchain-ref: v4-alpha
       require-version-state: true
       upload-artifacts: true

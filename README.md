@@ -1,3 +1,22 @@
+---
+status: active
+period: ongoing
+theme: paper-buildchain-v4
+doc_type: reference
+source_level: local-files
+confidence: high
+sensitivity: public
+evidence_grade: A
+review_state: self-reviewed
+last_reviewed: 2026-09-06
+ai_provenance:
+  model_family: GPT-6
+  product: Codex
+  generated_at: 2026-09-06
+  visible_context: Repository sources and generated Buildchain entry contracts.
+  invisible_context_boundary: No private data or hidden model state inspected.
+---
+
 # Kungfu Product White Paper
 
 This repository tracks the source for a Kungfu product white paper.
@@ -62,13 +81,14 @@ make update-site-bundles
 Install dependencies:
 
 ```sh
-npm install
+pnpm install --frozen-lockfile
+pnpm paper:agent:verify
 ```
 
 Run repository and release-surface checks:
 
 ```sh
-npm run check
+pnpm run check
 ```
 
 Build the PDF and Buildchain publication artifact:

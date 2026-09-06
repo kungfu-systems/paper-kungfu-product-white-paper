@@ -9,42 +9,66 @@
   },
   "runtime": {
     "repository": "kungfu-systems/buildchain",
-    "version": "3.0.4-alpha.13",
-    "ref": "97ecea8df0b8593c63fcf57f3f277ebb7081f017",
-    "resolvedSha": "97ecea8df0b8593c63fcf57f3f277ebb7081f017"
+    "version": "4.0.2-alpha.43",
+    "ref": "v4-alpha",
+    "resolvedSha": "2d8df76eaf70237519bd34170b0473c2ef3f4f4f"
   },
   "workflows": {
     "build": {
       "path": ".github/workflows/build.yml",
-      "sourceDigest": "sha256:e430d33399e9cd76ef670bbbf0b863096b13800c6d75b3ed625ccf1b05be0930",
+      "sourceDigest": "sha256:41e99cc23c27e189aea3bcf5c17c1838da02f5f5a83c15d092af460172dad86e",
       "reusablePath": ".github/workflows/publication-artifact.yml",
-      "reusableRef": "97ecea8df0b8593c63fcf57f3f277ebb7081f017"
+      "reusableRef": "v4-alpha",
+      "reusableRefs": [
+        "v4-alpha"
+      ]
     },
     "verify": {
       "path": ".github/workflows/verify.yml",
-      "sourceDigest": "sha256:72d62ec0e3660427cb3a12cfc145576a64fc89dafa61a3423a1ef5b03e2d5c96",
+      "sourceDigest": "sha256:3cf8745e12e63de9a8324f7b1f7e9c36e5ff17979303715cc18692abfb15020d",
       "reusablePath": ".github/workflows/check.yml",
-      "reusableRef": "97ecea8df0b8593c63fcf57f3f277ebb7081f017"
+      "reusableRef": "v4-alpha",
+      "reusableRefs": [
+        "v4-alpha"
+      ]
     },
     "release": {
       "path": ".github/workflows/paper-release.yml",
-      "sourceDigest": "sha256:85c2a993d4fce7e020fb270488984eb2e7deb3571dc3aae7466919b14321d544",
+      "sourceDigest": "sha256:d5484ff0fe38f33e8a177b7cb5ca451748fdbf8da54f50fe7fb7280290ec0b74",
       "reusablePath": ".github/workflows/paper-release-sealed.yml",
-      "reusableRef": "97ecea8df0b8593c63fcf57f3f277ebb7081f017"
+      "reusableRef": "v4",
+      "reusableRefs": [
+        "v4",
+        "v4-alpha"
+      ]
     }
   },
   "agentEntry": {
     "contract": "kungfu-buildchain-paper-agent-entry",
     "policyPath": ".buildchain/paper/agent-entry.json",
-    "policyDigest": "sha256:57ff26b613f22d9b63c9caab3558f7434f7c896db2cbc465ddbacae4e24d4dba",
+    "policyDigest": "sha256:9b5fae72bdbfb3b3614d29ad34b4962c949d03962ca2a86cd7b57d1177924c84",
     "instructionsPath": "AGENTS.md",
-    "instructionsDigest": "sha256:b2f241d3a9cefb0c6c3c0dac10a7222a333d663c364072fb8fed70c5db52355a"
+    "instructionsDigest": "sha256:df4de39bbe3729ebded47332dcd9f75bde8ed1bdbc15e466702528a805c3c8fb"
   },
   "admission": {
-    "contractLockPath": ".buildchain/contract-lock.json",
-    "contractLockDigest": "sha256:0634a6cf841bd15af96e01d54191a0c01d30c80b4e1c35ac6544c137e063c765",
-    "acceptedRef": "97ecea8df0b8593c63fcf57f3f277ebb7081f017",
-    "acceptedSha": "97ecea8df0b8593c63fcf57f3f277ebb7081f017"
+    "contractLockPath": ".buildchain/alpha-contract-lock.json",
+    "contractLockDigest": "sha256:99ab8b7c67f710af43aad0118e49a22d48110634129cd8b3d65c09b0dd0dda0a",
+    "acceptedRef": "v4-alpha",
+    "acceptedSha": "2d8df76eaf70237519bd34170b0473c2ef3f4f4f",
+    "channels": {
+      "v4": {
+        "ref": "v4",
+        "resolvedSha": "9f43b6d1eaf388b9347b80c492e5b8415016816c",
+        "lockPath": ".buildchain/contract-lock.json",
+        "lockDigest": "sha256:38d7e6a7cd4f76f97f362269325ee65b0f5d1d0d82e5f36a51a80da576057325"
+      },
+      "v4-alpha": {
+        "ref": "v4-alpha",
+        "resolvedSha": "2d8df76eaf70237519bd34170b0473c2ef3f4f4f",
+        "lockPath": ".buildchain/alpha-contract-lock.json",
+        "lockDigest": "sha256:99ab8b7c67f710af43aad0118e49a22d48110634129cd8b3d65c09b0dd0dda0a"
+      }
+    }
   },
   "trustedPublisher": {
     "type": "github",
@@ -82,5 +106,5 @@
     },
     "policyDigest": "sha256:42aafcd084e0de8f569176df4397120e226b4f619b0ff3db804bbb528e1313af"
   },
-  "authorityDigest": "sha256:1041adedc57a749933bef3dea7f3c0c79fd44222f8c42da8f86ec5bc921ae7fc"
+  "authorityDigest": "sha256:6b6eb208e7d777ffce70526ea424a758ae14a11d00e5381bf70dc7e3e2acd981"
 }

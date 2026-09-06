@@ -1,3 +1,6 @@
+# Next-development contract: kungfu-buildchain-next-development-transition/v1
+# Durable controller: kungfu-buildchain-next-development-controller/v1
+# A completed Alpha remains successful and its refs remain immutable while the next-development transition is incomplete.
 name: Build
 
 on:
@@ -15,10 +18,10 @@ permissions:
 
 jobs:
   publication:
-    uses: kungfu-systems/buildchain/.github/workflows/publication-artifact.yml@97ecea8df0b8593c63fcf57f3f277ebb7081f017
+    uses: kungfu-systems/buildchain/.github/workflows/publication-artifact.yml@v4-alpha
     with:
-      buildchain-ref: 97ecea8df0b8593c63fcf57f3f277ebb7081f017
-      buildchain-contract-lock-path: .buildchain/contract-lock.json
+      buildchain-ref: v4-alpha
+      buildchain-contract-lock-path: .buildchain/alpha-contract-lock.json
       toolchain-type: config
       verify-command: make check
       artifact-name: "paper-kungfu-product-white-paper"
