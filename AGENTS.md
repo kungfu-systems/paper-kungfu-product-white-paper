@@ -39,7 +39,7 @@ does not bypass remote policy.
 <!-- buildchain:next-development:v1:start -->
 ## Next-development transition (required after Alpha)
 
-Follow `architecture/decisions/0002-next-development-transition.md` and
+Follow [Buildchain next-development ADR](https://github.com/kungfu-systems/buildchain/blob/v4/architecture/decisions/0002-next-development-transition.md) and
 `kungfu-buildchain-next-development-transition/v1`. A completed Alpha remains successful and its refs remain immutable while the next-development transition is incomplete.
 
 Use only `semver/auto` or `anchored/manual`. Record `planned`,
@@ -57,7 +57,7 @@ the target version plus every declared source and derived root.
 Plan locally before opting into declared-path writes:
 
 ```sh
-node scripts/next-development-transition.mjs materialize --cwd . --input <request.json>
+node node_modules/@kungfu-tech/buildchain/scripts/next-development-transition.mjs materialize --cwd . --input <request.json>
 ```
 
 Add `--write` only after reviewing the rooted plan. Anchored/manual consumers
