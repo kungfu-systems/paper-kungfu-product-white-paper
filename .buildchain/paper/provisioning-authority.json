@@ -9,9 +9,9 @@
   },
   "runtime": {
     "repository": "kungfu-systems/buildchain",
-    "version": "4.0.2-alpha.43",
+    "version": "4.0.2-alpha.44",
     "ref": "v4-alpha",
-    "resolvedSha": "2d8df76eaf70237519bd34170b0473c2ef3f4f4f"
+    "resolvedSha": "34cd1112bb83d98935b6074646357901173bf830"
   },
   "workflows": {
     "build": {
@@ -46,15 +46,15 @@
   "agentEntry": {
     "contract": "kungfu-buildchain-paper-agent-entry",
     "policyPath": ".buildchain/paper/agent-entry.json",
-    "policyDigest": "sha256:9b5fae72bdbfb3b3614d29ad34b4962c949d03962ca2a86cd7b57d1177924c84",
+    "policyDigest": "sha256:b4eae5caa1bc33cee1f4ef66024f07b6aea028545ad36a427f11880c7def74b8",
     "instructionsPath": "AGENTS.md",
     "instructionsDigest": "sha256:c89970c62e552f5a558c0b169a5f0b3fe580e16fc3941a63bd1b49f309633612"
   },
   "admission": {
     "contractLockPath": ".buildchain/alpha-contract-lock.json",
-    "contractLockDigest": "sha256:99ab8b7c67f710af43aad0118e49a22d48110634129cd8b3d65c09b0dd0dda0a",
+    "contractLockDigest": "sha256:14e5f0302e1fcef9b4c1d60f0a6d2c8db39331174db21ef60b7b4d95d2972f33",
     "acceptedRef": "v4-alpha",
-    "acceptedSha": "2d8df76eaf70237519bd34170b0473c2ef3f4f4f",
+    "acceptedSha": "34cd1112bb83d98935b6074646357901173bf830",
     "channels": {
       "v4": {
         "ref": "v4",
@@ -64,9 +64,9 @@
       },
       "v4-alpha": {
         "ref": "v4-alpha",
-        "resolvedSha": "2d8df76eaf70237519bd34170b0473c2ef3f4f4f",
+        "resolvedSha": "34cd1112bb83d98935b6074646357901173bf830",
         "lockPath": ".buildchain/alpha-contract-lock.json",
-        "lockDigest": "sha256:99ab8b7c67f710af43aad0118e49a22d48110634129cd8b3d65c09b0dd0dda0a"
+        "lockDigest": "sha256:14e5f0302e1fcef9b4c1d60f0a6d2c8db39331174db21ef60b7b4d95d2972f33"
       }
     }
   },
@@ -106,5 +106,5 @@
     },
     "policyDigest": "sha256:42aafcd084e0de8f569176df4397120e226b4f619b0ff3db804bbb528e1313af"
   },
-  "authorityDigest": "sha256:6b67ffaf68d2bd2ca0312715f08169ff09a1bde87798b5a664d434aa9023ce18"
+  "authorityDigest": "sha256:9b916f45324a2fff87e0ac69be574e89ab49a9f425a3b91f288258ded9dc3e08"
 }
