@@ -1,3 +1,6 @@
+# Next-development contract: kungfu-buildchain-next-development-transition/v1
+# Durable controller: kungfu-buildchain-next-development-controller/v1
+# A completed Alpha remains successful and its refs remain immutable while the next-development transition is incomplete.
 name: Paper Release
 
 on:
@@ -11,8 +14,9 @@ permissions:
   contents: read
 
 jobs:
-  paper-release:
-    uses: kungfu-systems/buildchain/.github/workflows/paper-release-sealed.yml@97ecea8df0b8593c63fcf57f3f277ebb7081f017
+  paper-release-alpha:
+    if: ${{ startsWith(github.ref_name, 'alpha/') }}
+    uses: kungfu-systems/buildchain/.github/workflows/paper-release-sealed.yml@v4-alpha
     permissions:
       actions: read
       checks: write
@@ -21,7 +25,32 @@ jobs:
       issues: write
       pull-requests: write
     with:
-      buildchain-ref: 97ecea8df0b8593c63fcf57f3f277ebb7081f017
+      buildchain-ref: v4-alpha
+      buildchain-contract-lock-path: .buildchain/alpha-contract-lock.json
+      publisher-workflow-path: .github/workflows/paper-release.yml
+      toolchain-type: config
+      verify-command: make check
+      artifact-paths: "_build/main.pdf"
+      release-passport-product-name: "Kungfu: Continuity for Agent Work"
+    secrets:
+      KUNGFU_GOVERNANCE_AUDITOR_APP_PRIVATE_KEY: ${{ secrets.KUNGFU_GOVERNANCE_AUDITOR_APP_PRIVATE_KEY }}
+      BUILDCHAIN_GENERATED_WRITE_APP_CLIENT_ID: ${{ secrets.BUILDCHAIN_GENERATED_WRITE_APP_CLIENT_ID }}
+      BUILDCHAIN_GENERATED_WRITE_APP_PRIVATE_KEY: ${{ secrets.BUILDCHAIN_GENERATED_WRITE_APP_PRIVATE_KEY }}
+      BUILDCHAIN_GENERATED_WRITE_TOKEN: ${{ secrets.BUILDCHAIN_GENERATED_WRITE_TOKEN }}
+      BUILDCHAIN_PROMOTION_TOKEN: ${{ secrets.BUILDCHAIN_PROMOTION_TOKEN }}
+
+  paper-release:
+    if: ${{ startsWith(github.ref_name, 'release/') }}
+    uses: kungfu-systems/buildchain/.github/workflows/paper-release-sealed.yml@v4
+    permissions:
+      actions: read
+      checks: write
+      contents: read
+      id-token: write
+      issues: write
+      pull-requests: write
+    with:
+      buildchain-ref: v4
       buildchain-contract-lock-path: .buildchain/contract-lock.json
       publisher-workflow-path: .github/workflows/paper-release.yml
       toolchain-type: config

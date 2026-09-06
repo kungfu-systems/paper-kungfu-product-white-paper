@@ -10,18 +10,29 @@ const fail = (message) => {
 const readJson = (path) => JSON.parse(readFileSync(path, "utf8"));
 const stable = (value) => `${JSON.stringify(value, null, 2)}\n`;
 
-const promotionWorkflow = readFileSync(
-  ".github/workflows/buildchain-ref-promotion.yml",
-  "utf8",
-);
+const releaseWorkflow = readFileSync(".github/workflows/paper-release.yml", "utf8");
 for (const requiredSurface of [
-  "buildchain-ref:",
-  "inputs['buildchain-ref'] || (startsWith(github.event.workflow_run.head_branch || inputs['target-ref'], 'alpha/') && 'v3-alpha' || 'v3')",
-  "buildchain-contract-lock-path: ${{ startsWith(github.event.workflow_run.head_branch || inputs['target-ref'], 'alpha/') && '.buildchain/alpha-contract-lock.json' || '.buildchain/contract-lock.json' }}",
+  "paper-release-alpha:",
+  "if: ${{ startsWith(github.ref_name, 'alpha/') }}",
+  "if: ${{ startsWith(github.ref_name, 'release/') }}",
+  "uses: kungfu-systems/buildchain/.github/workflows/paper-release-sealed.yml@v4-alpha\n",
+  "uses: kungfu-systems/buildchain/.github/workflows/paper-release-sealed.yml@v4\n",
+  "buildchain-ref: v4-alpha\n",
+  "buildchain-ref: v4\n",
+  "buildchain-contract-lock-path: .buildchain/alpha-contract-lock.json",
+  "buildchain-contract-lock-path: .buildchain/contract-lock.json",
 ]) {
-  if (!promotionWorkflow.includes(requiredSurface)) {
-    fail(`Buildchain promotion workflow must include ${requiredSurface}`);
+  if (!releaseWorkflow.includes(requiredSurface)) {
+    fail(`Sealed Paper release workflow must include ${requiredSurface}`);
   }
+}
+
+const manualPromotion = readFileSync(".github/workflows/buildchain-ref-promotion.yml", "utf8");
+if (manualPromotion.includes("workflow_run:") || /@v3(?:-alpha)?\b/.test(manualPromotion)) {
+  fail("Manual promotion must be dispatch-only and use Buildchain v4 channels");
+}
+if ((manualPromotion.match(/dry-run: true/g) || []).length !== 2) {
+  fail("Both manual promotion channels must remain dry-run only");
 }
 
 for (const [path, expected] of Object.entries(buildSiteBundles())) {
@@ -83,11 +94,11 @@ const alphaContractLock = readJson(".buildchain/alpha-contract-lock.json");
 if (contractLock.contract !== "kungfu-buildchain-contract-lock") {
   fail(".buildchain/contract-lock.json must be a Buildchain contract lock");
 }
-if (contractLock.buildchain?.ref !== "v3") {
-  fail(".buildchain/contract-lock.json must lock the Buildchain v3 floating ref");
+if (contractLock.buildchain?.ref !== "v4" || contractLock.buildchain?.majorLine !== "v4") {
+  fail(".buildchain/contract-lock.json must lock the Buildchain v4 floating ref");
 }
-if (alphaContractLock.contract !== "kungfu-buildchain-contract-lock" || alphaContractLock.buildchain?.ref !== "v3-alpha") {
-  fail(".buildchain/alpha-contract-lock.json must lock the Buildchain v3-alpha floating ref");
+if (alphaContractLock.contract !== "kungfu-buildchain-contract-lock" || alphaContractLock.buildchain?.ref !== "v4-alpha" || alphaContractLock.buildchain?.majorLine !== "v4") {
+  fail(".buildchain/alpha-contract-lock.json must lock the Buildchain v4-alpha floating ref");
 }
 const releaseImpact = readJson("release-impact.json");
 if (releaseImpact.contract !== "kungfu-buildchain-impact") {

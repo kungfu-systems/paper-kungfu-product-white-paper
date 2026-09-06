@@ -62,3 +62,20 @@ command = "npm run check"
 
 [lifecycle.publish]
 command = "npm run publish:transaction"
+
+[next_development]
+contract = "kungfu-buildchain-next-development-transition/v1"
+controller_contract = "kungfu-buildchain-next-development-controller/v1"
+adr = "architecture/decisions/0002-next-development-transition.md"
+invariant = "A completed Alpha remains successful and its refs remain immutable while the next-development transition is incomplete."
+states = ["planned","waiting-anchor","materialized","pr-pending","merged","verified"]
+adapter = "scripts/next-development-transition.mjs"
+adapter_environment = "BUILDCHAIN_VERSION"
+source_paths = "version.files"
+derived_paths = "version.derived_files"
+read_only_paths = "version.manifest"
+derivation_stage = "lifecycle.version-state"
+verification_stage = "lifecycle.verify"
+allowed_effects = ["declared-version-source-and-derived-files"]
+public_side_effects = []
+forbidden_ref_namespaces = ["refs/heads/alpha/", "refs/tags/"]

@@ -35,3 +35,35 @@ Buildchain package and runtime authority, and feature-to-development lineage.
 Passing local commands alone is not acceptance, and manually bypassing them
 does not bypass remote policy.
 <!-- buildchain:paper-agent-entry:v1:end -->
+
+<!-- buildchain:next-development:v1:start -->
+## Next-development transition (required after Alpha)
+
+Follow `architecture/decisions/0002-next-development-transition.md` and
+`kungfu-buildchain-next-development-transition/v1`. A completed Alpha remains successful and its refs remain immutable while the next-development transition is incomplete.
+
+Use only `semver/auto` or `anchored/manual`. Record `planned`,
+`waiting-anchor`, `materialized`, `pr-pending`, `merged`, and `verified`
+without changing the completed Alpha outcome. During preparation, never move
+an Alpha branch or tag and never write outside declared source and derived
+version paths. Treat the anchor manifest as read-only.
+
+The durable controller creates one child keyed by the completed-Alpha root.
+Every runner must reuse that child and its compare-and-swap checkpoints. Build
+from the latest protected Dev SHA, supersede stale material before opening the
+version PR, and do not record `verified` until protected Dev readback matches
+the target version plus every declared source and derived root.
+
+Plan locally before opting into declared-path writes:
+
+```sh
+node scripts/next-development-transition.mjs materialize --cwd . --input <request.json>
+```
+
+Add `--write` only after reviewing the rooted plan. Anchored/manual consumers
+must materialize and root the declared anchor manifest first.
+Repository transaction adapters pass the exact target as
+`BUILDCHAIN_VERSION`, run `lifecycle.version-state` when derived files are
+declared, then run `lifecycle.verify`. The reference writer fails closed for
+derived-file consumers; it does not execute arbitrary consumer commands.
+<!-- buildchain:next-development:v1:end -->
